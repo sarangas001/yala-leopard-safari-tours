@@ -81,6 +81,20 @@ export default function Hero() {
     };
   }, []);
 
+  // Deep-link support: `/#park-yala` (from the header nav) selects that park and scrolls here.
+  useEffect(() => {
+    const hash = window.location.hash.replace("#", "");
+    const index = DESTINATIONS.findIndex((destination) => `park-${destination.id}` === hash);
+    if (index < 0) return;
+
+    // Deliberate one-time sync from the URL after mount: the server render and
+    // first client paint must both start at 0 to avoid a hydration mismatch.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setActive(index);
+    const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    rootRef.current?.scrollIntoView({ behavior: reduced ? "auto" : "smooth", block: "start" });
+  }, []);
+
   // Crossfade image layers, Ken Burns drift and text panels whenever the active park changes.
   useEffect(() => {
     const reduced = reducedMotionRef.current;
@@ -182,12 +196,17 @@ export default function Hero() {
   const activeDestination = DESTINATIONS[active];
 
   return (
-    <section ref={rootRef} aria-label="Featured national parks" className="relative w-full bg-white">
+    <section
+      ref={rootRef}
+      id="safaris"
+      aria-label="Featured national parks"
+      className="relative w-full scroll-mt-20 bg-white"
+    >
       <p className="sr-only" role="status" aria-live="polite">
         Now showing {activeDestination.name}
       </p>
 
-      <div className="relative h-[92svh] min-h-[600px] max-h-[880px] w-full overflow-hidden">
+      <div className="relative h-[92svh] min-h-175 max-h-220 w-full overflow-hidden">
         <div className="absolute inset-0">
           {DESTINATIONS.map((destination, i) => (
             <div
@@ -219,13 +238,13 @@ export default function Hero() {
               </div>
             </div>
           ))}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/10 to-black/5" />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/50 via-black/5 to-transparent" />
+          <div className="absolute inset-0 bg-linear-to-t from-black/75 via-black/10 to-black/5" />
+          <div className="absolute inset-0 bg-linear-to-r from-black/50 via-black/5 to-transparent" />
         </div>
 
-        <div className="relative z-10 flex h-full flex-col justify-between px-5 py-8 sm:px-8 sm:py-10 lg:px-14 lg:py-12">
-          <div ref={introRef} className="max-w-xl text-white">
-            <span className="text-sm font-medium uppercase tracking-[0.2em] text-brand-orange-light">
+        <div className="relative z-10 flex h-full flex-col px-5 pt-20 pb-8 sm:px-8 sm:pt-24 sm:pb-10 lg:px-14 lg:pt-28 lg:pb-12">
+          <div ref={introRef} className="mb-8 max-w-xl text-white">
+            <span className="text-sm font-medium uppercase tracking-[0.2em] text-white">
               Sri Lanka Safari Tours
             </span>
 
@@ -257,14 +276,14 @@ export default function Hero() {
 
             <a
               href="#enquire"
-              className="mt-6 inline-flex items-center gap-2 rounded-full bg-brand-orange px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-brand-orange-dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white sm:mt-8"
+              className="mt-6 inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-semibold text-brand-ink transition-colors hover:bg-white/90 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-ink sm:mt-8"
             >
               Plan your safari
               <span aria-hidden="true">→</span>
             </a>
           </div>
 
-          <div ref={cardsRef} className="w-full">
+          <div ref={cardsRef} className="mt-auto w-full">
             <div
               role="tablist"
               aria-label="Choose a national park to view"
@@ -289,7 +308,7 @@ export default function Hero() {
                     className={
                       "relative block h-24 w-16 overflow-hidden rounded-xl ring-2 transition-[ring-color,transform] duration-300 sm:h-32 sm:w-24 " +
                       (i === active
-                        ? "ring-brand-orange-light"
+                        ? "ring-white"
                         : "ring-white/30 group-hover:ring-white/70")
                     }
                   >
