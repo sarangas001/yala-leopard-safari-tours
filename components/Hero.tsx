@@ -81,7 +81,10 @@ export default function Hero() {
     };
   }, []);
 
-  // Deep-link support: `/#park-yala` (from the header nav) selects that park and scrolls here.
+  // Deep-link support: `/#park-yala` (from the header nav) selects that park on load.
+  // The actual scroll-into-view is handled by SmoothScroll, which owns the Lenis
+  // instance — calling the native scrollIntoView here would fight Lenis's own
+  // scroll loop and get snapped back to the top a frame later.
   useEffect(() => {
     const hash = window.location.hash.replace("#", "");
     const index = DESTINATIONS.findIndex((destination) => `park-${destination.id}` === hash);
@@ -91,8 +94,18 @@ export default function Hero() {
     // first client paint must both start at 0 to avoid a hydration mismatch.
     // eslint-disable-next-line react-hooks/set-state-in-effect
     setActive(index);
-    const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    rootRef.current?.scrollIntoView({ behavior: reduced ? "auto" : "smooth", block: "start" });
+  }, []);
+
+  // Same as above, but for clicks after the page has already loaded — SmoothScroll's
+  // hash handler dispatches this once it has smooth-scrolled the section into view.
+  useEffect(() => {
+    const handler = (event: Event) => {
+      const id = (event as CustomEvent<string>).detail;
+      const index = DESTINATIONS.findIndex((destination) => destination.id === id);
+      if (index >= 0) setActive(index);
+    };
+    window.addEventListener("select-park", handler);
+    return () => window.removeEventListener("select-park", handler);
   }, []);
 
   // Crossfade image layers, Ken Burns drift and text panels whenever the active park changes.
@@ -242,7 +255,7 @@ export default function Hero() {
           <div className="absolute inset-0 bg-linear-to-r from-black/50 via-black/5 to-transparent" />
         </div>
 
-        <div className="relative z-10 flex h-full flex-col px-5 pt-20 pb-8 sm:px-8 sm:pt-24 sm:pb-10 lg:px-14 lg:pt-28 lg:pb-12">
+        <div className="relative z-10 flex h-full flex-col px-6 pt-20 pb-8 sm:px-10 sm:pt-24 sm:pb-10 lg:px-20 lg:pt-28 lg:pb-12">
           <div ref={introRef} className="mb-8 max-w-xl text-white">
             <span className="text-sm font-medium uppercase tracking-[0.2em] text-white">
               Sri Lanka Safari Tours
@@ -338,10 +351,6 @@ export default function Hero() {
           </div>
         </div>
       </div>
-
-      <p className="px-5 py-2 text-right text-[11px] text-brand-ink-muted sm:px-8">
-        Wildlife photography via Wikimedia Commons, CC BY-SA 4.0 / FAL
-      </p>
     </section>
   );
 }

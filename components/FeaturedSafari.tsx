@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Link from "next/link";
 import Reveal from "@/components/Reveal";
 
 const DURATIONS = ["Half Day", "7 Hours", "Full Day"];
@@ -7,7 +6,7 @@ const DURATIONS = ["Half Day", "7 Hours", "Full Day"];
 export default function FeaturedSafari() {
   return (
     <section className="w-full bg-white">
-      <div className="mx-auto max-w-[1600px] px-5 py-16 sm:px-8 sm:py-20 lg:px-14 lg:py-24">
+      <div className="mx-auto max-w-[1600px] px-6 py-16 sm:px-10 sm:py-20 lg:px-20 lg:py-24">
         <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-2 lg:gap-16">
           <Reveal>
             <div className="relative aspect-4/3 w-full overflow-hidden rounded-tl-3xl rounded-tr-[5rem] rounded-br-3xl rounded-bl-[5rem]">
@@ -47,13 +46,14 @@ export default function FeaturedSafari() {
               ))}
             </div>
 
-            <Link
+            {/* eslint-disable-next-line @next/next/no-html-link-for-pages -- same-page anchor, smooth-scrolled by SmoothScroll's hash handler */}
+            <a
               href="/#park-yala"
               className="mt-8 inline-flex items-center gap-2 rounded-full bg-brand-orange px-7 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-brand-orange-dark"
             >
               View Yala Safari Packages
               <span aria-hidden="true">→</span>
-            </Link>
+            </a>
           </Reveal>
         </div>
       </div>

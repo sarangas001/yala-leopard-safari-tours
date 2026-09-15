@@ -6,8 +6,8 @@ import gsap from "gsap";
 export default function Reveal({
   children,
   className,
-  y = 24,
-  duration = 0.7,
+  y = 32,
+  duration = 0.8,
   delay = 0,
 }: {
   children: ReactNode;
@@ -26,12 +26,12 @@ export default function Reveal({
       return;
     }
 
-    gsap.set(el, { opacity: 0, y });
+    gsap.set(el, { opacity: 0, y, scale: 0.97 });
 
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (!entry.isIntersecting) return;
-        gsap.to(el, { opacity: 1, y: 0, duration, delay, ease: "power2.out" });
+        gsap.to(el, { opacity: 1, y: 0, scale: 1, duration, delay, ease: "power3.out" });
         observer.disconnect();
       },
       { threshold: 0.15 }

@@ -16,7 +16,7 @@ export default function FinalCta() {
         <div className="absolute inset-0 bg-brand-ink/70" />
       </div>
 
-      <Reveal className="relative mx-auto max-w-[1600px] px-5 py-20 text-center sm:px-8 sm:py-24 lg:px-14 lg:py-28">
+      <Reveal className="relative mx-auto max-w-[1600px] px-6 py-20 text-center sm:px-10 sm:py-24 lg:px-20 lg:py-28">
         <h2 className="mx-auto max-w-2xl font-display text-3xl font-medium tracking-tight text-white sm:text-4xl lg:text-5xl">
           Your Sri Lankan Wildlife Adventure Starts Here
         </h2>

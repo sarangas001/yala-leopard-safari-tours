@@ -15,7 +15,7 @@ const ANIMALS = [
 export default function WildlifeGrid() {
   return (
     <section className="w-full bg-white">
-      <div className="mx-auto max-w-[1600px] px-5 py-16 sm:px-8 sm:py-20 lg:px-14 lg:py-24">
+      <div className="mx-auto max-w-[1600px] px-6 py-16 sm:px-10 sm:py-20 lg:px-20 lg:py-24">
         <Reveal className="mx-auto max-w-2xl text-center">
           <span className="text-sm font-medium uppercase tracking-[0.2em] text-brand-orange">
             On Your Safari

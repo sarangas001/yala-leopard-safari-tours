@@ -46,7 +46,7 @@ function TripAdvisorIcon() {
 export default function Footer() {
   return (
     <footer className="w-full bg-brand-ink text-white">
-      <div className="mx-auto max-w-[1600px] px-5 py-16 sm:px-8 lg:px-14">
+      <div className="mx-auto max-w-[1600px] px-6 py-16 sm:px-10 lg:px-20">
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-[1.2fr_1fr_1fr]">
           <div>
             <Image
@@ -78,13 +78,21 @@ export default function Footer() {
               Explore
             </h3>
             <ul className="mt-4 space-y-3">
-              {EXPLORE_LINKS.map((link) => (
-                <li key={link.href}>
-                  <Link href={link.href} className="text-sm text-white/80 transition-colors hover:text-white">
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
+              {EXPLORE_LINKS.map((link) =>
+                link.href === "/" ? (
+                  <li key={link.href}>
+                    <Link href={link.href} className="text-sm text-white/80 transition-colors hover:text-white">
+                      {link.label}
+                    </Link>
+                  </li>
+                ) : (
+                  <li key={link.href}>
+                    <a href={link.href} className="text-sm text-white/80 transition-colors hover:text-white">
+                      {link.label}
+                    </a>
+                  </li>
+                )
+              )}
             </ul>
           </div>
 

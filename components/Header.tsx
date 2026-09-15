@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { useLenis } from "lenis/react";
 import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 
@@ -52,17 +53,48 @@ function MenuIcon({ open }: { open: boolean }) {
 }
 
 export default function Header() {
+  const lenis = useLenis();
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
   const dropdownWrapRef = useRef<HTMLDivElement | null>(null);
   const dropdownPanelRef = useRef<HTMLDivElement | null>(null);
   const mobilePanelRef = useRef<HTMLDivElement | null>(null);
+  const scrolledLayerRef = useRef<HTMLDivElement | null>(null);
   const reducedMotionRef = useRef(false);
 
   useEffect(() => {
     reducedMotionRef.current = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   }, []);
+
+  // Fade the nav from transparent-over-hero to a dark scrim once the page scrolls.
+  useEffect(() => {
+    let ticking = false;
+    const update = () => {
+      setScrolled(window.scrollY > 40);
+      ticking = false;
+    };
+    const onScroll = () => {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(update);
+    };
+
+    window.addEventListener("scroll", onScroll, { passive: true });
+    update();
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  useEffect(() => {
+    const layer = scrolledLayerRef.current;
+    if (!layer) return;
+    gsap.to(layer, {
+      opacity: scrolled ? 1 : 0,
+      duration: reducedMotionRef.current ? 0.01 : 0.4,
+      ease: "power2.out",
+    });
+  }, [scrolled]);
 
   // Animate the "Safaris" dropdown panel open/closed.
   useEffect(() => {
@@ -112,6 +144,7 @@ export default function Header() {
     gsap.killTweensOf(panel);
     if (mobileOpen) {
       document.body.style.overflow = "hidden";
+      lenis?.stop();
       gsap.set(panel, { display: "block" });
       gsap.fromTo(
         panel,
@@ -120,6 +153,7 @@ export default function Header() {
       );
     } else {
       document.body.style.overflow = "";
+      lenis?.start();
       gsap.to(panel, {
         height: 0,
         opacity: 0,
@@ -131,8 +165,9 @@ export default function Header() {
 
     return () => {
       document.body.style.overflow = "";
+      lenis?.start();
     };
-  }, [mobileOpen]);
+  }, [mobileOpen, lenis]);
 
   const closeAll = () => {
     setDropdownOpen(false);
@@ -140,9 +175,12 @@ export default function Header() {
   };
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 w-full bg-linear-to-b from-black/55 via-black/20 to-transparent">
+    <header className="fixed inset-x-0 top-0 z-50 w-full">
+      <div className="absolute inset-0 bg-linear-to-b from-black/55 via-black/20 to-transparent" />
+      <div ref={scrolledLayerRef} className="absolute inset-0 bg-linear-to-b from-black/95 via-black/70 to-black/30 opacity-0" />
+
       <div className="relative">
-        <div className="relative mx-auto flex max-w-[1600px] items-center justify-between gap-4 px-5 py-3 sm:px-8 lg:px-10">
+        <div className="relative mx-auto flex max-w-[1600px] items-center justify-between gap-4 px-6 py-3 sm:px-10 lg:px-20">
           <Link href="/" onClick={closeAll} className="shrink-0">
             <Image
               src="/logo-lockup.png"
@@ -211,12 +249,14 @@ export default function Header() {
               <PhoneIcon className="h-4 w-4" />
             </a>
 
-            <Link
+            {/* Same-page anchor: plain <a> so SmoothScroll's hash handler owns the smooth-scroll, not next/link. */}
+            {/* eslint-disable-next-line @next/next/no-html-link-for-pages */}
+            <a
               href="/#enquire"
               className="hidden items-center gap-2 rounded-full bg-white px-5 py-2.5 text-sm font-semibold text-brand-ink transition-colors hover:bg-white/90 sm:inline-flex"
             >
               Plan your safari
-            </Link>
+            </a>
 
             <button
               type="button"
@@ -268,13 +308,14 @@ export default function Header() {
             </a>
           ))}
 
-          <Link
+          {/* eslint-disable-next-line @next/next/no-html-link-for-pages */}
+          <a
             href="/#enquire"
             onClick={closeAll}
             className="mt-3 inline-flex items-center justify-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-semibold text-brand-ink"
           >
             Plan your safari
-          </Link>
+          </a>
         </nav>
       </div>
     </header>

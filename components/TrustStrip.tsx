@@ -59,7 +59,7 @@ const ITEMS = [
 export default function TrustStrip() {
   return (
     <section className="w-full bg-white">
-      <Reveal className="mx-auto max-w-[1600px] px-5 py-10 sm:px-8 lg:px-14">
+      <Reveal className="mx-auto max-w-[1600px] px-6 py-10 sm:px-10 lg:px-20">
         <div className="grid grid-cols-1 gap-6 divide-y divide-black/10 sm:grid-cols-2 sm:gap-8 sm:divide-y-0 lg:grid-cols-4">
           {ITEMS.map((item, i) => (
             <div key={item.label} className={"flex items-center gap-3 pt-6 sm:pt-0" + (i === 0 ? " pt-0" : "")}>
