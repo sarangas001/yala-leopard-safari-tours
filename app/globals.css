@@ -10,13 +10,13 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-}
+  --font-display: var(--font-fraunces);
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-brand-orange: #e07a1f;
+  --color-brand-orange-dark: #b8600f;
+  --color-brand-orange-light: #f6a949;
+  --color-brand-ink: #17140f;
+  --color-brand-ink-muted: #5a544a;
 }
 
 body {
