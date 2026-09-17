@@ -1,16 +1,25 @@
 import Image from "next/image";
 import Reveal from "@/components/Reveal";
 
-const STATS = [
-  { value: "36+", label: "Years guiding" },
-  { value: "3", label: "Parks covered" },
-  { value: "1,000+", label: "Guests hosted" },
-];
-
 export default function AboutPreview() {
   return (
-    <section id="about" className="w-full bg-white">
-      <div className="mx-auto max-w-[1600px] px-6 py-16 sm:px-10 sm:py-20 lg:px-20 lg:py-24">
+    <section id="about" className="relative w-full overflow-hidden bg-white">
+      {/* Peacock illustration — large, behind all content, decorative */}
+      {/* <div
+        className="pointer-events-none absolute bottom-16 right-6 z-0 hidden select-none sm:bottom-20 sm:right-10 lg:bottom-24 lg:right-20 lg:block"
+        aria-hidden="true"
+      >
+        <Image
+          src="/images/parks/peocock.png"
+          alt=""
+          width={420}
+          height={502}
+          quality={90}
+          style={{ width: "320px", height: "auto", opacity: 0.92 }}
+        />
+      </div> */}
+
+      <div className="relative z-10 mx-auto max-w-[1600px] px-6 py-16 sm:px-10 sm:py-20 lg:px-20 lg:py-24">
         <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-20">
           <Reveal className="lg:order-2">
             <div className="relative aspect-[4/3] w-full overflow-hidden rounded-3xl shadow-2xl shadow-black/10">
@@ -26,11 +35,7 @@ export default function AboutPreview() {
           </Reveal>
 
           <Reveal delay={0.12} className="lg:order-1">
-            <span className="inline-flex items-center gap-3 text-xs font-medium uppercase tracking-[0.22em] text-brand-orange">
-              <span className="h-px w-6 bg-brand-orange/50" aria-hidden="true" />
-              About Us
-            </span>
-            <h2 className="mt-4 font-display text-3xl font-medium tracking-tight text-brand-ink sm:text-4xl lg:text-5xl">
+            <h2 className="font-display text-3xl font-medium tracking-tight text-brand-ink sm:text-4xl lg:text-5xl">
               Local Safari Experience Since 1990
             </h2>
             <p className="mt-5 max-w-md text-base leading-relaxed text-brand-ink-muted">
@@ -39,20 +44,6 @@ export default function AboutPreview() {
               parks. Our goal has always been simple: share the island&apos;s
               wildlife responsibly, with guides who know these parks like home.
             </p>
-
-            {/* Inline stats */}
-            <div className="mt-8 flex flex-wrap gap-8 border-t border-black/[0.07] pt-8">
-              {STATS.map((stat) => (
-                <div key={stat.label}>
-                  <span className="font-display text-3xl font-medium text-brand-ink">
-                    {stat.value}
-                  </span>
-                  <p className="mt-0.5 text-xs font-medium uppercase tracking-[0.15em] text-brand-ink-muted">
-                    {stat.label}
-                  </p>
-                </div>
-              ))}
-            </div>
 
             <a
               href="#"
