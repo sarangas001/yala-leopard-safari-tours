@@ -24,20 +24,33 @@ const PARKS = [
 
 export default function SafariParks() {
   return (
-    <section className="w-full bg-white">
-      <div className="mx-auto max-w-[1600px] px-6 py-16 sm:px-10 sm:py-20 lg:px-20 lg:py-24">
-        <Reveal className="mx-auto max-w-2xl text-center">
-          <span className="inline-flex items-center gap-3 text-xs font-medium uppercase tracking-[0.22em] text-brand-orange">
-            <span className="h-px w-6 bg-brand-orange/50" aria-hidden="true" />
-            Choose Your Safari
-            <span className="h-px w-6 bg-brand-orange/50" aria-hidden="true" />
-          </span>
-          <h2 className="mt-4 font-display text-3xl font-medium tracking-tight text-brand-ink sm:text-4xl lg:text-5xl">
+    <section className="relative w-full overflow-hidden bg-white">
+      {/* Elephant illustration — large, behind all content, decorative */}
+      <div
+        className="pointer-events-none absolute -top-10 -right-8 z-0 hidden select-none lg:block"
+        aria-hidden="true"
+      >
+        <Image
+          src="/images/parks/elephant.png"
+          alt=""
+          width={400}
+          height={500}
+          quality={90}
+          style={{ width: "380px", height: "auto", opacity: 0.92 }}
+        />
+      </div>
+
+      {/* All content sits above the illustration */}
+      <div className="relative z-10 mx-auto max-w-[1600px] px-10 py-20 sm:px-16 sm:py-24 lg:px-28 lg:py-28">
+        {/* Heading — centered, no eyebrow label */}
+        <Reveal className="text-center">
+          <h2 className="font-display text-3xl font-medium tracking-tight text-brand-ink sm:text-4xl lg:text-5xl">
             Explore Sri Lanka&apos;s Wild Parks
           </h2>
         </Reveal>
 
-        <div className="mt-12 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:mt-16 lg:grid-cols-3">
+        {/* Cards */}
+        <div className="mt-14 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:mt-16 lg:grid-cols-3 lg:gap-7">
           {PARKS.map((park, i) => (
             <Reveal key={park.id} delay={i * 0.1}>
               <a href={`/#park-${park.id}`} className="group block">
@@ -50,15 +63,14 @@ export default function SafariParks() {
                     quality={75}
                     className="object-cover transition-transform duration-700 group-hover:scale-105"
                   />
-                  {/* subtle gradient – bottom only */}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
 
-                  {/* pill badge top-left */}
+                  {/* Pill badge */}
                   <span className="absolute left-4 top-4 rounded-full bg-white/90 px-3 py-1 text-xs font-semibold tracking-wide text-brand-ink backdrop-blur-sm">
                     {park.bestFor}
                   </span>
 
-                  {/* bottom text */}
+                  {/* Bottom text */}
                   <div className="absolute inset-x-0 bottom-0 p-6">
                     <h3 className="font-display text-xl font-medium text-white sm:text-2xl">
                       {park.name}
@@ -82,3 +94,4 @@ export default function SafariParks() {
     </section>
   );
 }
+
