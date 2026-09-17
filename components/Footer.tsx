@@ -6,7 +6,7 @@ const EXPLORE_LINKS = [
   { href: "/#park-yala", label: "Yala National Park" },
   { href: "/#park-udawalawe", label: "Udawalawe National Park" },
   { href: "/#park-bundala", label: "Bundala National Park" },
-  { href: "/#about", label: "About" },
+  { href: "/#about", label: "About Us" },
   { href: "/#gallery", label: "Gallery" },
   { href: "/#enquire", label: "Contact" },
 ];
@@ -46,26 +46,30 @@ function TripAdvisorIcon() {
 export default function Footer() {
   return (
     <footer className="w-full bg-brand-ink text-white">
+      {/* Thin orange accent top border */}
+      <div className="h-[3px] w-full bg-gradient-to-r from-brand-orange/0 via-brand-orange to-brand-orange/0" />
+
       <div className="mx-auto max-w-[1600px] px-6 py-16 sm:px-10 lg:px-20">
-        <div className="grid grid-cols-1 gap-12 lg:grid-cols-[1.2fr_1fr_1fr]">
+        <div className="grid grid-cols-1 gap-14 lg:grid-cols-[1.4fr_1fr_1fr]">
+          {/* Brand column */}
           <div>
             <Image
               src="/logo-lockup.png"
               alt="Yala Leopard Safari Tours"
               width={1478}
               height={720}
-              className="h-12 w-auto"
+              className="h-12 w-auto opacity-90"
             />
-            <p className="mt-5 max-w-xs text-sm leading-relaxed text-white/70">
+            <p className="mt-5 max-w-xs text-sm leading-relaxed text-white/55">
               Small-group leopard and wildlife safaris across Yala, Udawalawe
               and Bundala National Parks, led by local Sri Lankan guides.
             </p>
-            <div className="mt-6 flex gap-3">
+            <div className="mt-7 flex gap-3">
               {[FacebookIcon, InstagramIcon, TripAdvisorIcon].map((Icon, i) => (
                 <a
                   key={i}
                   href="#"
-                  className="flex h-9 w-9 items-center justify-center rounded-full border border-white/25 text-white/80 transition-colors hover:border-white hover:text-white"
+                  className="flex h-9 w-9 items-center justify-center rounded-full border border-white/15 text-white/60 transition-all hover:border-white/50 hover:text-white"
                 >
                   <Icon />
                 </a>
@@ -73,21 +77,28 @@ export default function Footer() {
             </div>
           </div>
 
+          {/* Explore column */}
           <div>
-            <h3 className="text-sm font-semibold uppercase tracking-[0.15em] text-white/50">
+            <h3 className="text-xs font-semibold uppercase tracking-[0.18em] text-white/40">
               Explore
             </h3>
-            <ul className="mt-4 space-y-3">
+            <ul className="mt-5 space-y-3.5">
               {EXPLORE_LINKS.map((link) =>
                 link.href === "/" ? (
                   <li key={link.href}>
-                    <Link href={link.href} className="text-sm text-white/80 transition-colors hover:text-white">
+                    <Link
+                      href={link.href}
+                      className="text-sm text-white/65 transition-colors hover:text-white"
+                    >
                       {link.label}
                     </Link>
                   </li>
                 ) : (
                   <li key={link.href}>
-                    <a href={link.href} className="text-sm text-white/80 transition-colors hover:text-white">
+                    <a
+                      href={link.href}
+                      className="text-sm text-white/65 transition-colors hover:text-white"
+                    >
                       {link.label}
                     </a>
                   </li>
@@ -96,11 +107,12 @@ export default function Footer() {
             </ul>
           </div>
 
+          {/* Contact column */}
           <div>
-            <h3 className="text-sm font-semibold uppercase tracking-[0.15em] text-white/50">
+            <h3 className="text-xs font-semibold uppercase tracking-[0.18em] text-white/40">
               Contact
             </h3>
-            <ul className="mt-4 space-y-3 text-sm text-white/80">
+            <ul className="mt-5 space-y-3.5 text-sm text-white/65">
               <li>
                 <a href="tel:+94112345678" className="transition-colors hover:text-white">
                   +94 11 234 5678
@@ -117,7 +129,10 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a href="mailto:info@yalaleopardsafaritours.com" className="transition-colors hover:text-white">
+                <a
+                  href="mailto:info@yalaleopardsafaritours.com"
+                  className="transition-colors hover:text-white"
+                >
                   info@yalaleopardsafaritours.com
                 </a>
               </li>
@@ -125,7 +140,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-14 flex flex-col gap-3 border-t border-white/10 pt-6 text-xs text-white/50 sm:flex-row sm:items-center sm:justify-between">
+        <div className="mt-16 flex flex-col gap-3 border-t border-white/[0.08] pt-6 text-xs text-white/35 sm:flex-row sm:items-center sm:justify-between">
           <p>© {new Date().getFullYear()} Yala Leopard Safari Tours. All rights reserved.</p>
           <p>Wildlife photography via Wikimedia Commons — see /images/CREDITS.md</p>
         </div>

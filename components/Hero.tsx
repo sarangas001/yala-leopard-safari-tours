@@ -257,11 +257,13 @@ export default function Hero() {
 
         <div className="relative z-10 flex h-full flex-col px-6 pt-20 pb-8 sm:px-10 sm:pt-24 sm:pb-10 lg:px-20 lg:pt-28 lg:pb-12">
           <div ref={introRef} className="mb-8 max-w-xl text-white">
-            <span className="text-sm font-medium uppercase tracking-[0.2em] text-white">
+            <span className="inline-flex items-center gap-3 text-xs font-medium uppercase tracking-[0.25em] text-white/80">
+              <span className="h-px w-8 bg-white/40" aria-hidden="true" />
               Sri Lanka Safari Tours
+              <span className="h-px w-8 bg-white/40" aria-hidden="true" />
             </span>
 
-            <div className="mt-4 grid">
+            <div className="mt-5 grid">
               {DESTINATIONS.map((destination, i) => (
                 <div
                   key={destination.id}
@@ -280,7 +282,7 @@ export default function Hero() {
                   <h1 className="font-display text-4xl font-medium leading-[1.05] tracking-tight sm:text-5xl lg:text-6xl">
                     {destination.name}
                   </h1>
-                  <p className="mt-4 max-w-md text-base leading-relaxed text-white/85 sm:text-lg">
+                  <p className="mt-4 max-w-md text-sm leading-relaxed text-white/75 sm:text-base">
                     {destination.description}
                   </p>
                 </div>
@@ -289,7 +291,7 @@ export default function Hero() {
 
             <a
               href="#enquire"
-              className="mt-6 inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-semibold text-brand-ink transition-colors hover:bg-white/90 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-ink sm:mt-8"
+              className="mt-8 inline-flex items-center gap-2 rounded-full bg-white px-7 py-3.5 text-sm font-semibold text-brand-ink shadow-lg shadow-black/20 transition-all hover:bg-white/95 hover:shadow-xl hover:shadow-black/25 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-ink"
             >
               Plan your safari
               <span aria-hidden="true">→</span>
@@ -319,28 +321,28 @@ export default function Hero() {
                 >
                   <span
                     className={
-                      "relative block h-24 w-16 overflow-hidden rounded-xl ring-2 transition-[ring-color,transform] duration-300 sm:h-32 sm:w-24 " +
+                      "relative block h-28 w-20 overflow-hidden rounded-2xl ring-2 transition-all duration-300 sm:h-36 sm:w-28 " +
                       (i === active
-                        ? "ring-white"
-                        : "ring-white/30 group-hover:ring-white/70")
+                        ? "ring-white scale-105"
+                        : "ring-white/20 group-hover:ring-white/60 group-hover:scale-102")
                     }
                   >
                     <Image
                       src={destination.image}
                       alt=""
                       fill
-                      sizes="96px"
+                      sizes="112px"
                       quality={55}
                       className={
-                        "object-cover transition-opacity duration-300 " +
-                        (i === active ? "opacity-100" : "opacity-60 group-hover:opacity-90")
+                        "object-cover transition-all duration-500 " +
+                        (i === active ? "opacity-100" : "opacity-50 group-hover:opacity-85")
                       }
                     />
                   </span>
                   <span
                     className={
-                      "mt-2 block max-w-[6.5rem] text-xs font-medium leading-tight transition-colors duration-300 sm:text-sm " +
-                      (i === active ? "text-white" : "text-white/70 group-hover:text-white")
+                      "mt-2.5 block max-w-[7rem] text-xs font-medium leading-snug tracking-wide transition-colors duration-300 " +
+                      (i === active ? "text-white" : "text-white/60 group-hover:text-white/90")
                     }
                   >
                     {destination.name}

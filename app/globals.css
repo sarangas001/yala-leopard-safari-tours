@@ -17,10 +17,13 @@
   --color-brand-orange-light: #f6a949;
   --color-brand-ink: #17140f;
   --color-brand-ink-muted: #5a544a;
+  --color-brand-cream: #f7f5f1;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
