@@ -6,7 +6,7 @@ export default function AboutPreview() {
     <section id="about" className="relative w-full overflow-hidden bg-white">
       {/* Peacock illustration — large, behind all content, decorative */}
       {/* <div
-        className="pointer-events-none absolute bottom-16 right-6 z-0 hidden select-none sm:bottom-20 sm:right-10 lg:bottom-24 lg:right-20 lg:block"
+        className="pointer-events-none absolute bottom-16 right-10 z-0 hidden select-none sm:bottom-20 sm:right-20 lg:bottom-24 lg:right-40 lg:block"
         aria-hidden="true"
       >
         <Image
@@ -19,7 +19,7 @@ export default function AboutPreview() {
         />
       </div> */}
 
-      <div className="relative z-10 mx-auto max-w-[1600px] px-6 py-16 sm:px-10 sm:py-20 lg:px-20 lg:py-24">
+      <div className="relative z-10 mx-auto max-w-[1600px] px-10 py-16 sm:px-20 sm:py-20 lg:px-40 lg:py-24">
         <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-20">
           <Reveal className="lg:order-2">
             <div className="relative aspect-[4/3] w-full overflow-hidden rounded-3xl shadow-2xl shadow-black/10">
