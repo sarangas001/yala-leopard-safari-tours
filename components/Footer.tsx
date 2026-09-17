@@ -350,7 +350,7 @@ function NavColumn({
 
 export default function Footer() {
   return (
-    <footer className="w-full bg-sand text-brand-ink">
+    <footer className="w-full bg-white text-brand-ink">
       {/* ============ SECTION 1 — Brand, newsletter, contact & trust ============ */}
       <div className="mx-auto max-w-[1600px] px-10 py-16 sm:px-20 sm:py-20 lg:px-40 lg:py-20">
         <div className="flex flex-col gap-14 lg:flex-row lg:items-start lg:justify-between lg:gap-20">
@@ -373,7 +373,7 @@ export default function Footer() {
                   key={label}
                   href="#"
                   aria-label={label}
-                  className="flex h-10 w-10 items-center justify-center rounded-full border border-earth/20 text-forest transition-colors hover:border-forest hover:bg-forest hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-forest/40 focus-visible:ring-offset-2 focus-visible:ring-offset-sand"
+                  className="flex h-10 w-10 items-center justify-center rounded-full border border-earth/20 text-forest transition-colors hover:border-forest hover:bg-forest hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-forest/40 focus-visible:ring-offset-2 focus-visible:ring-offset-white"
                 >
                   <Icon />
                 </a>
@@ -390,7 +390,7 @@ export default function Footer() {
               Sign up for Yala travel tips, wildlife updates and special
               safari offers — sent straight to your inbox.
             </p>
-            <form className="mt-5 flex items-center gap-2 rounded-full border border-earth/25 bg-white/70 p-1.5 pl-5 transition-colors focus-within:border-forest">
+            <form className="mt-5 flex items-center gap-2 rounded-full border border-earth/25 bg-sand p-1.5 pl-5 transition-colors focus-within:border-forest">
               <label htmlFor="footer-newsletter-email" className="sr-only">
                 Email address
               </label>
@@ -404,7 +404,7 @@ export default function Footer() {
               <button
                 type="submit"
                 aria-label="Subscribe"
-                className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-forest text-white transition-colors hover:bg-forest-dark focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-forest/50 focus-visible:ring-offset-2 focus-visible:ring-offset-sand"
+                className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-forest text-white transition-colors hover:bg-forest-dark focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-forest/50 focus-visible:ring-offset-2 focus-visible:ring-offset-white"
               >
                 <ArrowRightIcon className="h-4 w-4" />
               </button>
@@ -482,7 +482,7 @@ export default function Footer() {
               return (
                 <div
                   key={label}
-                  className="flex items-center gap-3 rounded-2xl border border-earth/15 bg-white/60 px-4 py-3"
+                  className="flex items-center gap-3 rounded-2xl border border-earth/15 bg-sand px-4 py-3"
                 >
                   <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-gold/15 text-gold">
                     <Icon className="h-4.5 w-4.5" />
