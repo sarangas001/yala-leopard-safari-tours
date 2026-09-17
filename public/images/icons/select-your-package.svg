@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 75 75" role="img" aria-labelledby="title desc">
+  <title id="title">Select your package</title>
+  <desc id="desc">A safari package box with binoculars on a soft purple organic background.</desc>
+  <path opacity=".8" fill="#FFE39A" d="M44.3 8.6s7.9-2 13.1 2.7S70.5 27 70.9 41.4 72 68.1 46.3 67 12.1 55 7.3 46.4 3.5 24.1 13.2 19.7 40.7 9 44.3 8.6Z"/>
+  <g fill="none" stroke="#111" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="m15 29 22.5-10L60 29 37.5 39Z"/>
+    <path d="M15 29v26l22.5 10L60 55V29M37.5 39v26"/>
+    <path d="M27 24.7 49.5 35v10.2"/>
+    <path d="M21.5 45.5 31 50v6.8l-9.5-4.2Z"/>
+    <circle cx="43.8" cy="50.4" r="4.7"/>
+    <circle cx="54.5" cy="50.4" r="4.7"/>
+    <path d="M48.5 49.1h1.3M40.4 46.5l2-6.2h3.5l2.4 6.2M58 46.5l-2-6.2h-3.5L50 46.5"/>
+  </g>
+</svg>

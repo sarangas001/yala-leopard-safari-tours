@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 75 75" role="img" aria-labelledby="title desc">
+  <title id="title">Customise your booking</title>
+  <desc id="desc">A booking calendar with adjustment controls on a soft purple organic background.</desc>
+  <path opacity=".8" fill="#CBECC7" d="M44.3 8.6s7.9-2 13.1 2.7S70.5 27 70.9 41.4 72 68.1 46.3 67 12.1 55 7.3 46.4 3.5 24.1 13.2 19.7 40.7 9 44.3 8.6Z"/>
+  <g fill="none" stroke="#111" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="12" y="18" width="45" height="42" rx="4"/>
+    <path d="M12 29h45M22 14v9M47 14v9"/>
+    <path d="M20 38h29M20 46h29M20 54h19"/>
+    <path d="M25 34v8M43 42v8M32 50v8"/>
+    <circle cx="25" cy="37" r="3" fill="#111"/>
+    <circle cx="43" cy="45" r="3" fill="#111"/>
+    <circle cx="32" cy="53" r="3" fill="#111"/>
+    <circle cx="57.5" cy="54.5" r="9.5" fill="#fff"/>
+    <path d="M54 54.5h7M57.5 51v7"/>
+  </g>
+</svg>
