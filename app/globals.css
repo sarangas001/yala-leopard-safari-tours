@@ -18,6 +18,14 @@
   --color-brand-ink: #17140f;
   --color-brand-ink-muted: #5a544a;
   --color-brand-cream: #f7f5f1;
+
+  /* Earth-tone palette — used by the footer's nature-inspired styling */
+  --color-forest: #2f4a3a;
+  --color-forest-dark: #223529;
+  --color-olive: #6e7b4a;
+  --color-sand: #f1e9d8;
+  --color-earth: #7a5c3e;
+  --color-gold: #c9a24b;
 }
 
 body {
