@@ -32,7 +32,7 @@ export default function TrustStrip() {
       </div> */}
 
       {/* Image + content section */}
-      <div className="mx-auto max-w-[1600px] px-6 py-10 sm:px-10 sm:py-12 lg:px-20 lg:py-14">
+      <div className="mx-auto max-w-[1600px] px-6 py-6 sm:px-10 sm:py-8 lg:px-20 lg:py-10">
         <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-20">
           {/* Image */}
           <Reveal>
