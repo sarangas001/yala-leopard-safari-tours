@@ -75,12 +75,7 @@ export default function WhyChooseUs() {
     <section className="w-full bg-brand-cream">
       <div className="mx-auto max-w-[1600px] px-6 py-16 sm:px-10 sm:py-20 lg:px-20 lg:py-24">
         <Reveal className="mx-auto max-w-2xl text-center">
-          <span className="inline-flex items-center gap-3 text-xs font-medium uppercase tracking-[0.22em] text-brand-orange">
-            <span className="h-px w-6 bg-brand-orange/50" aria-hidden="true" />
-            Why Choose Us
-            <span className="h-px w-6 bg-brand-orange/50" aria-hidden="true" />
-          </span>
-          <h2 className="mt-4 font-display text-3xl font-medium tracking-tight text-brand-ink sm:text-4xl lg:text-5xl">
+          <h2 className="font-display text-3xl font-medium tracking-tight text-brand-ink sm:text-4xl lg:text-5xl">
             Safari Experiences Done Right
           </h2>
         </Reveal>
