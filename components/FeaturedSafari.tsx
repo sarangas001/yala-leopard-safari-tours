@@ -5,28 +5,11 @@ const DURATIONS = ["Half Day", "7 Hours", "Full Day"];
 
 export default function FeaturedSafari() {
   return (
-    <section className="w-full bg-brand-cream">
+    <section className="w-full bg-white">
       <div className="mx-auto max-w-[1600px] px-6 py-16 sm:px-10 sm:py-20 lg:px-20 lg:py-24">
         <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-20">
           <Reveal>
-            <div className="relative aspect-[4/3] w-full overflow-hidden rounded-3xl shadow-2xl shadow-black/10">
-              <Image
-                src="/images/scenic/safari-jeeps.jpg"
-                alt="Safari jeep convoy in Yala National Park"
-                fill
-                sizes="(min-width: 1024px) 50vw, 100vw"
-                quality={80}
-                className="object-cover"
-              />
-            </div>
-          </Reveal>
-
-          <Reveal delay={0.12}>
-            <span className="inline-flex items-center gap-3 text-xs font-medium uppercase tracking-[0.22em] text-brand-orange">
-              <span className="h-px w-6 bg-brand-orange/50" aria-hidden="true" />
-              Featured Safari
-            </span>
-            <h2 className="mt-4 font-display text-3xl font-medium tracking-tight text-brand-ink sm:text-4xl lg:text-5xl">
+            <h2 className="font-display text-3xl font-medium tracking-tight text-brand-ink sm:text-4xl lg:text-5xl">
               The Yala Leopard Safari
             </h2>
             <p className="mt-5 max-w-md text-base leading-relaxed text-brand-ink-muted">
@@ -55,6 +38,19 @@ export default function FeaturedSafari() {
               View Yala Safari Packages
               <span aria-hidden="true" className="transition-transform duration-200 group-hover:translate-x-0.5">→</span>
             </a>
+          </Reveal>
+
+          <Reveal delay={0.12}>
+            <div className="relative aspect-4/3 w-full overflow-hidden  ">
+              <Image
+                src="/images/scenic/parking.png"
+                alt="Safari jeep convoy in Yala National Park"
+                fill
+                sizes="(min-width: 1024px) 50vw, 100vw"
+                quality={80}
+                className="object-cover object-bottom"
+              />
+            </div>
           </Reveal>
         </div>
       </div>
