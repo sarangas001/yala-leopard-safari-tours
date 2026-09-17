@@ -17,7 +17,7 @@ export default function Home() {
       <SafariParks />
       <HowItWorks />
       <FeaturedSafari />
-      <WildlifeGrid />
+      {/* <WildlifeGrid /> */}
       <Testimonials />
       <AboutPreview />
       <FinalCta />
