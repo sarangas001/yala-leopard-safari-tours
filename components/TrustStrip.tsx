@@ -32,7 +32,7 @@ export default function TrustStrip() {
       </div> */}
 
       {/* Image + content section */}
-      <div className="mx-auto max-w-[1600px] px-6 py-16 sm:px-10 sm:py-20 lg:px-20 lg:py-24">
+      <div className="mx-auto max-w-[1600px] px-6 py-10 sm:px-10 sm:py-12 lg:px-20 lg:py-14">
         <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-20">
           {/* Image */}
           <Reveal>
@@ -53,11 +53,7 @@ export default function TrustStrip() {
 
           {/* Text content */}
           <Reveal delay={0.12}>
-            <span className="inline-flex items-center gap-3 text-xs font-medium uppercase tracking-[0.22em] text-brand-orange">
-              <span className="h-px w-6 bg-brand-orange/50" aria-hidden="true" />
-              Sri Lanka&apos;s Wild Side
-            </span>
-            <h2 className="mt-4 font-display text-3xl font-medium tracking-tight text-brand-ink sm:text-4xl lg:text-[2.75rem] lg:leading-[1.1]">
+            <h2 className="font-display text-3xl font-medium tracking-tight text-brand-ink sm:text-4xl lg:text-[2.75rem] lg:leading-[1.1]">
               Wild Encounters,<br />
               Memories for a Lifetime
             </h2>
