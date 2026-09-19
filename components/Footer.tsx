@@ -353,7 +353,7 @@ export default function Footer() {
               />
               <span className="min-w-0 text-left">
                 <span className="block text-xs uppercase tracking-wide text-brand-ink-muted">{item.label}</span>
-                <span className="block truncate">{item.value}</span>
+                <span className="block">{item.value}</span>
               </span>
             </a>
           ))}
