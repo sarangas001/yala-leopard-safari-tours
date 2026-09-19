@@ -4,9 +4,7 @@ import SafariParkCards from "@/components/SafariParkCards";
 import SafariDurations from "@/components/SafariDurations";
 import ParkChooserFaq from "@/components/ParkChooserFaq";
 import SafariInclusions from "@/components/SafariInclusions";
-import ParkTicketsNotice from "@/components/ParkTicketsNotice";
 import FinalCta from "@/components/FinalCta";
-import Testimonials from "@/components/Testimonials";
 
 export const metadata: Metadata = {
   title: "Safaris | Yala Leopard Safari Tours",
