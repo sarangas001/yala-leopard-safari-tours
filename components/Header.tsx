@@ -14,7 +14,7 @@ const PARKS = [
 
 const NAV_LINKS = [
   { href: "/", label: "Home" },
-  { href: "/#about", label: "About" },
+  { href: "/about", label: "About" },
   { href: "/#gallery", label: "Gallery" },
   { href: "/#enquire", label: "Contact" },
 ];
