@@ -1,16 +1,15 @@
 import Image from "next/image";
 import Link from "next/link";
 
-// Placeholder contact details — replace with the real Yala Leopard Safari
-// Tours phone, WhatsApp, email and pickup/office location before launch.
 const CONTACT = {
-  phoneDisplay: "+94 11 234 5678",
-  phoneHref: "tel:+94112345678",
-  whatsappDisplay: "+94 11 234 5678",
-  whatsappHref: "https://wa.me/94112345678",
-  email: "info@yalaleopardsafaritours.com",
-  location: "Tissamaharama, Sri Lanka",
-  mapHref: "https://maps.google.com/?q=Tissamaharama+Sri+Lanka",
+  phoneDisplay: "076 043 5578",
+  phoneHref: "tel:+94760435578",
+  whatsappDisplay: "076 091 5578",
+  whatsappHref: "https://wa.me/94760915578",
+  email: "yalaleopardsafariride@gmail.com",
+  location: "538/B Gagasiripura, Debarawawa, Tissamaharama, Sri Lanka",
+  mapHref:
+    "https://maps.google.com/?q=538/B+Gagasiripura,+Debarawawa,+Tissamaharama,+Sri+Lanka",
 };
 
 const CONTACT_ITEMS: {
