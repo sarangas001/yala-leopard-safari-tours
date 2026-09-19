@@ -271,7 +271,7 @@ export default function Footer() {
     <footer className="w-full bg-white text-brand-ink">
       {/* ============ SECTION 1 — Brand, newsletter, contact & trust ============ */}
       <div className="mx-auto max-w-[1600px] px-10 py-10 sm:px-20 sm:py-12 lg:px-40 lg:py-14">
-        <div className="flex flex-col gap-10 lg:flex-row lg:items-start lg:justify-between lg:gap-14">
+        <div className="flex flex-col gap-10 lg:flex-row lg:items-start lg:justify-center-safe lg:gap-14">
           {/* Brand area */}
           <div className="mx-auto max-w-sm text-center sm:mx-0 sm:text-left">
             <Image

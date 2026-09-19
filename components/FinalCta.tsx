@@ -56,7 +56,7 @@ export default function FinalCta() {
             src="/images/scenic/cta-img.png"
             alt="A leopard, elephants and a peacock gather at a waterhole in Yala National Park"
             fill
-            sizes="100vw"
+            sizes="(min-width: 640px) 0px, 100vw"
             quality={85}
             className="object-cover object-center"
           />

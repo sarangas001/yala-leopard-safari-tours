@@ -34,7 +34,7 @@ export default function Testimonials() {
           the section) so it's only ever scaled down, not upscaled — upscaling
           a wide, comparatively low-resolution source with object-cover is
           what caused the blurry/pixelated look on tall mobile layouts. */}
-      <Image
+        <Image
           src="/images/scenic/review-bg.png"
           alt=""
           fill
