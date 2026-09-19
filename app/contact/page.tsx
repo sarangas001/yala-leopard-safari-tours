@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import ContactHero from "@/components/ContactHero";
 import ContactFormSection from "@/components/ContactFormSection";
 import ContactMapSection from "@/components/ContactMapSection";
+import ContactFaqPreview from "@/components/ContactFaqPreview";
+import FinalCta from "@/components/FinalCta";
 
 export const metadata: Metadata = {
   title: "Contact | Yala Leopard Safari Tours",
@@ -15,6 +17,8 @@ export default function ContactPage() {
       <ContactHero />
       <ContactFormSection />
       <ContactMapSection />
+      <ContactFaqPreview />
+      <FinalCta />
     </main>
   );
 }
