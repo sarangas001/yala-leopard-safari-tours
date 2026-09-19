@@ -34,19 +34,18 @@ export default function Testimonials() {
           the section) so it's only ever scaled down, not upscaled — upscaling
           a wide, comparatively low-resolution source with object-cover is
           what caused the blurry/pixelated look on tall mobile layouts. */}
-      <div className="absolute inset-x-0 top-0" aria-hidden="true">
-        <Image
+      <Image
           src="/images/scenic/review-bg.png"
           alt=""
-          width={2055}
-          height={765}
+          fill
+          aria-hidden="true"
           sizes="100vw"
-          quality={90}
-          style={{ width: "100%", height: "auto" }}
+          quality={85}
+          className="object-cover"
         />
-        {/* Soft white wash so the heading stays legible over the photo */}
-        <div className="absolute inset-0 bg-white/65" />
-      </div>
+      {/* <div className="absolute inset-x-0 top-0" aria-hidden="true">
+        <div className="absolute inset-0 bg-white/10" />
+      </div> */}
 
       <div className="relative z-10 mx-auto max-w-[1600px] px-10 py-16 sm:px-20 sm:py-20 lg:px-40 lg:py-24">
         <Reveal className="mx-auto max-w-2xl text-center">

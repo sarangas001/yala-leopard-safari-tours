@@ -5,6 +5,8 @@ import AboutFounder from "@/components/AboutFounder";
 import AboutVisionMission from "@/components/AboutVisionMission";
 import AboutWhyChooseUs from "@/components/AboutWhyChooseUs";
 import AboutPhilosophy from "@/components/AboutPhilosophy";
+import AboutServices from "@/components/AboutServices";
+import AboutVehicles from "@/components/AboutVehicles";
 
 export const metadata: Metadata = {
   title: "About Us | Yala Leopard Safari Tours",
@@ -21,6 +23,8 @@ export default function AboutPage() {
       <AboutVisionMission />
       <AboutWhyChooseUs />
       <AboutPhilosophy />
+      <AboutServices />
+      <AboutVehicles />
     </main>
   );
 }
