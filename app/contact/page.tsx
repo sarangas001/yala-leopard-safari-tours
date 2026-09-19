@@ -1,19 +1,24 @@
 import type { Metadata } from "next";
-import ComingSoon from "@/components/ComingSoon";
+import ContactHero from "@/components/ContactHero";
+import ContactFormSection from "@/components/ContactFormSection";
+import ContactMapSection from "@/components/ContactMapSection";
+import ContactFaqPreview from "@/components/ContactFaqPreview";
+import FinalCta from "@/components/FinalCta";
 
 export const metadata: Metadata = {
   title: "Contact | Yala Leopard Safari Tours",
-  description: "Get in touch with Yala Leopard Safari Tours.",
+  description:
+    "Contact our team for help choosing a safari, arranging pickup, coordinating a Hambantota cruise visit or planning private transport.",
 };
 
 export default function ContactPage() {
   return (
     <main className="flex flex-1 flex-col bg-white">
-      <ComingSoon
-        title="Contact"
-        image="/images/wildlife/crocodile.jpg"
-        alt="A crocodile resting by the water in a Sri Lankan national park"
-      />
+      <ContactHero />
+      <ContactFormSection />
+      <ContactMapSection />
+      <ContactFaqPreview />
+      <FinalCta />
     </main>
   );
 }
