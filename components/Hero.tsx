@@ -255,8 +255,8 @@ export default function Hero() {
           <div className="absolute inset-0 bg-linear-to-r from-black/50 via-black/5 to-transparent" />
         </div>
 
-        <div className="relative z-10 flex h-full flex-col px-6 pt-20 pb-8 sm:px-10 sm:pt-24 sm:pb-10 lg:px-20 lg:pt-28 lg:pb-12">
-          <div ref={introRef} className="mb-8 max-w-xl text-white">
+        <div className="relative z-10 flex h-full flex-col px-10 pt-20 pb-8 sm:px-20 sm:pt-24 sm:pb-10 lg:px-40 lg:pt-28 lg:pb-12">
+          <div ref={introRef} className="mb-8 max-w-xl text-center text-white sm:text-left">
             <span className="inline-flex items-center gap-3 text-xs font-medium uppercase tracking-[0.25em] text-white/80">
               <span className="h-px w-8 bg-white/40" aria-hidden="true" />
               Sri Lanka Safari Tours
@@ -282,7 +282,7 @@ export default function Hero() {
                   <h1 className="font-display text-4xl font-medium leading-[1.05] tracking-tight sm:text-5xl lg:text-6xl">
                     {destination.name}
                   </h1>
-                  <p className="mt-4 max-w-md text-sm leading-relaxed text-white/75 sm:text-base">
+                  <p className="mx-auto mt-4 max-w-md text-sm leading-relaxed text-white/75 sm:mx-0 sm:text-base">
                     {destination.description}
                   </p>
                 </div>

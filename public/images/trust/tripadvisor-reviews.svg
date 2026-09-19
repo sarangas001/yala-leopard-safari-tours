@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="300" viewBox="0 0 360 300" role="img" aria-labelledby="title desc">
+  <title id="title">TripAdvisor Reviews badge</title>
+  <desc id="desc">A clean circular travel review badge with an owl mark and five stars.</desc>
+  <defs>
+    <linearGradient id="ring" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#35E0B4"/>
+      <stop offset="1" stop-color="#00A680"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="150%">
+      <feDropShadow dx="0" dy="7" stdDeviation="7" flood-color="#0B2B24" flood-opacity=".16"/>
+    </filter>
+  </defs>
+  <g filter="url(#shadow)">
+    <circle cx="180" cy="140" r="116" fill="#fff" stroke="url(#ring)" stroke-width="7"/>
+    <circle cx="180" cy="140" r="102" fill="none" stroke="#DDF7EF" stroke-width="2"/>
+  </g>
+  <text x="180" y="68" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="800" fill="#12221E" letter-spacing="2.5">TRIPADVISOR</text>
+  <text x="180" y="90" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="700" fill="#167E67" letter-spacing="3.5">REVIEWS</text>
+  <g transform="translate(112 103)">
+    <path d="M16 9 4 0l4 19M120 9l12-9-4 19" fill="none" stroke="#12221E" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M16 16c14-9 29-8 43 3 6-4 12-4 18 0 14-11 29-12 43-3" fill="none" stroke="#12221E" stroke-width="7" stroke-linecap="round"/>
+    <circle cx="42" cy="45" r="29" fill="#F55264" stroke="#12221E" stroke-width="6"/>
+    <circle cx="94" cy="45" r="29" fill="#40D3BD" stroke="#12221E" stroke-width="6"/>
+    <circle cx="42" cy="45" r="12" fill="#fff" stroke="#12221E" stroke-width="6"/>
+    <circle cx="94" cy="45" r="12" fill="#fff" stroke="#12221E" stroke-width="6"/>
+    <path d="m68 49-11-13h22z" fill="#F4B83F" stroke="#12221E" stroke-width="4" stroke-linejoin="round"/>
+  </g>
+  <g fill="#F4B83F" transform="translate(116 184)">
+    <path d="m12 0 3 9h10l-8 6 3 9-8-5-8 5 3-9-8-6H9z"/>
+    <path d="m39 0 3 9h10l-8 6 3 9-8-5-8 5 3-9-8-6h10z"/>
+    <path d="m66 0 3 9h10l-8 6 3 9-8-5-8 5 3-9-8-6h10z"/>
+    <path d="m93 0 3 9h10l-8 6 3 9-8-5-8 5 3-9-8-6h10z"/>
+    <path d="m120 0 3 9h10l-8 6 3 9-8-5-8 5 3-9-8-6h10z"/>
+  </g>
+  <text x="180" y="235" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700" fill="#536760" letter-spacing="1.2">TRAVELLER TRUST</text>
+</svg>

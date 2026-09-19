@@ -34,11 +34,11 @@ export default function AboutPreview() {
             </div>
           </Reveal>
 
-          <Reveal delay={0.12} className="lg:order-1">
+          <Reveal delay={0.12} className="text-center lg:order-1 sm:text-left">
             <h2 className="font-display text-3xl font-medium tracking-tight text-brand-ink sm:text-4xl lg:text-5xl">
               Local Safari Experience Since 1990
             </h2>
-            <p className="mt-5 max-w-md text-base leading-relaxed text-brand-ink-muted">
+            <p className="mx-auto mt-5 max-w-md text-base leading-relaxed text-brand-ink-muted sm:mx-0">
               Founded by Kumara, Yala Leopard Safari Tours draws on more than 36
               years of local safari experience across Sri Lanka&apos;s southern
               parks. Our goal has always been simple: share the island&apos;s

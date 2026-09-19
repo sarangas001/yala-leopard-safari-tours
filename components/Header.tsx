@@ -180,7 +180,7 @@ export default function Header() {
       <div ref={scrolledLayerRef} className="absolute inset-0 bg-linear-to-b from-black/95 via-black/70 to-black/30 opacity-0" />
 
       <div className="relative">
-        <div className="relative mx-auto flex max-w-[1600px] items-center justify-between gap-4 px-6 py-3 sm:px-10 lg:px-20">
+        <div className="relative mx-auto flex max-w-[1600px] items-center justify-between gap-4 px-10 py-3 sm:px-20 lg:px-40">
           <Link href="/" onClick={closeAll} className="shrink-0">
             <Image
               src="/logo-lockup.png"
@@ -264,7 +264,7 @@ export default function Header() {
               aria-controls="mobile-menu"
               aria-label={mobileOpen ? "Close menu" : "Open menu"}
               onClick={() => setMobileOpen((open) => !open)}
-              className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/25 text-white transition-colors hover:border-white/60 lg:hidden"
+              className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/25 bg-white/15 text-white transition-colors hover:bg-white/25 hover:border-white/60 lg:hidden"
             >
               <MenuIcon open={mobileOpen} />
             </button>

@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="300" viewBox="0 0 360 300" role="img" aria-labelledby="title desc">
+  <title id="title">Safari Excellence badge</title>
+  <desc id="desc">A premium safari excellence badge with an elephant, acacia tree, and sunset.</desc>
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#F8CF68"/><stop offset="1" stop-color="#D98232"/></linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="150%"><feDropShadow dx="0" dy="7" stdDeviation="7" flood-color="#2A2113" flood-opacity=".18"/></filter>
+  </defs>
+  <g filter="url(#shadow)"><path d="M180 18 286 57v87c0 65-43 111-106 137-63-26-106-72-106-137V57z" fill="#FCF8EE" stroke="#8C642E" stroke-width="7"/></g>
+  <path d="M180 31 274 65v79c0 13-2 26-6 37H92c-4-11-6-24-6-37V65z" fill="url(#sky)"/>
+  <circle cx="205" cy="103" r="33" fill="#FFF2B1" opacity=".95"/>
+  <path d="M93 180c29-18 58-22 87-11 32 13 61 11 88-4v22H96z" fill="#7B4A26"/>
+  <g fill="#2C261F">
+    <path d="M115 169h8l3-39h-14z"/>
+    <path d="M76 132c14-17 29-21 46-13 12-15 27-15 43-3 13-4 25 1 34 16-15 3-27 4-37 3-20 13-39 12-57 0-10 1-20 0-29-3z"/>
+    <path d="M171 155c16-13 39-12 55 1 10 8 12 20 7 31h-16l-4-15-8 15h-17l-3-21-5 21h-14l2-22c-7-3-11-6-13-11 6-1 11-1 16 1z"/>
+    <path d="M224 160c13-7 22-3 29 8-8 1-14 5-17 11l-11-8z"/>
+    <path d="M229 178c7 7 10 15 10 25 6-3 9-9 10-17" fill="none" stroke="#2C261F" stroke-width="7" stroke-linecap="round"/>
+    <circle cx="215" cy="160" r="2.6" fill="#FCF8EE"/>
+  </g>
+  <path d="M102 199h156" stroke="#C99A53" stroke-width="2"/>
+  <text x="180" y="222" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="24" font-weight="700" fill="#3B3022">Safari Excellence</text>
+  <path d="M113 235h45M202 235h45" stroke="#B88A43" stroke-width="2"/>
+  <path d="m180 226 4 7 8 2-6 6 1 8-7-4-7 4 1-8-6-6 8-2z" fill="#D39A3B"/>
+  <text x="180" y="263" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="800" fill="#8C642E" letter-spacing="3.2">WILDLIFE EXPERIENCE</text>
+</svg>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 34 34" fill="none">
+  <defs>
+    <clipPath id="location-circle">
+      <circle cx="17" cy="17" r="16"/>
+    </clipPath>
+  </defs>
+
+  <circle cx="17" cy="17" r="16" fill="#FFC83D"/>
+
+  <g clip-path="url(#location-circle)">
+    <path
+      d="M21.93 8.16L35.35 21.58V35.35H21.78L14.15 27.72L17 24.88C18.71 22.91 23.13 17.37 23.13 12.82C23.13 10.98 22.72 9.42 21.93 8.16Z"
+      fill="#DFA21F"
+    />
+  </g>
+
+  <path
+    fill-rule="evenodd"
+    clip-rule="evenodd"
+    d="M17 5.75C12.68 5.75 9.18 9.25 9.18 13.57C9.18 18.99 15.78 26.29 16.53 27.1C16.78 27.37 17.22 27.37 17.47 27.1C18.22 26.29 24.82 18.99 24.82 13.57C24.82 9.25 21.32 5.75 17 5.75ZM17 10.38C15.21 10.38 13.76 11.83 13.76 13.62C13.76 15.41 15.21 16.86 17 16.86C18.79 16.86 20.24 15.41 20.24 13.62C20.24 11.83 18.79 10.38 17 10.38Z"
+    fill="#FFFFFF"
+  />
+</svg>

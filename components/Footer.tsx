@@ -13,6 +13,46 @@ const CONTACT = {
   mapHref: "https://maps.google.com/?q=Tissamaharama+Sri+Lanka",
 };
 
+const CONTACT_ITEMS: {
+  key: string;
+  label: string;
+  value: string;
+  href: string;
+  icon: string;
+  external?: boolean;
+}[] = [
+  {
+    key: "whatsapp",
+    label: "WhatsApp",
+    value: CONTACT.whatsappDisplay,
+    href: CONTACT.whatsappHref,
+    icon: "/images/icons/whatsapp.svg",
+    external: true,
+  },
+  {
+    key: "phone",
+    label: "Phone",
+    value: CONTACT.phoneDisplay,
+    href: CONTACT.phoneHref,
+    icon: "/images/icons/telephone.svg",
+  },
+  {
+    key: "email",
+    label: "Email",
+    value: CONTACT.email,
+    href: `mailto:${CONTACT.email}`,
+    icon: "/images/icons/mail.svg",
+  },
+  {
+    key: "location",
+    label: "Location",
+    value: CONTACT.location,
+    href: CONTACT.mapHref,
+    icon: "/images/icons/location.svg",
+    external: true,
+  },
+];
+
 // Placeholder destination/page anchors — swap for real routes as those pages go live.
 const NAV_COLUMNS: { heading: string; links: { href: string; label: string }[] }[] = [
   {
@@ -76,19 +116,19 @@ const NAV_COLUMNS: { heading: string; links: { href: string; label: string }[] }
   },
 ];
 
-// Example placeholder recognition badges — replace with genuine
-// certifications/ratings this business has actually received.
+// Trust & recognition badges — sample placeholder artwork, swap for genuine
+// certifications/ratings this business has actually received before launch.
 const TRUST_BADGES = [
-  { label: "TripAdvisor", detail: "4.8 ★ sample rating", icon: "star" as const },
-  { label: "Google Reviews", detail: "4.9 ★ sample rating", icon: "google" as const },
-  { label: "Sri Lanka Tourism", detail: "Sample registration", icon: "shield" as const },
-  { label: "Responsible Tourism", detail: "Sample certification", icon: "leaf" as const },
-  { label: "Safari Excellence", detail: "Sample award", icon: "ribbon" as const },
+  { src: "/images/trust/tripadvisor-reviews.svg", alt: "TripAdvisor reviews badge (sample)" },
+  { src: "/images/trust/google-reviews.svg", alt: "Google reviews badge (sample)" },
+  { src: "/images/trust/sri-lanka-tourism.svg", alt: "Sri Lanka Tourism badge (sample)" },
+  { src: "/images/trust/responsible-tourism.svg", alt: "Responsible Tourism badge (sample)" },
+  { src: "/images/trust/safari-excellence.svg", alt: "Safari Excellence badge (sample)" },
 ];
 
 type IconProps = { className?: string };
 
-function FacebookIcon({ className = "h-4 w-4" }: IconProps) {
+function FacebookIcon({ className = "h-5 w-5" }: IconProps) {
   return (
     <svg viewBox="0 0 24 24" fill="none" className={className} aria-hidden="true">
       <path
@@ -99,7 +139,7 @@ function FacebookIcon({ className = "h-4 w-4" }: IconProps) {
   );
 }
 
-function InstagramIcon({ className = "h-4 w-4" }: IconProps) {
+function InstagramIcon({ className = "h-5 w-5" }: IconProps) {
   return (
     <svg viewBox="0 0 24 24" fill="none" className={className} aria-hidden="true">
       <rect x="4.5" y="4.5" width="15" height="15" rx="4" stroke="currentColor" strokeWidth="1.5" />
@@ -109,7 +149,7 @@ function InstagramIcon({ className = "h-4 w-4" }: IconProps) {
   );
 }
 
-function YouTubeIcon({ className = "h-4 w-4" }: IconProps) {
+function YouTubeIcon({ className = "h-5 w-5" }: IconProps) {
   return (
     <svg viewBox="0 0 24 24" fill="none" className={className} aria-hidden="true">
       <rect x="3" y="6.5" width="18" height="11" rx="3.5" stroke="currentColor" strokeWidth="1.5" />
@@ -118,7 +158,7 @@ function YouTubeIcon({ className = "h-4 w-4" }: IconProps) {
   );
 }
 
-function TikTokIcon({ className = "h-4 w-4" }: IconProps) {
+function TikTokIcon({ className = "h-5 w-5" }: IconProps) {
   return (
     <svg viewBox="0 0 24 24" fill="none" className={className} aria-hidden="true">
       <path
@@ -137,7 +177,7 @@ function TikTokIcon({ className = "h-4 w-4" }: IconProps) {
   );
 }
 
-function TripAdvisorIcon({ className = "h-4 w-4" }: IconProps) {
+function TripAdvisorIcon({ className = "h-5 w-5" }: IconProps) {
   return (
     <svg viewBox="0 0 24 24" fill="none" className={className} aria-hidden="true">
       <circle cx="8.2" cy="13" r="3" stroke="currentColor" strokeWidth="1.5" />
@@ -164,50 +204,6 @@ function WhatsAppIcon({ className = "h-5 w-5" }: IconProps) {
   );
 }
 
-function PhoneIcon({ className = "h-5 w-5" }: IconProps) {
-  return (
-    <svg viewBox="0 0 24 24" fill="none" className={className} aria-hidden="true">
-      <path
-        d="M7.3 4.5 9.7 9l-1.9 1.9a12.5 12.5 0 0 0 5.3 5.3l1.9-1.9 4.5 2.4-.5 3.1c-.1.8-.8 1.4-1.6 1.3-3.7-.5-7.2-2.3-9.8-4.9C4.9 15.6 3.1 12.1 2.6 8.4c-.1-.8.5-1.5 1.3-1.6l3.4-.3Z"
-        stroke="currentColor"
-        strokeWidth="1.5"
-        strokeLinejoin="round"
-      />
-    </svg>
-  );
-}
-
-function MailIcon({ className = "h-5 w-5" }: IconProps) {
-  return (
-    <svg viewBox="0 0 24 24" fill="none" className={className} aria-hidden="true">
-      <rect x="3.5" y="5.5" width="17" height="13" rx="2.5" stroke="currentColor" strokeWidth="1.5" />
-      <path d="m4.5 7 7.5 6 7.5-6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-    </svg>
-  );
-}
-
-function MapPinIcon({ className = "h-5 w-5" }: IconProps) {
-  return (
-    <svg viewBox="0 0 24 24" fill="none" className={className} aria-hidden="true">
-      <path
-        d="M12 21s7-6.1 7-11.5A7 7 0 0 0 5 9.5C5 14.9 12 21 12 21Z"
-        stroke="currentColor"
-        strokeWidth="1.5"
-        strokeLinejoin="round"
-      />
-      <circle cx="12" cy="9.5" r="2.4" stroke="currentColor" strokeWidth="1.5" />
-    </svg>
-  );
-}
-
-function ChevronDownIcon({ className = "h-4 w-4" }: IconProps) {
-  return (
-    <svg viewBox="0 0 24 24" fill="none" className={className} aria-hidden="true">
-      <path d="m6 9 6 6 6-6" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-    </svg>
-  );
-}
-
 function ArrowRightIcon({ className = "h-5 w-5" }: IconProps) {
   return (
     <svg viewBox="0 0 24 24" fill="none" className={className} aria-hidden="true">
@@ -215,68 +211,6 @@ function ArrowRightIcon({ className = "h-5 w-5" }: IconProps) {
     </svg>
   );
 }
-
-function StarIcon({ className = "h-5 w-5" }: IconProps) {
-  return (
-    <svg viewBox="0 0 20 20" fill="currentColor" className={className} aria-hidden="true">
-      <path d="M10 1.5l2.6 5.4 5.9.7-4.3 4.2 1 5.9L10 14.9l-5.2 2.8 1-5.9-4.3-4.2 5.9-.7L10 1.5Z" />
-    </svg>
-  );
-}
-
-function GoogleIcon({ className = "h-5 w-5" }: IconProps) {
-  return (
-    <svg viewBox="0 0 24 24" fill="none" className={className} aria-hidden="true">
-      <circle cx="12" cy="12" r="9" stroke="currentColor" strokeWidth="1.5" />
-      <path d="M12 12h6.5c.1.6.2 1.2.2 1.8 0 3.9-2.7 6.7-6.7 6.7A8.5 8.5 0 1 1 17 6.4l-2 1.9a5.8 5.8 0 1 0 2 7.3H12v-3.6Z" fill="currentColor" />
-    </svg>
-  );
-}
-
-function ShieldIcon({ className = "h-5 w-5" }: IconProps) {
-  return (
-    <svg viewBox="0 0 24 24" fill="none" className={className} aria-hidden="true">
-      <path
-        d="M12 3.5 19 6v5.5c0 4.6-3 8.1-7 9.5-4-1.4-7-4.9-7-9.5V6l7-2.5Z"
-        stroke="currentColor"
-        strokeWidth="1.5"
-        strokeLinejoin="round"
-      />
-      <path d="m8.7 12 2.2 2.2 4.4-4.4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-    </svg>
-  );
-}
-
-function LeafIcon({ className = "h-5 w-5" }: IconProps) {
-  return (
-    <svg viewBox="0 0 24 24" fill="none" className={className} aria-hidden="true">
-      <path
-        d="M19 5C10 5 5 10 5 17c0 .7 0 1.3.1 2 6.8 0 12-4.9 13.6-11.3.2-.9.3-1.8.3-2.7Z"
-        stroke="currentColor"
-        strokeWidth="1.5"
-        strokeLinejoin="round"
-      />
-      <path d="M6 18c3-4 6.5-7 12.5-11" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
-    </svg>
-  );
-}
-
-function RibbonIcon({ className = "h-5 w-5" }: IconProps) {
-  return (
-    <svg viewBox="0 0 24 24" fill="none" className={className} aria-hidden="true">
-      <circle cx="12" cy="9" r="5.5" stroke="currentColor" strokeWidth="1.4" />
-      <path d="M9 13.5 7.5 20l4.5-2 4.5 2-1.5-6.5" stroke="currentColor" strokeWidth="1.4" strokeLinejoin="round" />
-    </svg>
-  );
-}
-
-const BADGE_ICONS = {
-  star: StarIcon,
-  google: GoogleIcon,
-  shield: ShieldIcon,
-  leaf: LeafIcon,
-  ribbon: RibbonIcon,
-};
 
 const SOCIAL_LINKS = [
   { label: "Facebook", Icon: FacebookIcon },
@@ -319,31 +253,15 @@ function NavColumn({
   links: { href: string; label: string }[];
 }) {
   return (
-    <div className="border-b border-earth/10 py-4 sm:border-0 sm:py-0">
-      {/* Mobile: accessible accordion using native <details>/<summary> */}
-      <details className="group sm:hidden">
-        <summary className="flex cursor-pointer list-none items-center justify-between rounded text-sm font-semibold uppercase tracking-[0.14em] text-brand-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-forest/40">
-          {heading}
-          <ChevronDownIcon className="h-4 w-4 shrink-0 text-brand-ink-muted transition-transform duration-200 group-open:rotate-180" />
-        </summary>
-        <ul className="mt-4 space-y-3 pl-0.5">
-          {links.map((link) => (
-            <NavLink key={link.label} {...link} />
-          ))}
-        </ul>
-      </details>
-
-      {/* Tablet / desktop: always-visible column */}
-      <div className="hidden sm:block">
-        <h3 className="text-sm font-semibold uppercase tracking-[0.14em] text-brand-ink">
-          {heading}
-        </h3>
-        <ul className="mt-5 space-y-3">
-          {links.map((link) => (
-            <NavLink key={link.label} {...link} />
-          ))}
-        </ul>
-      </div>
+    <div>
+      <h3 className="text-sm font-semibold uppercase tracking-[0.14em] text-brand-ink">
+        {heading}
+      </h3>
+      <ul className="mt-4 space-y-2.5">
+        {links.map((link) => (
+          <NavLink key={link.label} {...link} />
+        ))}
+      </ul>
     </div>
   );
 }
@@ -352,20 +270,23 @@ export default function Footer() {
   return (
     <footer className="w-full bg-white text-brand-ink">
       {/* ============ SECTION 1 — Brand, newsletter, contact & trust ============ */}
-      <div className="mx-auto max-w-[1600px] px-10 py-16 sm:px-20 sm:py-20 lg:px-40 lg:py-20">
-        <div className="flex flex-col gap-14 lg:flex-row lg:items-start lg:justify-between lg:gap-20">
+      <div className="mx-auto max-w-[1600px] px-10 py-10 sm:px-20 sm:py-12 lg:px-40 lg:py-14">
+        <div className="flex flex-col gap-10 lg:flex-row lg:items-start lg:justify-between lg:gap-14">
           {/* Brand area */}
           <div className="max-w-sm">
             <Image
-              src="/logo-lockup.png"
+              src="/logo-black.png"
               alt="Yala Leopard Safari Tours logo"
-              width={1478}
-              height={720}
+              width={5320}
+              height={2524}
               className="h-12 w-auto"
             />
             <p className="mt-5 text-sm leading-relaxed text-brand-ink-muted">
-              Discover the untamed beauty of Yala with unforgettable safari
-              experiences led by knowledgeable local guides.
+              Discover the untamed beauty of Yala, Udawalawe and Bundala with
+              unforgettable safari experiences led by knowledgeable local
+              guides. From leopard sightings at dawn to elephant herds at the
+              waterhole, we help you explore Sri Lanka&apos;s wild side
+              responsibly, safely and at an unhurried pace.
             </p>
             <div className="mt-6 flex gap-3">
               {SOCIAL_LINKS.map(({ label, Icon }) => (
@@ -390,7 +311,7 @@ export default function Footer() {
               Sign up for Yala travel tips, wildlife updates and special
               safari offers — sent straight to your inbox.
             </p>
-            <form className="mt-5 flex items-center gap-2 rounded-full border border-earth/25 bg-sand p-1.5 pl-5 transition-colors focus-within:border-forest">
+            <form className="mt-5 flex items-center gap-2 rounded-full border border-earth/20 bg-white p-1.5 pl-5">
               <label htmlFor="footer-newsletter-email" className="sr-only">
                 Email address
               </label>
@@ -399,7 +320,7 @@ export default function Footer() {
                 type="email"
                 required
                 placeholder="Your email address"
-                className="w-full bg-transparent text-sm text-brand-ink placeholder:text-brand-ink-muted/70 focus:outline-none"
+                className="w-full bg-transparent text-sm text-black placeholder:text-brand-ink-muted/70 focus:outline-none"
               />
               <button
                 type="submit"
@@ -413,95 +334,54 @@ export default function Footer() {
         </div>
 
         {/* Contact row */}
-        <div className="mt-14 grid grid-cols-1 gap-x-8 gap-y-6 border-t border-earth/15 pt-10 sm:grid-cols-2 lg:grid-cols-4">
-          <a
-            href={CONTACT.whatsappHref}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-3 rounded text-sm font-medium text-brand-ink transition-colors hover:text-forest focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-forest/40"
-          >
-            <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-forest/10 text-forest">
-              <WhatsAppIcon />
-            </span>
-            <span className="min-w-0">
-              <span className="block text-xs uppercase tracking-wide text-brand-ink-muted">WhatsApp</span>
-              <span className="block truncate">{CONTACT.whatsappDisplay}</span>
-            </span>
-          </a>
-
-          <a
-            href={CONTACT.phoneHref}
-            className="flex items-center gap-3 rounded text-sm font-medium text-brand-ink transition-colors hover:text-forest focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-forest/40"
-          >
-            <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-forest/10 text-forest">
-              <PhoneIcon />
-            </span>
-            <span className="min-w-0">
-              <span className="block text-xs uppercase tracking-wide text-brand-ink-muted">Phone</span>
-              <span className="block truncate">{CONTACT.phoneDisplay}</span>
-            </span>
-          </a>
-
-          <a
-            href={`mailto:${CONTACT.email}`}
-            className="flex items-center gap-3 rounded text-sm font-medium text-brand-ink transition-colors hover:text-forest focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-forest/40"
-          >
-            <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-forest/10 text-forest">
-              <MailIcon />
-            </span>
-            <span className="min-w-0">
-              <span className="block text-xs uppercase tracking-wide text-brand-ink-muted">Email</span>
-              <span className="block truncate">{CONTACT.email}</span>
-            </span>
-          </a>
-
-          <a
-            href={CONTACT.mapHref}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-3 rounded text-sm font-medium text-brand-ink transition-colors hover:text-forest focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-forest/40"
-          >
-            <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-forest/10 text-forest">
-              <MapPinIcon />
-            </span>
-            <span className="min-w-0">
-              <span className="block text-xs uppercase tracking-wide text-brand-ink-muted">Location</span>
-              <span className="block truncate">{CONTACT.location}</span>
-            </span>
-          </a>
+        <div className="mt-8 grid grid-cols-1 gap-x-8 gap-y-5 sm:grid-cols-2 lg:grid-cols-4">
+          {CONTACT_ITEMS.map((item) => (
+            <a
+              key={item.key}
+              href={item.href}
+              {...(item.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+              className="flex items-center gap-3 rounded text-sm font-medium text-brand-ink transition-colors hover:text-forest focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-forest/40"
+            >
+              <Image
+                src={item.icon}
+                alt=""
+                aria-hidden="true"
+                width={34}
+                height={34}
+                className="h-10 w-10 shrink-0"
+              />
+              <span className="min-w-0">
+                <span className="block text-xs uppercase tracking-wide text-brand-ink-muted">{item.label}</span>
+                <span className="block truncate">{item.value}</span>
+              </span>
+            </a>
+          ))}
         </div>
 
-        {/* Trust & recognition row — sample placeholders, see comment above TRUST_BADGES */}
-        <div className="mt-10 border-t border-earth/15 pt-10">
+        {/* Trust & recognition row — sample placeholder artwork, see comment above TRUST_BADGES */}
+        <div className="mt-8">
           <p className="text-xs font-medium uppercase tracking-[0.14em] text-brand-ink-muted">
             Trust &amp; Recognition
           </p>
-          <div className="mt-5 flex flex-wrap gap-4">
-            {TRUST_BADGES.map(({ label, detail, icon }) => {
-              const Icon = BADGE_ICONS[icon];
-              return (
-                <div
-                  key={label}
-                  className="flex items-center gap-3 rounded-2xl border border-earth/15 bg-sand px-4 py-3"
-                >
-                  <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-gold/15 text-gold">
-                    <Icon className="h-4.5 w-4.5" />
-                  </span>
-                  <span>
-                    <span className="block text-sm font-semibold text-brand-ink">{label}</span>
-                    <span className="block text-[11px] text-brand-ink-muted">{detail} · placeholder</span>
-                  </span>
-                </div>
-              );
-            })}
+          <div className="mt-4 flex flex-wrap items-center gap-6 sm:gap-8">
+            {TRUST_BADGES.map((badge) => (
+              <Image
+                key={badge.src}
+                src={badge.src}
+                alt={badge.alt}
+                width={360}
+                height={300}
+                className="h-14 w-auto sm:h-16"
+              />
+            ))}
           </div>
         </div>
       </div>
 
       {/* ============ SECTION 2 — Navigation links & copyright ============ */}
-      <div className="border-t border-earth/15">
-        <div className="mx-auto max-w-[1600px] px-10 py-12 sm:px-20 lg:px-40 lg:py-14">
-          <div className="grid grid-cols-1 gap-x-8 sm:grid-cols-2 sm:gap-y-10 lg:grid-cols-5">
+      <div>
+        <div className="mx-auto max-w-[1600px] px-10 py-10 sm:px-20 lg:px-40 lg:py-10">
+          <div className="grid grid-cols-1 gap-x-8 gap-y-8 sm:grid-cols-2 sm:gap-y-10 lg:grid-cols-5">
             {NAV_COLUMNS.map((column) => (
               <NavColumn key={column.heading} {...column} />
             ))}
@@ -510,7 +390,7 @@ export default function Footer() {
       </div>
 
       {/* Bottom bar */}
-      <div className="border-t border-earth/15">
+      <div>
         <div className="mx-auto max-w-[1600px] px-10 py-6 sm:px-20 lg:px-40">
           <div className="flex flex-col gap-4 text-xs text-brand-ink-muted sm:flex-row sm:items-center sm:justify-between">
             <p>© {new Date().getFullYear()} Yala Leopard Safari Tours. All Rights Reserved.</p>

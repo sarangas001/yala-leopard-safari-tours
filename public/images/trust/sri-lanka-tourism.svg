@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="300" viewBox="0 0 360 300" role="img" aria-labelledby="title desc">
+  <title id="title">Sri Lanka Tourism badge</title>
+  <desc id="desc">A warm tropical tourism badge featuring a stylised Sri Lankan island, sun, sea, and palm.</desc>
+  <defs>
+    <linearGradient id="sun" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#FFD35A"/><stop offset="1" stop-color="#F28B25"/></linearGradient>
+    <linearGradient id="sea" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#2CC9C3"/><stop offset="1" stop-color="#087E9A"/></linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="150%"><feDropShadow dx="0" dy="7" stdDeviation="7" flood-color="#493514" flood-opacity=".16"/></filter>
+  </defs>
+  <g filter="url(#shadow)"><path d="M180 20 298 81v138l-118 61L62 219V81z" fill="#fff" stroke="#E8B446" stroke-width="6"/></g>
+  <circle cx="180" cy="105" r="47" fill="url(#sun)"/>
+  <path d="M66 194c38-26 75-31 111-16 42 18 78 10 117-16v55l-114 59-114-59z" fill="url(#sea)"/>
+  <path d="M178 79c-8 13-7 28-15 38-6 7-3 16 4 20-2 11 4 19 12 22 2 12 11 19 18 15 10-5 7-16 13-24 7-9 14-15 10-26-3-9-10-12-8-23 2-13-8-23-18-26-7-2-12-1-16 4z" fill="#8B4E22"/>
+  <g fill="none" stroke="#126B54" stroke-width="6" stroke-linecap="round">
+    <path d="M116 166c2-31 16-52 39-65"/>
+    <path d="M151 102c-10-6-20-7-30-2M153 104c-5-12-3-22 4-31M152 105c11-7 23-8 34-3M149 106c-13 3-22 11-28 22"/>
+  </g>
+  <path d="M80 204c40-19 76-19 108-2 31 16 61 13 92-8" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round" opacity=".9"/>
+  <text x="180" y="231" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="23" font-weight="700" fill="#fff">Sri Lanka</text>
+  <text x="180" y="251" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="800" fill="#E8FEFA" letter-spacing="3.5">TOURISM</text>
+</svg>

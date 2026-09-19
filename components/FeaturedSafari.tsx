@@ -8,18 +8,18 @@ export default function FeaturedSafari() {
     <section className="w-full bg-white">
       <div className="mx-auto max-w-[1600px] px-10 py-16 sm:px-20 sm:py-20 lg:px-40 lg:py-24">
         <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-20">
-          <Reveal>
+          <Reveal className="text-center sm:text-left">
             <h2 className="font-display text-3xl font-medium tracking-tight text-brand-ink sm:text-4xl lg:text-5xl">
               The Yala Leopard Safari
             </h2>
-            <p className="mt-5 max-w-md text-base leading-relaxed text-brand-ink-muted">
+            <p className="mx-auto mt-5 max-w-md text-base leading-relaxed text-brand-ink-muted sm:mx-0">
               Yala holds the highest density of leopards on earth. Our flagship
               safari puts you in an open 4x4 jeep with a spotting-focused local
               guide, tracking leopards, elephants and more across the dry-zone
               scrub and open plains that made this park world-famous.
             </p>
 
-            <div className="mt-7 flex flex-wrap gap-2.5">
+            <div className="mt-7 flex flex-wrap justify-center gap-2.5 sm:justify-start">
               {DURATIONS.map((d) => (
                 <span
                   key={d}

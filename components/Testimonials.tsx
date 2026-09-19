@@ -8,21 +8,21 @@ const REVIEWS = [
     detail: "United Kingdom",
     headline: "Add a short, punchy headline here",
     quote:
-      "Add a real guest review here — a short, specific line about the leopard sighting or the guide's knowledge works best.",
+      "Add a real guest review here — a short, specific line about the leopard sighting or the guide's knowledge works best. Mention how many parks you visited, how the guide spotted wildlife other jeeps drove straight past, and how the whole day felt paced rather than rushed.",
   },
   {
     name: "Sample Guest",
     detail: "Germany",
     headline: "Add a short, punchy headline here",
     quote:
-      "Add a real guest review here — mention the jeep, the pace of the drive, or how many parks you covered.",
+      "Add a real guest review here — mention the jeep, the pace of the drive, or how many parks you covered. A note on the early pickup, the guide's local knowledge, or a specific animal encounter (elephants at the waterhole, a leopard on a rock) makes the quote feel real and specific.",
   },
   {
     name: "Sample Guest",
     detail: "Australia",
     headline: "Add a short, punchy headline here",
     quote:
-      "Add a real guest review here — pull a strong quote from Google or TripAdvisor once reviews start coming in.",
+      "Add a real guest review here — pull a strong quote from Google or TripAdvisor once reviews start coming in. The best quotes describe a specific moment — a close leopard sighting, a knowledgeable guide, or a small-group experience that felt personal rather than rushed.",
   },
 ];
 

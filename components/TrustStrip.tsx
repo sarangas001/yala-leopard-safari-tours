@@ -32,7 +32,7 @@ export default function TrustStrip() {
       </div> */}
 
       {/* Image + content section */}
-      <div className="mx-auto max-w-[1600px] px-6 py-6 sm:px-10 sm:py-8 lg:px-20 lg:py-10">
+      <div className="mx-auto max-w-[1600px] px-10 py-16 sm:px-20 sm:py-20 lg:px-40 lg:py-24">
         <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-20">
           {/* Image */}
           <Reveal>
@@ -52,18 +52,18 @@ export default function TrustStrip() {
 
 
           {/* Text content */}
-          <Reveal delay={0.12}>
-            <h2 className="font-display text-3xl font-medium tracking-tight text-brand-ink sm:text-4xl lg:text-[2.75rem] lg:leading-[1.1]">
+          <Reveal delay={0.12} className="text-center sm:text-left">
+            <h2 className="font-display text-3xl font-medium tracking-tight text-brand-ink sm:text-4xl lg:text-5xl">
               Wild Encounters,<br />
               Memories for a Lifetime
             </h2>
-            <p className="mt-5 max-w-md text-base leading-relaxed text-brand-ink-muted">
+            <p className="mx-auto mt-5 max-w-md text-base leading-relaxed text-brand-ink-muted sm:mx-0">
               Sri Lanka&apos;s southern parks hide some of nature&apos;s most
               extraordinary spectacles — leopards draped across ancient rocks,
               elephant herds wading through golden reservoirs, and flamingos
               painting coastal lagoons pink at dawn.
             </p>
-            <p className="mt-4 max-w-md text-base leading-relaxed text-brand-ink-muted">
+            <p className="mx-auto mt-4 max-w-md text-base leading-relaxed text-brand-ink-muted sm:mx-0">
               Our safaris take you deep into this world with experienced local
               guides who know every trail, watering hole and favourite leopard
               perch by heart. Small groups, open jeeps and an unhurried pace

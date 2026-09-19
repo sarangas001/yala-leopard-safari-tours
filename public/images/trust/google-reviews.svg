@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="300" viewBox="0 0 360 300" role="img" aria-labelledby="title desc">
+  <title id="title">Google Reviews badge</title>
+  <desc id="desc">A modern Google reviews badge with a multicolour G, five stars, and verified wording.</desc>
+  <defs>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#FFD86A"/>
+      <stop offset="1" stop-color="#F6B800"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="150%">
+      <feDropShadow dx="0" dy="7" stdDeviation="7" flood-color="#223047" flood-opacity=".15"/>
+    </filter>
+  </defs>
+  <g filter="url(#shadow)">
+    <rect x="48" y="25" width="264" height="230" rx="40" fill="#fff" stroke="#E6EAF0" stroke-width="4"/>
+  </g>
+  <g transform="translate(150 78) scale(.6)">
+    <path d="M100 51c0-6-1-11-2-16H51v31h27c-1 8-6 15-13 19v20h25c15-14 24-33 24-54z" fill="#4285F4"/>
+    <path d="M51 100c21 0 39-7 52-19L78 61c-7 5-16 8-27 8-20 0-37-14-43-33h-26v21c13 26 39 43 69 43z" fill="#34A853"/>
+    <path d="M8 36c-2-5-3-11-3-17s1-12 3-17v-21h-26C-23-8-26 5-26 19s3 27 8 38z" fill="#FBBC05"/>
+    <path d="M51-31c12 0 23 4 31 12L105-42C91-55 73-62 51-62c-30 0-56 17-69 43L8 2c6-19 23-33 43-33z" fill="#EA4335"/>
+  </g>
+  <text x="180" y="163" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="27" font-weight="800" fill="#202124">Google Reviews</text>
+  <g fill="url(#gold)" transform="translate(111 179)">
+    <path d="m12 0 3 9h10l-8 6 3 9-8-5-8 5 3-9-8-6H9z"/>
+    <path d="m40 0 3 9h10l-8 6 3 9-8-5-8 5 3-9-8-6h10z"/>
+    <path d="m68 0 3 9h10l-8 6 3 9-8-5-8 5 3-9-8-6h10z"/>
+    <path d="m96 0 3 9h10l-8 6 3 9-8-5-8 5 3-9-8-6h10z"/>
+    <path d="m124 0 3 9h10l-8 6 3 9-8-5-8 5 3-9-8-6h10z"/>
+  </g>
+  <g transform="translate(118 221)">
+    <circle cx="10" cy="-4" r="10" fill="#34A853"/>
+    <path d="m5-4 3 3 7-7" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="28" y="0" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" fill="#5F6368" letter-spacing="1">VERIFIED REVIEWS</text>
+  </g>
+</svg>
