@@ -46,18 +46,29 @@ export default function FinalCta() {
         </Reveal>
       </div>
 
-      {/* Scenic image — full-bleed, its own soft cloud fade blends into the white section */}
-      <Reveal
-        delay={0.1}
-        className="mt-4 pb-8 sm:mt-5 sm:pb-10 lg:pb-12"
-      >
+      {/* Scenic image. On mobile it's shown as a centered, cropped band rather
+          than the full wide panorama (which would render very thin and hard
+          to read); from sm: up the full image is shown at its natural
+          aspect ratio, full-bleed, with its own soft cloud fade. */}
+      <Reveal delay={0.1} className="mt-4 pb-8 sm:mt-5 sm:pb-10 lg:pb-12">
+        <div className="relative h-64 w-full overflow-hidden sm:hidden">
+          <Image
+            src="/images/scenic/cta-img.png"
+            alt="A leopard, elephants and a peacock gather at a waterhole in Yala National Park"
+            fill
+            sizes="100vw"
+            quality={85}
+            className="object-cover object-center"
+          />
+        </div>
         <Image
           src="/images/scenic/cta-img.png"
           alt="A leopard, elephants and a peacock gather at a waterhole in Yala National Park"
           width={2060}
           height={763}
           quality={85}
-          style={{ width: "100%", height: "auto", display: "block" }}
+          className="hidden sm:block"
+          style={{ width: "100%", height: "auto" }}
         />
       </Reveal>
     </section>

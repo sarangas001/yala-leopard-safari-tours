@@ -253,7 +253,7 @@ function NavColumn({
   links: { href: string; label: string }[];
 }) {
   return (
-    <div>
+    <div className="text-center sm:text-left">
       <h3 className="text-sm font-semibold uppercase tracking-[0.14em] text-brand-ink">
         {heading}
       </h3>
@@ -273,13 +273,13 @@ export default function Footer() {
       <div className="mx-auto max-w-[1600px] px-10 py-10 sm:px-20 sm:py-12 lg:px-40 lg:py-14">
         <div className="flex flex-col gap-10 lg:flex-row lg:items-start lg:justify-between lg:gap-14">
           {/* Brand area */}
-          <div className="max-w-sm">
+          <div className="mx-auto max-w-sm text-center sm:mx-0 sm:text-left">
             <Image
               src="/logo-black.png"
               alt="Yala Leopard Safari Tours logo"
               width={5320}
               height={2524}
-              className="h-12 w-auto"
+              className="h-auto w-full max-w-65"
             />
             <p className="mt-5 text-sm leading-relaxed text-brand-ink-muted">
               Discover the untamed beauty of Yala, Udawalawe and Bundala with
@@ -288,22 +288,22 @@ export default function Footer() {
               waterhole, we help you explore Sri Lanka&apos;s wild side
               responsibly, safely and at an unhurried pace.
             </p>
-            <div className="mt-6 flex gap-3">
+            <div className="mt-6 flex justify-center gap-3 sm:justify-start">
               {SOCIAL_LINKS.map(({ label, Icon }) => (
                 <a
                   key={label}
                   href="#"
                   aria-label={label}
-                  className="flex h-10 w-10 items-center justify-center rounded-full border border-earth/20 text-forest transition-colors hover:border-forest hover:bg-forest hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-forest/40 focus-visible:ring-offset-2 focus-visible:ring-offset-white"
+                  className="flex h-10 w-10 items-center justify-center rounded-full border border-brand-ink/20 text-brand-ink transition-colors hover:border-brand-ink hover:bg-brand-ink hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-ink/40 focus-visible:ring-offset-2 focus-visible:ring-offset-white"
                 >
-                  <Icon />
+                  <Icon className="h-6 w-6" />
                 </a>
               ))}
             </div>
           </div>
 
           {/* Newsletter area */}
-          <div className="w-full max-w-md">
+          <div className="mx-auto w-full max-w-md text-center sm:mx-0 sm:text-left">
             <h3 className="font-display text-2xl font-medium text-brand-ink sm:text-[1.75rem]">
               Get Safari Stories &amp; Travel Inspiration
             </h3>
@@ -320,12 +320,14 @@ export default function Footer() {
                 type="email"
                 required
                 placeholder="Your email address"
+                autoComplete="email"
+                suppressHydrationWarning
                 className="w-full bg-transparent text-sm text-black placeholder:text-brand-ink-muted/70 focus:outline-none"
               />
               <button
                 type="submit"
                 aria-label="Subscribe"
-                className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-forest text-white transition-colors hover:bg-forest-dark focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-forest/50 focus-visible:ring-offset-2 focus-visible:ring-offset-white"
+                className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-black text-white transition-colors hover:bg-black/80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black/50 focus-visible:ring-offset-2 focus-visible:ring-offset-white"
               >
                 <ArrowRightIcon className="h-4 w-4" />
               </button>
@@ -340,7 +342,7 @@ export default function Footer() {
               key={item.key}
               href={item.href}
               {...(item.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
-              className="flex items-center gap-3 rounded text-sm font-medium text-brand-ink transition-colors hover:text-forest focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-forest/40"
+              className="flex items-center justify-center gap-3 rounded text-sm font-medium text-brand-ink transition-colors hover:text-forest focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-forest/40 sm:justify-start"
             >
               <Image
                 src={item.icon}
@@ -350,7 +352,7 @@ export default function Footer() {
                 height={34}
                 className="h-10 w-10 shrink-0"
               />
-              <span className="min-w-0">
+              <span className="min-w-0 text-left">
                 <span className="block text-xs uppercase tracking-wide text-brand-ink-muted">{item.label}</span>
                 <span className="block truncate">{item.value}</span>
               </span>
@@ -360,10 +362,7 @@ export default function Footer() {
 
         {/* Trust & recognition row — sample placeholder artwork, see comment above TRUST_BADGES */}
         <div className="mt-8">
-          <p className="text-xs font-medium uppercase tracking-[0.14em] text-brand-ink-muted">
-            Trust &amp; Recognition
-          </p>
-          <div className="mt-4 flex flex-wrap items-center gap-6 sm:gap-8">
+          <div className="flex flex-wrap items-center justify-center gap-10 sm:gap-12">
             {TRUST_BADGES.map((badge) => (
               <Image
                 key={badge.src}
@@ -371,7 +370,7 @@ export default function Footer() {
                 alt={badge.alt}
                 width={360}
                 height={300}
-                className="h-14 w-auto sm:h-16"
+                className="h-16 w-auto sm:h-20"
               />
             ))}
           </div>
@@ -392,27 +391,33 @@ export default function Footer() {
       {/* Bottom bar */}
       <div>
         <div className="mx-auto max-w-[1600px] px-10 py-6 sm:px-20 lg:px-40">
-          <div className="flex flex-col gap-4 text-xs text-brand-ink-muted sm:flex-row sm:items-center sm:justify-between">
-            <p>© {new Date().getFullYear()} Yala Leopard Safari Tours. All Rights Reserved.</p>
-            <div className="flex flex-wrap items-center gap-x-5 gap-y-2">
+          <div className="flex flex-col items-center gap-4 text-center text-xs text-brand-ink-muted sm:flex-row sm:items-center sm:justify-between sm:text-left">
+            <p suppressHydrationWarning>© {new Date().getFullYear()} Yala Leopard Safari Tours. All Rights Reserved.</p>
+            <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2 sm:justify-start">
               <a href="#" className="transition-colors hover:text-forest">Privacy Policy</a>
               <a href="#" className="transition-colors hover:text-forest">Terms and Conditions</a>
               <a href="#" className="transition-colors hover:text-forest">Cookie Policy</a>
             </div>
           </div>
-          <p className="mt-4 text-[11px] italic text-brand-ink-muted/80">
+          <p className="mt-4 text-center text-[11px] italic text-brand-ink-muted/80 sm:text-left">
             Designed with respect for Sri Lanka&apos;s wildlife.
           </p>
         </div>
       </div>
 
-      {/* Floating WhatsApp button — placeholder number, see CONTACT above */}
+      {/* Floating WhatsApp button — placeholder number, see CONTACT above.
+          suppressHydrationWarning: fixed, bottom-right floating buttons are a
+          common target for browser/OS chrome (e.g. a floating PIP or
+          translate control) to reposition via an injected inline `translate`
+          style after the initial paint but before React hydrates — that's a
+          client-side DOM mutation outside our render, not a real mismatch. */}
       <a
         href={CONTACT.whatsappHref}
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Chat with us on WhatsApp"
-        className="fixed bottom-6 right-6 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-forest text-white shadow-lg shadow-forest/30 transition-colors hover:bg-forest-dark focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-forest/50 focus-visible:ring-offset-2"
+        suppressHydrationWarning
+        className="fixed bottom-6 right-6 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-lg shadow-[#25D366]/40 transition-colors hover:bg-[#1EBE5A] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#25D366]/50 focus-visible:ring-offset-2"
       >
         <WhatsAppIcon className="h-6 w-6" />
       </a>

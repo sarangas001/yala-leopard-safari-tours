@@ -57,9 +57,9 @@ export default function SafariParks() {
           {PARKS.map((park, i) => (
             <Reveal key={park.id} delay={i * 0.1}>
               <a href={`/#park-${park.id}`} className="group block h-full">
-                <div className="flex h-full flex-col overflow-hidden rounded-3xl border border-black/[0.06] bg-white shadow-sm transition-shadow duration-300 group-hover:shadow-md">
+                <div className="flex h-full flex-col overflow-hidden rounded-3xl border border-black/6 bg-white shadow-sm transition-shadow duration-300 group-hover:shadow-md">
                   {/* Image at top */}
-                  <div className="relative aspect-[4/3] w-full overflow-hidden">
+                  <div className="relative aspect-4/3 w-full overflow-hidden">
                     <Image
                       src={park.image}
                       alt={park.name}

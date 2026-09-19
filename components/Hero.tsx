@@ -302,7 +302,7 @@ export default function Hero() {
             <div
               role="tablist"
               aria-label="Choose a national park to view"
-              className="flex w-full items-end justify-start gap-3 sm:gap-4"
+              className="flex w-full items-end justify-center gap-3 sm:justify-start sm:gap-4"
             >
               {DESTINATIONS.map((destination, i) => (
                 <button
@@ -317,7 +317,7 @@ export default function Hero() {
                   tabIndex={i === active ? 0 : -1}
                   onClick={() => selectDestination(i)}
                   onKeyDown={(event) => handleTabKeyDown(event, i)}
-                  className="group text-left focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+                  className="group text-left focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
                 >
                   <span
                     className={
@@ -341,7 +341,7 @@ export default function Hero() {
                   </span>
                   <span
                     className={
-                      "mt-2.5 block max-w-[7rem] text-xs font-medium leading-snug tracking-wide transition-colors duration-300 " +
+                      "mt-2.5 block max-w-28 text-xs font-medium leading-snug tracking-wide transition-colors duration-300 " +
                       (i === active ? "text-white" : "text-white/60 group-hover:text-white/90")
                     }
                   >

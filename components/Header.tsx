@@ -264,7 +264,7 @@ export default function Header() {
               aria-controls="mobile-menu"
               aria-label={mobileOpen ? "Close menu" : "Open menu"}
               onClick={() => setMobileOpen((open) => !open)}
-              className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/25 bg-white/15 text-white transition-colors hover:bg-white/25 hover:border-white/60 lg:hidden"
+              className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-black/10 bg-white text-brand-ink shadow-sm transition-colors hover:bg-white/90 lg:hidden"
             >
               <MenuIcon open={mobileOpen} />
             </button>
