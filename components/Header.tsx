@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useLenis } from "lenis/react";
 import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
@@ -14,9 +15,10 @@ const PARKS = [
 
 const NAV_LINKS = [
   { href: "/", label: "Home" },
+  { href: "/safaris", label: "Safaris", hasDropdown: true },
   { href: "/about", label: "About" },
-  { href: "/#gallery", label: "Gallery" },
-  { href: "/#enquire", label: "Contact" },
+  { href: "/gallery", label: "Gallery" },
+  { href: "/contact", label: "Contact" },
 ];
 
 function ChevronIcon({ className }: { className?: string }) {
@@ -54,6 +56,7 @@ function MenuIcon({ open }: { open: boolean }) {
 
 export default function Header() {
   const lenis = useLenis();
+  const pathname = usePathname();
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -63,6 +66,9 @@ export default function Header() {
   const mobilePanelRef = useRef<HTMLDivElement | null>(null);
   const scrolledLayerRef = useRef<HTMLDivElement | null>(null);
   const reducedMotionRef = useRef(false);
+
+  const isActive = (href: string) =>
+    href === "/" ? pathname === "/" : pathname === href || pathname.startsWith(href + "/");
 
   useEffect(() => {
     reducedMotionRef.current = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -174,6 +180,12 @@ export default function Header() {
     setMobileOpen(false);
   };
 
+  const navLinkClass = (active: boolean) =>
+    "text-sm font-medium tracking-wide transition-colors " +
+    (active
+      ? "text-white underline decoration-white decoration-2 underline-offset-8"
+      : "text-white/85 hover:text-white");
+
   return (
     <header className="fixed inset-x-0 top-0 z-50 w-full">
       <div className="absolute inset-0 bg-linear-to-b from-black/55 via-black/20 to-transparent" />
@@ -193,51 +205,55 @@ export default function Header() {
           </Link>
 
           <nav aria-label="Primary" className="hidden items-center gap-8 lg:flex">
-            <Link
-              href="/"
-              className="text-sm font-medium tracking-wide text-white underline decoration-white decoration-2 underline-offset-8"
-            >
-              Home
-            </Link>
+            {NAV_LINKS.map((link) => {
+              const active = isActive(link.href);
 
-            <div ref={dropdownWrapRef} className="relative">
-              <button
-                type="button"
-                aria-expanded={dropdownOpen}
-                aria-haspopup="true"
-                onClick={() => setDropdownOpen((open) => !open)}
-                className="flex items-center gap-1.5 text-sm font-medium tracking-wide text-white/85 transition-colors hover:text-white"
-              >
-                Safaris
-                <ChevronIcon className={"h-3.5 w-3.5 transition-transform duration-200 " + (dropdownOpen ? "rotate-180" : "")} />
-              </button>
+              if (link.hasDropdown) {
+                return (
+                  <div key={link.href} ref={dropdownWrapRef} className="relative flex items-center gap-1.5">
+                    <Link href={link.href} onClick={closeAll} className={navLinkClass(active)}>
+                      {link.label}
+                    </Link>
+                    <button
+                      type="button"
+                      aria-expanded={dropdownOpen}
+                      aria-haspopup="true"
+                      aria-label="Toggle safari parks menu"
+                      onClick={() => setDropdownOpen((open) => !open)}
+                      className={
+                        "transition-colors " + (active ? "text-white" : "text-white/85 hover:text-white")
+                      }
+                    >
+                      <ChevronIcon
+                        className={"h-3.5 w-3.5 transition-transform duration-200 " + (dropdownOpen ? "rotate-180" : "")}
+                      />
+                    </button>
 
-              <div
-                ref={dropdownPanelRef}
-                className="invisible absolute left-1/2 top-full mt-4 w-64 -translate-x-1/2 rounded-2xl border border-white/10 bg-brand-ink/90 p-2 opacity-0 shadow-2xl backdrop-blur-xl"
-              >
-                {PARKS.map((park) => (
-                  <a
-                    key={park.id}
-                    href={`/#park-${park.id}`}
-                    onClick={closeAll}
-                    className="block rounded-xl px-4 py-3 text-sm text-white/80 transition-colors hover:bg-white/10 hover:text-white"
-                  >
-                    {park.name}
-                  </a>
-                ))}
-              </div>
-            </div>
+                    <div
+                      ref={dropdownPanelRef}
+                      className="invisible absolute left-1/2 top-full mt-4 w-64 -translate-x-1/2 rounded-2xl border border-white/10 bg-brand-ink/90 p-2 opacity-0 shadow-2xl backdrop-blur-xl"
+                    >
+                      {PARKS.map((park) => (
+                        <a
+                          key={park.id}
+                          href={`/#park-${park.id}`}
+                          onClick={closeAll}
+                          className="block rounded-xl px-4 py-3 text-sm text-white/80 transition-colors hover:bg-white/10 hover:text-white"
+                        >
+                          {park.name}
+                        </a>
+                      ))}
+                    </div>
+                  </div>
+                );
+              }
 
-            {NAV_LINKS.slice(1).map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                className="text-sm font-medium tracking-wide text-white/85 transition-colors hover:text-white"
-              >
-                {link.label}
-              </a>
-            ))}
+              return (
+                <Link key={link.href} href={link.href} onClick={closeAll} className={navLinkClass(active)}>
+                  {link.label}
+                </Link>
+              );
+            })}
           </nav>
 
           <div className="flex items-center gap-3">
@@ -276,37 +292,40 @@ export default function Header() {
         id="mobile-menu"
         ref={mobilePanelRef}
         style={{ height: 0, opacity: 0, display: "none", overflow: "hidden" }}
-        className="border-t border-white/10 bg-brand-ink/90 backdrop-blur-xl lg:hidden"
+        className="border-t border-white/10 bg-black lg:hidden"
       >
         <nav aria-label="Mobile" className="flex flex-col gap-1 px-5 py-4">
-          <Link href="/" onClick={closeAll} className="rounded-lg px-3 py-2.5 text-sm font-medium text-white">
-            Home
-          </Link>
+          {NAV_LINKS.map((link) => {
+            const active = isActive(link.href);
+            const mobileLinkClass =
+              "rounded-lg px-3 py-2.5 text-sm font-medium " + (active ? "text-white" : "text-white/85");
 
-          <span className="px-3 pt-2 text-xs font-semibold uppercase tracking-[0.2em] text-white/40">
-            Safaris
-          </span>
-          {PARKS.map((park) => (
-            <a
-              key={park.id}
-              href={`/#park-${park.id}`}
-              onClick={closeAll}
-              className="rounded-lg px-3 py-2.5 text-sm font-medium text-white/85"
-            >
-              {park.name}
-            </a>
-          ))}
+            if (link.hasDropdown) {
+              return (
+                <div key={link.href}>
+                  <Link href={link.href} onClick={closeAll} className={mobileLinkClass}>
+                    {link.label}
+                  </Link>
+                  {PARKS.map((park) => (
+                    <a
+                      key={park.id}
+                      href={`/#park-${park.id}`}
+                      onClick={closeAll}
+                      className="block rounded-lg px-6 py-2 text-sm text-white/70"
+                    >
+                      {park.name}
+                    </a>
+                  ))}
+                </div>
+              );
+            }
 
-          {NAV_LINKS.slice(1).map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              onClick={closeAll}
-              className="rounded-lg px-3 py-2.5 text-sm font-medium text-white/85"
-            >
-              {link.label}
-            </a>
-          ))}
+            return (
+              <Link key={link.href} href={link.href} onClick={closeAll} className={mobileLinkClass}>
+                {link.label}
+              </Link>
+            );
+          })}
 
           {/* eslint-disable-next-line @next/next/no-html-link-for-pages */}
           <a

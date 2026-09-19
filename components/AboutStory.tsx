@@ -15,6 +15,16 @@ export default function AboutStory() {
             the years, the team has guided local and international guests
             through some of the country&apos;s best-known national parks.
           </p>
+          <p className="mt-4 text-base leading-relaxed text-brand-ink-muted">
+            What began with a single jeep and a deep love for Yala&apos;s
+            dry-zone wilderness has grown into a small, dedicated team
+            covering Yala, Udawalawe and Bundala National Parks. Our
+            approach has stayed the same throughout: small groups, patient
+            guides, and an unhurried pace that lets the wildlife set the
+            schedule, not the clock. Three and a half decades later,
+            we&apos;re still run by the same family, still guided by the
+            same respect for the parks that started it all.
+          </p>
         </Reveal>
       </div>
     </section>

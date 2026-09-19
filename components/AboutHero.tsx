@@ -17,7 +17,7 @@ export default function AboutHero() {
         <div className="absolute inset-0 bg-linear-to-b from-black/65 via-black/35 to-black/55" />
       </div>
 
-      <div className="relative z-10 mx-auto max-w-[1600px] px-10 pt-32 pb-20 text-center sm:px-20 sm:pt-40 sm:pb-24 lg:px-40 lg:pt-48 lg:pb-28">
+      <div className="relative z-10 mx-auto max-w-[1600px] px-10 pt-32 pb-20 text-center sm:px-20 sm:pt-40 sm:pb-24 lg:flex lg:min-h-175 lg:items-center lg:justify-center lg:px-40 lg:py-0">
         <Reveal className="mx-auto max-w-2xl">
           <h1 className="font-display text-4xl font-medium leading-[1.05] tracking-tight text-white sm:text-5xl lg:text-6xl">
             Local Safari Experts Since 1990
