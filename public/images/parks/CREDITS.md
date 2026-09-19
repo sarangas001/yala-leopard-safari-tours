@@ -9,6 +9,8 @@ licensed photography before launch.
 | `yala.jpg` | Sri Lankan leopard, Yala National Park | AdrianRanasinghe | CC BY-SA 4.0 |
 | `udawalawe.jpg` | Asian elephant, Udawalawe National Park | Prasadtharanga | CC BY-SA 4.0 |
 | `bundala.jpg` | Blue-tailed bee-eater, Bundala National Park | A.Savin | Free Art License (FAL) |
+| `kumana.jpg` | Black-necked stork, Kumana National Park | Vasuki Jayaweera | CC BY-SA 4.0 |
+| `lunugamvehera.jpg` | Dry-zone forest landscape, Lunugamvehera National Park | Mammalwatcher | CC0 1.0 |
 
 Source: commons.wikimedia.org. CC BY-SA 4.0 requires attribution + share-alike
 if these files are kept; the site includes a small on-page credit line for
