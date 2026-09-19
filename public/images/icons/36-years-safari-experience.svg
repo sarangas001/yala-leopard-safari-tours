@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 75 75" role="img" aria-labelledby="title desc">
+  <title id="title">36+ years of safari experience</title>
+  <desc id="desc">An experience medal with 36 plus on a soft blue organic background.</desc>
+  <path opacity=".82" fill="#BFE3FF" d="M44.3 8.6s7.9-2 13.1 2.7S70.5 27 70.9 41.4 72 68.1 46.3 67 12.1 55 7.3 46.4 3.5 24.1 13.2 19.7 40.7 9 44.3 8.6Z"/>
+  <g fill="none" stroke="#111" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="37.5" cy="32" r="17" fill="#fff"/>
+    <path d="m26.5 45.2-4 15 8-4 6 6 3-13M48.5 45.2l4 15-8-4-6 6-3-13"/>
+    <path d="m37.5 17.5 3 4.5 5.3.8-3.8 3.8.9 5.4-5.4-2.6-5.4 2.6.9-5.4-3.8-3.8 5.3-.8Z" opacity=".18" fill="#111"/>
+  </g>
+  <text x="37.5" y="38.5" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="700" fill="#111">36+</text>
+</svg>

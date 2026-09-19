@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 75 75" role="img" aria-labelledby="title desc">
+  <title id="title">Hotel pickup and drop-off where applicable</title>
+  <desc id="desc">A hotel, location pin and transfer arrows on a soft purple organic background.</desc>
+  <path opacity=".82" fill="#DCC8FF" d="M44.3 8.6s7.9-2 13.1 2.7S70.5 27 70.9 41.4 72 68.1 46.3 67 12.1 55 7.3 46.4 3.5 24.1 13.2 19.7 40.7 9 44.3 8.6Z"/>
+  <g fill="none" stroke="#111" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M11 61h42M16 61V22h29v39M22 29h5M34 29h5M22 37h5M34 37h5M22 45h5M34 45h5M27 61V51h7v10" fill="#fff"/>
+    <path d="M57 17c-6 0-11 4.8-11 10.8 0 8.3 11 18.7 11 18.7s11-10.4 11-18.7C68 21.8 63 17 57 17Z" fill="#fff"/>
+    <circle cx="57" cy="28" r="4"/>
+    <path d="M51 55h16l-4-4M67 55l-4 4"/>
+  </g>
+</svg>

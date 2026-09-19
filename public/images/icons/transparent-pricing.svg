@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 75 75" role="img" aria-labelledby="title desc">
+  <title id="title">Transparent pricing</title>
+  <desc id="desc">A clear price tag with an eye on a soft pink organic background.</desc>
+  <path opacity=".82" fill="#F7C7DB" d="M44.3 8.6s7.9-2 13.1 2.7S70.5 27 70.9 41.4 72 68.1 46.3 67 12.1 55 7.3 46.4 3.5 24.1 13.2 19.7 40.7 9 44.3 8.6Z"/>
+  <g fill="none" stroke="#111" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M13 18h27l22 22-24 24-25-25Z" fill="#fff"/>
+    <circle cx="25" cy="30" r="4"/>
+    <path d="M27 48s6-8 14-8 14 8 14 8-6 8-14 8-14-8-14-8Z"/>
+    <circle cx="41" cy="48" r="4" fill="#111"/>
+    <path d="M40 25v20M35.5 29c1.5-3 8-3 9.5.5 1.8 4-8 3.7-8 8 0 4.2 7.5 4.4 9.5.5"/>
+  </g>
+</svg>

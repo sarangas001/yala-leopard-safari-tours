@@ -1,5 +1,4 @@
-import Image from "next/image";
-import Reveal from "@/components/Reveal";
+import IconFeatureGrid from "@/components/IconFeatureGrid";
 
 const STEPS = [
   {
@@ -35,40 +34,5 @@ const STEPS = [
 ];
 
 export default function HowItWorks() {
-  return (
-    <section className="w-full bg-white">
-      <div className="mx-auto max-w-[1600px] px-10 py-16 sm:px-20 sm:py-20 lg:px-40 lg:py-24">
-        <Reveal className="text-center">
-          <h2 className="font-display text-3xl font-medium tracking-tight text-brand-ink sm:text-4xl lg:text-5xl">
-            How It Works
-          </h2>
-        </Reveal>
-
-        <div className="mt-14 grid grid-cols-1 gap-10 sm:grid-cols-2 lg:mt-16 lg:grid-cols-3 lg:gap-x-12 lg:gap-y-14">
-          {STEPS.map((step, i) => (
-            <Reveal key={step.title} delay={(i % 3) * 0.08}>
-              <div className="flex flex-col items-center text-center">
-                {/* Custom uploaded icon */}
-                <div className="flex h-20 w-20 items-center justify-center">
-                  <Image
-                    src={step.icon}
-                    alt={step.title}
-                    width={72}
-                    height={72}
-                    style={{ width: "72px", height: "auto" }}
-                  />
-                </div>
-                <h3 className="mt-5 font-display text-lg font-medium text-brand-ink">
-                  {step.title}
-                </h3>
-                <p className="mt-2 max-w-[22ch] text-sm leading-relaxed text-brand-ink-muted sm:max-w-none">
-                  {step.text}
-                </p>
-              </div>
-            </Reveal>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
+  return <IconFeatureGrid heading="How It Works" items={STEPS} columns={3} />;
 }
