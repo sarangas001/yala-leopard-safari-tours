@@ -3,6 +3,7 @@ import SafariHero from "@/components/SafariHero";
 import SafariParkCards from "@/components/SafariParkCards";
 import SafariDurations from "@/components/SafariDurations";
 import ParkChooserFaq from "@/components/ParkChooserFaq";
+import SafariInclusions from "@/components/SafariInclusions";
 
 export const metadata: Metadata = {
   title: "Safaris | Yala Leopard Safari Tours",
@@ -17,6 +18,7 @@ export default function SafarisPage() {
       <SafariParkCards />
       <SafariDurations />
       <ParkChooserFaq />
+      <SafariInclusions />
     </main>
   );
 }
