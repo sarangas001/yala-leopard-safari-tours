@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 75 75" role="img" aria-labelledby="title desc">
+  <title id="title">Full Day</title>
+  <desc id="desc">A sunrise-to-sunset full-day symbol on a soft coral organic background.</desc>
+  <path opacity=".82" fill="#FFB9A8" d="M44.3 8.6s7.9-2 13.1 2.7S70.5 27 70.9 41.4 72 68.1 46.3 67 12.1 55 7.3 46.4 3.5 24.1 13.2 19.7 40.7 9 44.3 8.6Z"/>
+  <g fill="none" stroke="#111" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="11" y="17" width="53" height="43" rx="10" fill="#fff"/>
+    <path d="M11 46h53"/>
+    <path d="M17 46a12 12 0 0 1 24 0"/>
+    <path d="M29 27v5M16 33l4 3M42 33l-4 3"/>
+    <path d="M43 52h12M49 48l6 4-6 4"/>
+    <path d="M17 53h15"/>
+    <circle cx="51" cy="29" r="5.5" fill="#FFE38B"/>
+    <path d="M51 19v3M51 36v3M41 29h3M58 29h3M44 22l2 2M56 34l2 2M58 22l-2 2M46 34l-2 2"/>
+  </g>
+</svg>

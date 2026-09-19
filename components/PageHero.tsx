@@ -6,11 +6,13 @@ export default function PageHero({
   description,
   image,
   alt,
+  cta,
 }: {
   title: string;
   description?: string;
   image: string;
   alt: string;
+  cta?: { label: string; href: string };
 }) {
   return (
     <section className="relative w-full overflow-hidden bg-white">
@@ -28,6 +30,15 @@ export default function PageHero({
             <p className="mx-auto mt-5 max-w-xl text-sm leading-relaxed text-white/80 sm:text-base">
               {description}
             </p>
+          ) : null}
+          {cta ? (
+            <a
+              href={cta.href}
+              className="mt-8 inline-flex items-center gap-2 rounded-full bg-white px-7 py-3.5 text-sm font-semibold text-brand-ink shadow-lg shadow-black/20 transition-all hover:bg-white/95 hover:shadow-xl hover:shadow-black/25 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-ink"
+            >
+              {cta.label}
+              <span aria-hidden="true">→</span>
+            </a>
           ) : null}
         </Reveal>
       </div>
