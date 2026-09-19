@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import AboutHero from "@/components/AboutHero";
+import AboutStory from "@/components/AboutStory";
 
 export const metadata: Metadata = {
   title: "About Us | Yala Leopard Safari Tours",
@@ -11,6 +12,7 @@ export default function AboutPage() {
   return (
     <main className="flex flex-1 flex-col bg-white">
       <AboutHero />
+      <AboutStory />
     </main>
   );
 }
