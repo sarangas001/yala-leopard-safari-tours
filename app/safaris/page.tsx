@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import SafariHero from "@/components/SafariHero";
 import SafariParkCards from "@/components/SafariParkCards";
+import SafariDurations from "@/components/SafariDurations";
 import ParkChooserFaq from "@/components/ParkChooserFaq";
 
 export const metadata: Metadata = {
@@ -14,6 +15,7 @@ export default function SafarisPage() {
     <main className="flex flex-1 flex-col bg-white">
       <SafariHero />
       <SafariParkCards />
+      <SafariDurations />
       <ParkChooserFaq />
     </main>
   );

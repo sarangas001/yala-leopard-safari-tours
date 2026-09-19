@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 75 75" role="img" aria-labelledby="title desc">
+  <title id="title">7 Hours</title>
+  <desc id="desc">A seven-hour clock symbol on a soft blue organic background.</desc>
+  <path opacity=".82" fill="#BFE3FF" d="M44.3 8.6s7.9-2 13.1 2.7S70.5 27 70.9 41.4 72 68.1 46.3 67 12.1 55 7.3 46.4 3.5 24.1 13.2 19.7 40.7 9 44.3 8.6Z"/>
+  <g fill="none" stroke="#111" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="37.5" cy="39" r="23" fill="#fff"/>
+    <path d="M37.5 16v4M37.5 58v4M14.5 39h4M56.5 39h4M21.2 22.7l2.8 2.8M51 52.5l2.8 2.8M53.8 22.7 51 25.5M24 52.5l-2.8 2.8"/>
+    <path d="M37.5 23v16l-10 10"/>
+    <circle cx="37.5" cy="39" r="2.4" fill="#111"/>
+  </g>
+  <text x="47.5" y="50" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="700" fill="#111">7h</text>
+</svg>

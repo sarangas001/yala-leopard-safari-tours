@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 75 75" role="img" aria-labelledby="title desc">
+  <title id="title">Half Day</title>
+  <desc id="desc">A half-day clock and sun symbol on a soft yellow organic background.</desc>
+  <path opacity=".82" fill="#FFE38B" d="M44.3 8.6s7.9-2 13.1 2.7S70.5 27 70.9 41.4 72 68.1 46.3 67 12.1 55 7.3 46.4 3.5 24.1 13.2 19.7 40.7 9 44.3 8.6Z"/>
+  <g fill="none" stroke="#111" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="37.5" cy="39" r="20" fill="#fff"/>
+    <path d="M17.5 39h40"/>
+    <path d="M37.5 19v20l13 7.5"/>
+    <path d="M25 29.5a15 15 0 0 1 25 0"/>
+    <path d="M37.5 12v4M20.2 19.8l3 3M54.8 19.8l-3 3M13 36h4M58 36h4"/>
+    <circle cx="37.5" cy="39" r="2.2" fill="#111"/>
+  </g>
+</svg>
