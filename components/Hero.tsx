@@ -341,7 +341,7 @@ export default function Hero() {
                   </span>
                   <span
                     className={
-                      "mt-2.5 block max-w-28 text-xs font-medium leading-snug tracking-wide transition-colors duration-300 " +
+                      "mt-2.5 block min-h-9 max-w-28 text-xs font-medium leading-snug tracking-wide transition-colors duration-300 " +
                       (i === active ? "text-white" : "text-white/60 group-hover:text-white/90")
                     }
                   >
