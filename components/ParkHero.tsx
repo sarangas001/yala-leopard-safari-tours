@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Reveal from "@/components/Reveal";
 
-type ParkHeroCta = {
+export type ParkHeroCta = {
   label: string;
   href: string;
   variant?: "primary" | "whatsapp";
