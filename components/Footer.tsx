@@ -88,9 +88,9 @@ const NAV_COLUMNS: { heading: string; links: { href: string; label: string }[] }
       { href: "#", label: "What to Bring" },
       { href: "#", label: "Best Time to Visit" },
       { href: "#", label: "Pickup Information" },
-      { href: "#", label: "Frequently Asked Questions" },
-      { href: "#", label: "Booking Terms" },
-      { href: "#", label: "Cancellation Policy" },
+      { href: "/faq", label: "Frequently Asked Questions" },
+      { href: "/legal/terms-and-conditions", label: "Booking Terms" },
+      { href: "/legal/refund-cancellation-policy", label: "Cancellation Policy" },
     ],
   },
   {
@@ -98,7 +98,7 @@ const NAV_COLUMNS: { heading: string; links: { href: string; label: string }[] }
     links: [
       { href: "/#park-udawalawe", label: "Udawalawe National Park" },
       { href: "/#park-bundala", label: "Bundala National Park" },
-      { href: "#", label: "Lunugamvehera National Park" },
+      { href: "/safaris/lunugamvehera", label: "Lunugamvehera National Park" },
       { href: "#", label: "Wilpattu National Park" },
     ],
   },
@@ -106,9 +106,9 @@ const NAV_COLUMNS: { heading: string; links: { href: string; label: string }[] }
     heading: "Support & Legal",
     links: [
       { href: "/#enquire", label: "Contact Us" },
-      { href: "#", label: "Privacy Policy" },
-      { href: "#", label: "Cookie Policy" },
-      { href: "#", label: "Terms and Conditions" },
+      { href: "/legal/privacy-policy", label: "Privacy Policy" },
+      { href: "/legal/cookie-policy", label: "Cookie Policy" },
+      { href: "/legal/terms-and-conditions", label: "Terms and Conditions" },
       { href: "#", label: "Responsible Tourism" },
       { href: "#", label: "Sitemap" },
     ],
@@ -393,9 +393,9 @@ export default function Footer() {
           <div className="flex flex-col items-center gap-4 text-center text-xs text-brand-ink-muted sm:flex-row sm:items-center sm:justify-between sm:text-left">
             <p suppressHydrationWarning>© {new Date().getFullYear()} Yala Leopard Safari Tours. All Rights Reserved.</p>
             <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2 sm:justify-start">
-              <a href="#" className="transition-colors hover:text-forest">Privacy Policy</a>
-              <a href="#" className="transition-colors hover:text-forest">Terms and Conditions</a>
-              <a href="#" className="transition-colors hover:text-forest">Cookie Policy</a>
+              <Link href="/legal/privacy-policy" className="transition-colors hover:text-forest">Privacy Policy</Link>
+              <Link href="/legal/terms-and-conditions" className="transition-colors hover:text-forest">Terms and Conditions</Link>
+              <Link href="/legal/cookie-policy" className="transition-colors hover:text-forest">Cookie Policy</Link>
             </div>
           </div>
           <p className="mt-4 text-center text-[11px] italic text-brand-ink-muted/80 sm:text-left">
