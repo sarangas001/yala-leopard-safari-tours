@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Reveal from "@/components/Reveal";
 
 type ParkHeroCta = {
@@ -26,25 +27,31 @@ export default function ParkHero({
   title,
   description,
   video,
+  image,
   ctas,
 }: {
   title: string;
   description?: string;
-  video: string;
+  video?: string;
+  image?: string;
   ctas?: ParkHeroCta[];
 }) {
   return (
     <section className="relative w-full overflow-hidden bg-white">
       <div className="absolute inset-0">
-        <video
-          className="h-full w-full object-cover"
-          src={video}
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="auto"
-        />
+        {video ? (
+          <video
+            className="h-full w-full object-cover"
+            src={video}
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="auto"
+          />
+        ) : image ? (
+          <Image src={image} alt="" fill priority sizes="100vw" quality={80} className="object-cover" />
+        ) : null}
         <div className="absolute inset-0 bg-linear-to-b from-black/65 via-black/35 to-black/55" />
       </div>
 

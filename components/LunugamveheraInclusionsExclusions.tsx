@@ -1,23 +1,22 @@
 import ParkInclusionsExclusions from "@/components/ParkInclusionsExclusions";
 
 const INCLUSIONS = [
-  "Hotel pickup/drop-off in selected areas",
-  "4x4 safari jeep",
+  "Private 4x4 safari jeep",
   "Experienced English-speaking wildlife driver",
+  "Hotel pickup/drop-off in applicable areas",
   "Drinking water",
-  "Breakfast",
-  "Lunch on applicable full-day package",
-  "Binocular availability where provided",
+  "Meals where applicable",
+  "Binoculars where provided",
 ];
 
 const EXCLUSIONS = [
-  "Yala National Park entrance ticket unless selected/paid as an add-on",
+  "Park entrance fee unless selected or explicitly included",
   "Personal expenses",
-  "Optional services not selected during booking",
-  "Extra pickup/transport charges outside included areas where applicable",
+  "Optional services not selected",
+  "Pickup outside included zones where extra charges apply",
 ];
 
-export default function YalaInclusionsExclusions() {
+export default function LunugamveheraInclusionsExclusions() {
   return (
     <ParkInclusionsExclusions
       heading="What's Included &amp; Excluded"
