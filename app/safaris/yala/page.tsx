@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import YalaHero from "@/components/YalaHero";
 import YalaPricing from "@/components/YalaPricing";
 import YalaWhyVisit from "@/components/YalaWhyVisit";
+import YalaSafariFlow from "@/components/YalaSafariFlow";
 
 export const metadata: Metadata = {
   title: "Yala National Park Safari | Yala Leopard Safari Tours",
@@ -15,6 +16,7 @@ export default function YalaSafariPage() {
       <YalaHero />
       <YalaPricing />
       <YalaWhyVisit />
+      <YalaSafariFlow />
     </main>
   );
 }

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 75 75" role="img" aria-labelledby="title desc">
+  <title id="title">Explore wildlife routes with an experienced local driver</title>
+  <desc id="desc">A local safari driver with a steering wheel and route map on a soft purple organic background.</desc>
+  <path opacity=".82" fill="#D8C7F2" d="M44.3 8.6s7.9-2 13.1 2.7S70.5 27 70.9 41.4 72 68.1 46.3 67 12.1 55 7.3 46.4 3.5 24.1 13.2 19.7 40.7 9 44.3 8.6Z"/>
+  <g fill="none" stroke="#111" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="26" cy="26" r="8" fill="#fff"/>
+    <path d="M13 55c1-12 6-19 13-19s12 7 13 19" fill="#fff"/>
+    <circle cx="27" cy="51" r="10" fill="#fff"/>
+    <circle cx="27" cy="51" r="3"/>
+    <path d="M27 41v7M18 54l6-2M36 54l-6-2"/>
+    <path d="m43 20 8-4 12 4v31l-8 4-12-4Z" fill="#fff"/>
+    <path d="M51 16v31M55 24c-5 4-5 12 1 16M53 28l2-5 4 3"/>
+    <path d="M58 43c0 2-3 5-3 5s-3-3-3-5a3 3 0 0 1 6 0Z"/>
+  </g>
+</svg>
