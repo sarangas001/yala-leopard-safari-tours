@@ -34,14 +34,19 @@ export async function generateMetadata({
 
 export default async function BookPark({
   params,
+  searchParams,
 }: {
   params: Promise<{ park: string }>;
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
 }) {
   const { park } = await params;
   const parkData = getPark(park);
   if (!parkData) notFound();
 
   const packages = getParkPackages(park);
+  const sp = await searchParams;
+  const initialPackageParam = sp.package;
+  const initialPackage = Array.isArray(initialPackageParam) ? initialPackageParam[0] : initialPackageParam;
 
   return (
     <main className="flex flex-1 flex-col bg-white">
@@ -63,7 +68,7 @@ export default async function BookPark({
         </div>
       </section>
 
-      <BookingFlow park={park} packages={packages} />
+      <BookingFlow park={park} packages={packages} initialPackage={initialPackage} />
     </main>
   );
 }

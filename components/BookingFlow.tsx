@@ -53,9 +53,19 @@ function Stepper({
   );
 }
 
-export default function BookingFlow({ park, packages }: { park: string; packages: SafariPackage[] }) {
+export default function BookingFlow({
+  park,
+  packages,
+  initialPackage,
+}: {
+  park: string;
+  packages: SafariPackage[];
+  initialPackage?: string;
+}) {
   const router = useRouter();
-  const [packageName, setPackageName] = useState(packages[0]?.name ?? "");
+  const [packageName, setPackageName] = useState(
+    (initialPackage && packages.some((pkg) => pkg.name === initialPackage) ? initialPackage : packages[0]?.name) ?? ""
+  );
   const [date, setDate] = useState(DEFAULT_BOOKING_CONFIG.date);
   const [adults, setAdults] = useState(DEFAULT_BOOKING_CONFIG.adults);
   const [children, setChildren] = useState(DEFAULT_BOOKING_CONFIG.children);

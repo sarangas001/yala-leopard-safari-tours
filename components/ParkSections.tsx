@@ -12,7 +12,7 @@ import Testimonials from "@/components/Testimonials";
 import FinalCta from "@/components/FinalCta";
 import type { Section } from "@/lib/parks/types";
 
-export default function ParkSections({ sections }: { sections: Section[] }) {
+export default function ParkSections({ sections, parkSlug }: { sections: Section[]; parkSlug?: string }) {
   return (
     <>
       {sections.map((section, i) => {
@@ -20,7 +20,7 @@ export default function ParkSections({ sections }: { sections: Section[] }) {
           case "hero":
             return <ParkHero key={i} {...section} />;
           case "pricing":
-            return <SafariPricing key={i} {...section} />;
+            return <SafariPricing key={i} {...section} parkSlug={parkSlug} />;
           case "whyVisit":
             return <ParkWhyVisit key={i} {...section} />;
           case "safariFlow":
