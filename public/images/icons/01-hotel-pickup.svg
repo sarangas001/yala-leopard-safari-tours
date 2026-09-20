@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 75 75" role="img" aria-labelledby="title desc">
+  <title id="title">Hotel pickup where applicable</title>
+  <desc id="desc">A hotel and pickup vehicle on a soft blue organic background.</desc>
+  <path opacity=".82" fill="#BFE3FF" d="M44.3 8.6s7.9-2 13.1 2.7S70.5 27 70.9 41.4 72 68.1 46.3 67 12.1 55 7.3 46.4 3.5 24.1 13.2 19.7 40.7 9 44.3 8.6Z"/>
+  <g fill="none" stroke="#111" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 54V20h27v34M18 27h5M29 27h5M18 35h5M29 35h5M24 54V44h7v10" fill="#fff"/>
+    <path d="M40 42h15l7 7v8H39V46c0-2.2.8-4 1-4Z" fill="#fff"/>
+    <path d="M45 42v7h17M14 59h48"/>
+    <circle cx="45" cy="57" r="4" fill="#fff"/><circle cx="57" cy="57" r="4" fill="#fff"/>
+    <path d="M53 24v12M48 31l5 5 5-5"/>
+  </g>
+</svg>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 75 75" role="img" aria-labelledby="title desc">
+  <title id="title">Scenic and rest stops according to park rules</title>
+  <desc id="desc">A scenic viewpoint and rest bench with a park rule sign on a soft pink organic background.</desc>
+  <path opacity=".82" fill="#F7C7DB" d="M44.3 8.6s7.9-2 13.1 2.7S70.5 27 70.9 41.4 72 68.1 46.3 67 12.1 55 7.3 46.4 3.5 24.1 13.2 19.7 40.7 9 44.3 8.6Z"/>
+  <g fill="none" stroke="#111" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="19" cy="22" r="6" fill="#FFE38B"/>
+    <path d="M10 45 25 29l11 12 7-8 14 15"/>
+    <path d="M11 48h47"/>
+    <path d="M18 49v11M48 49v11M16 53h34v6H16z" fill="#fff"/>
+    <path d="M57 17v28M50 17h14v13H50z" fill="#fff"/>
+    <path d="m54 23 2 2 4-5"/>
+  </g>
+</svg>
