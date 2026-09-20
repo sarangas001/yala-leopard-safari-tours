@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
-import ComingSoon from "@/components/ComingSoon";
+import BlogHero from "@/components/BlogHero";
+import BlogFeatured from "@/components/BlogFeatured";
+import BlogCategoriesAndPosts from "@/components/BlogCategoriesAndPosts";
+import FinalCta from "@/components/FinalCta";
 
 export const metadata: Metadata = {
   title: "Blog | Yala Leopard Safari Tours",
@@ -9,11 +12,10 @@ export const metadata: Metadata = {
 export default function BlogPage() {
   return (
     <main className="flex flex-1 flex-col bg-white">
-      <ComingSoon
-        title="Blog"
-        image="/images/wildlife/spotted-deer.jpg"
-        alt="A spotted deer grazing in open grassland"
-      />
+      <BlogHero />
+      <BlogFeatured />
+      <BlogCategoriesAndPosts />
+      <FinalCta />
     </main>
   );
 }
