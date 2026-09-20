@@ -287,7 +287,7 @@ export const yala: ParkContent = {
           title: "Hambantota Port to Yala Safari",
           text: "A convenient safari transfer for cruise and port arrivals heading straight into Yala.",
           image: "/images/scenic/guide-jeep.jpg",
-          href: "/#enquire",
+          href: "/hambantota-port-to-yala",
         },
       ],
     },

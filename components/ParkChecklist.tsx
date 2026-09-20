@@ -1,3 +1,4 @@
+import type { ReactNode } from "react";
 import Reveal from "@/components/Reveal";
 
 export type ChecklistColumn = {
@@ -35,10 +36,12 @@ export default function ParkChecklist({
   heading,
   intro,
   columns,
+  note,
 }: {
   heading: string;
   intro?: string;
   columns: ChecklistColumn[];
+  note?: ReactNode;
 }) {
   const isSingleColumn = columns.length === 1;
 
@@ -90,6 +93,12 @@ export default function ParkChecklist({
             ))}
           </div>
         )}
+
+        {note ? (
+          <Reveal delay={0.15} className="mx-auto mt-10 max-w-2xl text-center text-sm text-brand-ink-muted">
+            {note}
+          </Reveal>
+        ) : null}
       </div>
     </section>
   );
