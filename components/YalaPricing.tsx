@@ -63,6 +63,7 @@ export default function YalaPricing() {
   return (
     <SafariPricing
       heading="Choose Your Yala Safari"
+      description="Whether you're after a quick morning game drive or a full day tracking wildlife, we have a package to suit your schedule and group size. Every safari runs in a comfortable 4x4 jeep with an experienced local driver, with private and shared options available."
       packages={YALA_PACKAGES}
       note="Maximum capacity: up to 7 passengers per jeep."
     />

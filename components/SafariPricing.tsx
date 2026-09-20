@@ -13,20 +13,25 @@ export type SafariPackage = {
 
 export default function SafariPricing({
   heading,
+  description,
   packages,
   note,
 }: {
   heading: string;
+  description?: string;
   packages: SafariPackage[];
   note?: string;
 }) {
   return (
     <section className="w-full bg-white">
-      <div className="mx-auto max-w-[1600px] px-10 py-16 sm:px-20 sm:py-20 lg:px-40 lg:py-24">
+      <div className="mx-auto max-w-[1600px] px-10 py-12 sm:px-20 sm:py-16 lg:px-40 lg:py-20">
         <Reveal className="mx-auto max-w-2xl text-center">
           <h2 className="font-display text-3xl font-medium tracking-tight text-brand-ink sm:text-4xl lg:text-5xl">
             {heading}
           </h2>
+          {description ? (
+            <p className="mt-4 text-base leading-relaxed text-brand-ink-muted">{description}</p>
+          ) : null}
         </Reveal>
 
         <div className="mt-14 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:mt-16 lg:grid-cols-3 lg:gap-7">
