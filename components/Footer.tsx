@@ -63,7 +63,7 @@ const NAV_COLUMNS: { heading: string; links: { href: string; label: string }[] }
       { href: "/#wildlife", label: "Wildlife" },
       { href: "/#gallery", label: "Safari Gallery" },
       { href: "#", label: "Travel Guide" },
-      { href: "#", label: "Blog" },
+      { href: "/blog", label: "Blog" },
       { href: "/#enquire", label: "Contact Us" },
     ],
   },

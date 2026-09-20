@@ -84,7 +84,7 @@ export default function Testimonials() {
 
         <Reveal className="mt-12 text-center lg:mt-14">
           <a
-            href="#"
+            href="/reviews"
             className="inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-semibold text-brand-ink shadow-md shadow-black/5 transition-colors hover:text-brand-orange"
           >
             Read all guest reviews →
