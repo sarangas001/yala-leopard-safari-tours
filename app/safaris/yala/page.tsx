@@ -9,6 +9,8 @@ import YalaWildlifeSlider from "@/components/YalaWildlifeSlider";
 import YalaWhatToBring from "@/components/YalaWhatToBring";
 import Testimonials from "@/components/Testimonials";
 import YalaFaq from "@/components/YalaFaq";
+import YalaRelatedExperiences from "@/components/YalaRelatedExperiences";
+import FinalCta from "@/components/FinalCta";
 
 export const metadata: Metadata = {
   title: "Yala National Park Safari | Yala Leopard Safari Tours",
@@ -29,6 +31,8 @@ export default function YalaSafariPage() {
       <YalaWhatToBring />
       <Testimonials />
       <YalaFaq />
+      <YalaRelatedExperiences />
+      <FinalCta />
     </main>
   );
 }
