@@ -33,7 +33,7 @@ export default async function ParkSafariPage({
 
   return (
     <main className="flex flex-1 flex-col bg-white">
-      <ParkSections sections={park.sections} />
+      <ParkSections sections={park.sections} parkSlug={id} />
     </main>
   );
 }

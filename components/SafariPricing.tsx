@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Reveal from "@/components/Reveal";
 
 export type PriceTier = { group: string; price: string };
@@ -16,11 +17,13 @@ export default function SafariPricing({
   description,
   packages,
   note,
+  parkSlug,
 }: {
   heading: string;
   description?: string;
   packages: SafariPackage[];
   note?: string;
+  parkSlug?: string;
 }) {
   return (
     <section className="w-full bg-white">
@@ -73,13 +76,13 @@ export default function SafariPricing({
                   <span className="font-semibold text-brand-ink">Includes:</span> {pkg.includes}
                 </p>
 
-                <a
-                  href="/#enquire"
+                <Link
+                  href={parkSlug ? `/book/${parkSlug}?package=${encodeURIComponent(pkg.name)}` : "/#enquire"}
                   className="mt-5 inline-flex w-fit items-center gap-2 rounded-full bg-brand-orange px-5 py-2.5 text-xs font-semibold text-white shadow-md shadow-brand-orange/25 transition-all hover:bg-brand-orange-dark hover:shadow-lg hover:shadow-brand-orange/30"
                 >
                   Enquire Now
                   <span aria-hidden="true">→</span>
-                </a>
+                </Link>
               </div>
             </Reveal>
           ))}
