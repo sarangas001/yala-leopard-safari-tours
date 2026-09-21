@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, type ReactNode } from "react";
+import { useRef, useState, type ReactNode } from "react";
 import { useSearchParams } from "next/navigation";
 import Link from "next/link";
 import Reveal from "@/components/Reveal";
@@ -53,12 +53,70 @@ export default function CheckoutFlow({ park, packages }: { park: string; package
 
   const [paymentOption, setPaymentOption] = useState<"full" | "deposit">("full");
   const [agreed, setAgreed] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
+  const [canceledDismissed, setCanceledDismissed] = useState(false);
+  const detailsFormRef = useRef<HTMLFormElement>(null);
+  const specialRequestRef = useRef<HTMLTextAreaElement>(null);
 
   const depositDue = breakdown.total * 0.5;
   const dueNow = paymentOption === "full" ? breakdown.total : depositDue;
   const remainingBalance = paymentOption === "full" ? 0 : breakdown.total - depositDue;
 
   const editHref = `/book/${park}?${searchParams.toString()}`;
+  const showCanceledBanner = searchParams.get("canceled") === "true" && !canceledDismissed;
+
+  async function handlePayment() {
+    if (!agreed || isSubmitting || !detailsFormRef.current) return;
+
+    const form = detailsFormRef.current;
+    if (!form.reportValidity()) return;
+
+    const formData = new FormData(form);
+    setErrorMessage(null);
+    setIsSubmitting(true);
+
+    try {
+      const response = await fetch("/api/checkout", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          park,
+          packageName,
+          date,
+          adults,
+          children,
+          infants,
+          entranceTickets,
+          extras: extraIds,
+          pickupType,
+          hotelName,
+          pickupNotes,
+          specialRequest: specialRequestRef.current?.value ?? "",
+          paymentOption,
+          customer: {
+            firstName: formData.get("firstName") ?? "",
+            lastName: formData.get("lastName") ?? "",
+            email: formData.get("email") ?? "",
+            country: formData.get("country") ?? "",
+            countryCode: formData.get("countryCode") ?? "",
+            phone: formData.get("phone") ?? "",
+          },
+        }),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok || !data.url) {
+        throw new Error(data.error || "Something went wrong starting checkout. Please try again.");
+      }
+
+      window.location.assign(data.url);
+    } catch (error) {
+      setErrorMessage(error instanceof Error ? error.message : "Something went wrong starting checkout. Please try again.");
+      setIsSubmitting(false);
+    }
+  }
 
   if (!selectedPackage) {
     return (
@@ -79,11 +137,24 @@ export default function CheckoutFlow({ park, packages }: { park: string; package
   return (
     <section className="w-full bg-white">
       <div className="mx-auto max-w-[1600px] px-10 py-16 sm:px-20 sm:py-20 lg:px-40 lg:py-24">
+        {showCanceledBanner ? (
+          <div className="mb-8 flex items-start justify-between gap-4 rounded-2xl border border-brand-orange/30 bg-brand-orange/5 p-4 text-sm text-brand-ink">
+            <p>Your checkout was canceled and no payment was taken. You can review your booking below and pay whenever you&apos;re ready.</p>
+            <button
+              type="button"
+              onClick={() => setCanceledDismissed(true)}
+              className="shrink-0 text-brand-ink-muted hover:text-brand-ink"
+              aria-label="Dismiss"
+            >
+              ✕
+            </button>
+          </div>
+        ) : null}
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-[1fr_400px] lg:gap-16">
           <div className="space-y-12">
             <Reveal>
               <h2 className="font-display text-2xl font-medium text-brand-ink sm:text-3xl">Customer Details</h2>
-              <form className="mt-6 grid grid-cols-1 gap-5 sm:grid-cols-2">
+              <form ref={detailsFormRef} className="mt-6 grid grid-cols-1 gap-5 sm:grid-cols-2">
                 <Field label="First Name" required>
                   <input type="text" name="firstName" required className={inputClass} />
                 </Field>
@@ -111,6 +182,7 @@ export default function CheckoutFlow({ park, packages }: { park: string; package
                 Dietary requests, child seat, accessibility considerations, photography needs, cruise timing or anything else we should know.
               </p>
               <textarea
+                ref={specialRequestRef}
                 name="specialRequest"
                 rows={4}
                 placeholder="Optional"
@@ -248,13 +320,18 @@ export default function CheckoutFlow({ park, packages }: { park: string; package
                   </span>
                 </label>
 
+                {errorMessage ? (
+                  <p className="mt-4 rounded-xl bg-red-50 p-3 text-sm text-red-700">{errorMessage}</p>
+                ) : null}
+
                 <button
                   type="button"
-                  disabled={!agreed}
+                  disabled={!agreed || isSubmitting}
+                  onClick={handlePayment}
                   className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full bg-brand-orange px-7 py-3.5 text-sm font-semibold text-white shadow-md shadow-brand-orange/25 transition-all hover:bg-brand-orange-dark hover:shadow-lg hover:shadow-brand-orange/30 disabled:cursor-not-allowed disabled:opacity-50"
                 >
-                  Pay Securely Now
-                  <span aria-hidden="true">→</span>
+                  {isSubmitting ? "Redirecting to Stripe…" : "Pay Securely Now"}
+                  {!isSubmitting ? <span aria-hidden="true">→</span> : null}
                 </button>
                 <p className="mt-3 text-center text-xs text-brand-ink-muted">
                   Amount due now: <span className="font-semibold text-brand-ink">{formatUsd(dueNow)}</span>
