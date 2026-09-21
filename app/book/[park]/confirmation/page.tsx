@@ -4,7 +4,7 @@ import Reveal from "@/components/Reveal";
 import { getPark, getParkSlugs } from "@/lib/parks";
 import { getPackage, formatUsd } from "@/lib/booking/pricing";
 import { BOOKING_EXTRAS } from "@/lib/booking/extras";
-import { stripe } from "@/lib/stripe";
+import { getStripe } from "@/lib/stripe";
 import type Stripe from "stripe";
 
 const PARK_NAMES: Record<string, string> = {
@@ -73,7 +73,7 @@ export default async function BookingConfirmation({
 
   let session: Stripe.Checkout.Session;
   try {
-    session = await stripe.checkout.sessions.retrieve(sessionId, {
+    session = await getStripe().checkout.sessions.retrieve(sessionId, {
       expand: ["payment_intent"],
     });
   } catch {

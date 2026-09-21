@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { stripe } from "@/lib/stripe";
+import { getStripe } from "@/lib/stripe";
 import { getPark } from "@/lib/parks";
 import { getPackage, calculateBreakdown } from "@/lib/booking/pricing";
 import { BOOKING_EXTRAS } from "@/lib/booking/extras";
@@ -114,7 +114,7 @@ export async function POST(request: Request) {
   });
 
   try {
-    const session = await stripe.checkout.sessions.create({
+    const session = await getStripe().checkout.sessions.create({
       mode: "payment",
       customer_email: customer.email,
       line_items: [
