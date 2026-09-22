@@ -78,7 +78,10 @@ export default function SafariParkCards() {
         <div className="mt-14 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:mt-16 lg:grid-cols-3 lg:gap-7">
           {PARKS.map((park, i) => (
             <Reveal key={park.id} delay={(i % 3) * 0.1}>
-              <div className="flex h-full flex-col overflow-hidden rounded-3xl border border-black/6 bg-white shadow-sm transition-shadow duration-300 hover:shadow-md">
+              <a
+                href={`/safaris/${park.id}`}
+                className="group flex h-full flex-col overflow-hidden rounded-3xl border border-black/6 bg-white shadow-sm transition-shadow duration-300 hover:shadow-md"
+              >
                 <div className="relative aspect-4/3 w-full overflow-hidden">
                   <Image
                     src={park.image}
@@ -86,7 +89,7 @@ export default function SafariParkCards() {
                     fill
                     sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
                     quality={75}
-                    className="object-cover transition-transform duration-700 hover:scale-105"
+                    className="object-cover transition-transform duration-700 group-hover:scale-105"
                   />
                 </div>
 
@@ -109,15 +112,12 @@ export default function SafariParkCards() {
                     </div>
                   </dl>
 
-                  <a
-                    href={`/safaris/${park.id}`}
-                    className="mt-5 inline-flex w-fit items-center gap-2 rounded-full bg-brand-orange px-5 py-2.5 text-xs font-semibold text-white shadow-md shadow-brand-orange/25 transition-all hover:bg-brand-orange-dark hover:shadow-lg hover:shadow-brand-orange/30"
-                  >
+                  <span className="mt-5 inline-flex w-fit items-center gap-2 rounded-full bg-brand-orange px-5 py-2.5 text-xs font-semibold text-white shadow-md shadow-brand-orange/25 transition-all group-hover:bg-brand-orange-dark group-hover:shadow-lg group-hover:shadow-brand-orange/30">
                     {park.cta}
                     <span aria-hidden="true">→</span>
-                  </a>
+                  </span>
                 </div>
-              </div>
+              </a>
             </Reveal>
           ))}
         </div>

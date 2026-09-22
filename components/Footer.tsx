@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { getLatestArticles } from "@/lib/blog/articles";
 
 const CONTACT = {
   phoneDisplay: "076 043 5578",
@@ -52,68 +53,54 @@ const CONTACT_ITEMS: {
   },
 ];
 
-// Placeholder destination/page anchors — swap for real routes as those pages go live.
-const NAV_COLUMNS: { heading: string; links: { href: string; label: string }[] }[] = [
-  {
-    heading: "Explore",
-    links: [
-      { href: "/", label: "Home" },
-      { href: "/#about", label: "About Us" },
-      { href: "/#park-yala", label: "Yala National Park" },
-      { href: "/#wildlife", label: "Wildlife" },
-      { href: "/#gallery", label: "Safari Gallery" },
-      { href: "#", label: "Travel Guide" },
-      { href: "/blog", label: "Blog" },
-      { href: "/#enquire", label: "Contact Us" },
-    ],
-  },
-  {
-    heading: "Safari Experiences",
-    links: [
-      { href: "/#enquire", label: "Morning Safari" },
-      { href: "/#enquire", label: "Afternoon Safari" },
-      { href: "/#enquire", label: "Full-Day Safari" },
-      { href: "/#enquire", label: "Private Safari" },
-      { href: "/#enquire", label: "Family Safari" },
-      { href: "/#enquire", label: "Photography Safari" },
-      { href: "/#enquire", label: "Leopard Safari" },
-      { href: "/#enquire", label: "Bird-Watching Safari" },
-    ],
-  },
-  {
-    heading: "Plan Your Safari",
-    links: [
-      { href: "/#enquire", label: "Safari Packages" },
-      { href: "#", label: "Safari Vehicles" },
-      { href: "#", label: "What to Bring" },
-      { href: "#", label: "Best Time to Visit" },
-      { href: "#", label: "Pickup Information" },
-      { href: "/faq", label: "Frequently Asked Questions" },
-      { href: "/legal/terms-and-conditions", label: "Booking Terms" },
-      { href: "/legal/refund-cancellation-policy", label: "Cancellation Policy" },
-    ],
-  },
-  {
-    heading: "Other Destinations",
-    links: [
-      { href: "/#park-udawalawe", label: "Udawalawe National Park" },
-      { href: "/#park-bundala", label: "Bundala National Park" },
-      { href: "/safaris/lunugamvehera", label: "Lunugamvehera National Park" },
-      { href: "#", label: "Wilpattu National Park" },
-    ],
-  },
-  {
-    heading: "Support & Legal",
-    links: [
-      { href: "/#enquire", label: "Contact Us" },
-      { href: "/legal/privacy-policy", label: "Privacy Policy" },
-      { href: "/legal/cookie-policy", label: "Cookie Policy" },
-      { href: "/legal/terms-and-conditions", label: "Terms and Conditions" },
-      { href: "#", label: "Responsible Tourism" },
-      { href: "#", label: "Sitemap" },
-    ],
-  },
+// Safari parks — mirrors the comparison cards on the Safaris page (components/SafariParkCards.tsx).
+const SAFARI_PARK_LINKS: { href: string; label: string }[] = [
+  { href: "/safaris/yala", label: "Yala National Park" },
+  { href: "/safaris/udawalawe", label: "Udawalawe National Park" },
+  { href: "/safaris/bundala", label: "Bundala National Park" },
+  { href: "/safaris/kumana", label: "Kumana National Park" },
+  { href: "/safaris/lunugamvehera", label: "Lunugamvehera National Park" },
 ];
+
+function getNavColumns(): { heading: string; links: { href: string; label: string }[] }[] {
+  return [
+    {
+      heading: "Explore",
+      links: [
+        { href: "/", label: "Home" },
+        { href: "/about", label: "About Us" },
+        { href: "/safaris", label: "Safaris" },
+        { href: "/gallery", label: "Gallery" },
+        { href: "/faq", label: "FAQ" },
+        { href: "/book/yala", label: "Booking" },
+        { href: "/blog", label: "Blog" },
+        { href: "/contact", label: "Contact Us" },
+      ],
+    },
+    {
+      heading: "Safari Experiences",
+      links: getLatestArticles(6).map((article) => ({
+        href: `/blog/${article.slug}`,
+        label: article.title,
+      })),
+    },
+    {
+      heading: "Plan Your Safari",
+      links: SAFARI_PARK_LINKS,
+    },
+    {
+      heading: "Support & Legal",
+      links: [
+        { href: "/contact", label: "Contact Us" },
+        { href: "/legal/privacy-policy", label: "Privacy Policy" },
+        { href: "/legal/cookie-policy", label: "Cookie Policy" },
+        { href: "/legal/terms-and-conditions", label: "Terms & Conditions" },
+        { href: "/legal/refund-cancellation-policy", label: "Refund & Cancellation" },
+        { href: "/sitemap", label: "Sitemap" },
+      ],
+    },
+  ];
+}
 
 // Trust & recognition badges — sample placeholder artwork, swap for genuine
 // certifications/ratings this business has actually received before launch.
@@ -220,26 +207,14 @@ const SOCIAL_LINKS = [
 ];
 
 function NavLink({ href, label }: { href: string; label: string }) {
-  if (href === "/") {
-    return (
-      <li>
-        <Link
-          href={href}
-          className="text-sm text-brand-ink-muted transition-colors hover:text-forest focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-forest/40 rounded"
-        >
-          {label}
-        </Link>
-      </li>
-    );
-  }
   return (
     <li>
-      <a
+      <Link
         href={href}
         className="text-sm text-brand-ink-muted transition-colors hover:text-forest focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-forest/40 rounded"
       >
         {label}
-      </a>
+      </Link>
     </li>
   );
 }
@@ -252,7 +227,7 @@ function NavColumn({
   links: { href: string; label: string }[];
 }) {
   return (
-    <div className="text-center sm:text-left">
+    <div className="flex h-full flex-col text-center sm:text-left">
       <h3 className="text-sm font-semibold uppercase tracking-[0.14em] text-brand-ink">
         {heading}
       </h3>
@@ -379,8 +354,8 @@ export default function Footer() {
       {/* ============ SECTION 2 — Navigation links & copyright ============ */}
       <div>
         <div className="mx-auto max-w-[1600px] px-10 py-10 sm:px-20 lg:px-40 lg:py-10">
-          <div className="grid grid-cols-1 gap-x-8 gap-y-8 sm:grid-cols-2 sm:gap-y-10 lg:grid-cols-5">
-            {NAV_COLUMNS.map((column) => (
+          <div className="grid grid-cols-1 gap-x-8 gap-y-8 sm:grid-cols-2 sm:gap-y-10 lg:grid-cols-4 lg:items-stretch">
+            {getNavColumns().map((column) => (
               <NavColumn key={column.heading} {...column} />
             ))}
           </div>

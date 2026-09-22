@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import Reveal from "@/components/Reveal";
 
 const DURATIONS = ["Half Day", "7 Hours", "Full Day"];
@@ -30,14 +31,13 @@ export default function FeaturedSafari() {
               ))}
             </div>
 
-            {/* eslint-disable-next-line @next/next/no-html-link-for-pages -- same-page anchor, smooth-scrolled by SmoothScroll's hash handler */}
-            <a
-              href="/#park-yala"
+            <Link
+              href="/safaris/yala"
               className="mt-8 inline-flex items-center gap-2 rounded-full bg-brand-orange px-7 py-3.5 text-sm font-semibold text-white shadow-md shadow-brand-orange/25 transition-all hover:bg-brand-orange-dark hover:shadow-lg hover:shadow-brand-orange/30"
             >
               View Yala Safari Packages
               <span aria-hidden="true" className="transition-transform duration-200 group-hover:translate-x-0.5">→</span>
-            </a>
+            </Link>
           </Reveal>
 
           <Reveal delay={0.12}>

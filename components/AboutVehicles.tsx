@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import Reveal from "@/components/Reveal";
 
 export default function AboutVehicles() {
@@ -34,13 +35,13 @@ export default function AboutVehicles() {
               takes you out.
             </p>
 
-            <a
-              href="#enquire"
+            <Link
+              href="/safaris"
               className="mt-8 inline-flex items-center gap-2 rounded-full bg-brand-orange px-7 py-3.5 text-sm font-semibold text-white shadow-md shadow-brand-orange/25 transition-all hover:bg-brand-orange-dark hover:shadow-lg hover:shadow-brand-orange/30"
             >
               Plan Your Safari
               <span aria-hidden="true">→</span>
-            </a>
+            </Link>
           </Reveal>
         </div>
       </div>
