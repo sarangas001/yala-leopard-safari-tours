@@ -15,7 +15,13 @@ export default function AboutVisionMission() {
   return (
     <section className="w-full bg-white">
       <div className="mx-auto max-w-[1600px] px-10 py-16 sm:px-20 sm:py-20 lg:px-40 lg:py-24">
-        <div className="grid grid-cols-1 gap-12 sm:grid-cols-2 sm:gap-16">
+        <Reveal className="mx-auto max-w-2xl text-center">
+          <h2 className="font-display text-3xl font-medium tracking-tight text-brand-ink sm:text-4xl lg:text-5xl">
+            Our Mission and Vision
+          </h2>
+        </Reveal>
+
+        <div className="mt-14 grid grid-cols-1 gap-12 sm:grid-cols-2 sm:gap-16 lg:mt-16">
           {ITEMS.map((item, i) => (
             <Reveal key={item.label} delay={i * 0.1} className="text-center sm:text-left">
               <h3 className="inline-flex items-center gap-3 text-sm font-semibold uppercase tracking-[0.14em] text-brand-ink">

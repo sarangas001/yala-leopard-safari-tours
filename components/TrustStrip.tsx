@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import Reveal from "@/components/Reveal";
 
 const STATS = [
@@ -69,13 +70,13 @@ export default function TrustStrip() {
               perch by heart. Small groups, open jeeps and an unhurried pace
               mean you miss nothing.
             </p>
-            <a
-              href="#enquire"
+            <Link
+              href="/safaris"
               className="mt-8 inline-flex items-center gap-2 rounded-full bg-brand-orange px-7 py-3.5 text-sm font-semibold text-white shadow-md shadow-brand-orange/25 transition-all hover:bg-brand-orange-dark hover:shadow-lg hover:shadow-brand-orange/30"
             >
               Plan your safari
               <span aria-hidden="true">→</span>
-            </a>
+            </Link>
           </Reveal>
         </div>
       </div>

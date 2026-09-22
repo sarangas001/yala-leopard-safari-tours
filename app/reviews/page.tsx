@@ -19,11 +19,11 @@ export default function ReviewsPage() {
   return (
     <main className="flex flex-1 flex-col bg-white">
       <ReviewsHero />
-      <ReviewsTrustSummary />
-      <ReviewsFaq />
-      <ReviewsSources />
       <ReviewsGuestStories />
       <ReviewsTravelerPhotos />
+      <ReviewsTrustSummary />
+      <ReviewsSources />
+      <ReviewsFaq />
       <ReviewsSubmitForm />
       <ReviewsTrustNotes />
       <FinalCta />

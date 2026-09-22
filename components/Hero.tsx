@@ -290,7 +290,7 @@ export default function Hero() {
             </div>
 
             <a
-              href="#enquire"
+              href={`/safaris/${activeDestination.id}`}
               className="mt-8 inline-flex items-center gap-2 rounded-full bg-white px-7 py-3.5 text-sm font-semibold text-brand-ink shadow-lg shadow-black/20 transition-all hover:bg-white/95 hover:shadow-xl hover:shadow-black/25 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-ink"
             >
               Plan your safari

@@ -328,3 +328,7 @@ export function getArticle(slug: string): BlogArticle | undefined {
 export function getArticleSlugs(): string[] {
   return ARTICLES.map((article) => article.slug);
 }
+
+export function getLatestArticles(count: number): BlogArticle[] {
+  return ARTICLES.slice(0, count);
+}

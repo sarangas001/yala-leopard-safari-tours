@@ -107,7 +107,7 @@ export default function GalleryGrid() {
 
   return (
     <section className="w-full bg-white">
-      <div className="mx-auto max-w-[1600px] px-6 py-16 sm:px-10 sm:py-20 lg:px-20 lg:py-24">
+      <div className="mx-auto max-w-[1600px] px-10 py-16 sm:px-20 sm:py-20 lg:px-40 lg:py-24">
         <Reveal className="flex flex-wrap items-center justify-center gap-3">
           <div role="tablist" aria-label="Gallery categories" className="flex flex-wrap items-center justify-center gap-3">
             {CATEGORIES.map((cat) => {
@@ -133,7 +133,7 @@ export default function GalleryGrid() {
           </div>
         </Reveal>
 
-        <div className="mt-12 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:mt-16 lg:grid-cols-4 lg:gap-4">
+        <div className="mt-12 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:mt-16 lg:grid-cols-4 lg:gap-6">
           {filtered.map((img, i) => (
             <Reveal key={img.src} delay={(i % 4) * 0.06}>
               <div

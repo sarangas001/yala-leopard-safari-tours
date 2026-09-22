@@ -46,7 +46,7 @@ export default function AboutPreview() {
             </p>
 
             <a
-              href="#"
+              href="/about"
               className="mt-8 inline-flex items-center gap-2 rounded-full bg-brand-orange px-7 py-3.5 text-sm font-semibold text-white shadow-md shadow-brand-orange/25 transition-all hover:bg-brand-orange-dark hover:shadow-lg hover:shadow-brand-orange/30"
             >
               Our Story

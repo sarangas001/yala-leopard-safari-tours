@@ -7,29 +7,15 @@ import { useLenis } from "lenis/react";
 import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 
-const PARKS = [
-  { id: "yala", name: "Yala National Park" },
-  { id: "udawalawe", name: "Udawalawe National Park" },
-  { id: "bundala", name: "Bundala National Park" },
-];
-
 const NAV_LINKS = [
   { href: "/", label: "Home" },
-  { href: "/safaris", label: "Safaris", hasDropdown: true },
+  { href: "/safaris", label: "Safaris" },
   { href: "/about", label: "About" },
   { href: "/gallery", label: "Gallery" },
   { href: "/reviews", label: "Reviews" },
   { href: "/blog", label: "Blog" },
   { href: "/contact", label: "Contact" },
 ];
-
-function ChevronIcon({ className }: { className?: string }) {
-  return (
-    <svg viewBox="0 0 16 16" fill="none" className={className} aria-hidden="true">
-      <path d="M4 6l4 4 4-4" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
-    </svg>
-  );
-}
 
 function PhoneIcon({ className }: { className?: string }) {
   return (
@@ -56,15 +42,15 @@ function MenuIcon({ open }: { open: boolean }) {
   );
 }
 
+// Scroll distance (px) over which the header background ramps from
+// near-transparent to fully opaque.
+const SCROLL_FADE_DISTANCE = 160;
+
 export default function Header() {
   const lenis = useLenis();
   const pathname = usePathname();
-  const [dropdownOpen, setDropdownOpen] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
 
-  const dropdownWrapRef = useRef<HTMLDivElement | null>(null);
-  const dropdownPanelRef = useRef<HTMLDivElement | null>(null);
   const mobilePanelRef = useRef<HTMLDivElement | null>(null);
   const scrolledLayerRef = useRef<HTMLDivElement | null>(null);
   const reducedMotionRef = useRef(false);
@@ -76,11 +62,16 @@ export default function Header() {
     reducedMotionRef.current = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   }, []);
 
-  // Fade the nav from transparent-over-hero to a dark scrim once the page scrolls.
+  // Continuously fade the nav from near-transparent-over-hero to a dark scrim
+  // as the page scrolls, instead of snapping at a fixed threshold — keeps the
+  // header readable while staying unobtrusive at the very top on every viewport.
   useEffect(() => {
     let ticking = false;
     const update = () => {
-      setScrolled(window.scrollY > 40);
+      const progress = Math.min(window.scrollY / SCROLL_FADE_DISTANCE, 1);
+      if (scrolledLayerRef.current) {
+        scrolledLayerRef.current.style.opacity = String(progress);
+      }
       ticking = false;
     };
     const onScroll = () => {
@@ -93,55 +84,6 @@ export default function Header() {
     update();
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
-
-  useEffect(() => {
-    const layer = scrolledLayerRef.current;
-    if (!layer) return;
-    gsap.to(layer, {
-      opacity: scrolled ? 1 : 0,
-      duration: reducedMotionRef.current ? 0.01 : 0.4,
-      ease: "power2.out",
-    });
-  }, [scrolled]);
-
-  // Animate the "Safaris" dropdown panel open/closed.
-  useEffect(() => {
-    const panel = dropdownPanelRef.current;
-    if (!panel) return;
-    const reduced = reducedMotionRef.current;
-
-    gsap.killTweensOf(panel);
-    if (dropdownOpen) {
-      gsap.fromTo(
-        panel,
-        { autoAlpha: 0, y: reduced ? 0 : -6 },
-        { autoAlpha: 1, y: 0, duration: reduced ? 0.01 : 0.22, ease: "power2.out" }
-      );
-    } else {
-      gsap.to(panel, { autoAlpha: 0, y: reduced ? 0 : -6, duration: reduced ? 0.01 : 0.16, ease: "power2.in" });
-    }
-  }, [dropdownOpen]);
-
-  // Close the dropdown on outside click or Escape.
-  useEffect(() => {
-    if (!dropdownOpen) return;
-
-    const onPointerDown = (event: PointerEvent) => {
-      if (!dropdownWrapRef.current?.contains(event.target as Node)) {
-        setDropdownOpen(false);
-      }
-    };
-    const onKeyDown = (event: KeyboardEvent) => {
-      if (event.key === "Escape") setDropdownOpen(false);
-    };
-
-    document.addEventListener("pointerdown", onPointerDown);
-    document.addEventListener("keydown", onKeyDown);
-    return () => {
-      document.removeEventListener("pointerdown", onPointerDown);
-      document.removeEventListener("keydown", onKeyDown);
-    };
-  }, [dropdownOpen]);
 
   // Animate the mobile menu panel open/closed and lock body scroll while open.
   useEffect(() => {
@@ -178,7 +120,6 @@ export default function Header() {
   }, [mobileOpen, lenis]);
 
   const closeAll = () => {
-    setDropdownOpen(false);
     setMobileOpen(false);
   };
 
@@ -190,7 +131,7 @@ export default function Header() {
 
   return (
     <header className="fixed inset-x-0 top-0 z-50 w-full">
-      <div className="absolute inset-0 bg-linear-to-b from-black/55 via-black/20 to-transparent" />
+      <div className="absolute inset-0 bg-linear-to-b from-black/30 via-black/10 to-transparent" />
       <div ref={scrolledLayerRef} className="absolute inset-0 bg-linear-to-b from-black/95 via-black/70 to-black/30 opacity-0" />
 
       <div className="relative">
@@ -209,47 +150,6 @@ export default function Header() {
           <nav aria-label="Primary" className="hidden items-center gap-8 lg:flex">
             {NAV_LINKS.map((link) => {
               const active = isActive(link.href);
-
-              if (link.hasDropdown) {
-                return (
-                  <div key={link.href} ref={dropdownWrapRef} className="relative flex items-center gap-1.5">
-                    <Link href={link.href} onClick={closeAll} className={navLinkClass(active)}>
-                      {link.label}
-                    </Link>
-                    <button
-                      type="button"
-                      aria-expanded={dropdownOpen}
-                      aria-haspopup="true"
-                      aria-label="Toggle safari parks menu"
-                      onClick={() => setDropdownOpen((open) => !open)}
-                      className={
-                        "transition-colors " + (active ? "text-white" : "text-white/85 hover:text-white")
-                      }
-                    >
-                      <ChevronIcon
-                        className={"h-3.5 w-3.5 transition-transform duration-200 " + (dropdownOpen ? "rotate-180" : "")}
-                      />
-                    </button>
-
-                    <div
-                      ref={dropdownPanelRef}
-                      className="invisible absolute left-1/2 top-full mt-4 w-64 -translate-x-1/2 rounded-2xl border border-white/10 bg-brand-ink/90 p-2 opacity-0 shadow-2xl backdrop-blur-xl"
-                    >
-                      {PARKS.map((park) => (
-                        <a
-                          key={park.id}
-                          href={`/#park-${park.id}`}
-                          onClick={closeAll}
-                          className="block rounded-xl px-4 py-3 text-sm text-white/80 transition-colors hover:bg-white/10 hover:text-white"
-                        >
-                          {park.name}
-                        </a>
-                      ))}
-                    </div>
-                  </div>
-                );
-              }
-
               return (
                 <Link key={link.href} href={link.href} onClick={closeAll} className={navLinkClass(active)}>
                   {link.label}
@@ -259,22 +159,21 @@ export default function Header() {
           </nav>
 
           <div className="flex items-center gap-3">
-            <a
-              href="tel:+94112345678"
+            <Link
+              href="/contact"
               aria-label="Call us"
               className="hidden h-10 w-10 items-center justify-center rounded-full bg-white/15 text-white transition-colors hover:bg-white/25 sm:inline-flex"
             >
               <PhoneIcon className="h-4 w-4" />
-            </a>
+            </Link>
 
-            {/* Same-page anchor: plain <a> so SmoothScroll's hash handler owns the smooth-scroll, not next/link. */}
-            {/* eslint-disable-next-line @next/next/no-html-link-for-pages */}
-            <a
-              href="/#enquire"
+            <Link
+              href="/safaris"
+              onClick={closeAll}
               className="hidden items-center gap-2 rounded-full bg-white px-5 py-2.5 text-sm font-semibold text-brand-ink transition-colors hover:bg-white/90 sm:inline-flex"
             >
               Plan your safari
-            </a>
+            </Link>
 
             <button
               type="button"
@@ -302,26 +201,6 @@ export default function Header() {
             const mobileLinkClass =
               "rounded-lg px-3 py-2.5 text-sm font-medium " + (active ? "text-white" : "text-white/85");
 
-            if (link.hasDropdown) {
-              return (
-                <div key={link.href}>
-                  <Link href={link.href} onClick={closeAll} className={mobileLinkClass}>
-                    {link.label}
-                  </Link>
-                  {PARKS.map((park) => (
-                    <a
-                      key={park.id}
-                      href={`/#park-${park.id}`}
-                      onClick={closeAll}
-                      className="block rounded-lg px-6 py-2 text-sm text-white/70"
-                    >
-                      {park.name}
-                    </a>
-                  ))}
-                </div>
-              );
-            }
-
             return (
               <Link key={link.href} href={link.href} onClick={closeAll} className={mobileLinkClass}>
                 {link.label}
@@ -329,14 +208,13 @@ export default function Header() {
             );
           })}
 
-          {/* eslint-disable-next-line @next/next/no-html-link-for-pages */}
-          <a
-            href="/#enquire"
+          <Link
+            href="/safaris"
             onClick={closeAll}
             className="mt-3 inline-flex items-center justify-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-semibold text-brand-ink"
           >
             Plan your safari
-          </a>
+          </Link>
         </nav>
       </div>
     </header>
