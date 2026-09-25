@@ -10,7 +10,7 @@ export default function AboutVehicles() {
           <Reveal>
             <div className="relative aspect-4/3 w-full overflow-hidden rounded-3xl shadow-2xl shadow-black/10">
               <Image
-                src="/images/scenic/guide-jeep.jpg"
+                src="/images/new-img/9.jpg"
                 alt="Open-top safari jeeps parked on a dirt track in Yala National Park"
                 fill
                 sizes="(min-width: 1024px) 50vw, 100vw"
