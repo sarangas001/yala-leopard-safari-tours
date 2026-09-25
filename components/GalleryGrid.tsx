@@ -15,7 +15,7 @@ type GalleryImage = {
 
 const IMAGES: GalleryImage[] = [
   {
-    src: "/images/wildlife/sloth-bear.jpg",
+    src: "/images/new-img/IMG_2392.jpg",
     alt: "A sloth bear foraging in the Sri Lankan dry-zone forest",
     caption: "Sloth Bear",
     category: "wildlife",
@@ -87,7 +87,7 @@ const IMAGES: GalleryImage[] = [
     category: "parks",
   },
   {
-    src: "/images/scenic/parking.png",
+    src: "/images/new-img/IMG_1906.jpg",
     alt: "Safari jeep convoy in Yala National Park",
     caption: "Convoy on the Move",
     category: "safari-life",

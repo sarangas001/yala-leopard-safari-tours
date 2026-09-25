@@ -5,7 +5,7 @@ export default function ReviewsHero() {
     <PageHero
       title="What Travelers Say About Yala Wild Safari"
       description="Read experiences shared by guests who explored Sri Lanka's wildlife with our safari team."
-      image="/images/scenic/guide-jeep.jpg"
+      image="/images/new-img/IMG_7940.jpg"
       alt="A safari guide beside jeeps parked on a dirt track in Yala National Park"
     />
   );
