@@ -7,29 +7,41 @@ type PhotoCard = {
   caption: string;
 };
 
-// Sample placeholder photos — replace with real, permission-cleared guest
-// submissions as they come in. Mirrors the placeholder convention used in
-// ReviewsGuestStories.tsx (STORIES) and Footer.tsx (TRUST_BADGES).
-const SAMPLE_PHOTOS: PhotoCard[] = [
+const GUEST_PHOTOS: PhotoCard[] = [
   {
-    src: "/images/parks/yala.jpg",
-    alt: "Misty hills and open grassland in Yala National Park",
-    caption: "Add a real, approved guest photo here",
+    src: "/images/new-img/IMG_2561.jpg",
+    alt: "Two guests posing beside the safari jeep after their Yala game drive",
+    caption: "Guest Photo",
   },
   {
-    src: "/images/wildlife/spotted-deer.jpg",
-    alt: "A spotted deer grazing in open grassland",
-    caption: "Add a real, approved guest photo here",
+    src: "/images/new-img/14.jpg",
+    alt: "A family posing together on their safari jeep",
+    caption: "Guest Photo",
   },
   {
-    src: "/images/scenic/safari-jeeps.jpg",
-    alt: "A line of 4x4 safari jeeps ready for a game drive",
-    caption: "Add a real, approved guest photo here",
+    src: "/images/new-img/IMG_2067.jpg",
+    alt: "A group of friends posing beside the safari jeep",
+    caption: "Guest Photo",
   },
   {
-    src: "/images/wildlife/peacock.jpg",
-    alt: "An Indian peacock displaying its plumage",
-    caption: "Add a real, approved guest photo here",
+    src: "/images/new-img/IMG_2365.jpg",
+    alt: "A guest and her daughter posing beside the safari jeep",
+    caption: "Guest Photo",
+  },
+  {
+    src: "/images/new-img/IMG_2374.jpg",
+    alt: "A young family enjoying their safari jeep experience",
+    caption: "Guest Photo",
+  },
+  {
+    src: "/images/new-img/9.jpg",
+    alt: "Guests smiling from their safari jeep before a game drive",
+    caption: "Guest Photo",
+  },
+  {
+    src: "/images/new-img/IMG_4846.jpg",
+    alt: "A couple posing together on their safari jeep",
+    caption: "Guest Photo",
   },
 ];
 
@@ -42,12 +54,12 @@ export default function ReviewsTravelerPhotos() {
             Traveler Photos
           </h2>
           <p className="mt-4 text-base leading-relaxed text-brand-ink-muted">
-            As guests share their own photos from the trip, with permission, we&apos;ll feature them here. Check back soon — or add yours when you submit your review below.
+            Real moments from guests who joined us on safari. Add yours when you submit your review below.
           </p>
         </Reveal>
 
         <div className="mt-12 grid grid-cols-2 gap-4 sm:grid-cols-4 lg:mt-16 lg:gap-6">
-          {SAMPLE_PHOTOS.map((photo, i) => (
+          {GUEST_PHOTOS.map((photo, i) => (
             <Reveal key={photo.src} delay={(i % 4) * 0.06}>
               <div className="group relative aspect-square w-full overflow-hidden rounded-2xl">
                 <Image

@@ -92,6 +92,186 @@ const IMAGES: GalleryImage[] = [
     caption: "Convoy on the Move",
     category: "safari-life",
   },
+  {
+    src: "/images/new-img/11.jpg",
+    alt: "A leopard mother and her cub in the forest undergrowth",
+    caption: "Leopard Mother & Cub",
+    category: "wildlife",
+  },
+  {
+    src: "/images/new-img/12.jpg",
+    alt: "A leopard running along a forest trail at dusk",
+    caption: "Leopard on the Move",
+    category: "wildlife",
+  },
+  {
+    src: "/images/new-img/13.jpg",
+    alt: "A spotted deer stag drinking at a waterhole",
+    caption: "At the Waterhole",
+    category: "wildlife",
+  },
+  {
+    src: "/images/new-img/8.webp",
+    alt: "A herd of spotted deer gathered at a waterhole",
+    caption: "Deer Herd",
+    category: "wildlife",
+  },
+  {
+    src: "/images/new-img/9.webp",
+    alt: "A leopard resting on a tree branch",
+    caption: "Leopard at Rest",
+    category: "wildlife",
+  },
+  {
+    src: "/images/new-img/4-A-Kumana-leopard.jpg",
+    alt: "A leopard resting on a fallen log in Kumana National Park",
+    caption: "Leopard in Kumana",
+    category: "wildlife",
+  },
+  {
+    src: "/images/new-img/IMG_7940.jpg",
+    alt: "A Sri Lankan leopard on the prowl at dusk",
+    caption: "Leopard on the Prowl",
+    category: "wildlife",
+  },
+  {
+    src: "/images/new-img/IMG_9129.jpg",
+    alt: "A leopard resting on a sandy forest track",
+    caption: "Leopard Resting",
+    category: "wildlife",
+  },
+  {
+    src: "/images/new-img/IMG_9172.jpg",
+    alt: "Spotted deer stags sparring in the forest",
+    caption: "Sparring Stags",
+    category: "wildlife",
+  },
+  {
+    src: "/images/new-img/IMG_1606.jpg",
+    alt: "A wild Asian elephant approaching on a forest track",
+    caption: "Asian Elephant",
+    category: "wildlife",
+  },
+  {
+    src: "/images/new-img/IMG_2001.jpg",
+    alt: "Two elephants greeting each other trunk to trunk",
+    caption: "Elephants Greeting",
+    category: "wildlife",
+  },
+  {
+    src: "/images/new-img/IMG_2015.jpg",
+    alt: "A close encounter with a tusker elephant on a dirt road",
+    caption: "Tusker Up Close",
+    category: "wildlife",
+  },
+  {
+    src: "/images/new-img/IMG_1021.jpg",
+    alt: "A black-necked stork wading through a wetland",
+    caption: "Black-Necked Stork",
+    category: "wildlife",
+  },
+  {
+    src: "/images/new-img/black-necked-stork.jpeg",
+    alt: "A black-necked stork foraging in a wetland",
+    caption: "Stork in the Wetlands",
+    category: "wildlife",
+  },
+  {
+    src: "/images/new-img/IMG_8909.jpg",
+    alt: "A brown fish owl perched on a branch",
+    caption: "Brown Fish Owl",
+    category: "wildlife",
+  },
+  {
+    src: "/images/new-img/Spoonbill.jpeg",
+    alt: "A Eurasian spoonbill wading in a lagoon",
+    caption: "Eurasian Spoonbill",
+    category: "wildlife",
+  },
+  {
+    src: "/images/new-img/Spot-Billed-pelican.jpeg",
+    alt: "A spot-billed pelican resting near the water",
+    caption: "Spot-Billed Pelican",
+    category: "wildlife",
+  },
+  {
+    src: "/images/new-img/pelicans.jpg",
+    alt: "Pelicans gathered on the water's edge",
+    caption: "Pelicans on the Water",
+    category: "wildlife",
+  },
+  {
+    src: "/images/new-img/flamingos.jpeg",
+    alt: "Greater flamingos wading in a coastal lagoon",
+    caption: "Flamingos in the Lagoon",
+    category: "wildlife",
+  },
+  {
+    src: "/images/new-img/grey-heron.jpg",
+    alt: "A grey heron standing at the water's edge",
+    caption: "Grey Heron",
+    category: "wildlife",
+  },
+  {
+    src: "/images/new-img/herons-egrets.jpeg",
+    alt: "Herons and egrets gathered near a wetland",
+    caption: "Herons & Egrets",
+    category: "wildlife",
+  },
+  {
+    src: "/images/new-img/painted-storks.jpg",
+    alt: "A flock of painted storks feeding in the wetlands",
+    caption: "Painted Storks",
+    category: "wildlife",
+  },
+  {
+    src: "/images/new-img/monkey-species.jpg",
+    alt: "A monkey resting in the dry-zone forest",
+    caption: "Monkey in the Wild",
+    category: "wildlife",
+  },
+  {
+    src: "/images/new-img/water-baffalo.jpg",
+    alt: "A water buffalo wallowing in a lagoon",
+    caption: "Water Buffalo",
+    category: "wildlife",
+  },
+  {
+    src: "/images/new-img/wild-boar.jpeg",
+    alt: "A wild boar foraging in the dry-zone scrub",
+    caption: "Wild Boar in the Scrub",
+    category: "wildlife",
+  },
+  {
+    src: "/images/new-img/crocodile.jpg",
+    alt: "A mugger crocodile resting on the riverbank",
+    caption: "Crocodile on the Bank",
+    category: "wildlife",
+  },
+  {
+    src: "/images/new-img/crocodile-1.jpg",
+    alt: "A mugger crocodile basking near the water's edge",
+    caption: "Basking Crocodile",
+    category: "wildlife",
+  },
+  {
+    src: "/images/new-img/IMG_1457.jpg",
+    alt: "Safari jeeps parked and ready before a game drive",
+    caption: "Safari Fleet",
+    category: "safari-life",
+  },
+  {
+    src: "/images/new-img/IMG_2170.jpg",
+    alt: "A convoy of safari jeeps driving into the sunset",
+    caption: "Sunset Safari Convoy",
+    category: "safari-life",
+  },
+  {
+    src: "/images/new-img/IMG_4365-1.jpg",
+    alt: "A wildlife photographer capturing the action with a telephoto lens",
+    caption: "Wildlife Photographer at Work",
+    category: "safari-life",
+  },
 ];
 
 const CATEGORIES: { key: Category | "all"; label: string }[] = [
@@ -136,12 +316,7 @@ export default function GalleryGrid() {
         <div className="mt-12 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:mt-16 lg:grid-cols-4 lg:gap-6">
           {filtered.map((img, i) => (
             <Reveal key={img.src} delay={(i % 4) * 0.06}>
-              <div
-                className={
-                  "group relative w-full overflow-hidden rounded-2xl " +
-                  (i % 4 === 0 || i % 4 === 3 ? "aspect-3/4" : "aspect-square")
-                }
-              >
+              <div className="group relative aspect-square w-full overflow-hidden rounded-2xl">
                 <Image
                   src={img.src}
                   alt={img.alt}
