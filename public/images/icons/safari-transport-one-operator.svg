@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 75 75" role="img" aria-labelledby="title desc">
+  <title id="title">Safari and transport with one operator</title>
+  <desc id="desc">One operator coordinating a safari jeep and transport vehicle on a soft purple organic background.</desc>
+  <path opacity=".82" fill="#D8C7F2" d="M44.3 8.6s7.9-2 13.1 2.7S70.5 27 70.9 41.4 72 68.1 46.3 67 12.1 55 7.3 46.4 3.5 24.1 13.2 19.7 40.7 9 44.3 8.6Z"/>
+  <g fill="none" stroke="#111" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="37.5" cy="18" r="6" fill="#fff"/>
+    <path d="M27.5 33c1-6 4.5-9 10-9s9 3 10 9" fill="#fff"/>
+    <path d="M31 31 22 39M44 31l9 8"/>
+    <path d="M12 43h16l6 6v8H9V48c0-2 1-4 3-5Z" fill="#fff"/>
+    <path d="M17 43v6h17M9 50h25M23 42l2-5h5l4 12"/>
+    <circle cx="15" cy="57" r="4" fill="#fff"/><circle cx="29" cy="57" r="4" fill="#fff"/>
+    <path d="M45 41h14l7 8v8H41V47c0-3 1-6 4-6Z" fill="#fff"/>
+    <path d="M50 41v8h16M41 50h25"/>
+    <circle cx="47" cy="57" r="4" fill="#fff"/><circle cx="61" cy="57" r="4" fill="#fff"/>
+    <path d="M22 64h31M49 61l4 3-4 3"/>
+  </g>
+</svg>

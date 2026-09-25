@@ -34,12 +34,12 @@ const HOW_IT_WORKS = [
 
 const WHY_TRAVEL_WITH_US = [
   { title: "English-Speaking Drivers", icon: "/images/icons/english-speaking-drivers.svg" },
-  { title: "Fuel Included", icon: "/images/icons/transparent-pricing.svg" },
+  { title: "Fuel Included", icon: "/images/icons/fuel-included.svg" },
   { title: "Comfortable Vehicle Choices", icon: "/images/icons/customise-your-booking.svg" },
   { title: "Airport, Hotel & Long-Distance Travel", icon: "/images/icons/hotel-pickup-dropoff.svg" },
   { title: "24/7 WhatsApp Support", icon: "/images/icons/24-7-whatsapp-support.svg" },
   { title: "Transparent Pricing", icon: "/images/icons/transparent-pricing.svg" },
-  { title: "Safari & Transport, One Operator", icon: "/images/icons/whatsapp.svg" },
+  { title: "Safari & Transport, One Operator", icon: "/images/icons/safari-transport-one-operator.svg" },
 ];
 
 const FAQS = [

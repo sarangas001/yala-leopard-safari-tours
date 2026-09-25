@@ -51,12 +51,12 @@ const HOW_IT_WORKS = [
 ];
 
 const WILDLIFE = [
-  { name: "Sri Lankan Leopard", image: "/images/parks/yala.jpg" },
-  { name: "Asian Elephant", image: "/images/parks/udawalawe.jpg" },
-  { name: "Sloth Bear", image: "/images/wildlife/sloth-bear.jpg" },
-  { name: "Crocodile", image: "/images/wildlife/crocodile.jpg" },
-  { name: "Spotted Deer", image: "/images/wildlife/spotted-deer.jpg" },
-  { name: "Wild Boar", image: "/images/wildlife/wild-boar.jpg" },
+  { name: "Sri Lankan Leopard", image: "/images/new-img/IMG_9129.jpg" },
+  { name: "Asian Elephant", image: "/images/new-img/IMG_1606.jpg" },
+  { name: "Sloth Bear", image: "/images/new-img/IMG_2392.jpg" },
+  { name: "Crocodile", image: "/images/new-img/crocodile-1.jpg" },
+  { name: "Spotted Deer", image: "/images/new-img/12.jpg" },
+  { name: "Wild Boar", image: "/images/new-img/wild-boar.jpeg" },
   { name: "Peacock & Birdlife", image: "/images/wildlife/peacock.jpg" },
 ];
 

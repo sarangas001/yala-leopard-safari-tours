@@ -41,14 +41,14 @@ export default function FeaturedSafari() {
           </Reveal>
 
           <Reveal delay={0.12}>
-            <div className="relative aspect-4/3 w-full overflow-hidden  ">
+            <div className="relative aspect-4/3 w-full rounded-3xl overflow-hidden  ">
               <Image
-                src="/images/scenic/parking.png"
+                src="/images/new-img/IMG_1753.jpg"
                 alt="Safari jeep convoy in Yala National Park"
                 fill
                 sizes="(min-width: 1024px) 50vw, 100vw"
                 quality={80}
-                className="object-cover object-bottom"
+                className="object-cover object-left-center"
               />
             </div>
           </Reveal>

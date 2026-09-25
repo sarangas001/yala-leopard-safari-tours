@@ -7,12 +7,14 @@ const TEAM: TeamMember[] = [
     role: "Head Safari Guide & Driver",
     experience: "36+ Years of Experience",
     bio: "An experienced local safari driver and guide with extensive knowledge of Yala National Park, wildlife routes and animal behavior.",
+    photo: "/images/team/Kumara.png"
   },
   {
     name: "Akila",
     role: "Professional Wildlife Tour Guide",
     experience: "30+ Years of Experience",
     bio: "Akila brings deep, specialised knowledge of leopard tracking behaviour, elephant migration, avian identification and local ecosystem conservation. Having guided thousands of travellers from around the world, Akila delivers an exceptionally safe, educational and elite safari experience.",
+    photo: "/images/team/Akila.png"
   },
 ];
 

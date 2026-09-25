@@ -9,13 +9,13 @@ const SERVICES = [
   {
     title: "Yala Leopard Safari",
     text: "Track the world's highest density of leopards across Yala's dry-zone scrub and open plains.",
-    image: "/images/parks/yala.jpg",
+    image: "/images/new-img/8.webp",
     href: "/safaris/yala",
   },
   {
     title: "Udawalawe Elephant Safari",
     text: "Watch wild elephant herds gather in full view around the Udawalawe reservoir.",
-    image: "/images/parks/udawalawe.jpg",
+    image: "/images/new-img/IMG_2001.jpg",
     href: "/safaris/udawalawe",
   },
   {
@@ -27,13 +27,13 @@ const SERVICES = [
   {
     title: "Hambantota Port to Yala Safari",
     text: "A convenient safari transfer for cruise and port arrivals heading straight into Yala.",
-    image: "/images/scenic/guide-jeep.jpg",
+    image: "/images/new-img/IMG_2374.jpg",
     href: "/hambantota-port-to-yala",
   },
   {
     title: "Taxi & Car Rental with Driver",
     text: "Private, air-conditioned vehicles with an experienced driver for the whole island.",
-    image: "/images/scenic/parking.png",
+    image: "/images/new-img/9.jpg",
     href: "/taxi-car-rental",
   },
   {
@@ -45,13 +45,13 @@ const SERVICES = [
   {
     title: "Custom / Private Tours",
     text: "Fully tailored itineraries built around your dates, pace and interests.",
-    image: "/images/wildlife/sloth-bear.jpg",
+    image: "/images/new-img/IMG_2067.jpg",
     href: "/safaris",
   },
   {
     title: "Multi-Day Tours",
     text: "Multi-park itineraries with overnight stays, for a deeper safari experience where offered.",
-    image: "/images/wildlife/spotted-deer.jpg",
+    image: "/images/new-img/IMG_1457.jpg",
     href: "/safaris",
   },
 ];

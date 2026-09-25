@@ -17,8 +17,8 @@ export default function PageHero({
   return (
     <section className="relative w-full overflow-hidden bg-white">
       <div className="absolute inset-0">
-        <Image src={image} alt={alt} fill priority sizes="100vw" quality={75} className="object-cover" />
-        <div className="absolute inset-0 bg-linear-to-b from-black/65 via-black/35 to-black/55" />
+        <Image src={image} alt={alt} fill priority sizes="100vw" quality={75} className="object-cover object-right" />
+        <div className="absolute inset-0 bg-linear-to-b from-black/65 via-black/35 to-black/45" />
       </div>
 
       <div className="relative z-10 mx-auto max-w-[1600px] px-10 pt-32 pb-20 text-center sm:px-20 sm:pt-40 sm:pb-24 lg:flex lg:min-h-175 lg:items-center lg:justify-center lg:px-40 lg:py-0">

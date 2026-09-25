@@ -19,7 +19,7 @@ export default function TeamMemberProfile({
   return (
     <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-20">
       <Reveal className={reverse ? "lg:order-2" : undefined}>
-        <div className="relative aspect-4/3 w-full overflow-hidden rounded-3xl bg-sand shadow-2xl shadow-black/10">
+        <div className="relative aspect-4/5 w-full overflow-hidden rounded-3xl bg-sand shadow-2xl shadow-black/10">
           {member.photo ? (
             <Image
               src={member.photo}
@@ -27,7 +27,7 @@ export default function TeamMemberProfile({
               fill
               sizes="(min-width: 1024px) 50vw, 100vw"
               quality={80}
-              className="object-cover"
+              className="object-cover object-top"
             />
           ) : (
             // Placeholder — swap for a real photo before launch

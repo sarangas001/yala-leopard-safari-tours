@@ -7,7 +7,7 @@ const PARKS = [
     name: "Yala National Park",
     bestFor: "Leopards & Wildlife",
     copy: "Discover Sri Lanka's most celebrated wildlife park — home to the world's highest density of leopards, alongside elephants, sloth bears and crocodiles.",
-    image: "/images/parks/yala.jpg",
+    image: "/images/new-img/IMG_9129.jpg",
   },
   {
     id: "udawalawe",
@@ -21,7 +21,7 @@ const PARKS = [
     name: "Bundala National Park",
     bestFor: "Birds & Wetlands",
     copy: "A Ramsar-listed coastal sanctuary of lagoons and dunes, alive with flamingos, migratory birds, crocodiles and elephants.",
-    image: "/images/parks/bundala.jpg",
+    image: "/images/new-img/IMG_9172.jpg",
   },
 ];
 

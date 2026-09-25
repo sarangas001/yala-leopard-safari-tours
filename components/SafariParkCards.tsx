@@ -20,7 +20,7 @@ const PARKS: Park[] = [
     available: "Half Day, 7 Hours, Full Day",
     tourTypes: "Private and selected Shared options",
     cta: "Explore Yala",
-    image: "/images/parks/yala.jpg",
+    image: "/images/new-img/8.webp",
     alt: "A leopard resting on a rock in Yala National Park",
   },
   {
@@ -30,7 +30,7 @@ const PARKS: Park[] = [
     available: "Half Day, 7 Hours, Full Day",
     tourTypes: "Private",
     cta: "Explore Udawalawe",
-    image: "/images/parks/udawalawe.jpg",
+    image: "/images/new-img/IMG_2001.jpg",
     alt: "Wild elephants grazing on open grassland in Udawalawe National Park",
   },
   {
@@ -50,7 +50,7 @@ const PARKS: Park[] = [
     available: "Half Day, 7 Hours, Full Day",
     tourTypes: "Private",
     cta: "Explore Kumana",
-    image: "/images/parks/kumana.jpg",
+    image: "/images/new-img/IMG_1021.jpg",
     alt: "A black-necked stork wading through Kumana National Park's wetlands",
   },
   {
@@ -60,7 +60,7 @@ const PARKS: Park[] = [
     available: "Half Day, 7 Hours, Full Day",
     tourTypes: "Private",
     cta: "Explore Lunugamvehera",
-    image: "/images/parks/lunugamvehera.jpg",
+    image: "/images/new-img/11.jpg",
     alt: "Dry-zone forest landscape at Lunugamvehera National Park",
   },
 ];
