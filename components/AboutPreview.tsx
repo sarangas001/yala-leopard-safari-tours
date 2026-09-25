@@ -24,12 +24,12 @@ export default function AboutPreview() {
           <Reveal className="lg:order-2">
             <div className="relative aspect-4/3 w-full overflow-hidden rounded-3xl shadow-2xl shadow-black/10">
               <Image
-                src="/images/scenic/guide-jeep.jpg"
+                src="/images/new-img/IMG_2067.jpg"
                 alt="Safari guide and jeep in Yala National Park"
                 fill
                 sizes="(min-width: 1024px) 50vw, 100vw"
                 quality={80}
-                className="object-cover"
+                className="object-cover object-top"
               />
             </div>
           </Reveal>
