@@ -9,7 +9,7 @@ export default function SafariInclusions() {
           <Reveal>
             <div className="relative aspect-3/2 w-full max-w-lg overflow-hidden rounded-3xl mx-auto lg:mx-0">
               <Image
-                src="/images/scenic/guide-jeep.jpg"
+                src="/images/new-img/12.jpg"
                 alt="A safari guide beside jeeps parked on a dirt track in Yala National Park"
                 fill
                 sizes="(min-width: 1024px) 40vw, 100vw"

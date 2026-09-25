@@ -13,14 +13,14 @@ const SERVICES: ServiceCard[] = [
   {
     title: "Hambantota Port to Yala Safari",
     text: "Picked up from Hambantota Cruise Port or your Hambantota hotel, straight into a Yala safari and back again.",
-    image: "/images/scenic/guide-jeep.jpg",
+    image: "/images/new-img/IMG_2374.jpg",
     alt: "A safari guide standing beside a 4x4 jeep in Yala National Park",
     href: "/hambantota-port-to-yala",
   },
   {
     title: "Taxi and Car Rental",
     text: "Private car and van rental with an English-speaking driver, for transfers and long-distance travel across Sri Lanka.",
-    image: "/images/scenic/parking.png",
+    image: "/images/new-img/9.jpg",
     alt: "A row of private vehicles available for hire in Sri Lanka",
     href: "/taxi-car-rental",
   },
