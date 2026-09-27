@@ -12,7 +12,6 @@ const TEAM: TeamMember[] = [
   {
     name: "Akila",
     role: "Professional Wildlife Tour Guide",
-    experience: "30+ Years of Experience",
     bio: "Akila brings deep, specialised knowledge of leopard tracking behaviour, elephant migration, avian identification and local ecosystem conservation. Having guided thousands of travellers from around the world, Akila delivers an exceptionally safe, educational and elite safari experience.",
     photo: "/images/team/Akila.png"
   },
