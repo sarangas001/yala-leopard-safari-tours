@@ -4,7 +4,7 @@ import GalleryGrid from "@/components/GalleryGrid";
 
 export const metadata: Metadata = {
   title: "Gallery | Yala Leopard Safari Tours",
-  description: "Photos from our Yala, Udawalawe, Bundala, Kumana and Lunugamvehera safaris.",
+  description: "Photos from our Yala, Udawalawe and Bundala safaris.",
 };
 
 export default function GalleryPage() {

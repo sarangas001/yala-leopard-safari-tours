@@ -58,8 +58,6 @@ const SAFARI_PARK_LINKS: { href: string; label: string }[] = [
   { href: "/safaris/yala", label: "Yala National Park" },
   { href: "/safaris/udawalawe", label: "Udawalawe National Park" },
   { href: "/safaris/bundala", label: "Bundala National Park" },
-  { href: "/safaris/kumana", label: "Kumana National Park" },
-  { href: "/safaris/lunugamvehera", label: "Lunugamvehera National Park" },
 ];
 
 function getNavColumns(): { heading: string; links: { href: string; label: string }[] }[] {
@@ -174,14 +172,6 @@ function TripAdvisorIcon({ className = "h-5 w-5" }: IconProps) {
   );
 }
 
-function ArrowRightIcon({ className = "h-5 w-5" }: IconProps) {
-  return (
-    <svg viewBox="0 0 24 24" fill="none" className={className} aria-hidden="true">
-      <path d="M4 12h15M13 6l6 6-6 6" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-    </svg>
-  );
-}
-
 const SOCIAL_LINKS = [
   { label: "Facebook", Icon: FacebookIcon },
   { label: "Instagram", Icon: InstagramIcon },
@@ -246,6 +236,17 @@ export default function Footer() {
               waterhole, we help you explore Sri Lanka&apos;s wild side
               responsibly, safely and at an unhurried pace.
             </p>
+          </div>
+
+          {/* Newsletter area */}
+          <div className="mx-auto w-full max-w-md text-center sm:mx-0 sm:text-left">
+            <h3 className="font-display text-2xl font-medium text-brand-ink sm:text-[1.75rem]">
+              Get Safari Stories &amp; Travel Inspiration
+            </h3>
+            <p className="mt-3 text-sm leading-relaxed text-brand-ink-muted">
+              Sign up for Yala travel tips, wildlife updates and special
+              safari offers, sent straight to your inbox.
+            </p>
             <div className="mt-6 flex justify-center gap-3 sm:justify-start">
               {SOCIAL_LINKS.map(({ label, Icon }) => (
                 <a
@@ -258,38 +259,6 @@ export default function Footer() {
                 </a>
               ))}
             </div>
-          </div>
-
-          {/* Newsletter area */}
-          <div className="mx-auto w-full max-w-md text-center sm:mx-0 sm:text-left">
-            <h3 className="font-display text-2xl font-medium text-brand-ink sm:text-[1.75rem]">
-              Get Safari Stories &amp; Travel Inspiration
-            </h3>
-            <p className="mt-3 text-sm leading-relaxed text-brand-ink-muted">
-              Sign up for Yala travel tips, wildlife updates and special
-              safari offers, sent straight to your inbox.
-            </p>
-            <form className="mt-5 flex items-center gap-2 rounded-full border border-earth/20 bg-white p-1.5 pl-5">
-              <label htmlFor="footer-newsletter-email" className="sr-only">
-                Email address
-              </label>
-              <input
-                id="footer-newsletter-email"
-                type="email"
-                required
-                placeholder="Your email address"
-                autoComplete="email"
-                suppressHydrationWarning
-                className="w-full bg-transparent text-sm text-black placeholder:text-brand-ink-muted/70 focus:outline-none"
-              />
-              <button
-                type="submit"
-                aria-label="Subscribe"
-                className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-black text-white transition-colors hover:bg-black/80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black/50 focus-visible:ring-offset-2 focus-visible:ring-offset-white"
-              >
-                <ArrowRightIcon className="h-4 w-4" />
-              </button>
-            </form>
           </div>
         </div>
 

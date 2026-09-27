@@ -15,11 +15,11 @@ const FAQS: FaqItem[] = [
   },
   {
     q: "Which park is best for birdwatching?",
-    a: "Bundala and Kumana are the primary birdwatching parks. Kumana is specifically legendary for its massive, seasonal swamp-nesting colonies, while Bundala is the birdwatching and wetland safari option.",
+    a: "Bundala is our primary birdwatching park, a Ramsar-listed wetland safari destination known for its lagoons, flamingos and migratory bird species.",
   },
   {
     q: "Which park is best for a quiet, crowd-free wildlife experience?",
-    a: "Lunugamvehera and Bundala offer the quietest safaris on this website, allowing you to watch wildlife without the heavy jeep traffic found in busier parks.",
+    a: "Bundala offers the quietest safari on this website, allowing you to watch wildlife without the heavy jeep traffic found in busier parks.",
   },
 ];
 

@@ -26,6 +26,7 @@ export const udawalawe: ParkContent = {
           time: "To be confirmed",
           duration: "Approx. 4–5 hours",
           includes: "Breakfast",
+          image: "/images/new-img/IMG_2001.jpg",
           tiers: [
             { group: "1 Person", price: "$80" },
             { group: "2 Persons", price: "$50 pp" },
@@ -40,6 +41,7 @@ export const udawalawe: ParkContent = {
           time: "To be confirmed",
           duration: "7 hours",
           includes: "Breakfast",
+          image: "/images/new-img/IMG_1457.jpg",
           tiers: [
             { group: "1 Person", price: "$95" },
             { group: "2 Persons", price: "$60 pp" },
@@ -54,6 +56,7 @@ export const udawalawe: ParkContent = {
           time: "To be confirmed",
           duration: "Approx. 13 hours",
           includes: "Breakfast and lunch",
+          image: "/images/new-img/IMG_4846.jpg",
           tiers: [
             { group: "1 Person", price: "$140" },
             { group: "2 Persons", price: "$90 pp" },

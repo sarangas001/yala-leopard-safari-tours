@@ -25,6 +25,7 @@ export const bundala: ParkContent = {
           time: "To be confirmed",
           duration: "Approx. 4–5 hours",
           includes: "Breakfast",
+          image: "/images/new-img/Spoonbill.jpeg",
           tiers: [
             { group: "1 Person", price: "$80" },
             { group: "2 Persons", price: "$50 pp" },
@@ -39,6 +40,7 @@ export const bundala: ParkContent = {
           time: "To be confirmed",
           duration: "7 hours",
           includes: "Breakfast",
+          image: "/images/new-img/Spot-Billed-pelican.jpeg",
           tiers: [
             { group: "1 Person", price: "$95" },
             { group: "2 Persons", price: "$60 pp" },
@@ -53,6 +55,7 @@ export const bundala: ParkContent = {
           time: "To be confirmed",
           duration: "Approx. 13 hours",
           includes: "Breakfast and lunch",
+          image: "/images/new-img/black-necked-stork.jpeg",
           tiers: [
             { group: "1 Person", price: "$130" },
             { group: "2 Persons", price: "$80 pp" },

@@ -23,8 +23,6 @@ const SECTIONS: { heading: string; links: { href: string; label: string }[] }[] 
       { href: "/safaris/yala", label: "Yala National Park" },
       { href: "/safaris/udawalawe", label: "Udawalawe National Park" },
       { href: "/safaris/bundala", label: "Bundala National Park" },
-      { href: "/safaris/kumana", label: "Kumana National Park" },
-      { href: "/safaris/lunugamvehera", label: "Lunugamvehera National Park" },
     ],
   },
   {

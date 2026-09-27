@@ -26,6 +26,7 @@ export const yala: ParkContent = {
           time: "5:00 AM – 10:00 AM",
           duration: "Approx. 4–5 hours",
           includes: "Breakfast",
+          image: "/images/new-img/IMG_2067.jpg",
           tiers: [
             { group: "1 Person", price: "$80" },
             { group: "2 Persons", price: "$50 pp" },
@@ -40,6 +41,7 @@ export const yala: ParkContent = {
           time: "5:00 AM – 12:00 PM",
           duration: "7 hours",
           includes: "Breakfast",
+          image: "/images/new-img/IMG_2170.jpg",
           tiers: [
             { group: "1 Person", price: "$95" },
             { group: "2 Persons", price: "$60 pp" },
@@ -55,12 +57,14 @@ export const yala: ParkContent = {
           duration: "7 hours",
           includes: "Breakfast",
           flatPrice: "$25 per person",
+          image: "/images/new-img/IMG_2365.jpg",
         },
         {
           name: "Full-Day Private Safari",
           time: "5:00 AM – 6:00 PM",
           duration: "Approx. 13 hours",
           includes: "Breakfast and lunch",
+          image: "/images/new-img/IMG_9129.jpg",
           tiers: [
             { group: "1 Person", price: "$140" },
             { group: "2 Persons", price: "$90 pp" },
@@ -76,6 +80,7 @@ export const yala: ParkContent = {
           duration: "Approx. 13 hours",
           includes: "Breakfast and lunch",
           flatPrice: "$50 per person",
+          image: "/images/new-img/8.webp",
         },
       ],
       note: "Maximum capacity: up to 7 passengers per jeep.",

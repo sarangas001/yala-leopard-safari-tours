@@ -62,7 +62,7 @@ export default function FinalCta() {
           />
         </div>
         <Image
-          src="/images/scenic/cta-img.png"
+          src="/images/scenic/cta-img-2.png"
           alt="A leopard, elephants and a peacock gather at a waterhole in Yala National Park"
           width={2060}
           height={763}

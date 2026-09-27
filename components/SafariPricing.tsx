@@ -11,6 +11,7 @@ export type SafariPackage = {
   includes: string;
   tiers?: PriceTier[];
   flatPrice?: string;
+  image?: string;
 };
 
 export default function SafariPricing({
@@ -44,10 +45,10 @@ export default function SafariPricing({
           {packages.map((pkg, i) => (
             <Reveal key={pkg.name} delay={(i % 3) * 0.1}>
               <div className="flex h-full flex-col overflow-hidden rounded-3xl border border-black/6 bg-white shadow-sm transition-shadow duration-300 hover:shadow-md">
-                {image ? (
+                {pkg.image ?? image ? (
                   <div className="relative aspect-4/3 w-full overflow-hidden">
                     <Image
-                      src={image}
+                      src={(pkg.image ?? image)!}
                       alt=""
                       fill
                       sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"

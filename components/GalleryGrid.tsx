@@ -69,22 +69,10 @@ const IMAGES: GalleryImage[] = [
     category: "wildlife",
   },
   {
-    src: "/images/parks/kumana.jpg",
-    alt: "Wetland landscape in Kumana National Park",
-    caption: "Kumana National Park",
-    category: "parks",
-  },
-  {
     src: "/images/wildlife/peacock.jpg",
     alt: "An Indian peacock displaying its plumage",
     caption: "Indian Peacock",
     category: "wildlife",
-  },
-  {
-    src: "/images/parks/lunugamvehera.jpg",
-    alt: "Reservoir and scrubland in Lunugamvehera National Park",
-    caption: "Lunugamvehera National Park",
-    category: "parks",
   },
   {
     src: "/images/new-img/IMG_1906.jpg",
@@ -120,12 +108,6 @@ const IMAGES: GalleryImage[] = [
     src: "/images/new-img/9.webp",
     alt: "A leopard resting on a tree branch",
     caption: "Leopard at Rest",
-    category: "wildlife",
-  },
-  {
-    src: "/images/new-img/4-A-Kumana-leopard.jpg",
-    alt: "A leopard resting on a fallen log in Kumana National Park",
-    caption: "Leopard in Kumana",
     category: "wildlife",
   },
   {

@@ -6,7 +6,7 @@ export default function AboutPhilosophy() {
     <section className="relative w-full overflow-hidden bg-white">
       {/* Traveller illustration — contextual decorative graphic */}
       <div
-        className="pointer-events-none absolute -top-10 -right-8 z-0 hidden select-none lg:block"
+        className="pointer-events-none absolute -top-4 -right-8 z-0 hidden select-none lg:block"
         aria-hidden="true"
       >
         <Image
@@ -20,7 +20,7 @@ export default function AboutPhilosophy() {
       </div>
 
       <div className="relative z-10 mx-auto max-w-[1600px] px-10 py-16 sm:px-20 sm:py-20 lg:px-40 lg:py-24">
-        <Reveal className="mx-auto max-w-2xl text-center">
+        <Reveal className="mx-auto max-w-3xl text-center">
           <h2 className="font-display text-3xl font-medium tracking-tight text-brand-ink sm:text-4xl lg:text-5xl">
             Our Safari Philosophy
           </h2>

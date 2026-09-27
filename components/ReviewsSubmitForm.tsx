@@ -5,8 +5,6 @@ const SERVICES = [
   "Yala Safari",
   "Udawalawe Safari",
   "Bundala Safari",
-  "Kumana Safari",
-  "Lunugamvehera Safari",
   "Hambantota Port to Yala Safari",
   "Taxi / Transport",
   "Other",
