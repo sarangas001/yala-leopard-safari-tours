@@ -6,7 +6,7 @@ const PARKS = [
     id: "yala",
     name: "Yala National Park",
     bestFor: "Leopards & Wildlife",
-    copy: "Discover Sri Lanka's most celebrated wildlife park — home to the world's highest density of leopards, alongside elephants, sloth bears and crocodiles.",
+    copy: "Discover Sri Lanka's most celebrated wildlife park, home to the world's highest density of leopards, alongside elephants, sloth bears and crocodiles.",
     image: "/images/new-img/IMG_9129.jpg",
   },
   {

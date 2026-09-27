@@ -60,7 +60,7 @@ export default function TrustStrip() {
             </h2>
             <p className="mx-auto mt-5 max-w-md text-base leading-relaxed text-brand-ink-muted sm:mx-0">
               Sri Lanka&apos;s southern parks hide some of nature&apos;s most
-              extraordinary spectacles — leopards draped across ancient rocks,
+              extraordinary spectacles: leopards draped across ancient rocks,
               elephant herds wading through golden reservoirs, and flamingos
               painting coastal lagoons pink at dawn.
             </p>

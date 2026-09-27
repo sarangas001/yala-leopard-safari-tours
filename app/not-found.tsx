@@ -27,7 +27,7 @@ export default function NotFound() {
             This Trail Leads Nowhere
           </h1>
           <p className="mx-auto mt-5 max-w-md text-base leading-relaxed text-white/80">
-            The page you&apos;re looking for has wandered off — much like
+            The page you&apos;re looking for has wandered off, much like
             the wildlife it&apos;s named after. Let&apos;s get you back on
             track.
           </p>

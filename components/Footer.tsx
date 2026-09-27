@@ -58,8 +58,6 @@ const SAFARI_PARK_LINKS: { href: string; label: string }[] = [
   { href: "/safaris/yala", label: "Yala National Park" },
   { href: "/safaris/udawalawe", label: "Udawalawe National Park" },
   { href: "/safaris/bundala", label: "Bundala National Park" },
-  { href: "/safaris/kumana", label: "Kumana National Park" },
-  { href: "/safaris/lunugamvehera", label: "Lunugamvehera National Park" },
 ];
 
 function getNavColumns(): { heading: string; links: { href: string; label: string }[] }[] {
@@ -174,30 +172,6 @@ function TripAdvisorIcon({ className = "h-5 w-5" }: IconProps) {
   );
 }
 
-function WhatsAppIcon({ className = "h-5 w-5" }: IconProps) {
-  return (
-    <svg viewBox="0 0 24 24" fill="none" className={className} aria-hidden="true">
-      <path
-        d="M12 3.5a8.4 8.4 0 0 0-7.2 12.7L3.5 20.5l4.4-1.3A8.4 8.4 0 1 0 12 3.5Z"
-        stroke="currentColor"
-        strokeWidth="1.5"
-      />
-      <path
-        d="M8.8 8.4c.2-.5.4-.5.6-.5h.5c.2 0 .4 0 .5.4.2.5.6 1.6.6 1.7.1.1.1.3 0 .4-.1.2-.1.3-.3.4-.1.2-.3.3-.4.5-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.1.5.1.6-.1.2-.2.7-.8.9-1.1.2-.2.4-.2.6-.1l1.5.7c.2.1.4.2.4.3.1.2.1.9-.2 1.5-.3.6-1.5 1.2-2.1 1.2-.5.1-1.2.1-1.9-.1-.4-.1-1-.3-1.7-.6-3-1.3-4.9-4.3-5-4.5-.1-.2-1.2-1.6-1.2-3s.7-2.1.9-2.4Z"
-        fill="currentColor"
-      />
-    </svg>
-  );
-}
-
-function ArrowRightIcon({ className = "h-5 w-5" }: IconProps) {
-  return (
-    <svg viewBox="0 0 24 24" fill="none" className={className} aria-hidden="true">
-      <path d="M4 12h15M13 6l6 6-6 6" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-    </svg>
-  );
-}
-
 const SOCIAL_LINKS = [
   { label: "Facebook", Icon: FacebookIcon },
   { label: "Instagram", Icon: InstagramIcon },
@@ -211,7 +185,7 @@ function NavLink({ href, label }: { href: string; label: string }) {
     <li>
       <Link
         href={href}
-        className="text-sm text-brand-ink-muted transition-colors hover:text-forest focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-forest/40 rounded"
+        className="text-sm text-brand-ink-muted transition-colors hover:text-brand-orange focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange/40 rounded"
       >
         {label}
       </Link>
@@ -262,18 +236,6 @@ export default function Footer() {
               waterhole, we help you explore Sri Lanka&apos;s wild side
               responsibly, safely and at an unhurried pace.
             </p>
-            <div className="mt-6 flex justify-center gap-3 sm:justify-start">
-              {SOCIAL_LINKS.map(({ label, Icon }) => (
-                <a
-                  key={label}
-                  href="#"
-                  aria-label={label}
-                  className="flex h-10 w-10 items-center justify-center rounded-full border border-brand-ink/20 text-brand-ink transition-colors hover:border-brand-ink hover:bg-brand-ink hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-ink/40 focus-visible:ring-offset-2 focus-visible:ring-offset-white"
-                >
-                  <Icon className="h-6 w-6" />
-                </a>
-              ))}
-            </div>
           </div>
 
           {/* Newsletter area */}
@@ -283,29 +245,20 @@ export default function Footer() {
             </h3>
             <p className="mt-3 text-sm leading-relaxed text-brand-ink-muted">
               Sign up for Yala travel tips, wildlife updates and special
-              safari offers — sent straight to your inbox.
+              safari offers, sent straight to your inbox.
             </p>
-            <form className="mt-5 flex items-center gap-2 rounded-full border border-earth/20 bg-white p-1.5 pl-5">
-              <label htmlFor="footer-newsletter-email" className="sr-only">
-                Email address
-              </label>
-              <input
-                id="footer-newsletter-email"
-                type="email"
-                required
-                placeholder="Your email address"
-                autoComplete="email"
-                suppressHydrationWarning
-                className="w-full bg-transparent text-sm text-black placeholder:text-brand-ink-muted/70 focus:outline-none"
-              />
-              <button
-                type="submit"
-                aria-label="Subscribe"
-                className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-black text-white transition-colors hover:bg-black/80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black/50 focus-visible:ring-offset-2 focus-visible:ring-offset-white"
-              >
-                <ArrowRightIcon className="h-4 w-4" />
-              </button>
-            </form>
+            <div className="mt-6 flex justify-center gap-3 sm:justify-start">
+              {SOCIAL_LINKS.map(({ label, Icon }) => (
+                <a
+                  key={label}
+                  href="#"
+                  aria-label={label}
+                  className="flex h-10 w-10 items-center justify-center rounded-full border border-brand-ink/20 text-brand-ink transition-colors hover:border-brand-orange hover:bg-brand-orange hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange/40 focus-visible:ring-offset-2 focus-visible:ring-offset-white"
+                >
+                  <Icon className="h-6 w-6" />
+                </a>
+              ))}
+            </div>
           </div>
         </div>
 
@@ -316,7 +269,7 @@ export default function Footer() {
               key={item.key}
               href={item.href}
               {...(item.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
-              className="flex items-center justify-center gap-3 rounded text-sm font-medium text-brand-ink transition-colors hover:text-forest focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-forest/40 sm:justify-start"
+              className="flex items-center justify-center gap-3 rounded text-sm font-medium text-brand-ink transition-colors hover:text-brand-orange focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange/40 sm:justify-start"
             >
               <Image
                 src={item.icon}
@@ -328,7 +281,7 @@ export default function Footer() {
               />
               <span className="min-w-0 text-left">
                 <span className="block text-xs uppercase tracking-wide text-brand-ink-muted">{item.label}</span>
-                <span className="block">{item.value}</span>
+                <span className="block wrap-break-word">{item.value}</span>
               </span>
             </a>
           ))}
@@ -368,14 +321,15 @@ export default function Footer() {
           <div className="flex flex-col items-center gap-4 text-center text-xs text-brand-ink-muted sm:flex-row sm:items-center sm:justify-between sm:text-left">
             <p suppressHydrationWarning>© {new Date().getFullYear()} Yala Leopard Safari Tours. All Rights Reserved.</p>
             <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2 sm:justify-start">
-              <Link href="/legal/privacy-policy" className="transition-colors hover:text-forest">Privacy Policy</Link>
-              <Link href="/legal/terms-and-conditions" className="transition-colors hover:text-forest">Terms and Conditions</Link>
-              <Link href="/legal/cookie-policy" className="transition-colors hover:text-forest">Cookie Policy</Link>
+              <Link href="/legal/privacy-policy" className="transition-colors hover:text-brand-orange">Privacy Policy</Link>
+              <Link href="/legal/terms-and-conditions" className="transition-colors hover:text-brand-orange">Terms and Conditions</Link>
+              <Link href="/legal/cookie-policy" className="transition-colors hover:text-brand-orange">Cookie Policy</Link>
             </div>
           </div>
-          <p className="mt-4 text-center text-[11px] italic text-brand-ink-muted/80 sm:text-left">
-            Designed with respect for Sri Lanka&apos;s wildlife.
-          </p>
+          <div className="mt-4 flex flex-col items-center justify-between gap-2 text-center text-[11px] italic text-brand-ink-muted/80 sm:flex-row sm:text-left">
+            <p>Designed with respect for Sri Lanka&apos;s wildlife.</p>
+            <p>Site by Grow Digitally</p>
+          </div>
         </div>
       </div>
 
@@ -391,9 +345,9 @@ export default function Footer() {
         rel="noopener noreferrer"
         aria-label="Chat with us on WhatsApp"
         suppressHydrationWarning
-        className="fixed bottom-6 right-6 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-lg shadow-[#25D366]/40 transition-colors hover:bg-[#1EBE5A] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#25D366]/50 focus-visible:ring-offset-2"
+        className="fixed bottom-6 right-6 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-white shadow-lg shadow-black/20 transition-transform hover:scale-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#25D366]/50 focus-visible:ring-offset-2"
       >
-        <WhatsAppIcon className="h-6 w-6" />
+        <Image src="/images/icons/whatsapp.svg" alt="" aria-hidden="true" width={40} height={40} className="h-10 w-10" />
       </a>
     </footer>
   );

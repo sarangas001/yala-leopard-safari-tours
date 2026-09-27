@@ -13,14 +13,6 @@ const PARK_CHOICES = [
     q: "Choose Bundala if...",
     a: "You love birds, wetlands, photography and a less crowded experience.",
   },
-  {
-    q: "Choose Kumana if...",
-    a: "You want to witness massive nesting bird colonies in a remote, untouched wetland wilderness without the safari crowds.",
-  },
-  {
-    q: "Choose Lunugamvehera if...",
-    a: "You want a quiet, crowd-free alternative to spot migrating elephant herds and wildlife passing through an essential ecological corridor.",
-  },
 ];
 
 function ChevronDownIcon({ className }: { className?: string }) {

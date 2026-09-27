@@ -11,12 +11,13 @@ export const udawalawe: ParkContent = {
       title: "Udawalawe Elephant Safari Tours",
       description:
         "Explore the open grasslands, reservoir landscapes and elephant-rich habitats of Udawalawe National Park with an experienced local safari driver in a private 4x4 jeep.",
-      video: "/videos/yala-leopard.mp4",
+      video: "/videos/udawalawe.mp4",
       ctas: [{ label: "Book Udawalawe Safari", href: "/#enquire" }],
     },
     {
       type: "pricing",
       heading: "Choose Your Udawalawe Safari",
+      image: "/images/new-img/IMG_2001.jpg",
       description:
         "Udawalawe tours are currently planned as private tours only. Whichever package you choose, you'll travel in a comfortable 4x4 jeep with an experienced local driver, on a schedule built around your group.",
       packages: [
@@ -25,6 +26,7 @@ export const udawalawe: ParkContent = {
           time: "To be confirmed",
           duration: "Approx. 4–5 hours",
           includes: "Breakfast",
+          image: "/images/new-img/IMG_2001.jpg",
           tiers: [
             { group: "1 Person", price: "$80" },
             { group: "2 Persons", price: "$50 pp" },
@@ -39,6 +41,7 @@ export const udawalawe: ParkContent = {
           time: "To be confirmed",
           duration: "7 hours",
           includes: "Breakfast",
+          image: "/images/new-img/IMG_1457.jpg",
           tiers: [
             { group: "1 Person", price: "$95" },
             { group: "2 Persons", price: "$60 pp" },
@@ -53,6 +56,7 @@ export const udawalawe: ParkContent = {
           time: "To be confirmed",
           duration: "Approx. 13 hours",
           includes: "Breakfast and lunch",
+          image: "/images/new-img/IMG_4846.jpg",
           tiers: [
             { group: "1 Person", price: "$140" },
             { group: "2 Persons", price: "$90 pp" },
@@ -119,7 +123,7 @@ export const udawalawe: ParkContent = {
       type: "inclusionsExclusions",
       heading: "What's Included & Excluded",
       intro:
-        "Exact inclusions depend on the package you select — here's a general guide to what's covered.",
+        "Exact inclusions depend on the package you select: here's a general guide to what's covered.",
       inclusions: [
         "Private 4x4 safari jeep",
         "Experienced English-speaking wildlife driver",
@@ -173,7 +177,7 @@ export const udawalawe: ParkContent = {
       faqs: [
         {
           q: "Is Udawalawe good for elephants?",
-          a: "Yes — Udawalawe is one of Sri Lanka's best-known parks for elephant viewing, with open grassland habitats that make sightings especially likely.",
+          a: "Yes, Udawalawe is one of Sri Lanka's best-known parks for elephant viewing, with open grassland habitats that make sightings especially likely.",
         },
         {
           q: "Are the tours private?",
@@ -185,11 +189,11 @@ export const udawalawe: ParkContent = {
         },
         {
           q: "Is the entrance ticket included?",
-          a: "No — the park entrance ticket is not included in the safari price unless it's explicitly selected or added.",
+          a: "No, the park entrance ticket is not included in the safari price unless it's explicitly selected or added.",
         },
         {
           q: "Is hotel pickup available?",
-          a: "Yes, hotel pickup and drop-off is available in applicable areas — just share your hotel details when booking.",
+          a: "Yes, hotel pickup and drop-off is available in applicable areas; just share your hotel details when booking.",
         },
         {
           q: "Can children join?",
@@ -197,11 +201,11 @@ export const udawalawe: ParkContent = {
         },
         {
           q: "Are elephant sightings guaranteed?",
-          a: "No sighting can ever be guaranteed, as animals move freely in their natural habitat — but Udawalawe's open terrain gives you an excellent chance of seeing elephants.",
+          a: "No sighting can ever be guaranteed, as animals move freely in their natural habitat, but Udawalawe's open terrain gives you an excellent chance of seeing elephants.",
         },
         {
           q: "What should I bring?",
-          a: "Comfortable clothing and shoes, a camera, binoculars, sunscreen, a hat and sunglasses — see our full what to bring list below.",
+          a: "Comfortable clothing and shoes, a camera, binoculars, sunscreen, a hat and sunglasses: see our full what to bring list below.",
         },
       ],
     },

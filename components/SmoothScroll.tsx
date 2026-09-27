@@ -1,10 +1,36 @@
 "use client";
 
 import { ReactLenis, useLenis } from "lenis/react";
-import { useEffect, useState, type ReactNode } from "react";
+import { usePathname } from "next/navigation";
+import { useEffect, useRef, useState, type ReactNode } from "react";
 
 const HEADER_OFFSET = 96;
 const PARK_HASH_RE = /^#park-(.+)$/;
+
+// Lenis owns the actual scroll position independently of Next's router, so a
+// client-side navigation to a new page can otherwise leave the new page's Hero
+// scrolled to wherever the previous page happened to be. Snap back to the top
+// (instantly, not animated) whenever the route itself changes, but not on a
+// same-page hash navigation, which HashLinkHandler already handles.
+function ScrollResetOnNavigate() {
+  const lenis = useLenis();
+  const pathname = usePathname();
+  const isFirstRender = useRef(true);
+
+  useEffect(() => {
+    if (isFirstRender.current) {
+      isFirstRender.current = false;
+      return;
+    }
+    if (lenis) {
+      lenis.scrollTo(0, { immediate: true });
+    } else {
+      window.scrollTo(0, 0);
+    }
+  }, [pathname, lenis]);
+
+  return null;
+}
 
 // Handles same-page hash links (park deep-links, footer/nav anchors) with the
 // same smooth easing as regular scrolling, instead of the browser's instant jump.
@@ -88,6 +114,7 @@ export default function SmoothScroll({ children }: { children: ReactNode }) {
       }}
     >
       <HashLinkHandler />
+      <ScrollResetOnNavigate />
       {children}
     </ReactLenis>
   );

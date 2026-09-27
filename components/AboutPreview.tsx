@@ -4,20 +4,20 @@ import Reveal from "@/components/Reveal";
 export default function AboutPreview() {
   return (
     <section id="about" className="relative w-full overflow-hidden bg-white">
-      {/* Peacock illustration — large, behind all content, decorative */}
-      {/* <div
-        className="pointer-events-none absolute bottom-16 right-10 z-0 hidden select-none sm:bottom-20 sm:right-20 lg:bottom-24 lg:right-40 lg:block"
+      {/* Peacock illustration — mirrors the elephant illustration placement in SafariParks, left-aligned */}
+      <div
+        className="pointer-events-none absolute -top-4 -left-8 z-0 hidden select-none lg:block"
         aria-hidden="true"
       >
         <Image
           src="/images/parks/peocock.png"
           alt=""
-          width={420}
-          height={502}
+          width={400}
+          height={500}
           quality={90}
-          style={{ width: "320px", height: "auto", opacity: 0.92 }}
+          style={{ width: "380px", height: "auto", opacity: 0.92 }}
         />
-      </div> */}
+      </div>
 
       <div className="relative z-10 mx-auto max-w-[1600px] px-10 py-16 sm:px-20 sm:py-20 lg:px-40 lg:py-24">
         <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-20">

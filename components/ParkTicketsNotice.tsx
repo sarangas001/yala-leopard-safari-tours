@@ -12,7 +12,7 @@ export default function ParkTicketsNotice() {
             Park entrance tickets are charged separately from your safari&apos;s
             base price. Rates are set by Sri Lanka&apos;s Department of Wildlife
             Conservation and vary by park, so this cost isn&apos;t bundled into
-            our package pricing — it&apos;s shown as its own line item in your
+            our package pricing; it&apos;s shown as its own line item in your
             quote whenever it applies, so the final cost is always clear before
             you confirm your booking.
           </p>

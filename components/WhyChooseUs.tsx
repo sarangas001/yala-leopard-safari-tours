@@ -34,7 +34,7 @@ const BENEFITS = [
   },
   {
     title: "Photography-Friendly Jeeps",
-    text: "Open 4x4 seating with unobstructed sightlines — perfect for wildlife photography.",
+    text: "Open 4x4 seating with unobstructed sightlines, perfect for wildlife photography.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" className="h-5 w-5" aria-hidden="true">
         <rect x="4" y="7" width="16" height="11" rx="2" stroke="currentColor" strokeWidth="1.5" />
@@ -45,7 +45,7 @@ const BENEFITS = [
   },
   {
     title: "Transparent Pricing",
-    text: "Clear inclusions, exclusions and add-on pricing before you commit — no surprise charges.",
+    text: "Clear inclusions, exclusions and add-on pricing before you commit: no surprise charges.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" className="h-5 w-5" aria-hidden="true">
         <path d="M4 8.5A2.5 2.5 0 0 1 6.5 6h9A2.5 2.5 0 0 1 18 8.5V17a1 1 0 0 1-1.55.83L14 16.5l-2.45 1.33a1 1 0 0 1-1 0L8.1 16.5l-2.45 1.33A1 1 0 0 1 4 17V8.5Z" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round" />
@@ -55,7 +55,7 @@ const BENEFITS = [
   },
   {
     title: "Free Cancellation",
-    text: "Cancel up to 24 hours before your safari for a full refund — book with complete confidence.",
+    text: "Cancel up to 24 hours before your safari for a full refund: book with complete confidence.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" className="h-5 w-5" aria-hidden="true">
         <path

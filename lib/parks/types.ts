@@ -21,6 +21,7 @@ export type Section =
       description?: string;
       packages: SafariPackage[];
       note?: string;
+      image?: string;
     }
   | {
       type: "whyVisit";

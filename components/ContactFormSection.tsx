@@ -223,7 +223,7 @@ export default function ContactFormSection() {
                     <span className="block text-xs uppercase tracking-wide text-brand-ink-muted">
                       {item.label}
                     </span>
-                    <span className="block text-base font-medium">{item.value}</span>
+                    <span className="block text-base font-medium wrap-break-word">{item.value}</span>
                   </span>
                 </a>
               ))}

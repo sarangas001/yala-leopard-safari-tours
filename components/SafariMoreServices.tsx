@@ -7,6 +7,7 @@ type ServiceCard = {
   image: string;
   alt: string;
   href: string;
+  cta: string;
 };
 
 const SERVICES: ServiceCard[] = [
@@ -16,6 +17,7 @@ const SERVICES: ServiceCard[] = [
     image: "/images/new-img/IMG_2374.jpg",
     alt: "A safari guide standing beside a 4x4 jeep in Yala National Park",
     href: "/hambantota-port-to-yala",
+    cta: "See Package Details",
   },
   {
     title: "Taxi and Car Rental",
@@ -23,6 +25,7 @@ const SERVICES: ServiceCard[] = [
     image: "/images/new-img/9.jpg",
     alt: "A row of private vehicles available for hire in Sri Lanka",
     href: "/taxi-car-rental",
+    cta: "See Package Details",
   },
 ];
 
@@ -63,7 +66,7 @@ export default function SafariMoreServices() {
                   </p>
 
                   <span className="mt-5 inline-flex w-fit items-center gap-2 rounded-full bg-brand-orange px-5 py-2.5 text-xs font-semibold text-white shadow-md shadow-brand-orange/25 transition-all group-hover:bg-brand-orange-dark group-hover:shadow-lg group-hover:shadow-brand-orange/30">
-                    Explore
+                    {service.cta}
                     <span aria-hidden="true">→</span>
                   </span>
                 </div>

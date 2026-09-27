@@ -11,7 +11,7 @@ const FAQS: FaqItem[] = [
   },
   {
     q: "Can I leave a review?",
-    a: "Yes — use the submission form on this page to share your experience. All submissions are moderated before appearing publicly.",
+    a: "Yes, use the submission form on this page to share your experience. All submissions are moderated before appearing publicly.",
   },
   {
     q: "How are reviews moderated?",
@@ -19,7 +19,7 @@ const FAQS: FaqItem[] = [
   },
   {
     q: "How can I tell if a review came from your website or another platform?",
-    a: "Each review card shows its source — whether it was submitted directly through this site or collected from an external platform like Google or TripAdvisor.",
+    a: "Each review card shows its source: whether it was submitted directly through this site or collected from an external platform like Google or TripAdvisor.",
   },
   {
     q: "Will my personal details be shown publicly?",

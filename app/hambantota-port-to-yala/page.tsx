@@ -67,7 +67,7 @@ const FAQS = [
   },
   {
     q: "Is the trip round trip?",
-    a: "Yes. This is a round trip — pickup from Hambantota, a full Yala safari, and return to your agreed Hambantota location afterwards.",
+    a: "Yes. This is a round trip: pickup from Hambantota, a full Yala safari, and return to your agreed Hambantota location afterwards.",
   },
   {
     q: "Is the Yala safari included?",

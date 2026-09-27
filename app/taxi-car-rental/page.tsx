@@ -45,7 +45,7 @@ const WHY_TRAVEL_WITH_US = [
 const FAQS = [
   {
     q: "Is a driver included?",
-    a: "Yes, every rental includes an English-speaking driver — this is a driver rental service, not a self-drive rental.",
+    a: "Yes, every rental includes an English-speaking driver: this is a driver rental service, not a self-drive rental.",
   },
   {
     q: "Is fuel included?",

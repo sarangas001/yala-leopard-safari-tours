@@ -11,8 +11,6 @@ const PARK_NAMES: Record<string, string> = {
   yala: "Yala National Park",
   udawalawe: "Udawalawe National Park",
   bundala: "Bundala National Park",
-  kumana: "Kumana National Park",
-  lunugamvehera: "Lunugamvehera National Park",
 };
 
 export function generateStaticParams() {
@@ -109,7 +107,7 @@ export default async function BookingConfirmation({
       <StatusShell
         park={park}
         title="Checkout Expired"
-        message="This checkout session expired before payment was completed. Please start your booking again — no payment was taken."
+        message="This checkout session expired before payment was completed. Please start your booking again. No payment was taken."
       />
     );
   }
@@ -137,7 +135,7 @@ export default async function BookingConfirmation({
               <span className="h-px w-6 bg-brand-orange/50" aria-hidden="true" />
             </span>
             <h1 className="mt-4 font-display text-4xl font-medium leading-[1.1] tracking-tight text-brand-ink sm:text-5xl">
-              Thank You — You&apos;re All Set
+              Thank You: You&apos;re All Set
             </h1>
             <p className="mt-4 text-base leading-relaxed text-brand-ink-muted">
               A confirmation has been sent to your email. Reference:{" "}
@@ -197,7 +195,7 @@ export default async function BookingConfirmation({
 
           <Reveal delay={0.15} className="mx-auto mt-8 max-w-2xl">
             <p className="text-sm leading-relaxed text-brand-ink-muted">
-              <span className="font-semibold text-brand-ink">Important:</span> please be ready at your confirmed pickup time. Pickup timing can vary slightly depending on hotel location, traffic and park conditions — we&apos;ll be in touch by WhatsApp if anything changes.
+              <span className="font-semibold text-brand-ink">Important:</span> please be ready at your confirmed pickup time. Pickup timing can vary slightly depending on hotel location, traffic and park conditions; we&apos;ll be in touch by WhatsApp if anything changes.
             </p>
           </Reveal>
 

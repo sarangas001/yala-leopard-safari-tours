@@ -153,7 +153,7 @@ export default function BookingFlow({
                 />
               </div>
               <p className="mt-2 text-xs text-brand-ink-muted">
-                Live availability isn&apos;t connected yet — dates aren&apos;t checked against real capacity.
+                Live availability isn&apos;t connected yet; dates aren&apos;t checked against real capacity.
               </p>
             </Reveal>
 
@@ -190,7 +190,7 @@ export default function BookingFlow({
                   className="mt-0.5 h-4 w-4 shrink-0 rounded border-earth/40 text-brand-orange focus:ring-brand-orange"
                 />
                 <span className="text-sm leading-relaxed text-brand-ink-muted">
-                  <span className="font-medium text-brand-ink">Add Park Entrance Tickets</span> — {formatUsd(ENTRANCE_TICKET_PRICE_USD)} per eligible guest. Rate shown is a reference figure and may vary by park.
+                  <span className="font-medium text-brand-ink">Add Park Entrance Tickets</span>: {formatUsd(ENTRANCE_TICKET_PRICE_USD)} per eligible guest. Rate shown is a reference figure and may vary by park.
                 </span>
               </label>
             </Reveal>

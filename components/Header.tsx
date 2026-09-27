@@ -170,7 +170,7 @@ export default function Header() {
             <Link
               href="/safaris"
               onClick={closeAll}
-              className="hidden items-center gap-2 rounded-full bg-white px-5 py-2.5 text-sm font-semibold text-brand-ink transition-colors hover:bg-white/90 sm:inline-flex"
+              className="hidden items-center gap-2 rounded-full bg-brand-orange px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-brand-orange-dark sm:inline-flex"
             >
               Plan your safari
             </Link>
@@ -211,7 +211,7 @@ export default function Header() {
           <Link
             href="/safaris"
             onClick={closeAll}
-            className="mt-3 inline-flex items-center justify-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-semibold text-brand-ink"
+            className="mt-3 inline-flex items-center justify-center gap-2 rounded-full bg-brand-orange px-5 py-3 text-sm font-semibold text-white"
           >
             Plan your safari
           </Link>

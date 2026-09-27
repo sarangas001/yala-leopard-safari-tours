@@ -26,7 +26,7 @@ const STORIES: GuestStory[] = [
     country: "United Kingdom",
     safariType: "yala",
     rating: 5,
-    excerpt: "Add a real, approved Yala review here — a specific moment (a leopard sighting, the guide's knowledge) reads best.",
+    excerpt: "Add a real, approved Yala review here: a specific moment (a leopard sighting, the guide's knowledge) reads best.",
     date: "Add review date",
     source: "Add source (Google, TripAdvisor, Direct, etc.)",
   },
@@ -35,7 +35,7 @@ const STORIES: GuestStory[] = [
     country: "Germany",
     safariType: "udawalawe",
     rating: 5,
-    excerpt: "Add a real, approved Udawalawe review here — mention the elephant herds or the pace of the drive.",
+    excerpt: "Add a real, approved Udawalawe review here: mention the elephant herds or the pace of the drive.",
     date: "Add review date",
     source: "Add source (Google, TripAdvisor, Direct, etc.)",
   },
@@ -44,7 +44,7 @@ const STORIES: GuestStory[] = [
     country: "Australia",
     safariType: "bundala",
     rating: 5,
-    excerpt: "Add a real, approved Bundala review here — birdlife, lagoons or a quieter alternative to Yala works well.",
+    excerpt: "Add a real, approved Bundala review here: birdlife, lagoons or a quieter alternative to Yala works well.",
     date: "Add review date",
     source: "Add source (Google, TripAdvisor, Direct, etc.)",
   },
@@ -108,7 +108,7 @@ export default function ReviewsGuestStories() {
             Featured Guest Stories
           </h2>
           <p className="mt-4 text-base leading-relaxed text-brand-ink-muted">
-            Approved reviews from guests across every safari and service we offer — filter by the experience you&apos;re curious about.
+            Approved reviews from guests across every safari and service we offer: filter by the experience you&apos;re curious about.
           </p>
         </Reveal>
 

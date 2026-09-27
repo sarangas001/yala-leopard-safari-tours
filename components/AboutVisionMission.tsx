@@ -3,7 +3,7 @@ import Reveal from "@/components/Reveal";
 const ITEMS = [
   {
     label: "Our Vision",
-    text: "Share Sri Lanka's natural wildlife with global travelers in an eco-friendly manner and to a high standard. We want every guest — whether it's their first safari or their fifth trip back to Yala — to leave with a genuine appreciation for the island's wild places, and a reason to help protect them.",
+    text: "Share Sri Lanka's natural wildlife with global travelers in an eco-friendly manner and to a high standard. We want every guest, whether it's their first safari or their fifth trip back to Yala, to leave with a genuine appreciation for the island's wild places, and a reason to help protect them.",
   },
   {
     label: "Our Mission",
