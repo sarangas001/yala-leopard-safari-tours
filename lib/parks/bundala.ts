@@ -11,7 +11,7 @@ export const bundala: ParkContent = {
       title: "Bundala Bird Watching Safari Tours",
       description:
         "Discover the wetlands, lagoons, coastal habitats and remarkable birdlife of Bundala National Park with an experienced local safari driver in a private 4x4 jeep.",
-      video: "/videos/yala-leopard.mp4",
+      video: "/videos/bundala.mp4",
       ctas: [{ label: "Book Bundala Safari", href: "/#enquire" }],
     },
     {

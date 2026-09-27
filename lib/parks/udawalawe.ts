@@ -11,7 +11,7 @@ export const udawalawe: ParkContent = {
       title: "Udawalawe Elephant Safari Tours",
       description:
         "Explore the open grasslands, reservoir landscapes and elephant-rich habitats of Udawalawe National Park with an experienced local safari driver in a private 4x4 jeep.",
-      video: "/videos/yala-leopard.mp4",
+      video: "/videos/udawalawe.mp4",
       ctas: [{ label: "Book Udawalawe Safari", href: "/#enquire" }],
     },
     {
