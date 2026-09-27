@@ -12,7 +12,7 @@ const SERVICES = [
   "Other",
 ];
 
-const RATINGS = ["5 — Excellent", "4 — Very Good", "3 — Good", "2 — Fair", "1 — Poor"];
+const RATINGS = ["5 - Excellent", "4 - Very Good", "3 - Good", "2 - Fair", "1 - Poor"];
 
 const inputClass =
   "w-full rounded-xl border border-earth/25 bg-white px-4 py-3 text-sm text-brand-ink placeholder:text-brand-ink-muted/60 transition-colors focus:border-brand-orange focus:outline-none";
@@ -51,7 +51,7 @@ export default function ReviewsSubmitForm() {
             Submit a Review
           </h2>
           <p className="mt-4 text-base leading-relaxed text-brand-ink-muted">
-            Been on safari with us? We&apos;d love to hear about it — every submission is moderated before it appears publicly.
+            Been on safari with us? We&apos;d love to hear about it; every submission is moderated before it appears publicly.
           </p>
         </Reveal>
 
@@ -96,7 +96,7 @@ export default function ReviewsSubmitForm() {
                   name="review"
                   rows={5}
                   required
-                  placeholder="Tell us about your safari — the wildlife you saw, your guide, or anything that stood out."
+                  placeholder="Tell us about your safari: the wildlife you saw, your guide, or anything that stood out."
                   className={inputClass + " resize-none"}
                 />
               </Field>

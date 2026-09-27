@@ -21,7 +21,7 @@ export default function PageHero({
         <div className="absolute inset-0 bg-linear-to-b from-black/65 via-black/35 to-black/45" />
       </div>
 
-      <div className="relative z-10 mx-auto max-w-[1600px] px-10 pt-32 pb-20 text-center sm:px-20 sm:pt-40 sm:pb-24 lg:flex lg:min-h-175 lg:items-center lg:justify-center lg:px-40 lg:py-0">
+      <div className="relative z-10 mx-auto max-w-[1600px] px-10 pt-32 pb-20 text-center sm:px-20 sm:pt-40 sm:pb-24 lg:flex lg:min-h-185 lg:items-center lg:justify-center lg:px-40 lg:py-0">
         <Reveal className="mx-auto max-w-2xl">
           <h1 className="font-display text-4xl font-medium leading-[1.05] tracking-tight text-white sm:text-5xl lg:text-6xl">
             {title}
@@ -34,7 +34,7 @@ export default function PageHero({
           {cta ? (
             <a
               href={cta.href}
-              className="mt-8 inline-flex items-center gap-2 rounded-full bg-white px-7 py-3.5 text-sm font-semibold text-brand-ink shadow-lg shadow-black/20 transition-all hover:bg-white/95 hover:shadow-xl hover:shadow-black/25 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-ink"
+              className="mt-8 inline-flex items-center gap-2 rounded-full bg-brand-orange px-7 py-3.5 text-sm font-semibold text-white shadow-lg shadow-brand-orange/30 transition-all hover:bg-brand-orange-dark hover:shadow-xl hover:shadow-brand-orange/35 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
             >
               {cta.label}
               <span aria-hidden="true">→</span>

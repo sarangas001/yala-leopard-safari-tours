@@ -59,7 +59,7 @@ export default function WildlifeGrid() {
 
         <Reveal className="mt-8 text-center lg:mt-10">
           <p className="mx-auto max-w-sm text-xs text-brand-ink-muted/70">
-            Wildlife sightings are never guaranteed — animals move freely in their natural habitat.
+            Wildlife sightings are never guaranteed; animals move freely in their natural habitat.
           </p>
         </Reveal>
       </div>

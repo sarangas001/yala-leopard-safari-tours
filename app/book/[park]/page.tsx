@@ -62,7 +62,7 @@ export default async function BookPark({
               Your {PARK_NAMES[park] ?? "Safari"}
             </h1>
             <p className="mt-4 text-base leading-relaxed text-brand-ink-muted">
-              Choose your package, date and guests below — your total updates live as you go.
+              Choose your package, date and guests below; your total updates live as you go.
             </p>
           </Reveal>
         </div>

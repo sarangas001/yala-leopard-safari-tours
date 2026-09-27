@@ -3,8 +3,23 @@ import Reveal from "@/components/Reveal";
 
 export default function SafariInclusions() {
   return (
-    <section className="w-full bg-white">
-      <div className="mx-auto max-w-[1600px] px-10 py-16 sm:px-20 sm:py-20 lg:px-40 lg:py-24">
+    <section className="relative w-full overflow-hidden bg-white">
+      {/* Leopard illustration — right-aligned decorative graphic */}
+      <div
+        className="pointer-events-none absolute -top-10 -right-8 z-0 hidden select-none lg:block"
+        aria-hidden="true"
+      >
+        <Image
+          src="/images/parks/leopard.png"
+          alt=""
+          width={400}
+          height={500}
+          quality={90}
+          style={{ width: "380px", height: "auto", opacity: 0.92 }}
+        />
+      </div>
+
+      <div className="relative z-10 mx-auto max-w-[1600px] px-10 py-16 sm:px-20 sm:py-20 lg:px-40 lg:py-24">
         <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-20">
           <Reveal>
             <div className="relative aspect-3/2 w-full max-w-lg overflow-hidden rounded-3xl mx-auto lg:mx-0">

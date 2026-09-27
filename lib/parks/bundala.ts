@@ -17,6 +17,7 @@ export const bundala: ParkContent = {
     {
       type: "pricing",
       heading: "Choose Your Bundala Safari",
+      image: "/images/new-img/Spoonbill.jpeg",
       description: "Bundala packages are currently planned as private tours only.",
       packages: [
         {
@@ -131,7 +132,7 @@ export const bundala: ParkContent = {
       type: "inclusionsExclusions",
       heading: "What's Included & Excluded",
       intro:
-        "Exact inclusions depend on the package you select — here's a general guide to what's covered.",
+        "Exact inclusions depend on the package you select: here's a general guide to what's covered.",
       inclusions: [
         "Private 4x4 safari jeep",
         "Experienced English-speaking wildlife driver",
@@ -157,7 +158,7 @@ export const bundala: ParkContent = {
       type: "infoSection",
       heading: "Best Time for Bird Watching",
       paragraph:
-        "Early morning and late afternoon tend to be the most active times for birdwatching in Bundala, when temperatures are cooler and birds are most visible around the lagoons and wetlands. Overall activity varies with the season, water levels and migration cycles, so no two visits look exactly the same — your driver will help plan your route around the conditions on the day.",
+        "Early morning and late afternoon tend to be the most active times for birdwatching in Bundala, when temperatures are cooler and birds are most visible around the lagoons and wetlands. Overall activity varies with the season, water levels and migration cycles, so no two visits look exactly the same; your driver will help plan your route around the conditions on the day.",
     },
     {
       type: "checklist",
@@ -206,7 +207,7 @@ export const bundala: ParkContent = {
         },
         {
           q: "What birds can I see?",
-          a: "Bundala is known for flamingos and other migratory waterbirds, pelicans, painted storks, herons and egrets, along with resident peacocks — the exact species you see will depend on the season and time of your visit.",
+          a: "Bundala is known for flamingos and other migratory waterbirds, pelicans, painted storks, herons and egrets, along with resident peacocks; the exact species you see will depend on the season and time of your visit.",
         },
         {
           q: "Is Bundala less crowded than Yala?",
@@ -218,11 +219,11 @@ export const bundala: ParkContent = {
         },
         {
           q: "Is the park entrance ticket included?",
-          a: "No — the park entrance ticket is not included in the safari price unless it's explicitly selected or added.",
+          a: "No, the park entrance ticket is not included in the safari price unless it's explicitly selected or added.",
         },
         {
           q: "Is hotel pickup available?",
-          a: "Yes, hotel pickup and drop-off is available in applicable areas — just share your hotel details when booking.",
+          a: "Yes, hotel pickup and drop-off is available in applicable areas; just share your hotel details when booking.",
         },
         {
           q: "What safari duration is best for birdwatchers?",
@@ -230,7 +231,7 @@ export const bundala: ParkContent = {
         },
         {
           q: "Are bird sightings guaranteed?",
-          a: "No sighting can ever be guaranteed, as birds move freely in their natural habitat and sightings depend on the day, season and migration patterns — but Bundala's rich wetland habitats give you an excellent chance of memorable birdwatching.",
+          a: "No sighting can ever be guaranteed, as birds move freely in their natural habitat and sightings depend on the day, season and migration patterns, but Bundala's rich wetland habitats give you an excellent chance of memorable birdwatching.",
         },
       ],
     },

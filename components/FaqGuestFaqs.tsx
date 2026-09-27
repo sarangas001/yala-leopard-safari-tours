@@ -11,7 +11,7 @@ const FAQS: FaqItem[] = [
   },
   {
     q: "Are infants free?",
-    a: "Infant age and pricing rules are still being finalized — please check with us directly when booking for the most current guidance.",
+    a: "Infant age and pricing rules are still being finalized; please check with us directly when booking for the most current guidance.",
   },
 ];
 

@@ -17,6 +17,7 @@ export const kumana: ParkContent = {
     {
       type: "pricing",
       heading: "Choose Your Kumana Safari",
+      image: "/images/new-img/4-A-Kumana-leopard.jpg",
       description: "Kumana packages are currently planned as private tours only.",
       packages: [
         {
@@ -132,7 +133,7 @@ export const kumana: ParkContent = {
       type: "inclusionsExclusions",
       heading: "What's Included &amp; Excluded",
       intro:
-        "Exact inclusions depend on the package you select — here's a general guide to what's covered.",
+        "Exact inclusions depend on the package you select: here's a general guide to what's covered.",
       inclusions: [
         "Private 4x4 safari jeep",
         "Experienced English-speaking wildlife driver",
@@ -152,13 +153,13 @@ export const kumana: ParkContent = {
       type: "infoSection",
       heading: "Park Entrance Information",
       paragraph:
-        "The Kumana National Park entrance ticket is charged separately from your safari's base price. Rates are set by Sri Lanka's Department of Wildlife Conservation, so this cost isn't bundled into our package pricing — it's shown as its own line item in your quote whenever it applies, so the final cost is always clear before you confirm your booking.",
+        "The Kumana National Park entrance ticket is charged separately from your safari's base price. Rates are set by Sri Lanka's Department of Wildlife Conservation, so this cost isn't bundled into our package pricing; it's shown as its own line item in your quote whenever it applies, so the final cost is always clear before you confirm your booking.",
     },
     {
       type: "infoSection",
       heading: "Best Time for Bird Watching",
       paragraph:
-        "As a general guide, Kumana's nesting season — roughly April to June — tends to draw the biggest concentrations of waterbirds to the park's wetlands, making it a popular window for birdwatchers. Exact timing shifts a little from year to year, and access or closure dates can also change, so it's always best to confirm current conditions directly with us before your trip.",
+        "As a general guide, Kumana's nesting season, roughly April to June, tends to draw the biggest concentrations of waterbirds to the park's wetlands, making it a popular window for birdwatchers. Exact timing shifts a little from year to year, and access or closure dates can also change, so it's always best to confirm current conditions directly with us before your trip.",
     },
     {
       type: "checklist",
@@ -202,7 +203,7 @@ export const kumana: ParkContent = {
       faqs: [
         {
           q: "Is Kumana less crowded than Yala?",
-          a: "Yes — Kumana sees far fewer visitors than Yala, giving you a quieter, wilder safari experience while offering much of the same wildlife diversity.",
+          a: "Yes, Kumana sees far fewer visitors than Yala, giving you a quieter, wilder safari experience while offering much of the same wildlife diversity.",
         },
         {
           q: "What birds can I see at Kumana?",
@@ -210,7 +211,7 @@ export const kumana: ParkContent = {
         },
         {
           q: "Is Kumana connected to Yala National Park?",
-          a: "Yes, Kumana is connected to Yala by the Kumbukkan Oya river, and the two parks share much of the same wildlife — though Kumana remains noticeably less crowded.",
+          a: "Yes, Kumana is connected to Yala by the Kumbukkan Oya river, and the two parks share much of the same wildlife, though Kumana remains noticeably less crowded.",
         },
         {
           q: "Are tours private?",
@@ -218,11 +219,11 @@ export const kumana: ParkContent = {
         },
         {
           q: "Is the park entrance ticket included?",
-          a: "No — the park entrance ticket is charged separately and is not included in the safari price unless it's explicitly selected or added.",
+          a: "No, the park entrance ticket is charged separately and is not included in the safari price unless it's explicitly selected or added.",
         },
         {
           q: "Is hotel pickup available?",
-          a: "Yes, hotel pickup and drop-off is available in applicable areas — just share your hotel details when booking.",
+          a: "Yes, hotel pickup and drop-off is available in applicable areas; just share your hotel details when booking.",
         },
         {
           q: "What safari duration is best for birdwatchers?",
@@ -230,7 +231,7 @@ export const kumana: ParkContent = {
         },
         {
           q: "Are bird sightings guaranteed?",
-          a: "No sighting can ever be guaranteed, as birds and wildlife move freely and sightings depend on the day, season and migration patterns — but Kumana's nesting colonies make it one of the best parks in Sri Lanka for birdwatching.",
+          a: "No sighting can ever be guaranteed, as birds and wildlife move freely and sightings depend on the day, season and migration patterns, but Kumana's nesting colonies make it one of the best parks in Sri Lanka for birdwatching.",
         },
       ],
     },

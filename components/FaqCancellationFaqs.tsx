@@ -3,7 +3,7 @@ import ParkFaq, { type FaqItem } from "@/components/ParkFaq";
 const FAQS: FaqItem[] = [
   {
     q: "Can I cancel my safari?",
-    a: "Yes — you can cancel free of charge up to 24 hours before your safari for a full refund. This is subject to our full Refund, Cancellation & Return Policy.",
+    a: "Yes, you can cancel free of charge up to 24 hours before your safari for a full refund. This is subject to our full Refund, Cancellation & Return Policy.",
   },
   {
     q: "What happens if I cancel within 24 hours?",

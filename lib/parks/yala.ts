@@ -17,6 +17,7 @@ export const yala: ParkContent = {
     {
       type: "pricing",
       heading: "Choose Your Yala Safari",
+      image: "/images/new-img/IMG_9129.jpg",
       description:
         "Whether you're after a quick morning game drive or a full day tracking wildlife, we have a package to suit your schedule and group size. Every safari runs in a comfortable 4x4 jeep with an experienced local driver, with private and shared options available.",
       packages: [
@@ -83,7 +84,7 @@ export const yala: ParkContent = {
       type: "whyVisit",
       heading: "Why Visit Yala National Park?",
       paragraph:
-        "Yala is one of Sri Lanka's best-known wildlife destinations, famous above all for its leopards — the park has one of the highest leopard densities in the world. Beyond leopards, keep an eye out for elephants, sloth bears, crocodiles, spotted deer, wild boar and abundant birdlife, all set across a striking mix of forest, grassland, lagoon and coastal landscapes. With golden light and dramatic scenery to match the wildlife, Yala is also an excellent choice for wildlife photography.",
+        "Yala is one of Sri Lanka's best-known wildlife destinations, famous above all for its leopards: the park has one of the highest leopard densities in the world. Beyond leopards, keep an eye out for elephants, sloth bears, crocodiles, spotted deer, wild boar and abundant birdlife, all set across a striking mix of forest, grassland, lagoon and coastal landscapes. With golden light and dramatic scenery to match the wildlife, Yala is also an excellent choice for wildlife photography.",
       disclaimer:
         "Please note: wildlife sightings are not guaranteed. Yala is home to an incredible diversity of animals, but sightings depend on the day and cannot be promised on every safari drive.",
     },
@@ -138,7 +139,7 @@ export const yala: ParkContent = {
       type: "inclusionsExclusions",
       heading: "What's Included & Excluded",
       intro:
-        "Exact inclusions depend on the package you select — here's a general guide to what's covered.",
+        "Exact inclusions depend on the package you select: here's a general guide to what's covered.",
       inclusions: [
         "Hotel pickup/drop-off in selected areas",
         "4x4 safari jeep",
@@ -232,7 +233,7 @@ export const yala: ParkContent = {
         },
         {
           q: "Is the park entrance ticket included?",
-          a: "No — the park entrance ticket is charged separately from the safari price. It can be added as an optional extra when you book, so the cost is always clear upfront.",
+          a: "No, the park entrance ticket is charged separately from the safari price. It can be added as an optional extra when you book, so the cost is always clear upfront.",
         },
         {
           q: "What is the difference between shared and private safari?",

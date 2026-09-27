@@ -29,7 +29,7 @@ export default function AboutVehicles() {
               Yala&apos;s dry-zone tracks while keeping you comfortable for
               the whole drive. Raised, cushioned seating and an open
               sides-and-roof design give everyone a clear, unobstructed view
-              of the action — and plenty of room to raise a camera the
+              of the action, and plenty of room to raise a camera the
               moment a leopard steps into view. Every vehicle in our fleet
               is kept clean, well-maintained and safety-checked before it
               takes you out.

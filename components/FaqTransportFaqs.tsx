@@ -15,7 +15,7 @@ const FAQS: FaqItem[] = [
   },
   {
     q: "Is fuel included in the car rental rate?",
-    a: "Yes — fuel and driver are included in the rate. Waiting time, tolls, parking and overnight driver charges may be additional.",
+    a: "Yes, fuel and driver are included in the rate. Waiting time, tolls, parking and overnight driver charges may be additional.",
   },
 ];
 

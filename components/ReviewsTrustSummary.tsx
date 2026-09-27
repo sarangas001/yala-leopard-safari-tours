@@ -13,14 +13,29 @@ const TRUST_BADGES = [
 
 export default function ReviewsTrustSummary() {
   return (
-    <section className="w-full bg-white">
-      <div className="mx-auto max-w-[1600px] px-10 py-16 sm:px-20 sm:py-20 lg:px-40 lg:py-24">
+    <section className="relative w-full overflow-hidden bg-white">
+      {/* Deer illustration — right-aligned decorative graphic */}
+      <div
+        className="pointer-events-none absolute -top-10 -right-8 z-0 hidden select-none lg:block"
+        aria-hidden="true"
+      >
+        <Image
+          src="/images/parks/deer.png"
+          alt=""
+          width={400}
+          height={500}
+          quality={90}
+          style={{ width: "340px", height: "auto", opacity: 0.92 }}
+        />
+      </div>
+
+      <div className="relative z-10 mx-auto max-w-[1600px] px-10 py-16 sm:px-20 sm:py-20 lg:px-40 lg:py-24">
         <Reveal className="mx-auto max-w-2xl text-center">
           <h2 className="font-display text-3xl font-medium tracking-tight text-brand-ink sm:text-4xl lg:text-5xl">
             Trusted by Travelers
           </h2>
           <p className="mt-4 text-base leading-relaxed text-brand-ink-muted">
-            We collect and share feedback from guests across every platform we&apos;re listed on. Ratings and review counts shown on these platforms update in real time — visit them directly for the most current numbers.
+            We collect and share feedback from guests across every platform we&apos;re listed on. Ratings and review counts shown on these platforms update in real time, visit them directly for the most current numbers.
           </p>
         </Reveal>
 

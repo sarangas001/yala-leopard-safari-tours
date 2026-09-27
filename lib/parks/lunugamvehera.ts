@@ -17,6 +17,7 @@ export const lunugamvehera: ParkContent = {
     {
       type: "pricing",
       heading: "Choose Your Lunugamvehera Safari",
+      image: "/images/new-img/11.jpg",
       description: "Lunugamvehera tours are currently planned as private tours only.",
       packages: [
         {
@@ -118,7 +119,7 @@ export const lunugamvehera: ParkContent = {
       type: "inclusionsExclusions",
       heading: "What's Included & Excluded",
       intro:
-        "Exact inclusions depend on the package you select — here's a general guide to what's covered.",
+        "Exact inclusions depend on the package you select: here's a general guide to what's covered.",
       inclusions: [
         "Private 4x4 safari jeep",
         "Experienced English-speaking wildlife driver",
@@ -138,7 +139,7 @@ export const lunugamvehera: ParkContent = {
       type: "infoSection",
       heading: "Park Entrance Information",
       paragraph:
-        "The Lunugamvehera National Park entrance ticket is charged separately from your safari's base price. Rates are set by Sri Lanka's Department of Wildlife Conservation, so this cost isn't bundled into our package pricing — it's shown as its own line item in your quote whenever it applies, so the final cost is always clear before you confirm your booking.",
+        "The Lunugamvehera National Park entrance ticket is charged separately from your safari's base price. Rates are set by Sri Lanka's Department of Wildlife Conservation, so this cost isn't bundled into our package pricing; it's shown as its own line item in your quote whenever it applies, so the final cost is always clear before you confirm your booking.",
     },
     {
       type: "wildlifeSlider",
@@ -186,7 +187,7 @@ export const lunugamvehera: ParkContent = {
       faqs: [
         {
           q: "Is Lunugamvehera good for elephants?",
-          a: "Yes — the park sits on an important corridor that elephants use to migrate between Yala and Udawalawe, so elephant activity is a real highlight of a visit here.",
+          a: "Yes, the park sits on an important corridor that elephants use to migrate between Yala and Udawalawe, so elephant activity is a real highlight of a visit here.",
         },
         {
           q: "How is it different from Yala or Udawalawe?",
@@ -198,11 +199,11 @@ export const lunugamvehera: ParkContent = {
         },
         {
           q: "Is the entrance ticket included?",
-          a: "No — the park entrance ticket is not included in the safari price unless it's explicitly selected or added.",
+          a: "No, the park entrance ticket is not included in the safari price unless it's explicitly selected or added.",
         },
         {
           q: "Is hotel pickup available?",
-          a: "Yes, hotel pickup and drop-off is available in applicable areas — just share your hotel details when booking.",
+          a: "Yes, hotel pickup and drop-off is available in applicable areas; just share your hotel details when booking.",
         },
         {
           q: "Can children join?",
@@ -210,11 +211,11 @@ export const lunugamvehera: ParkContent = {
         },
         {
           q: "Are elephant sightings guaranteed?",
-          a: "No sighting can ever be guaranteed, as animals move freely in their natural habitat — but Lunugamvehera's role as an elephant corridor gives you a good chance of seeing them.",
+          a: "No sighting can ever be guaranteed, as animals move freely in their natural habitat, but Lunugamvehera's role as an elephant corridor gives you a good chance of seeing them.",
         },
         {
           q: "What should I bring?",
-          a: "Comfortable clothing and shoes, a camera, binoculars, sunscreen, a hat and sunglasses — see our full what to bring list below.",
+          a: "Comfortable clothing and shoes, a camera, binoculars, sunscreen, a hat and sunglasses: see our full what to bring list below.",
         },
       ],
     },

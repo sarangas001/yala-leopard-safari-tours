@@ -15,7 +15,7 @@ const FAQS: FaqItem[] = [
   },
   {
     q: "Are park entrance tickets included?",
-    a: "It depends on the park — please check the individual park page or your booking summary, where we clearly show whether the entrance ticket is included, offered as an add-on, or charged separately.",
+    a: "It depends on the park; please check the individual park page or your booking summary, where we clearly show whether the entrance ticket is included, offered as an add-on, or charged separately.",
   },
   {
     q: "Will I see the total before paying?",

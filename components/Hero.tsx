@@ -111,7 +111,7 @@ export default function Hero() {
   // Crossfade image layers, Ken Burns drift and text panels whenever the active park changes.
   useEffect(() => {
     const reduced = reducedMotionRef.current;
-    const fadeDuration = reduced ? 0.15 : 0.9;
+    const fadeDuration = reduced ? 0.15 : 0.6;
 
     layerRefs.current.forEach((el, i) => {
       if (!el) return;
@@ -142,7 +142,7 @@ export default function Hero() {
       gsap.to(el, {
         opacity: i === active ? 1 : 0,
         y: i === active ? 0 : 10,
-        duration: reduced ? 0.15 : 0.5,
+        duration: reduced ? 0.15 : 0.35,
         ease: "power2.out",
         overwrite: "auto",
       });
@@ -219,7 +219,7 @@ export default function Hero() {
         Now showing {activeDestination.name}
       </p>
 
-      <div className="relative h-[92svh] min-h-175 max-h-220 w-full overflow-hidden">
+      <div className="relative h-[96svh] min-h-185 max-h-240 w-full overflow-hidden">
         <div className="absolute inset-0">
           {DESTINATIONS.map((destination, i) => (
             <div
@@ -240,7 +240,7 @@ export default function Hero() {
               >
                 <Image
                   src={destination.image}
-                  alt={`${destination.name} — Sri Lanka safari destination`}
+                  alt={`${destination.name}, Sri Lanka safari destination`}
                   fill
                   priority={i === 0}
                   loading={i === 0 ? undefined : "eager"}
@@ -291,7 +291,7 @@ export default function Hero() {
 
             <a
               href={`/safaris/${activeDestination.id}`}
-              className="mt-8 inline-flex items-center gap-2 rounded-full bg-white px-7 py-3.5 text-sm font-semibold text-brand-ink shadow-lg shadow-black/20 transition-all hover:bg-white/95 hover:shadow-xl hover:shadow-black/25 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-ink"
+              className="mt-8 inline-flex items-center gap-2 rounded-full bg-brand-orange px-7 py-3.5 text-sm font-semibold text-white shadow-lg shadow-brand-orange/30 transition-all hover:bg-brand-orange-dark hover:shadow-xl hover:shadow-brand-orange/35 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
             >
               Plan your safari
               <span aria-hidden="true">→</span>

@@ -8,21 +8,21 @@ const REVIEWS = [
     detail: "United Kingdom",
     headline: "Add a short, punchy headline here",
     quote:
-      "Add a real guest review here — a short, specific line about the leopard sighting or the guide's knowledge works best. Mention how many parks you visited, how the guide spotted wildlife other jeeps drove straight past, and how the whole day felt paced rather than rushed.",
+      "Add a real guest review here, a short, specific line about the leopard sighting or the guide's knowledge works best. Mention how many parks you visited, how the guide spotted wildlife other jeeps drove straight past, and how the whole day felt paced rather than rushed.",
   },
   {
     name: "Sample Guest",
     detail: "Germany",
     headline: "Add a short, punchy headline here",
     quote:
-      "Add a real guest review here — mention the jeep, the pace of the drive, or how many parks you covered. A note on the early pickup, the guide's local knowledge, or a specific animal encounter (elephants at the waterhole, a leopard on a rock) makes the quote feel real and specific.",
+      "Add a real guest review here, mention the jeep, the pace of the drive, or how many parks you covered. A note on the early pickup, the guide's local knowledge, or a specific animal encounter (elephants at the waterhole, a leopard on a rock) makes the quote feel real and specific.",
   },
   {
     name: "Sample Guest",
     detail: "Australia",
     headline: "Add a short, punchy headline here",
     quote:
-      "Add a real guest review here — pull a strong quote from Google or TripAdvisor once reviews start coming in. The best quotes describe a specific moment — a close leopard sighting, a knowledgeable guide, or a small-group experience that felt personal rather than rushed.",
+      "Add a real guest review here, pull a strong quote from Google or TripAdvisor once reviews start coming in. The best quotes describe a specific moment: a close leopard sighting, a knowledgeable guide, or a small-group experience that felt personal rather than rushed.",
   },
 ];
 
@@ -49,7 +49,7 @@ export default function Testimonials() {
 
       <div className="relative z-10 mx-auto max-w-[1600px] px-10 py-16 sm:px-20 sm:py-20 lg:px-40 lg:py-24">
         <Reveal className="mx-auto max-w-2xl text-center">
-          <h2 className="font-display text-3xl font-medium tracking-tight text-brand-ink sm:text-4xl lg:text-5xl">
+          <h2 className="font-display text-3xl font-medium tracking-tight text-white sm:text-4xl lg:text-5xl">
             Don&apos;t take our word for it
           </h2>
         </Reveal>

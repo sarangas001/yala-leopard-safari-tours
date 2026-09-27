@@ -125,7 +125,7 @@ export async function POST(request: Request) {
             unit_amount: amountCents,
             product_data: {
               name:
-                `${selectedPackage.name}` + (paymentOption === "deposit" ? " — 50% Deposit" : ""),
+                `${selectedPackage.name}` + (paymentOption === "deposit" ? " (50% Deposit)" : ""),
               description: `${park.slug} safari · ${body.date || "date to be confirmed"} · ${adults} Adults${
                 children ? `, ${children} Children` : ""
               }${infants ? `, ${infants} Infants` : ""}`,

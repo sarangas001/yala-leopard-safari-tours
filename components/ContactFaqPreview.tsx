@@ -3,11 +3,11 @@ import Reveal from "@/components/Reveal";
 const FAQS = [
   {
     q: "Can I book through WhatsApp?",
-    a: "Yes — message us on WhatsApp with your dates and group size, and our team will confirm availability and pricing directly in the chat.",
+    a: "Yes, message us on WhatsApp with your dates and group size, and our team will confirm availability and pricing directly in the chat.",
   },
   {
     q: "Can you pick me up from my hotel?",
-    a: "In most cases, yes. Hotel pickup and drop-off is available where applicable — just share your hotel details when you enquire.",
+    a: "In most cases, yes. Hotel pickup and drop-off is available where applicable; just share your hotel details when you enquire.",
   },
   {
     q: "Can you arrange a safari for tomorrow?",
@@ -15,11 +15,11 @@ const FAQS = [
   },
   {
     q: "Do you offer airport transfers?",
-    a: "Yes, we offer airport and hotel transfers alongside our safaris — let us know your flight details and we'll arrange the pickup.",
+    a: "Yes, we offer airport and hotel transfers alongside our safaris; let us know your flight details and we'll arrange the pickup.",
   },
   {
     q: "Can cruise passengers book from Hambantota?",
-    a: "Yes — we run a dedicated Hambantota Port to Yala safari for cruise passengers with limited time ashore.",
+    a: "Yes, we run a dedicated Hambantota Port to Yala safari for cruise passengers with limited time ashore.",
   },
 ];
 

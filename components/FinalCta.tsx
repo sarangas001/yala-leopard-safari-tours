@@ -25,15 +25,15 @@ export default function FinalCta() {
             beaten territories to uncover the wildlife hidden beneath the
             clichés. Whether it&apos;s your first leopard sighting or your
             fifth trip back to Yala, our guides bring decades of local
-            tracking knowledge to every drive — so you leave with more than
+            tracking knowledge to every drive, so you leave with more than
             photos, you leave with a story worth telling. From the dry-zone
             scrub of Yala to the wetlands of Bundala and the open plains of
             Udawalawe, every itinerary is paced around the moment rather than
             the clock, so nothing about the wild ever feels rushed. Each
             safari runs in a comfortable open 4x4 jeep with a small group
             size, flexible pickup from your hotel or villa, and a guide who
-            knows every waterhole, trail and favourite leopard perch by heart
-            — so you can simply sit back, watch, and let Sri Lanka&apos;s
+            knows every waterhole, trail and favourite leopard perch by heart,
+            so you can simply sit back, watch, and let Sri Lanka&apos;s
             wilderness reveal itself.
           </p>
           <button
@@ -53,7 +53,7 @@ export default function FinalCta() {
       <Reveal delay={0.1} className="mt-4 pb-8 sm:mt-5 sm:pb-10 lg:pb-12">
         <div className="relative h-64 w-full overflow-hidden sm:hidden">
           <Image
-            src="/images/scenic/cta-img.png"
+            src="/images/scenic/cta-img-2.png"
             alt="A leopard, elephants and a peacock gather at a waterhole in Yala National Park"
             fill
             sizes="(min-width: 640px) 0px, 100vw"
