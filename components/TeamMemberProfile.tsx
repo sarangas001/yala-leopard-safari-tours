@@ -4,7 +4,7 @@ import Reveal from "@/components/Reveal";
 export type TeamMember = {
   name: string;
   role: string;
-  experience: string;
+  experience?: string;
   bio: string;
   photo?: string;
 };
