@@ -22,7 +22,7 @@ const SERVICES: ServiceCard[] = [
   {
     title: "Taxi and Car Rental",
     text: "Private car and van rental with an English-speaking driver, for transfers and long-distance travel across Sri Lanka.",
-    image: "/images/new-img/9.jpg",
+    image: "/images/new-img/taxi-car-2.jpeg",
     alt: "A row of private vehicles available for hire in Sri Lanka",
     href: "/taxi-car-rental",
     cta: "See Package Details",
