@@ -302,10 +302,11 @@ export default function GalleryGrid() {
                 <Image
                   src={img.src}
                   alt={img.alt}
-                  fill
+                  width={600}
+                  height={600}
                   sizes="(min-width: 1024px) 25vw, (min-width: 640px) 33vw, 50vw"
                   quality={75}
-                  className="object-cover transition-transform duration-700 group-hover:scale-110"
+                  className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-linear-to-t from-black/75 via-black/0 to-transparent opacity-60 transition-opacity duration-400 group-hover:opacity-100" />
                 <span className="absolute inset-x-0 bottom-0 p-3 text-sm font-medium text-white/0 transition-all duration-300 group-hover:text-white sm:p-4">
