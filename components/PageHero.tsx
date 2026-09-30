@@ -2,17 +2,22 @@ import Image from "next/image";
 import Reveal from "@/components/Reveal";
 
 export default function PageHero({
+  eyebrow,
   title,
   description,
   image,
   alt,
   cta,
+  compact = false,
 }: {
+  eyebrow?: string;
   title: string;
   description?: string;
   image: string;
   alt: string;
   cta?: { label: string; href: string };
+  /** Shorter hero for transactional pages (booking, checkout). */
+  compact?: boolean;
 }) {
   return (
     <section className="relative w-full overflow-hidden bg-white">
@@ -21,8 +26,20 @@ export default function PageHero({
         <div className="absolute inset-0 bg-linear-to-b from-black/65 via-black/35 to-black/45" />
       </div>
 
-      <div className="relative z-10 mx-auto max-w-[1600px] px-10 pt-32 pb-20 text-center sm:px-20 sm:pt-40 sm:pb-24 lg:flex lg:min-h-185 lg:items-center lg:justify-center lg:px-40 lg:py-0">
+      <div
+        className={
+          "relative z-10 mx-auto max-w-[1600px] px-10 pt-32 pb-20 text-center sm:px-20 sm:pt-40 sm:pb-24 lg:flex lg:items-center lg:justify-center lg:px-40 lg:py-0 " +
+          (compact ? "lg:min-h-120" : "lg:min-h-185")
+        }
+      >
         <Reveal className="mx-auto max-w-2xl">
+          {eyebrow ? (
+            <span className="mb-4 inline-flex items-center gap-3 text-xs font-medium uppercase tracking-[0.22em] text-white/80">
+              <span className="h-px w-6 bg-white/50" aria-hidden="true" />
+              {eyebrow}
+              <span className="h-px w-6 bg-white/50" aria-hidden="true" />
+            </span>
+          ) : null}
           <h1 className="font-display text-4xl font-medium leading-[1.05] tracking-tight text-white sm:text-5xl lg:text-6xl">
             {title}
           </h1>

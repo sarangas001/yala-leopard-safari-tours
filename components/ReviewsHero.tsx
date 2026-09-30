@@ -7,6 +7,7 @@ export default function ReviewsHero() {
       description="Read experiences shared by guests who explored Sri Lanka's wildlife with our safari team."
       image="/images/new-img/IMG_7940.jpg"
       alt="A safari guide beside jeeps parked on a dirt track in Yala National Park"
+      cta={{ label: "Plan Your Safari", href: "/safaris" }}
     />
   );
 }

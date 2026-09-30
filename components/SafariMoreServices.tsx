@@ -31,8 +31,23 @@ const SERVICES: ServiceCard[] = [
 
 export default function SafariMoreServices() {
   return (
-    <section className="w-full bg-white">
-      <div className="mx-auto max-w-[1600px] px-10 py-[1.5cm] sm:px-20 sm:py-[1.5cm] lg:px-40 lg:py-[2.5cm]">
+    <section className="relative w-full overflow-hidden bg-white">
+      {/* Photographer illustration — decorative graphic, left-aligned */}
+      <div
+        className="pointer-events-none absolute -top-4 -left-8 z-0 hidden select-none lg:block"
+        aria-hidden="true"
+      >
+        <Image
+          src="/images/parks/05-safari-wildlife-photographer.png"
+          alt=""
+          width={400}
+          height={500}
+          quality={90}
+          style={{ width: "340px", height: "auto", opacity: 0.92 }}
+        />
+      </div>
+
+      <div className="relative z-10 mx-auto max-w-[1600px] px-10 py-[1.5cm] sm:px-20 sm:py-[1.5cm] lg:px-40 lg:py-[2.5cm]">
         <Reveal className="mx-auto max-w-2xl text-center">
           <h2 className="font-display text-3xl font-medium tracking-tight text-brand-ink sm:text-4xl lg:text-5xl">
             More Safari Services

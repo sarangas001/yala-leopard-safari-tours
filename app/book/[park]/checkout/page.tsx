@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Suspense } from "react";
 import { notFound } from "next/navigation";
-import Reveal from "@/components/Reveal";
+import PageHero from "@/components/PageHero";
 import CheckoutFlow from "@/components/CheckoutFlow";
 import { getPark, getParkSlugs } from "@/lib/parks";
 import { getParkPackages } from "@/lib/booking/pricing";
@@ -28,23 +28,14 @@ export default async function BookingCheckout({
 
   return (
     <main className="flex flex-1 flex-col bg-white">
-      <section className="w-full bg-white">
-        <div className="mx-auto max-w-[1600px] px-10 pt-[1.5cm] text-center sm:px-20 sm:pt-[1.5cm] lg:px-40 lg:pt-[2.5cm]">
-          <Reveal className="mx-auto max-w-2xl">
-            <span className="inline-flex items-center gap-3 text-xs font-medium uppercase tracking-[0.22em] text-brand-orange">
-              <span className="h-px w-6 bg-brand-orange/50" aria-hidden="true" />
-              Step 2 of 2
-              <span className="h-px w-6 bg-brand-orange/50" aria-hidden="true" />
-            </span>
-            <h1 className="mt-4 font-display text-4xl font-medium leading-[1.1] tracking-tight text-brand-ink sm:text-5xl">
-              Checkout
-            </h1>
-            <p className="mt-4 text-base leading-relaxed text-brand-ink-muted">
-              Review your details and complete your booking.
-            </p>
-          </Reveal>
-        </div>
-      </section>
+      <PageHero
+        compact
+        eyebrow="Step 2 of 2"
+        title="Checkout"
+        description="Review your details and complete your booking."
+        image="/images/scenic/safari-jeeps.jpg"
+        alt="A line of safari jeeps waiting on a dirt track in the national park"
+      />
 
       <Suspense fallback={<div className="mx-auto max-w-[1600px] px-10 py-[1.5cm] sm:px-20 sm:py-[1.5cm] lg:px-40 lg:py-[2.5cm]" />}>
         <CheckoutFlow park={park} packages={packages} />

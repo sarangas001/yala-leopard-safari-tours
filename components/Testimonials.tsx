@@ -35,7 +35,7 @@ export default function Testimonials() {
           a wide, comparatively low-resolution source with object-cover is
           what caused the blurry/pixelated look on tall mobile layouts. */}
         <Image
-          src="/images/scenic/review-bg.png"
+          src="/images/scenic/review-bg-2.png"
           alt=""
           fill
           aria-hidden="true"
@@ -43,20 +43,17 @@ export default function Testimonials() {
           quality={85}
           className="object-cover"
         />
-      {/* <div className="absolute inset-x-0 top-0" aria-hidden="true">
-        <div className="absolute inset-0 bg-white/10" />
-      </div> */}
 
       <div className="relative z-10 mx-auto max-w-[1600px] px-10 py-[1.5cm] sm:px-20 sm:py-[1.5cm] lg:px-40 lg:py-[2.5cm]">
-        <Reveal className="mx-auto max-w-2xl text-center">
-          <h2 className="font-display text-3xl font-medium tracking-tight text-white sm:text-4xl lg:text-5xl">
+        <Reveal className="mx-auto mt-20 max-w-2xl text-center sm:mt-0">
+          <h2 className="text-balance font-display text-3xl font-medium tracking-tight text-white drop-shadow-[0_2px_10px_rgba(20,60,120,0.55)] sm:text-4xl lg:text-5xl">
             Don&apos;t take our word for it
           </h2>
         </Reveal>
 
         <div className="mt-14 grid grid-cols-1 gap-8 sm:grid-cols-3 lg:mt-18 lg:gap-10">
           {REVIEWS.map((review, i) => (
-            <Reveal key={i} delay={i * 0.1}>
+            <Reveal key={i} delay={i * 0.1} className={i >= 2 ? "hidden sm:block" : undefined}>
               <div className="flex h-full flex-col items-center rounded-2xl bg-white/90 p-8 text-center shadow-xl shadow-black/5">
                 <h3 className="font-display text-lg font-medium text-brand-ink">
                   {review.headline}

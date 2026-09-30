@@ -7,9 +7,24 @@ import { useLenis } from "lenis/react";
 import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 
-const NAV_LINKS = [
+type NavLink = {
+  href: string;
+  label: string;
+  children?: { href: string; label: string }[];
+};
+
+const NAV_LINKS: NavLink[] = [
   { href: "/", label: "Home" },
-  { href: "/safaris", label: "Safaris" },
+  {
+    href: "/safaris",
+    label: "Safaris",
+    children: [
+      { href: "/safaris/yala", label: "Yala National Park" },
+      { href: "/safaris/udawalawe", label: "Udawalawe National Park" },
+      { href: "/safaris/bundala", label: "Bundala National Park" },
+    ],
+  },
+  { href: "/taxi-car-rental", label: "Taxi & Car Rental" },
   { href: "/about", label: "About" },
   { href: "/gallery", label: "Gallery" },
   { href: "/reviews", label: "Reviews" },
@@ -26,6 +41,14 @@ function PhoneIcon({ className }: { className?: string }) {
         strokeWidth="1.4"
         strokeLinejoin="round"
       />
+    </svg>
+  );
+}
+
+function ChevronIcon({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 20 20" fill="none" className={className} aria-hidden="true">
+      <path d="M5 8l5 5 5-5" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   );
 }
@@ -50,6 +73,7 @@ export default function Header() {
   const lenis = useLenis();
   const pathname = usePathname();
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [dropdownOpen, setDropdownOpen] = useState(false);
 
   const mobilePanelRef = useRef<HTMLDivElement | null>(null);
   const scrolledLayerRef = useRef<HTMLDivElement | null>(null);
@@ -121,21 +145,22 @@ export default function Header() {
 
   const closeAll = () => {
     setMobileOpen(false);
+    setDropdownOpen(false);
   };
 
   const navLinkClass = (active: boolean) =>
-    "text-sm font-medium tracking-wide transition-colors " +
+    "whitespace-nowrap text-sm font-medium tracking-wide transition-colors " +
     (active
       ? "text-white underline decoration-white decoration-2 underline-offset-8"
       : "text-white/85 hover:text-white");
 
   return (
     <header className="fixed inset-x-0 top-0 z-50 w-full">
-      <div className="absolute inset-0 bg-linear-to-b from-black/30 via-black/10 to-transparent" />
-      <div ref={scrolledLayerRef} className="absolute inset-0 bg-linear-to-b from-black/95 via-black/70 to-black/30 opacity-0" />
+      <div className="pointer-events-none absolute inset-0 bg-linear-to-b from-black/30 via-black/10 to-transparent" />
+      <div ref={scrolledLayerRef} className="pointer-events-none absolute inset-0 bg-linear-to-b from-black/95 via-black/70 to-black/30 opacity-0" />
 
       <div className="relative">
-        <div className="relative mx-auto flex max-w-[1600px] items-center justify-between gap-4 px-10 py-3 sm:px-20 lg:px-40">
+        <div className="relative mx-auto flex max-w-[1600px] items-center justify-between gap-4 px-10 py-3 sm:px-20 xl:px-20 2xl:px-40">
           <Link href="/" onClick={closeAll} className="shrink-0">
             <Image
               src="/logo-lockup.png"
@@ -147,13 +172,74 @@ export default function Header() {
             />
           </Link>
 
-          <nav aria-label="Primary" className="hidden items-center gap-8 lg:flex">
+          <nav aria-label="Primary" className="hidden items-center gap-6 xl:flex 2xl:gap-8">
             {NAV_LINKS.map((link) => {
               const active = isActive(link.href);
+
+              if (!link.children) {
+                return (
+                  <Link key={link.href} href={link.href} onClick={closeAll} className={navLinkClass(active)}>
+                    {link.label}
+                  </Link>
+                );
+              }
+
               return (
-                <Link key={link.href} href={link.href} onClick={closeAll} className={navLinkClass(active)}>
-                  {link.label}
-                </Link>
+                <div
+                  key={link.href}
+                  className="relative"
+                  onMouseEnter={() => setDropdownOpen(true)}
+                  onMouseLeave={() => setDropdownOpen(false)}
+                  onBlur={(event) => {
+                    if (!event.currentTarget.contains(event.relatedTarget)) setDropdownOpen(false);
+                  }}
+                  onKeyDown={(event) => {
+                    if (event.key === "Escape") setDropdownOpen(false);
+                  }}
+                >
+                  <Link
+                    href={link.href}
+                    onClick={closeAll}
+                    onFocus={() => setDropdownOpen(true)}
+                    aria-haspopup="menu"
+                    aria-expanded={dropdownOpen}
+                    className={navLinkClass(active) + " inline-flex items-center gap-1"}
+                  >
+                    {link.label}
+                    <ChevronIcon
+                      className={"h-4 w-4 transition-transform duration-200 " + (dropdownOpen ? "rotate-180" : "")}
+                    />
+                  </Link>
+
+                  {/* pt-4 keeps the hover area continuous between the trigger and the panel. */}
+                  <div
+                    className={
+                      "absolute left-1/2 top-full w-64 -translate-x-1/2 pt-4 transition-all duration-200 " +
+                      (dropdownOpen ? "visible translate-y-0 opacity-100" : "invisible -translate-y-1 opacity-0")
+                    }
+                  >
+                    <ul
+                      role="menu"
+                      className="overflow-hidden rounded-2xl border border-white/10 bg-black/90 p-2 shadow-xl shadow-black/30 backdrop-blur"
+                    >
+                      {link.children.map((child) => (
+                        <li key={child.href} role="none">
+                          <Link
+                            href={child.href}
+                            role="menuitem"
+                            onClick={closeAll}
+                            className={
+                              "block rounded-xl px-4 py-2.5 text-sm font-medium transition-colors hover:bg-white/10 hover:text-white " +
+                              (isActive(child.href) ? "text-white" : "text-white/80")
+                            }
+                          >
+                            {child.label}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
               );
             })}
           </nav>
@@ -181,7 +267,7 @@ export default function Header() {
               aria-controls="mobile-menu"
               aria-label={mobileOpen ? "Close menu" : "Open menu"}
               onClick={() => setMobileOpen((open) => !open)}
-              className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-black/10 bg-white text-brand-ink shadow-sm transition-colors hover:bg-white/90 lg:hidden"
+              className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-black/10 bg-white text-brand-ink shadow-sm transition-colors hover:bg-white/90 xl:hidden"
             >
               <MenuIcon open={mobileOpen} />
             </button>
@@ -193,18 +279,41 @@ export default function Header() {
         id="mobile-menu"
         ref={mobilePanelRef}
         style={{ height: 0, opacity: 0, display: "none", overflow: "hidden" }}
-        className="border-t border-white/10 bg-black lg:hidden"
+        className="relative border-t border-white/10 bg-black xl:hidden"
       >
-        <nav aria-label="Mobile" className="flex flex-col gap-1 px-5 py-4">
+        <nav
+          aria-label="Mobile"
+          data-lenis-prevent
+          className="flex max-h-[calc(100dvh-4.5rem)] flex-col gap-1 overflow-y-auto overscroll-contain px-5 py-4"
+        >
           {NAV_LINKS.map((link) => {
             const active = isActive(link.href);
             const mobileLinkClass =
-              "rounded-lg px-3 py-2.5 text-sm font-medium " + (active ? "text-white" : "text-white/85");
+              "block rounded-lg px-3 py-2.5 text-sm font-medium " + (active ? "text-white" : "text-white/85");
 
             return (
-              <Link key={link.href} href={link.href} onClick={closeAll} className={mobileLinkClass}>
-                {link.label}
-              </Link>
+              <div key={link.href}>
+                <Link href={link.href} onClick={closeAll} className={mobileLinkClass}>
+                  {link.label}
+                </Link>
+                {link.children ? (
+                  <div className="ml-3 flex flex-col border-l border-white/15 pl-2">
+                    {link.children.map((child) => (
+                      <Link
+                        key={child.href}
+                        href={child.href}
+                        onClick={closeAll}
+                        className={
+                          "block rounded-lg px-3 py-2 text-sm " +
+                          (isActive(child.href) ? "text-white" : "text-white/70")
+                        }
+                      >
+                        {child.label}
+                      </Link>
+                    ))}
+                  </div>
+                ) : null}
+              </div>
             );
           })}
 

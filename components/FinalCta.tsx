@@ -16,7 +16,7 @@ export default function FinalCta() {
           </h2>
           <p
             className={
-              "mx-auto mt-5 max-w-2xl text-base leading-relaxed text-brand-ink-muted " +
+              "mx-auto mt-5 text-base leading-relaxed text-brand-ink-muted " +
               (expanded ? "" : "line-clamp-3")
             }
           >

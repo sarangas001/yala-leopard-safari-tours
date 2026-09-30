@@ -108,9 +108,11 @@ export default function SmoothScroll({ children }: { children: ReactNode }) {
     <ReactLenis
       root
       options={{
-        duration: reduced ? 0 : 1.15,
+        // Lerp-based smoothing keeps easing toward the target on every wheel tick,
+        // so slow, small scrolls keep gliding instead of stalling mid-way like the
+        // fixed-duration tween did.
+        lerp: reduced ? 1 : 0.1,
         smoothWheel: !reduced,
-        easing: (t: number) => 1 - Math.pow(1 - t, 3),
       }}
     >
       <HashLinkHandler />
