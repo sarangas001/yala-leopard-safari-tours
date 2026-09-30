@@ -7,6 +7,7 @@ export default function ContactHero() {
       description="Contact our team for help choosing a safari, arranging pickup, coordinating a Hambantota cruise visit or planning private transport."
       image="/images/new-img/4-A-Kumana-leopard.jpg"
       alt="A safari guide beside jeeps parked on a dirt track in Yala National Park"
+      cta={{ label: "Send an Enquiry", href: "#enquiry" }}
     />
   );
 }

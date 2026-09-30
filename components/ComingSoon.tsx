@@ -24,7 +24,7 @@ export default function ComingSoon({
       </section>
 
       <section className="w-full bg-white">
-        <div className="mx-auto max-w-[1600px] px-10 py-16 text-center sm:px-20 sm:py-20 lg:px-40 lg:py-24">
+        <div className="mx-auto max-w-[1600px] px-10 py-[1.5cm] text-center sm:px-20 sm:py-[1.5cm] lg:px-40 lg:py-[2.5cm]">
           <p className="mx-auto max-w-md text-base leading-relaxed text-brand-ink-muted">
             This page is being built. In the meantime, get in touch and
             we&apos;ll help you plan your safari.

@@ -121,7 +121,7 @@ export default function CheckoutFlow({ park, packages }: { park: string; package
   if (!selectedPackage) {
     return (
       <section className="w-full bg-white">
-        <div className="mx-auto max-w-[1600px] px-10 py-16 text-center sm:px-20 sm:py-20 lg:px-40 lg:py-24">
+        <div className="mx-auto max-w-[1600px] px-10 py-[1.5cm] text-center sm:px-20 sm:py-[1.5cm] lg:px-40 lg:py-[2.5cm]">
           <p className="text-base text-brand-ink-muted">
             We couldn&apos;t find your safari selection. Please{" "}
             <a href={`/book/${park}`} className="font-semibold text-brand-orange hover:text-brand-orange-dark">
@@ -136,7 +136,7 @@ export default function CheckoutFlow({ park, packages }: { park: string; package
 
   return (
     <section className="w-full bg-white">
-      <div className="mx-auto max-w-[1600px] px-10 py-16 sm:px-20 sm:py-20 lg:px-40 lg:py-24">
+      <div className="mx-auto max-w-[1600px] px-10 py-[1.5cm] sm:px-20 sm:py-[1.5cm] lg:px-40 lg:py-[2.5cm]">
         {showCanceledBanner ? (
           <div className="mb-8 flex items-start justify-between gap-4 rounded-2xl border border-brand-orange/30 bg-brand-orange/5 p-4 text-sm text-brand-ink">
             <p>Your checkout was canceled and no payment was taken. You can review your booking below and pay whenever you&apos;re ready.</p>

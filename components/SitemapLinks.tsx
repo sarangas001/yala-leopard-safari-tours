@@ -39,7 +39,7 @@ const SECTIONS: { heading: string; links: { href: string; label: string }[] }[] 
 export default function SitemapLinks() {
   return (
     <section className="w-full bg-white">
-      <div className="mx-auto max-w-[1600px] px-10 py-16 sm:px-20 sm:py-20 lg:px-40 lg:py-24">
+      <div className="mx-auto max-w-[1600px] px-10 py-[1.5cm] sm:px-20 sm:py-[1.5cm] lg:px-40 lg:py-[2.5cm]">
         <div className="grid grid-cols-1 gap-12 sm:grid-cols-3 sm:gap-8">
           {SECTIONS.map((section, i) => (
             <Reveal key={section.heading} delay={i * 0.1} className="text-center sm:text-left">

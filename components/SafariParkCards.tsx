@@ -47,8 +47,23 @@ const PARKS: Park[] = [
 
 export default function SafariParkCards() {
   return (
-    <section id="compare-parks" className="w-full scroll-mt-20 bg-white">
-      <div className="mx-auto max-w-[1600px] px-10 py-16 sm:px-20 sm:py-20 lg:px-40 lg:py-24">
+    <section id="compare-parks" className="relative w-full scroll-mt-20 overflow-hidden bg-white">
+      {/* Safari jeep illustration — decorative graphic, right-aligned */}
+      <div
+        className="pointer-events-none absolute -top-4 -right-8 z-0 hidden select-none lg:block"
+        aria-hidden="true"
+      >
+        <Image
+          src="/images/parks/04-safari-jeep-tour.png"
+          alt=""
+          width={400}
+          height={500}
+          quality={90}
+          style={{ width: "340px", height: "auto", opacity: 0.92 }}
+        />
+      </div>
+
+      <div className="relative z-10 mx-auto max-w-[1600px] px-10 py-[1.5cm] sm:px-20 sm:py-[1.5cm] lg:px-40 lg:py-[2.5cm]">
         <Reveal className="mx-auto max-w-2xl text-center">
           <h2 className="font-display text-3xl font-medium tracking-tight text-brand-ink sm:text-4xl lg:text-5xl">
             Compare Sri Lanka&apos;s Safari Parks

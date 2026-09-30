@@ -18,7 +18,7 @@ const MAP_EMBED_SRC =
 export default function ContactMapSection() {
   return (
     <section className="w-full bg-white">
-      <div className="mx-auto max-w-[1600px] px-10 py-16 sm:px-20 sm:py-20 lg:px-40 lg:py-24">
+      <div className="mx-auto max-w-[1600px] px-10 py-[1.5cm] sm:px-20 sm:py-[1.5cm] lg:px-40 lg:py-[2.5cm]">
         <div className="grid grid-cols-1 overflow-hidden rounded-3xl border border-black/6 shadow-sm lg:grid-cols-2">
           <Reveal className="flex flex-col justify-center bg-white p-8 sm:p-10 lg:p-12">
             <h2 className="font-display text-2xl font-medium text-brand-ink sm:text-3xl">
