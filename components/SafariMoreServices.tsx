@@ -31,7 +31,7 @@ const SERVICES: ServiceCard[] = [
 
 export default function SafariMoreServices() {
   return (
-    <section className="relative w-full overflow-hidden bg-white">
+    <section id="more-services" className="relative w-full scroll-mt-20 overflow-hidden bg-white">
       {/* Photographer illustration — decorative graphic, left-aligned */}
       <div
         className="pointer-events-none absolute -top-4 -left-8 z-0 hidden select-none lg:block"

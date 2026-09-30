@@ -10,6 +10,8 @@ import gsap from "gsap";
 type NavLink = {
   href: string;
   label: string;
+  /** Path that marks this item active when href is a hash link to another page. */
+  activePath?: string;
   children?: { href: string; label: string }[];
 };
 
@@ -24,7 +26,7 @@ const NAV_LINKS: NavLink[] = [
       { href: "/safaris/bundala", label: "Bundala National Park" },
     ],
   },
-  { href: "/taxi-car-rental", label: "Taxi & Car Rental" },
+  { href: "/safaris#more-services", label: "Taxi & Car Rental", activePath: "/taxi-car-rental" },
   { href: "/about", label: "About" },
   { href: "/gallery", label: "Gallery" },
   { href: "/reviews", label: "Reviews" },
@@ -174,7 +176,7 @@ export default function Header() {
 
           <nav aria-label="Primary" className="hidden items-center gap-6 xl:flex 2xl:gap-8">
             {NAV_LINKS.map((link) => {
-              const active = isActive(link.href);
+              const active = isActive(link.activePath ?? link.href);
 
               if (!link.children) {
                 return (
@@ -287,7 +289,7 @@ export default function Header() {
           className="flex max-h-[calc(100dvh-4.5rem)] flex-col gap-1 overflow-y-auto overscroll-contain px-5 py-4"
         >
           {NAV_LINKS.map((link) => {
-            const active = isActive(link.href);
+            const active = isActive(link.activePath ?? link.href);
             const mobileLinkClass =
               "block rounded-lg px-3 py-2.5 text-sm font-medium " + (active ? "text-white" : "text-white/85");
 

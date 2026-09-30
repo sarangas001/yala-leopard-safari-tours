@@ -27,6 +27,19 @@ function ScrollResetOnNavigate() {
     } else {
       window.scrollTo(0, 0);
     }
+
+    // Arrived via a cross-page hash link (e.g. /safaris#more-services): glide to the section.
+    const hash = window.location.hash;
+    const target = hash.length > 1 ? document.querySelector(hash) : null;
+    if (target instanceof HTMLElement) {
+      requestAnimationFrame(() => {
+        if (lenis) {
+          lenis.scrollTo(target, { offset: -HEADER_OFFSET, duration: 1.2 });
+        } else {
+          target.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+      });
+    }
   }, [pathname, lenis]);
 
   return null;
@@ -87,8 +100,9 @@ function HashLinkHandler() {
       }
     };
 
-    document.addEventListener("click", handleClick);
-    return () => document.removeEventListener("click", handleClick);
+    // Capture phase: runs before Next's <Link> click handler, which would otherwise claim the event.
+    document.addEventListener("click", handleClick, true);
+    return () => document.removeEventListener("click", handleClick, true);
   }, [lenis]);
 
   return null;
