@@ -13,7 +13,7 @@ export default function BlogCategoriesAndPosts() {
   return (
     <>
       <section className="w-full bg-white">
-        <div className="mx-auto max-w-[1600px] px-10 py-16 sm:px-20 sm:py-20 lg:px-40 lg:py-24">
+        <div className="mx-auto max-w-[1600px] px-10 py-[1.5cm] sm:px-20 sm:py-[1.5cm] lg:px-40 lg:py-[2.5cm]">
           <Reveal className="mx-auto max-w-2xl text-center">
             <h2 className="font-display text-3xl font-medium tracking-tight text-brand-ink sm:text-4xl lg:text-5xl">
               Explore Categories
@@ -62,7 +62,7 @@ export default function BlogCategoriesAndPosts() {
       </section>
 
       <section className="w-full bg-white">
-        <div className="mx-auto max-w-[1600px] px-10 pb-16 sm:px-20 sm:pb-20 lg:px-40 lg:pb-24">
+        <div className="mx-auto max-w-[1600px] px-10 pb-[1.5cm] sm:px-20 sm:pb-[1.5cm] lg:px-40 lg:pb-[2.5cm]">
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 lg:gap-7">
             {filtered.map((article, i) => (
               <Reveal key={article.slug} delay={(i % 3) * 0.08}>

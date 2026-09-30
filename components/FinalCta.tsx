@@ -9,7 +9,7 @@ export default function FinalCta() {
 
   return (
     <section className="w-full bg-white">
-      <div className="mx-auto max-w-[1600px] px-10 pt-16 sm:px-20 sm:pt-20 lg:px-40 lg:pt-24">
+      <div className="mx-auto max-w-[1600px] px-10 pt-[1.5cm] sm:px-20 sm:pt-[1.5cm] lg:px-40 lg:pt-[2.5cm]">
         <Reveal className="text-center">
           <h2 className="mx-auto max-w-2xl font-display text-3xl font-medium tracking-tight text-brand-ink sm:text-4xl lg:text-5xl">
             Your Sri Lankan Wildlife Adventure Starts Here

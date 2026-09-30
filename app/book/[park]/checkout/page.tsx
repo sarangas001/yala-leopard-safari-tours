@@ -29,7 +29,7 @@ export default async function BookingCheckout({
   return (
     <main className="flex flex-1 flex-col bg-white">
       <section className="w-full bg-white">
-        <div className="mx-auto max-w-[1600px] px-10 pt-16 text-center sm:px-20 sm:pt-20 lg:px-40 lg:pt-24">
+        <div className="mx-auto max-w-[1600px] px-10 pt-[1.5cm] text-center sm:px-20 sm:pt-[1.5cm] lg:px-40 lg:pt-[2.5cm]">
           <Reveal className="mx-auto max-w-2xl">
             <span className="inline-flex items-center gap-3 text-xs font-medium uppercase tracking-[0.22em] text-brand-orange">
               <span className="h-px w-6 bg-brand-orange/50" aria-hidden="true" />
@@ -46,7 +46,7 @@ export default async function BookingCheckout({
         </div>
       </section>
 
-      <Suspense fallback={<div className="mx-auto max-w-[1600px] px-10 py-16 sm:px-20 sm:py-20 lg:px-40 lg:py-24" />}>
+      <Suspense fallback={<div className="mx-auto max-w-[1600px] px-10 py-[1.5cm] sm:px-20 sm:py-[1.5cm] lg:px-40 lg:py-[2.5cm]" />}>
         <CheckoutFlow park={park} packages={packages} />
       </Suspense>
     </main>

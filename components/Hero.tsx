@@ -39,7 +39,7 @@ const DESTINATIONS: Destination[] = [
   },
 ];
 
-const AUTO_ADVANCE_MS = 6500;
+const AUTO_ADVANCE_MS = 3250;
 const COUNT = DESTINATIONS.length;
 
 export default function Hero() {
