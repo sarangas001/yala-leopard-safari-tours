@@ -69,7 +69,7 @@ export default function BlogCategoriesAndPosts() {
         <div className="mx-auto max-w-[1600px] px-10 pb-[1.5cm] sm:px-20 sm:pb-[1.5cm] lg:px-40 lg:pb-[2.5cm]">
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 lg:gap-7">
             {filtered.map((article, i) => (
-              <Reveal key={article.slug} delay={(i % 3) * 0.08}>
+              <Reveal still key={article.slug} delay={(i % 3) * 0.08}>
                 <a
                   href={`/blog/${article.slug}`}
                   className="group flex h-full flex-col overflow-hidden rounded-3xl border border-black/6 bg-white shadow-sm transition-shadow duration-700 hover:shadow-md"
@@ -81,7 +81,7 @@ export default function BlogCategoriesAndPosts() {
                       fill
                       sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
                       quality={72}
-                      className={`object-cover transition-transform duration-1500 group-hover:scale-105 ${focalClass(article.heroImage)}`}
+                      className={`object-cover ${focalClass(article.heroImage)}`}
                       style={focalStyle(article.heroImage)}
                     />
                     <span className="absolute left-4 top-4 rounded-full bg-white/90 px-3 py-1 text-xs font-semibold tracking-wide text-brand-ink backdrop-blur-sm">

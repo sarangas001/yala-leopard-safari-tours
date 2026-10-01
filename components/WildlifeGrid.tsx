@@ -30,7 +30,7 @@ export default function WildlifeGrid() {
 
         <div className="mt-12 grid grid-cols-2 gap-3 sm:grid-cols-4 lg:mt-16 lg:gap-4">
           {ANIMALS.map((animal, i) => (
-            <Reveal key={animal.name} delay={(i % 4) * 0.06}>
+            <Reveal still key={animal.name} delay={(i % 4) * 0.06}>
               {/* Alternate heights for an editorial feel */}
               <div
                 className={
@@ -46,7 +46,7 @@ export default function WildlifeGrid() {
                   fill
                   sizes="(min-width: 1024px) 25vw, 50vw"
                   quality={70}
-                  className={`object-cover transition-transform duration-1500 group-hover:scale-110 ${focalClass(animal.image)}`}
+                  className={`object-cover ${focalClass(animal.image)}`}
                   style={focalStyle(animal.image)}
                 />
                 {/* Overlay hidden by default, revealed on hover */}

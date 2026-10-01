@@ -6,7 +6,7 @@ export default function AboutPhilosophy() {
     <section className="relative w-full overflow-hidden bg-white">
       {/* Traveller illustration — contextual decorative graphic */}
       <div
-        className="pointer-events-none absolute -top-4 -right-8 z-0 hidden select-none lg:block"
+        className="pointer-events-none absolute -top-4 -left-8 z-0 hidden select-none lg:block"
         aria-hidden="true"
       >
         <Image

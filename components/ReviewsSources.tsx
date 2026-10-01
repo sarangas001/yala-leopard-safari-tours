@@ -23,7 +23,7 @@ export default function ReviewsSources() {
           </p>
         </Reveal>
 
-        <Reveal delay={0.1} className="mt-12 flex flex-wrap items-center justify-center gap-10 sm:gap-12">
+        <Reveal still delay={0.1} className="mt-12 flex flex-wrap items-center justify-center gap-10 sm:gap-12">
           {PRIMARY_SOURCES.map((source) => (
             <Image
               key={source.src}

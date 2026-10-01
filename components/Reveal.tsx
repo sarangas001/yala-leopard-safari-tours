@@ -12,18 +12,28 @@ export default function Reveal({
   y = 32,
   duration = 0.8,
   delay = 0,
+  still = false,
 }: {
   children: ReactNode;
   className?: string;
   y?: number;
   duration?: number;
   delay?: number;
+  /** Render with no animation — used around image-heavy grids. */
+  still?: boolean;
 }) {
   const ref = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
+
+    // A still block must always be fully visible — also clears any hidden state
+    // left on the element by an earlier animated render (e.g. after a hot reload).
+    if (still) {
+      gsap.set(el, { clearProps: "opacity,transform" });
+      return;
+    }
 
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
       return;
@@ -49,7 +59,7 @@ export default function Reveal({
     observer.observe(el);
 
     return () => observer.disconnect();
-  }, [y, duration, delay]);
+  }, [y, duration, delay, still]);
 
   return (
     <div ref={ref} className={className}>

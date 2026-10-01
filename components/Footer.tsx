@@ -227,7 +227,7 @@ export default function Footer() {
               alt="Yala Leopard Safari Tours logo"
               width={5320}
               height={2524}
-              className="h-auto w-full max-w-65"
+              className="mx-auto h-auto w-full max-w-65"
             />
             <p className="mt-5 text-sm leading-relaxed text-brand-ink-muted">
               Discover the untamed beauty of Yala, Udawalawe and Bundala with
@@ -345,9 +345,9 @@ export default function Footer() {
         rel="noopener noreferrer"
         aria-label="Chat with us on WhatsApp"
         suppressHydrationWarning
-        className="fixed bottom-6 right-6 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-white shadow-lg shadow-black/20 transition-transform hover:scale-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#25D366]/50 focus-visible:ring-offset-2"
+        className="fixed bottom-6 right-6 z-50 flex h-16 w-16 items-center justify-center rounded-full drop-shadow-lg transition-transform hover:scale-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#25D366]/50 focus-visible:ring-offset-2"
       >
-        <Image src="/images/icons/whatsapp.svg" alt="" aria-hidden="true" width={40} height={40} className="h-10 w-10" />
+        <Image src="/images/icons/whastapp-icon.png" alt="" aria-hidden="true" width={64} height={64} quality={90} className="h-16 w-16" />
       </a>
     </footer>
   );

@@ -73,7 +73,7 @@ export default function SafariParkCards() {
 
         <div className="mt-14 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:mt-16 lg:grid-cols-3 lg:gap-7">
           {PARKS.map((park, i) => (
-            <Reveal key={park.id} delay={(i % 3) * 0.1}>
+            <Reveal still key={park.id} delay={(i % 3) * 0.1}>
               <a
                 href={`/safaris/${park.id}`}
                 className="group flex h-full flex-col overflow-hidden rounded-3xl border border-black/6 bg-white shadow-sm transition-shadow duration-700 hover:shadow-md"
@@ -85,7 +85,7 @@ export default function SafariParkCards() {
                     fill
                     sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
                     quality={75}
-                    className={`object-cover transition-transform duration-1500 group-hover:scale-105 ${focalClass(park.image)}`}
+                    className={`object-cover ${focalClass(park.image)}`}
                     style={focalStyle(park.image)}
                   />
                 </div>

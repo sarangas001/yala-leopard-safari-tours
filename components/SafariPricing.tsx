@@ -44,7 +44,7 @@ export default function SafariPricing({
 
         <div className="mt-14 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:mt-16 lg:grid-cols-3 lg:gap-7">
           {packages.map((pkg, i) => (
-            <Reveal key={pkg.name} delay={(i % 3) * 0.1}>
+            <Reveal still key={pkg.name} delay={(i % 3) * 0.1}>
               <div className="flex h-full flex-col overflow-hidden rounded-3xl border border-black/6 bg-white shadow-sm transition-shadow duration-700 hover:shadow-md">
                 {pkg.image ?? image ? (
                   <div className="relative aspect-4/3 w-full overflow-hidden">

@@ -55,7 +55,7 @@ function ArrowIcon({ direction }: { direction: "prev" | "next" }) {
   );
 }
 
-export default function Testimonials() {
+export default function Testimonials({ illustration = true }: { illustration?: boolean }) {
   const [index, setIndex] = useState(0);
   const touchStartX = useRef<number | null>(null);
   const last = REVIEWS.length - 1;
@@ -67,7 +67,9 @@ export default function Testimonials() {
 
   return (
     <section className="relative w-full overflow-hidden bg-white">
-      <Illustration src="/images/parks/deer.png" side="left" width={300} offsetTop={-16} />
+      {illustration ? (
+        <Illustration src="/images/parks/deer.png" side="left" width={300} offsetTop={-16} />
+      ) : null}
 
       <div className="relative z-10 mx-auto max-w-[1600px] px-10 py-[1.5cm] sm:px-20 sm:py-[1.5cm] lg:px-40 lg:py-[2.5cm]">
         <Reveal className="mx-auto max-w-2xl text-center">

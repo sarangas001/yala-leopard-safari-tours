@@ -1,4 +1,3 @@
-import Illustration from "@/components/Illustration";
 import Image from "next/image";
 import Reveal from "@/components/Reveal";
 import { focalClass, focalStyle } from "@/lib/focal";
@@ -14,7 +13,6 @@ export default function ParkRelatedExperiences({
 }) {
   return (
     <section className="relative overflow-hidden w-full bg-white">
-      <Illustration src="/images/parks/deer.png" side="right" />
       <div className="relative z-10 mx-auto max-w-[1600px] px-10 py-[1.5cm] sm:px-20 sm:py-[1.5cm] lg:px-40 lg:py-[2.5cm]">
         <Reveal className="mx-auto max-w-2xl text-center">
           <h2 className="font-display text-3xl font-medium tracking-tight text-brand-ink sm:text-4xl lg:text-5xl">
@@ -24,7 +22,7 @@ export default function ParkRelatedExperiences({
 
         <div className="mt-14 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:mt-16 lg:grid-cols-3 lg:gap-7">
           {experiences.map((experience, i) => (
-            <Reveal key={experience.title} delay={(i % 3) * 0.1}>
+            <Reveal still key={experience.title} delay={(i % 3) * 0.1}>
               <a
                 href={experience.href}
                 className="group flex h-full flex-col items-center overflow-hidden rounded-3xl border border-black/6 bg-white text-center shadow-sm transition-shadow duration-700 hover:shadow-md"
@@ -36,7 +34,7 @@ export default function ParkRelatedExperiences({
                     fill
                     sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
                     quality={75}
-                    className={`object-cover transition-transform duration-1500 group-hover:scale-105 ${focalClass(experience.image)}`}
+                    className={`object-cover ${focalClass(experience.image)}`}
                     style={focalStyle(experience.image)}
                   />
                 </div>

@@ -84,7 +84,7 @@ export default function AboutServices() {
 
   return (
     <section className="relative overflow-hidden w-full bg-white">
-      <Illustration src="/images/parks/deer.png" side="left" />
+      <Illustration src="/images/parks/deer.png" side="right" />
       <div className="relative z-10 mx-auto max-w-[1600px] px-10 py-[1.5cm] sm:px-20 sm:py-[1.5cm] lg:px-40 lg:py-[2.5cm]">
         <div className="flex items-end justify-between gap-6">
           <Reveal>
@@ -132,7 +132,7 @@ export default function AboutServices() {
                     priority={i === 0}
                     sizes="(min-width: 640px) 320px, 288px"
                     quality={75}
-                    className={`object-cover transition-transform duration-1500 group-hover:scale-105 ${focalClass(service.image)}`}
+                    className={`object-cover ${focalClass(service.image)}`}
                     style={focalStyle(service.image)}
                   />
                 </div>
