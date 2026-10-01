@@ -9,6 +9,7 @@ export default function PageHero({
   alt,
   cta,
   compact = false,
+  imageClassName = "object-right",
 }: {
   eyebrow?: string;
   title: string;
@@ -18,11 +19,13 @@ export default function PageHero({
   cta?: { label: string; href: string };
   /** Shorter hero for transactional pages (booking, checkout). */
   compact?: boolean;
+  /** Tailwind object-position class for the background image. */
+  imageClassName?: string;
 }) {
   return (
     <section className="relative w-full overflow-hidden bg-white">
       <div className="absolute inset-0">
-        <Image src={image} alt={alt} fill priority sizes="100vw" quality={75} className="object-cover object-right" />
+        <Image src={image} alt={alt} fill priority sizes="100vw" quality={75} className={"object-cover " + imageClassName} />
         <div className="absolute inset-0 bg-linear-to-b from-black/65 via-black/35 to-black/45" />
       </div>
 

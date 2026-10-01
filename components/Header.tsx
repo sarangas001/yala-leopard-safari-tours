@@ -27,7 +27,7 @@ const NAV_LINKS: NavLink[] = [
     ],
   },
   {
-    href: "/safaris#more-services",
+    href: "/taxi-car-rental",
     label: "Taxi & Car Rental",
     activePath: "/taxi-car-rental",
     children: [
@@ -178,7 +178,7 @@ export default function Header() {
               width={1478}
               height={720}
               priority
-              className="h-11 w-auto sm:h-14"
+              className="h-14 w-auto sm:h-18"
             />
           </Link>
 
