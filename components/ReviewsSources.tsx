@@ -12,7 +12,7 @@ const PRIMARY_SOURCES = [
 export default function ReviewsSources() {
   return (
     <section className="relative overflow-hidden w-full bg-white">
-      <Illustration src="/images/parks/elephant.png" side="left" />
+      {/* <Illustration src="/images/parks/elephant.png" side="left" /> */}
       <div className="relative z-10 mx-auto max-w-[1600px] px-10 py-[1.5cm] sm:px-20 sm:py-[1.5cm] lg:px-40 lg:py-[2.5cm]">
         <Reveal className="mx-auto max-w-2xl text-center">
           <h2 className="font-display text-3xl font-medium tracking-tight text-brand-ink sm:text-4xl lg:text-5xl">
