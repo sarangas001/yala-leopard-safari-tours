@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Reveal from "@/components/Reveal";
 import type { ArticleBlock } from "@/lib/blog/types";
+import { focalClass, focalStyle } from "@/lib/focal";
 
 export default function BlogArticleTemplate({ blocks }: { blocks: ArticleBlock[] }) {
   return (
@@ -38,7 +39,8 @@ export default function BlogArticleTemplate({ blocks }: { blocks: ArticleBlock[]
                       fill
                       sizes="(min-width: 640px) 672px, 100vw"
                       quality={80}
-                      className="object-cover"
+                      className={`object-cover ${focalClass(block.src)}`}
+                      style={focalStyle(block.src)}
                     />
                   </div>
                   {block.caption ? (

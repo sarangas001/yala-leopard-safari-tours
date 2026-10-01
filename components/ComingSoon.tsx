@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { focalClass, focalStyle } from "@/lib/focal";
 
 export default function ComingSoon({
   title,
@@ -13,7 +14,7 @@ export default function ComingSoon({
     <>
       <section className="relative w-full overflow-hidden bg-white">
         <div className="absolute inset-0">
-          <Image src={image} alt={alt} fill priority sizes="100vw" quality={70} className="object-cover" />
+          <Image src={image} alt={alt} fill priority sizes="100vw" quality={70} className={`object-cover ${focalClass(image)}`} style={focalStyle(image)} />
           <div className="absolute inset-0 bg-black/55" />
         </div>
         <div className="relative z-10 mx-auto flex min-h-100 max-w-[1600px] items-center justify-center px-10 pt-24 pb-16 text-center sm:px-20 sm:pt-28 sm:pb-20 lg:px-40 lg:pt-32 lg:pb-24">

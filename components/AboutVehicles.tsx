@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import Reveal from "@/components/Reveal";
+import { focalClass, focalStyle } from "@/lib/focal";
 
 export default function AboutVehicles() {
   return (
@@ -15,7 +16,8 @@ export default function AboutVehicles() {
                 fill
                 sizes="(min-width: 1024px) 50vw, 100vw"
                 quality={80}
-                className="object-cover"
+                className={`object-cover ${focalClass("/images/new-img/9.jpg")}`}
+                style={focalStyle("/images/new-img/9.jpg")}
               />
             </div>
           </Reveal>

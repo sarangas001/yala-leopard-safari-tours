@@ -12,6 +12,7 @@ export const yala: ParkContent = {
       description:
         "Explore Yala National Park with an experienced local wildlife driver in a comfortable 4x4 safari jeep. Choose from flexible Half-Day, 7-Hour and Full-Day options.",
       video: "/videos/yala.mp4",
+      poster: "/images/parks/yala.jpg",
       ctas: [{ label: "Book Yala Safari", href: "/#enquire" }],
     },
     {
@@ -26,7 +27,7 @@ export const yala: ParkContent = {
           time: "5:00 AM – 10:00 AM",
           duration: "Approx. 4–5 hours",
           includes: "Breakfast",
-          image: "/images/new-img/IMG_2067.jpg",
+          image: "/images/new-img/13.jpg",
           tiers: [
             { group: "1 Person", price: "$80" },
             { group: "2 Persons", price: "$50 pp" },
@@ -41,7 +42,7 @@ export const yala: ParkContent = {
           time: "5:00 AM – 12:00 PM",
           duration: "7 hours",
           includes: "Breakfast",
-          image: "/images/new-img/IMG_2170.jpg",
+          image: "/images/new-img/IMG_1606.jpg",
           tiers: [
             { group: "1 Person", price: "$95" },
             { group: "2 Persons", price: "$60 pp" },
@@ -50,14 +51,6 @@ export const yala: ParkContent = {
             { group: "5 Persons", price: "$38 pp" },
             { group: "6 Persons", price: "$35 pp" },
           ],
-        },
-        {
-          name: "7-Hour Shared Safari",
-          time: "5:00 AM – 12:00 PM",
-          duration: "7 hours",
-          includes: "Breakfast",
-          flatPrice: "$25 per person",
-          image: "/images/new-img/IMG_2365.jpg",
         },
         {
           name: "Full-Day Private Safari",
@@ -74,6 +67,14 @@ export const yala: ParkContent = {
             { group: "6 Persons", price: "$52 pp" },
           ],
         },
+        {
+          name: "7-Hour Shared Safari",
+          time: "5:00 AM – 12:00 PM",
+          duration: "7 hours",
+          includes: "Breakfast",
+          flatPrice: "$25 per person",
+          image: "/images/new-img/IMG_2392.jpg",
+        },        
         {
           name: "Full-Day Shared Safari",
           time: "5:00 AM – 6:00 PM",
@@ -292,7 +293,7 @@ export const yala: ParkContent = {
         {
           title: "Hambantota Port to Yala Safari",
           text: "A convenient safari transfer for cruise and port arrivals heading straight into Yala.",
-          image: "/images/scenic/guide-jeep.jpg",
+          image: "/images/new-img/IMG_9172.jpg",
           href: "/hambantota-port-to-yala",
         },
       ],

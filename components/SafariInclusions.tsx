@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Reveal from "@/components/Reveal";
+import { focalClass, focalStyle } from "@/lib/focal";
 
 export default function SafariInclusions() {
   return (
@@ -29,7 +30,8 @@ export default function SafariInclusions() {
                 fill
                 sizes="(min-width: 1024px) 40vw, 100vw"
                 quality={80}
-                className="object-cover"
+                className={`object-cover ${focalClass("/images/new-img/12.jpg")}`}
+                style={focalStyle("/images/new-img/12.jpg")}
               />
             </div>
           </Reveal>

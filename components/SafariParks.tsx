@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Reveal from "@/components/Reveal";
+import { focalClass, focalStyle } from "@/lib/focal";
 
 const PARKS = [
   {
@@ -57,7 +58,7 @@ export default function SafariParks() {
           {PARKS.map((park, i) => (
             <Reveal key={park.id} delay={i * 0.1}>
               <a href={`/safaris/${park.id}`} className="group block h-full">
-                <div className="flex h-full flex-col overflow-hidden rounded-3xl border border-black/6 bg-white shadow-sm transition-shadow duration-300 group-hover:shadow-md">
+                <div className="flex h-full flex-col overflow-hidden rounded-3xl border border-black/6 bg-white shadow-sm transition-shadow duration-700 group-hover:shadow-md">
                   {/* Image at top */}
                   <div className="relative aspect-4/3 w-full overflow-hidden">
                     <Image
@@ -66,7 +67,8 @@ export default function SafariParks() {
                       fill
                       sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
                       quality={75}
-                      className="object-cover transition-transform duration-700 group-hover:scale-105"
+                      className={`object-cover transition-transform duration-1500 group-hover:scale-105 ${focalClass(park.image)}`}
+                      style={focalStyle(park.image)}
                     />
                     {/* Pill badge */}
                     <span className="absolute left-4 top-4 rounded-full bg-white/90 px-3 py-1 text-xs font-semibold tracking-wide text-brand-ink backdrop-blur-sm">
@@ -82,11 +84,11 @@ export default function SafariParks() {
                     <p className="mt-3 flex-1 text-sm leading-relaxed text-brand-ink-muted">
                       {park.copy}
                     </p>
-                    <span className="mt-5 inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-[0.15em] text-brand-orange transition-colors duration-300 group-hover:text-brand-orange-dark">
-                      Explore Park
+                    <span className="mt-5 inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-[0.15em] text-brand-orange transition-colors duration-700 group-hover:text-brand-orange-dark">
+                      View Safari Packages
                       <span
                         aria-hidden="true"
-                        className="transition-transform duration-300 group-hover:translate-x-1"
+                        className="transition-transform duration-700 group-hover:translate-x-1"
                       >
                         →
                       </span>

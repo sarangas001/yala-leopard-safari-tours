@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import Reveal from "@/components/Reveal";
+import { focalClass, focalStyle } from "@/lib/focal";
 
 export type PriceTier = { group: string; price: string };
 
@@ -44,7 +45,7 @@ export default function SafariPricing({
         <div className="mt-14 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:mt-16 lg:grid-cols-3 lg:gap-7">
           {packages.map((pkg, i) => (
             <Reveal key={pkg.name} delay={(i % 3) * 0.1}>
-              <div className="flex h-full flex-col overflow-hidden rounded-3xl border border-black/6 bg-white shadow-sm transition-shadow duration-300 hover:shadow-md">
+              <div className="flex h-full flex-col overflow-hidden rounded-3xl border border-black/6 bg-white shadow-sm transition-shadow duration-700 hover:shadow-md">
                 {pkg.image ?? image ? (
                   <div className="relative aspect-4/3 w-full overflow-hidden">
                     <Image
@@ -53,7 +54,8 @@ export default function SafariPricing({
                       fill
                       sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
                       quality={75}
-                      className="object-cover"
+                      className={`object-cover ${focalClass((pkg.image ?? image)!)}`}
+                      style={focalStyle((pkg.image ?? image)!)}
                     />
                   </div>
                 ) : null}

@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useState } from "react";
 import Reveal from "@/components/Reveal";
+import { focalClass, focalStyle } from "@/lib/focal";
 
 export default function FinalCta() {
   const [expanded, setExpanded] = useState(false);
@@ -58,7 +59,8 @@ export default function FinalCta() {
             fill
             sizes="(min-width: 640px) 0px, 100vw"
             quality={85}
-            className="object-cover object-center"
+            className={`object-cover object-center ${focalClass("/images/scenic/cta-img-2.png")}`}
+            style={focalStyle("/images/scenic/cta-img-2.png")}
           />
         </div>
         <Image

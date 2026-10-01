@@ -20,5 +20,5 @@ const FAQS: FaqItem[] = [
 ];
 
 export default function FaqTransportFaqs() {
-  return <ParkFaq heading="Pickup &amp; Transport FAQs" faqs={FAQS} />;
+  return <ParkFaq heading="Pickup &amp; Transport FAQs" faqs={FAQS} illustration="/images/parks/03-sri-lankan-peacock.png" illustrationSide="right" />;
 }

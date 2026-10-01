@@ -12,6 +12,7 @@ export type Section =
       title: string;
       description?: string;
       video?: string;
+      poster?: string;
       image?: string;
       ctas?: ParkHeroCta[];
     }

@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import Reveal from "@/components/Reveal";
+import { focalClass, focalStyle } from "@/lib/focal";
 
 const DURATIONS = ["Half Day", "7 Hours", "Full Day"];
 
@@ -39,7 +40,7 @@ export default function FeaturedSafari() {
               className="mt-8 inline-flex items-center gap-2 rounded-full bg-brand-orange px-7 py-3.5 text-sm font-semibold text-white shadow-md shadow-brand-orange/25 transition-all hover:bg-brand-orange-dark hover:shadow-lg hover:shadow-brand-orange/30"
             >
               View Yala Safari Packages
-              <span aria-hidden="true" className="transition-transform duration-200 group-hover:translate-x-0.5">→</span>
+              <span aria-hidden="true" className="transition-transform duration-500 group-hover:translate-x-0.5">→</span>
             </Link>
           </Reveal>
 
@@ -51,7 +52,8 @@ export default function FeaturedSafari() {
                 fill
                 sizes="(min-width: 1024px) 50vw, 100vw"
                 quality={80}
-                className="object-cover object-left-center"
+                className={`object-cover object-left-center ${focalClass("/images/new-img/IMG_1753.jpg")}`}
+                style={focalStyle("/images/new-img/IMG_1753.jpg")}
               />
             </div>
           </Reveal>

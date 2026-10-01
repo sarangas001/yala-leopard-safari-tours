@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Reveal from "@/components/Reveal";
+import { focalClass, focalStyle } from "@/lib/focal";
 
 type ServiceCard = {
   title: string;
@@ -17,7 +18,7 @@ const SERVICES: ServiceCard[] = [
     image: "/images/new-img/IMG_2374.jpg",
     alt: "A safari guide standing beside a 4x4 jeep in Yala National Park",
     href: "/hambantota-port-to-yala",
-    cta: "See Package Details",
+    cta: "View Safari Package",
   },
   {
     title: "Taxi and Car Rental",
@@ -25,7 +26,7 @@ const SERVICES: ServiceCard[] = [
     image: "/images/new-img/taxi-car-2.jpeg",
     alt: "A row of private vehicles available for hire in Sri Lanka",
     href: "/taxi-car-rental",
-    cta: "See Package Details",
+    cta: "View Safari Package",
   },
 ];
 
@@ -59,7 +60,7 @@ export default function SafariMoreServices() {
             <Reveal key={service.title} delay={i * 0.1}>
               <a
                 href={service.href}
-                className="group flex h-full flex-col overflow-hidden rounded-3xl border border-black/6 bg-white shadow-sm transition-shadow duration-300 hover:shadow-md"
+                className="group flex h-full flex-col overflow-hidden rounded-3xl border border-black/6 bg-white shadow-sm transition-shadow duration-700 hover:shadow-md"
               >
                 <div className="relative aspect-4/3 w-full overflow-hidden">
                   <Image
@@ -68,7 +69,8 @@ export default function SafariMoreServices() {
                     fill
                     sizes="(min-width: 1024px) 50vw, 100vw"
                     quality={75}
-                    className="object-cover transition-transform duration-700 group-hover:scale-105"
+                    className={`object-cover transition-transform duration-1500 group-hover:scale-105 ${focalClass(service.image)}`}
+                    style={focalStyle(service.image)}
                   />
                 </div>
 

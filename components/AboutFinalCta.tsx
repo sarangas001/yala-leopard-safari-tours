@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Reveal from "@/components/Reveal";
+import { focalClass, focalStyle } from "@/lib/focal";
 
 export default function AboutFinalCta() {
   return (
@@ -12,7 +13,8 @@ export default function AboutFinalCta() {
             fill
             sizes="100vw"
             quality={75}
-            className="object-cover"
+            className={`object-cover ${focalClass("/images/wildlife/peacock.jpg")}`}
+            style={focalStyle("/images/wildlife/peacock.jpg")}
           />
           <div className="absolute inset-0 bg-linear-to-t from-black/70 via-black/30 to-black/15" />
           <div className="absolute inset-0 bg-linear-to-r from-black/60 via-black/15 to-transparent" />

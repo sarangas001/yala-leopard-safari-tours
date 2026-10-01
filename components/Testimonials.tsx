@@ -1,4 +1,7 @@
-import Image from "next/image";
+"use client";
+
+import { useRef, useState } from "react";
+import Illustration from "@/components/Illustration";
 import Reveal from "@/components/Reveal";
 
 // Placeholder quotes — replace with real Google/TripAdvisor reviews before launch.
@@ -26,65 +29,142 @@ const REVIEWS = [
   },
 ];
 
+function Stars() {
+  return (
+    <div className="flex justify-center gap-1 text-brand-orange" aria-label="5 out of 5 stars">
+      {Array.from({ length: 5 }).map((_, star) => (
+        <svg key={star} viewBox="0 0 20 20" fill="currentColor" className="h-5 w-5">
+          <path d="M10 1.5l2.6 5.4 5.9.7-4.3 4.2 1 5.9L10 14.9l-5.2 2.8 1-5.9-4.3-4.2 5.9-.7L10 1.5Z" />
+        </svg>
+      ))}
+    </div>
+  );
+}
+
+function ArrowIcon({ direction }: { direction: "prev" | "next" }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" className="h-5 w-5" aria-hidden="true">
+      <path
+        d={direction === "prev" ? "M15 5l-7 7 7 7" : "M9 5l7 7-7 7"}
+        stroke="currentColor"
+        strokeWidth="1.8"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
+
 export default function Testimonials() {
+  const [index, setIndex] = useState(0);
+  const touchStartX = useRef<number | null>(null);
+  const last = REVIEWS.length - 1;
+
+  const go = (next: number) => setIndex(next < 0 ? last : next > last ? 0 : next);
+
+  const buttonClass =
+    "flex h-12 w-12 items-center justify-center rounded-full border border-black/10 bg-white text-brand-ink shadow-sm transition-colors hover:border-brand-orange hover:bg-brand-orange hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-orange";
+
   return (
     <section className="relative w-full overflow-hidden bg-white">
-      {/* Scenic background image, framed by its own soft cloud fade.
-          Rendered at its natural aspect ratio (never stretched taller than
-          the section) so it's only ever scaled down, not upscaled — upscaling
-          a wide, comparatively low-resolution source with object-cover is
-          what caused the blurry/pixelated look on tall mobile layouts. */}
-        <Image
-          src="/images/scenic/review-bg-2.png"
-          alt=""
-          fill
-          aria-hidden="true"
-          sizes="100vw"
-          quality={85}
-          className="object-cover"
-        />
+      <Illustration src="/images/parks/deer.png" side="left" width={300} offsetTop={-16} />
 
       <div className="relative z-10 mx-auto max-w-[1600px] px-10 py-[1.5cm] sm:px-20 sm:py-[1.5cm] lg:px-40 lg:py-[2.5cm]">
-        <Reveal className="mx-auto mt-20 max-w-2xl text-center sm:mt-0">
-          <h2 className="text-balance font-display text-3xl font-medium tracking-tight text-white drop-shadow-[0_2px_10px_rgba(20,60,120,0.55)] sm:text-4xl lg:text-5xl">
+        <Reveal className="mx-auto max-w-2xl text-center">
+          <span className="inline-flex items-center gap-3 text-xs font-medium uppercase tracking-[0.22em] text-brand-orange">
+            <span className="h-px w-6 bg-brand-orange/50" aria-hidden="true" />
+            Guest Reviews
+            <span className="h-px w-6 bg-brand-orange/50" aria-hidden="true" />
+          </span>
+          <h2 className="mt-4 text-balance font-display text-3xl font-medium tracking-tight text-brand-ink sm:text-4xl lg:text-5xl">
             Don&apos;t take our word for it
           </h2>
         </Reveal>
 
-        <div className="mt-14 grid grid-cols-1 gap-8 sm:grid-cols-3 lg:mt-18 lg:gap-10">
-          {REVIEWS.map((review, i) => (
-            <Reveal key={i} delay={i * 0.1} className={i >= 2 ? "hidden sm:block" : undefined}>
-              <div className="flex h-full flex-col items-center rounded-2xl bg-white/90 p-8 text-center shadow-xl shadow-black/5">
-                <h3 className="font-display text-lg font-medium text-brand-ink">
-                  {review.headline}
-                </h3>
-                <p className="mt-3 flex-1 text-sm leading-relaxed text-brand-ink-muted sm:text-base">
-                  {review.quote}
-                </p>
-
-                <div className="mt-6 border-t border-black/[0.07] pt-5">
-                  <p className="text-sm font-semibold text-brand-ink">{review.name}</p>
-                  <p className="text-xs text-brand-ink-muted">{review.detail}</p>
-                  {/* Stars */}
-                  <div className="mt-2 flex justify-center gap-0.5 text-brand-orange" aria-label="5 out of 5 stars">
-                    {Array.from({ length: 5 }).map((_, star) => (
-                      <svg key={star} viewBox="0 0 20 20" fill="currentColor" className="h-3.5 w-3.5">
-                        <path d="M10 1.5l2.6 5.4 5.9.7-4.3 4.2 1 5.9L10 14.9l-5.2 2.8 1-5.9-4.3-4.2 5.9-.7L10 1.5Z" />
-                      </svg>
-                    ))}
+        <Reveal className="mx-auto mt-6 max-w-3xl lg:mt-10">
+          <div
+            role="region"
+            aria-roledescription="carousel"
+            aria-label="Guest reviews"
+            className="overflow-hidden"
+            onTouchStart={(e) => {
+              touchStartX.current = e.touches[0].clientX;
+            }}
+            onTouchEnd={(e) => {
+              if (touchStartX.current === null) return;
+              const delta = e.changedTouches[0].clientX - touchStartX.current;
+              touchStartX.current = null;
+              if (Math.abs(delta) > 50) go(index + (delta < 0 ? 1 : -1));
+            }}
+          >
+            <div
+              className="flex transition-transform duration-1000 ease-in-out"
+              style={{ transform: `translateX(-${index * 100}%)` }}
+            >
+              {REVIEWS.map((review, i) => (
+                <figure
+                  key={i}
+                  role="group"
+                  aria-roledescription="slide"
+                  aria-label={`${i + 1} of ${REVIEWS.length}`}
+                  aria-hidden={i !== index}
+                  className="w-full shrink-0 px-1 pb-2 pt-8"
+                >
+                  <div className="relative flex h-full flex-col items-center rounded-3xl border border-black/6 bg-white px-6 pb-8 pt-14 text-center shadow-lg shadow-black/5 sm:px-12">
+                    <span
+                      className="absolute left-1/2 top-0 flex h-12 w-12 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-brand-orange font-display text-4xl leading-none text-white shadow-lg shadow-brand-orange/30"
+                      aria-hidden="true"
+                    >
+                      <span className="translate-y-1">&ldquo;</span>
+                    </span>
+                    <Stars />
+                    <h3 className="mt-5 font-display text-xl font-medium text-brand-ink sm:text-2xl">
+                      {review.headline}
+                    </h3>
+                    <blockquote className="mt-4 text-sm leading-relaxed text-brand-ink-muted sm:text-base">
+                      {review.quote}
+                    </blockquote>
+                    <figcaption className="mt-6 w-full border-t border-brand-orange/20 pt-5">
+                      <span className="block text-sm font-semibold text-brand-ink">{review.name}</span>
+                      <span className="block text-xs text-brand-ink-muted">{review.detail}</span>
+                    </figcaption>
                   </div>
-                </div>
-              </div>
-            </Reveal>
-          ))}
-        </div>
+                </figure>
+              ))}
+            </div>
+          </div>
 
-        <Reveal className="mt-12 text-center lg:mt-14">
+          <div className="mt-8 flex items-center justify-center gap-5">
+            <button type="button" aria-label="Previous review" onClick={() => go(index - 1)} className={buttonClass}>
+              <ArrowIcon direction="prev" />
+            </button>
+            <div className="flex items-center gap-2">
+              {REVIEWS.map((_, i) => (
+                <button
+                  key={i}
+                  type="button"
+                  aria-label={`Show review ${i + 1}`}
+                  aria-current={i === index}
+                  onClick={() => setIndex(i)}
+                  className={
+                    "h-2.5 rounded-full transition-all duration-700 " +
+                    (i === index ? "w-8 bg-brand-orange" : "w-2.5 bg-black/15 hover:bg-black/30")
+                  }
+                />
+              ))}
+            </div>
+            <button type="button" aria-label="Next review" onClick={() => go(index + 1)} className={buttonClass}>
+              <ArrowIcon direction="next" />
+            </button>
+          </div>
+        </Reveal>
+
+        <Reveal className="mt-10 text-center lg:mt-12">
           <a
             href="/reviews"
-            className="inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-semibold text-brand-ink shadow-md shadow-black/5 transition-colors hover:text-brand-orange"
+            className="inline-flex items-center gap-2 rounded-full bg-brand-orange px-6 py-3 text-sm font-semibold text-white shadow-md shadow-brand-orange/25 transition-colors hover:bg-brand-orange-dark"
           >
-            Read all guest reviews →
+            Read all guest reviews <span aria-hidden="true">→</span>
           </a>
         </Reveal>
       </div>
