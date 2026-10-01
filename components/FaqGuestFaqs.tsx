@@ -16,5 +16,5 @@ const FAQS: FaqItem[] = [
 ];
 
 export default function FaqGuestFaqs() {
-  return <ParkFaq heading="Children &amp; Guest FAQs" faqs={FAQS} />;
+  return <ParkFaq heading="Children &amp; Guest FAQs" faqs={FAQS} illustration="/images/parks/traveller.png" illustrationSide="left" />;
 }

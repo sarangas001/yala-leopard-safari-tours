@@ -39,7 +39,7 @@ export default function FeaturedSafari() {
               className="mt-8 inline-flex items-center gap-2 rounded-full bg-brand-orange px-7 py-3.5 text-sm font-semibold text-white shadow-md shadow-brand-orange/25 transition-all hover:bg-brand-orange-dark hover:shadow-lg hover:shadow-brand-orange/30"
             >
               View Yala Safari Packages
-              <span aria-hidden="true" className="transition-transform duration-200 group-hover:translate-x-0.5">→</span>
+              <span aria-hidden="true" className="transition-transform duration-500 group-hover:translate-x-0.5">→</span>
             </Link>
           </Reveal>
 

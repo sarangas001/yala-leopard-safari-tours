@@ -41,7 +41,7 @@ export const udawalawe: ParkContent = {
           time: "To be confirmed",
           duration: "7 hours",
           includes: "Breakfast",
-          image: "/images/new-img/IMG_1457.jpg",
+          image: "/images/new-img/IMG_1606.jpg",
           tiers: [
             { group: "1 Person", price: "$95" },
             { group: "2 Persons", price: "$60 pp" },
@@ -56,7 +56,7 @@ export const udawalawe: ParkContent = {
           time: "To be confirmed",
           duration: "Approx. 13 hours",
           includes: "Breakfast and lunch",
-          image: "/images/new-img/IMG_4846.jpg",
+          image: "/images/parks/udawalawe.jpg",
           tiers: [
             { group: "1 Person", price: "$140" },
             { group: "2 Persons", price: "$90 pp" },
@@ -227,7 +227,7 @@ export const udawalawe: ParkContent = {
         {
           title: "Taxi & Car Rental",
           text: "Private, air-conditioned vehicles with an experienced driver for the whole island.",
-          image: "/images/scenic/safari-jeeps.jpg",
+          image: "/images/new-img/IMG_9129.jpg",
           href: "/#enquire",
         },
       ],

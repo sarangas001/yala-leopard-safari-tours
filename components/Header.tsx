@@ -26,7 +26,15 @@ const NAV_LINKS: NavLink[] = [
       { href: "/safaris/bundala", label: "Bundala National Park" },
     ],
   },
-  { href: "/safaris#more-services", label: "Taxi & Car Rental", activePath: "/taxi-car-rental" },
+  {
+    href: "/safaris#more-services",
+    label: "Taxi & Car Rental",
+    activePath: "/taxi-car-rental",
+    children: [
+      { href: "/hambantota-port-to-yala", label: "Hambantota Port to Yala Safari" },
+      { href: "/taxi-car-rental", label: "Taxi and Car Rental" },
+    ],
+  },
   { href: "/about", label: "About" },
   { href: "/gallery", label: "Gallery" },
   { href: "/reviews", label: "Reviews" },
@@ -75,7 +83,7 @@ export default function Header() {
   const lenis = useLenis();
   const pathname = usePathname();
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [openMenu, setOpenMenu] = useState<string | null>(null);
 
   const mobilePanelRef = useRef<HTMLDivElement | null>(null);
   const scrolledLayerRef = useRef<HTMLDivElement | null>(null);
@@ -125,7 +133,7 @@ export default function Header() {
       gsap.fromTo(
         panel,
         { height: 0, opacity: 0 },
-        { height: "auto", opacity: 1, duration: reduced ? 0.01 : 0.35, ease: "power2.out" }
+        { height: "auto", opacity: 1, duration: reduced ? 0.01 : 0.7, ease: "power2.out" }
       );
     } else {
       document.body.style.overflow = "";
@@ -133,7 +141,7 @@ export default function Header() {
       gsap.to(panel, {
         height: 0,
         opacity: 0,
-        duration: reduced ? 0.01 : 0.25,
+        duration: reduced ? 0.01 : 0.5,
         ease: "power2.in",
         onComplete: () => gsap.set(panel, { display: "none" }),
       });
@@ -147,7 +155,7 @@ export default function Header() {
 
   const closeAll = () => {
     setMobileOpen(false);
-    setDropdownOpen(false);
+    setOpenMenu(null);
   };
 
   const navLinkClass = (active: boolean) =>
@@ -176,7 +184,8 @@ export default function Header() {
 
           <nav aria-label="Primary" className="hidden items-center gap-6 xl:flex 2xl:gap-8">
             {NAV_LINKS.map((link) => {
-              const active = isActive(link.activePath ?? link.href);
+              const active =
+                isActive(link.activePath ?? link.href) || !!link.children?.some((c) => isActive(c.href));
 
               if (!link.children) {
                 return (
@@ -186,43 +195,45 @@ export default function Header() {
                 );
               }
 
+              const dropdownOpen = openMenu === link.label;
+
               return (
                 <div
                   key={link.href}
                   className="relative"
-                  onMouseEnter={() => setDropdownOpen(true)}
-                  onMouseLeave={() => setDropdownOpen(false)}
+                  onMouseEnter={() => setOpenMenu(link.label)}
+                  onMouseLeave={() => setOpenMenu(null)}
                   onBlur={(event) => {
-                    if (!event.currentTarget.contains(event.relatedTarget)) setDropdownOpen(false);
+                    if (!event.currentTarget.contains(event.relatedTarget)) setOpenMenu(null);
                   }}
                   onKeyDown={(event) => {
-                    if (event.key === "Escape") setDropdownOpen(false);
+                    if (event.key === "Escape") setOpenMenu(null);
                   }}
                 >
                   <Link
                     href={link.href}
                     onClick={closeAll}
-                    onFocus={() => setDropdownOpen(true)}
+                    onFocus={() => setOpenMenu(link.label)}
                     aria-haspopup="menu"
                     aria-expanded={dropdownOpen}
                     className={navLinkClass(active) + " inline-flex items-center gap-1"}
                   >
                     {link.label}
                     <ChevronIcon
-                      className={"h-4 w-4 transition-transform duration-200 " + (dropdownOpen ? "rotate-180" : "")}
+                      className={"h-4 w-4 transition-transform duration-500 " + (dropdownOpen ? "rotate-180" : "")}
                     />
                   </Link>
 
                   {/* pt-4 keeps the hover area continuous between the trigger and the panel. */}
                   <div
                     className={
-                      "absolute left-1/2 top-full w-64 -translate-x-1/2 pt-4 transition-all duration-200 " +
+                      "absolute left-1/2 top-full w-72 -translate-x-1/2 pt-4 transition-all duration-500 " +
                       (dropdownOpen ? "visible translate-y-0 opacity-100" : "invisible -translate-y-1 opacity-0")
                     }
                   >
                     <ul
                       role="menu"
-                      className="overflow-hidden rounded-2xl border border-white/10 bg-black/90 p-2 shadow-xl shadow-black/30 backdrop-blur"
+                      className="overflow-hidden rounded-2xl border border-black/10 bg-white p-2 shadow-xl shadow-black/20"
                     >
                       {link.children.map((child) => (
                         <li key={child.href} role="none">
@@ -231,8 +242,8 @@ export default function Header() {
                             role="menuitem"
                             onClick={closeAll}
                             className={
-                              "block rounded-xl px-4 py-2.5 text-sm font-medium transition-colors hover:bg-white/10 hover:text-white " +
-                              (isActive(child.href) ? "text-white" : "text-white/80")
+                              "block rounded-xl px-4 py-2.5 text-sm font-medium transition-colors hover:bg-brand-orange hover:text-white " +
+                              (isActive(child.href) ? "text-brand-orange" : "text-brand-ink")
                             }
                           >
                             {child.label}
@@ -289,7 +300,8 @@ export default function Header() {
           className="flex max-h-[calc(100dvh-4.5rem)] flex-col gap-1 overflow-y-auto overscroll-contain px-5 py-4"
         >
           {NAV_LINKS.map((link) => {
-            const active = isActive(link.activePath ?? link.href);
+            const active =
+              isActive(link.activePath ?? link.href) || !!link.children?.some((c) => isActive(c.href));
             const mobileLinkClass =
               "block rounded-lg px-3 py-2.5 text-sm font-medium " + (active ? "text-white" : "text-white/85");
 

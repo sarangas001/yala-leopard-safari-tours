@@ -35,17 +35,17 @@ export default function Testimonials() {
           a wide, comparatively low-resolution source with object-cover is
           what caused the blurry/pixelated look on tall mobile layouts. */}
         <Image
-          src="/images/scenic/review-bg-2.png"
+          src="/images/reviews-img-3.png"
           alt=""
           fill
           aria-hidden="true"
           sizes="100vw"
           quality={85}
-          className="object-cover"
+          className="object-cover top-0"
         />
 
       <div className="relative z-10 mx-auto max-w-[1600px] px-10 py-[1.5cm] sm:px-20 sm:py-[1.5cm] lg:px-40 lg:py-[2.5cm]">
-        <Reveal className="mx-auto mt-20 max-w-2xl text-center sm:mt-0">
+        <Reveal className="mx-auto max-w-2xl text-center sm:mt-0">
           <h2 className="text-balance font-display text-3xl font-medium tracking-tight text-white drop-shadow-[0_2px_10px_rgba(20,60,120,0.55)] sm:text-4xl lg:text-5xl">
             Don&apos;t take our word for it
           </h2>

@@ -34,7 +34,7 @@ function ScrollResetOnNavigate() {
     if (target instanceof HTMLElement) {
       requestAnimationFrame(() => {
         if (lenis) {
-          lenis.scrollTo(target, { offset: -HEADER_OFFSET, duration: 1.2 });
+          lenis.scrollTo(target, { offset: -HEADER_OFFSET, duration: 2.2 });
         } else {
           target.scrollIntoView({ behavior: "smooth", block: "start" });
         }
@@ -64,7 +64,7 @@ function HashLinkHandler() {
     if (!targetEl) return;
 
     requestAnimationFrame(() => {
-      lenis.scrollTo(targetEl as HTMLElement, { offset: -HEADER_OFFSET, duration: 1.2 });
+      lenis.scrollTo(targetEl as HTMLElement, { offset: -HEADER_OFFSET, duration: 2.2 });
     });
   }, [lenis]);
 
@@ -94,7 +94,7 @@ function HashLinkHandler() {
       history.pushState(null, "", hash);
 
       if (lenis) {
-        lenis.scrollTo(targetEl as HTMLElement, { offset: -HEADER_OFFSET, duration: 1.2 });
+        lenis.scrollTo(targetEl as HTMLElement, { offset: -HEADER_OFFSET, duration: 2.2 });
       } else {
         (targetEl as HTMLElement).scrollIntoView({ behavior: "smooth", block: "start" });
       }
@@ -125,7 +125,7 @@ export default function SmoothScroll({ children }: { children: ReactNode }) {
         // Lerp-based smoothing keeps easing toward the target on every wheel tick,
         // so slow, small scrolls keep gliding instead of stalling mid-way like the
         // fixed-duration tween did.
-        lerp: reduced ? 1 : 0.1,
+        lerp: reduced ? 1 : 0.05,
         smoothWheel: !reduced,
       }}
     >

@@ -5,7 +5,7 @@ export default function AboutPreview() {
   return (
     <section id="about" className="relative w-full overflow-hidden bg-white">
       {/* Peacock illustration — mirrors the elephant illustration placement in SafariParks, left-aligned */}
-      <div
+      {/* <div
         className="pointer-events-none absolute -top-4 -left-8 z-0 hidden select-none lg:block"
         aria-hidden="true"
       >
@@ -17,7 +17,7 @@ export default function AboutPreview() {
           quality={90}
           style={{ width: "380px", height: "auto", opacity: 0.92 }}
         />
-      </div>
+      </div> */}
 
       <div className="relative z-10 mx-auto max-w-[1600px] px-10 py-[1.5cm] sm:px-20 sm:py-[1.5cm] lg:px-40 lg:py-[2.5cm]">
         <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-20">

@@ -2,14 +2,16 @@ import Image from "next/image";
 import Reveal from "@/components/Reveal";
 import BlogArticleTemplate from "@/components/BlogArticleTemplate";
 import FinalCta from "@/components/FinalCta";
+import Illustration from "@/components/Illustration";
 import { categoryLabel } from "@/lib/blog/types";
 import type { BlogArticle } from "@/lib/blog/types";
 
 export default function BlogPostView({ article }: { article: BlogArticle }) {
   return (
     <>
-      <section className="w-full bg-white">
-        <div className="mx-auto max-w-[1600px] px-10 py-[1.5cm] sm:px-20 sm:py-[1.5cm] lg:px-40 lg:py-[2.5cm]">
+      <section className="relative w-full overflow-hidden bg-white">
+        <Illustration src="/images/parks/leopard.png" side="right" />
+        <div className="relative z-10 mx-auto max-w-[1600px] px-10 py-[1.5cm] sm:px-20 sm:py-[1.5cm] lg:px-40 lg:py-[2.5cm]">
           <Reveal className="mx-auto max-w-2xl text-center">
             <span className="inline-flex items-center gap-3 text-xs font-medium uppercase tracking-[0.22em] text-brand-orange">
               <span className="h-px w-6 bg-brand-orange/50" aria-hidden="true" />

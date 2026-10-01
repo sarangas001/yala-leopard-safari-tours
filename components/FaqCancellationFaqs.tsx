@@ -16,5 +16,5 @@ const FAQS: FaqItem[] = [
 ];
 
 export default function FaqCancellationFaqs() {
-  return <ParkFaq heading="Cancellation &amp; Refund FAQs" faqs={FAQS} />;
+  return <ParkFaq heading="Cancellation &amp; Refund FAQs" faqs={FAQS} illustration="/images/parks/leopard.png" illustrationSide="right" />;
 }

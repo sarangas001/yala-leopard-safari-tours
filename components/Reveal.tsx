@@ -3,6 +3,9 @@
 import { useEffect, useRef, type ReactNode } from "react";
 import gsap from "gsap";
 
+// Global pacing for scroll-reveal animations — raise to slow the whole site down.
+const SLOWDOWN = 2;
+
 export default function Reveal({
   children,
   className,
@@ -31,7 +34,14 @@ export default function Reveal({
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (!entry.isIntersecting) return;
-        gsap.to(el, { opacity: 1, y: 0, scale: 1, duration, delay, ease: "power3.out" });
+        gsap.to(el, {
+          opacity: 1,
+          y: 0,
+          scale: 1,
+          duration: duration * SLOWDOWN,
+          delay: delay * SLOWDOWN,
+          ease: "power3.out",
+        });
         observer.disconnect();
       },
       { threshold: 0.15 }

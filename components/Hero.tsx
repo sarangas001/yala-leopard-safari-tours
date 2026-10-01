@@ -69,9 +69,9 @@ export default function Hero() {
       if (!reducedMotionRef.current) {
         gsap.set([introRef.current, cardsRef.current], { opacity: 0, y: 18 });
         gsap
-          .timeline({ defaults: { ease: "power2.out", duration: 0.8 } })
+          .timeline({ defaults: { ease: "power2.out", duration: 1.6 } })
           .to(introRef.current, { opacity: 1, y: 0, delay: 0.1 })
-          .to(cardsRef.current, { opacity: 1, y: 0 }, "-=0.5");
+          .to(cardsRef.current, { opacity: 1, y: 0 }, "-=1");
       }
     }, rootRef);
 
@@ -111,7 +111,7 @@ export default function Hero() {
   // Crossfade image layers, Ken Burns drift and text panels whenever the active park changes.
   useEffect(() => {
     const reduced = reducedMotionRef.current;
-    const fadeDuration = reduced ? 0.15 : 0.6;
+    const fadeDuration = reduced ? 0.15 : 1.2;
 
     layerRefs.current.forEach((el, i) => {
       if (!el) return;
@@ -132,7 +132,7 @@ export default function Hero() {
         gsap.fromTo(
           frame,
           { scale: 1.08 },
-          { scale: 1, duration: 7, ease: "power1.out" }
+          { scale: 1, duration: 12, ease: "power1.out" }
         );
       }
     }
@@ -142,7 +142,7 @@ export default function Hero() {
       gsap.to(el, {
         opacity: i === active ? 1 : 0,
         y: i === active ? 0 : 10,
-        duration: reduced ? 0.15 : 0.35,
+        duration: reduced ? 0.15 : 0.8,
         ease: "power2.out",
         overwrite: "auto",
       });
@@ -321,7 +321,7 @@ export default function Hero() {
                 >
                   <span
                     className={
-                      "relative block h-28 w-20 overflow-hidden rounded-2xl ring-2 transition-all duration-300 sm:h-36 sm:w-28 " +
+                      "relative block h-28 w-20 overflow-hidden rounded-2xl ring-2 transition-all duration-700 sm:h-36 sm:w-28 " +
                       (i === active
                         ? "ring-white scale-105"
                         : "ring-white/20 group-hover:ring-white/60 group-hover:scale-102")
@@ -334,14 +334,14 @@ export default function Hero() {
                       sizes="112px"
                       quality={55}
                       className={
-                        "object-cover transition-all duration-500 " +
+                        "object-cover transition-all duration-1000 " +
                         (i === active ? "opacity-100" : "opacity-50 group-hover:opacity-85")
                       }
                     />
                   </span>
                   <span
                     className={
-                      "mt-2.5 block min-h-9 max-w-28 text-xs font-medium leading-snug tracking-wide transition-colors duration-300 " +
+                      "mt-2.5 block min-h-9 max-w-28 text-xs font-medium leading-snug tracking-wide transition-colors duration-700 " +
                       (i === active ? "text-white" : "text-white/60 group-hover:text-white/90")
                     }
                   >

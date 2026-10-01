@@ -55,7 +55,7 @@ export default function ParkChooserFaq() {
               <details className="group py-5">
                 <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-base font-medium text-brand-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange/40 rounded">
                   {choice.q}
-                  <ChevronDownIcon className="h-4 w-4 shrink-0 text-brand-ink-muted transition-transform duration-200 group-open:rotate-180" />
+                  <ChevronDownIcon className="h-4 w-4 shrink-0 text-brand-ink-muted transition-transform duration-500 group-open:rotate-180" />
                 </summary>
                 <p className="mt-3 max-w-xl text-sm leading-relaxed text-brand-ink-muted">
                   {choice.a}

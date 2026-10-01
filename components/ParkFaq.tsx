@@ -1,3 +1,4 @@
+import Illustration from "@/components/Illustration";
 import Reveal from "@/components/Reveal";
 
 export type FaqItem = { q: string; a: string };
@@ -14,14 +15,19 @@ export default function ParkFaq({
   heading = "FAQs",
   intro,
   faqs,
+  illustration = "/images/parks/02-sri-lankan-leopard.png",
+  illustrationSide = "left",
 }: {
   heading?: string;
   intro?: string;
   faqs: FaqItem[];
+  illustration?: string;
+  illustrationSide?: "left" | "right";
 }) {
   return (
-    <section className="w-full bg-white">
-      <div className="mx-auto max-w-[1600px] px-10 py-[1.5cm] sm:px-20 sm:py-[1.5cm] lg:px-40 lg:py-[2.5cm]">
+    <section className="relative overflow-hidden w-full bg-white">
+      <Illustration src={illustration} side={illustrationSide} />
+      <div className="relative z-10 mx-auto max-w-[1600px] px-10 py-[1.5cm] sm:px-20 sm:py-[1.5cm] lg:px-40 lg:py-[2.5cm]">
         <Reveal className="mx-auto max-w-2xl text-center">
           <h2 className="font-display text-3xl font-medium tracking-tight text-brand-ink sm:text-4xl lg:text-5xl">
             {heading}
@@ -35,7 +41,7 @@ export default function ParkFaq({
               <details className="group py-5">
                 <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-base font-medium text-brand-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange/40 rounded">
                   {faq.q}
-                  <ChevronDownIcon className="h-4 w-4 shrink-0 text-brand-ink-muted transition-transform duration-200 group-open:rotate-180" />
+                  <ChevronDownIcon className="h-4 w-4 shrink-0 text-brand-ink-muted transition-transform duration-500 group-open:rotate-180" />
                 </summary>
                 <p className="mt-3 max-w-xl text-sm leading-relaxed text-brand-ink-muted">{faq.a}</p>
               </details>

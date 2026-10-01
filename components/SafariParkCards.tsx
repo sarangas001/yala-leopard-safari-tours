@@ -19,7 +19,7 @@ const PARKS: Park[] = [
     bestFor: "Best for leopards, diverse wildlife and iconic safari landscapes.",
     available: "Half Day, 7 Hours, Full Day",
     tourTypes: "Private and selected Shared options",
-    cta: "See Yala Details",
+    cta: "View Yala Safari Packages",
     image: "/images/new-img/8.webp",
     alt: "A leopard resting on a rock in Yala National Park",
   },
@@ -29,7 +29,7 @@ const PARKS: Park[] = [
     bestFor: "Best for elephant-focused safaris and open landscapes.",
     available: "Half Day, 7 Hours, Full Day",
     tourTypes: "Private",
-    cta: "See Udawalawe Details",
+    cta: "View Udawalawe Safari Packages",
     image: "/images/new-img/IMG_2001.jpg",
     alt: "Wild elephants grazing on open grassland in Udawalawe National Park",
   },
@@ -39,7 +39,7 @@ const PARKS: Park[] = [
     bestFor: "Best for birdwatching, wetlands and a quieter safari.",
     available: "Half Day, 7 Hours, Full Day",
     tourTypes: "Private",
-    cta: "See Bundala Details",
+    cta: "View Bundala Safari Packages",
     image: "/images/parks/bundala.jpg",
     alt: "A blue-tailed bee-eater in Bundala National Park's wetlands",
   },
@@ -75,7 +75,7 @@ export default function SafariParkCards() {
             <Reveal key={park.id} delay={(i % 3) * 0.1}>
               <a
                 href={`/safaris/${park.id}`}
-                className="group flex h-full flex-col overflow-hidden rounded-3xl border border-black/6 bg-white shadow-sm transition-shadow duration-300 hover:shadow-md"
+                className="group flex h-full flex-col overflow-hidden rounded-3xl border border-black/6 bg-white shadow-sm transition-shadow duration-700 hover:shadow-md"
               >
                 <div className="relative aspect-4/3 w-full overflow-hidden">
                   <Image
@@ -84,7 +84,7 @@ export default function SafariParkCards() {
                     fill
                     sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
                     quality={75}
-                    className="object-cover transition-transform duration-700 group-hover:scale-105"
+                    className="object-cover transition-transform duration-1500 group-hover:scale-105"
                   />
                 </div>
 

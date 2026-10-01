@@ -1,5 +1,7 @@
 "use client";
 
+import Illustration from "@/components/Illustration";
+
 import Image from "next/image";
 import { useState } from "react";
 import Reveal from "@/components/Reveal";
@@ -12,8 +14,9 @@ export default function BlogCategoriesAndPosts() {
 
   return (
     <>
-      <section className="w-full bg-white">
-        <div className="mx-auto max-w-[1600px] px-10 py-[1.5cm] sm:px-20 sm:py-[1.5cm] lg:px-40 lg:py-[2.5cm]">
+      <section className="relative overflow-hidden w-full bg-white">
+      <Illustration src="/images/parks/peocock.png" side="right" />
+        <div className="relative z-10 mx-auto max-w-[1600px] px-10 py-[1.5cm] sm:px-20 sm:py-[1.5cm] lg:px-40 lg:py-[2.5cm]">
           <Reveal className="mx-auto max-w-2xl text-center">
             <h2 className="font-display text-3xl font-medium tracking-tight text-brand-ink sm:text-4xl lg:text-5xl">
               Explore Categories
@@ -68,7 +71,7 @@ export default function BlogCategoriesAndPosts() {
               <Reveal key={article.slug} delay={(i % 3) * 0.08}>
                 <a
                   href={`/blog/${article.slug}`}
-                  className="group flex h-full flex-col overflow-hidden rounded-3xl border border-black/6 bg-white shadow-sm transition-shadow duration-300 hover:shadow-md"
+                  className="group flex h-full flex-col overflow-hidden rounded-3xl border border-black/6 bg-white shadow-sm transition-shadow duration-700 hover:shadow-md"
                 >
                   <div className="relative aspect-4/3 w-full overflow-hidden">
                     <Image
@@ -77,7 +80,7 @@ export default function BlogCategoriesAndPosts() {
                       fill
                       sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
                       quality={72}
-                      className="object-cover transition-transform duration-700 group-hover:scale-105"
+                      className="object-cover transition-transform duration-1500 group-hover:scale-105"
                     />
                     <span className="absolute left-4 top-4 rounded-full bg-white/90 px-3 py-1 text-xs font-semibold tracking-wide text-brand-ink backdrop-blur-sm">
                       {categoryLabel(article.category)}
@@ -88,9 +91,9 @@ export default function BlogCategoriesAndPosts() {
                     <p className="text-xs text-brand-ink-muted">{article.date}</p>
                     <h3 className="mt-2 font-display text-lg font-medium text-brand-ink">{article.title}</h3>
                     <p className="mt-3 flex-1 text-sm leading-relaxed text-brand-ink-muted">{article.excerpt}</p>
-                    <span className="mt-5 inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-[0.15em] text-brand-orange transition-colors duration-300 group-hover:text-brand-orange-dark">
+                    <span className="mt-5 inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-[0.15em] text-brand-orange transition-colors duration-700 group-hover:text-brand-orange-dark">
                       Read More
-                      <span aria-hidden="true" className="transition-transform duration-300 group-hover:translate-x-1">
+                      <span aria-hidden="true" className="transition-transform duration-700 group-hover:translate-x-1">
                         →
                       </span>
                     </span>

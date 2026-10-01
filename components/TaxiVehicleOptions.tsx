@@ -1,3 +1,4 @@
+import Illustration from "@/components/Illustration";
 import Reveal from "@/components/Reveal";
 
 type Vehicle = {
@@ -14,8 +15,9 @@ const VEHICLES: Vehicle[] = [
 
 export default function TaxiVehicleOptions() {
   return (
-    <section className="w-full bg-white">
-      <div className="mx-auto max-w-[1600px] px-10 py-[1.5cm] sm:px-20 sm:py-[1.5cm] lg:px-40 lg:py-[2.5cm]">
+    <section className="relative overflow-hidden w-full bg-white">
+      <Illustration src="/images/parks/04-safari-jeep-tour.png" side="left" />
+      <div className="relative z-10 mx-auto max-w-[1600px] px-10 py-[1.5cm] sm:px-20 sm:py-[1.5cm] lg:px-40 lg:py-[2.5cm]">
         <Reveal className="mx-auto max-w-2xl text-center">
           <h2 className="font-display text-3xl font-medium tracking-tight text-brand-ink sm:text-4xl lg:text-5xl">
             Vehicle Options
@@ -25,7 +27,7 @@ export default function TaxiVehicleOptions() {
         <div className="mt-14 grid grid-cols-1 gap-6 sm:grid-cols-3 lg:mt-16 lg:gap-7">
           {VEHICLES.map((vehicle, i) => (
             <Reveal key={vehicle.name} delay={(i % 3) * 0.1}>
-              <div className="flex h-full flex-col items-center rounded-3xl border border-black/6 bg-white p-7 text-center shadow-sm transition-shadow duration-300 hover:shadow-md">
+              <div className="flex h-full flex-col items-center rounded-3xl border border-black/6 bg-white p-7 text-center shadow-sm transition-shadow duration-700 hover:shadow-md">
                 <h3 className="font-display text-xl font-medium text-brand-ink sm:text-2xl">
                   {vehicle.name}
                 </h3>

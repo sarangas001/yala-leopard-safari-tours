@@ -1,3 +1,4 @@
+import Illustration from "@/components/Illustration";
 import Image from "next/image";
 import type { ReactNode } from "react";
 import Reveal from "@/components/Reveal";
@@ -120,8 +121,9 @@ function Field({
 
 export default function ContactFormSection() {
   return (
-    <section id="enquiry" className="w-full scroll-mt-20 bg-white">
-      <div className="mx-auto max-w-[1600px] px-10 py-[1.5cm] sm:px-20 sm:py-[1.5cm] lg:px-40 lg:py-[2.5cm]">
+    <section id="enquiry" className="relative overflow-hidden w-full scroll-mt-20 bg-white">
+      <Illustration src="/images/parks/traveller.png" side="right" />
+      <div className="relative z-10 mx-auto max-w-[1600px] px-10 py-[1.5cm] sm:px-20 sm:py-[1.5cm] lg:px-40 lg:py-[2.5cm]">
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-16">
           {/* Enquiry form */}
           <Reveal>

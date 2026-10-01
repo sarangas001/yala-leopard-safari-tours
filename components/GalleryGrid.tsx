@@ -1,5 +1,7 @@
 "use client";
 
+import Illustration from "@/components/Illustration";
+
 import Image from "next/image";
 import { useState } from "react";
 import Reveal from "@/components/Reveal";
@@ -268,8 +270,9 @@ export default function GalleryGrid() {
   const filtered = active === "all" ? IMAGES : IMAGES.filter((img) => img.category === active);
 
   return (
-    <section className="w-full bg-white">
-      <div className="mx-auto max-w-[1600px] px-10 py-[1.5cm] sm:px-20 sm:py-[1.5cm] lg:px-40 lg:py-[2.5cm]">
+    <section className="relative overflow-hidden w-full bg-white">
+      <Illustration src="/images/parks/05-safari-wildlife-photographer.png" side="right" />
+      <div className="relative z-10 mx-auto max-w-[1600px] px-10 py-[1.5cm] sm:px-20 sm:py-[1.5cm] lg:px-40 lg:py-[2.5cm]">
         <Reveal className="flex flex-wrap items-center justify-center gap-3">
           <div role="tablist" aria-label="Gallery categories" className="flex flex-wrap items-center justify-center gap-3">
             {CATEGORIES.map((cat) => {
@@ -306,10 +309,10 @@ export default function GalleryGrid() {
                   height={600}
                   sizes="(min-width: 1024px) 25vw, (min-width: 640px) 33vw, 50vw"
                   quality={75}
-                  className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  className="h-full w-full object-cover transition-transform duration-1500 group-hover:scale-110"
                 />
-                <div className="absolute inset-0 bg-linear-to-t from-black/75 via-black/0 to-transparent opacity-60 transition-opacity duration-400 group-hover:opacity-100" />
-                <span className="absolute inset-x-0 bottom-0 p-3 text-sm font-medium text-white/0 transition-all duration-300 group-hover:text-white sm:p-4">
+                <div className="absolute inset-0 bg-linear-to-t from-black/75 via-black/0 to-transparent opacity-60 transition-opacity duration-900 group-hover:opacity-100" />
+                <span className="absolute inset-x-0 bottom-0 p-3 text-sm font-medium text-white/0 transition-all duration-700 group-hover:text-white sm:p-4">
                   {img.caption}
                 </span>
               </div>

@@ -20,5 +20,5 @@ const FAQS: FaqItem[] = [
 ];
 
 export default function FaqBookingFaqs() {
-  return <ParkFaq heading="Safari Booking FAQs" faqs={FAQS} />;
+  return <ParkFaq heading="Safari Booking FAQs" faqs={FAQS} illustration="/images/parks/04-safari-jeep-tour.png" illustrationSide="left" />;
 }

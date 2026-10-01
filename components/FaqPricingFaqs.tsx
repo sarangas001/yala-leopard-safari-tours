@@ -24,5 +24,5 @@ const FAQS: FaqItem[] = [
 ];
 
 export default function FaqPricingFaqs() {
-  return <ParkFaq heading="Package &amp; Pricing FAQs" faqs={FAQS} />;
+  return <ParkFaq heading="Package &amp; Pricing FAQs" faqs={FAQS} illustration="/images/parks/elephant.png" illustrationSide="right" />;
 }
