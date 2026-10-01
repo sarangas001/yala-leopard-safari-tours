@@ -7,7 +7,7 @@ export default function AboutPreview() {
     <section id="about" className="relative w-full overflow-hidden bg-white">
       {/* Peacock illustration — mirrors the elephant illustration placement in SafariParks, left-aligned */}
       {/* <div
-        className="pointer-events-none absolute -top-4 -left-8 z-0 hidden select-none lg:block"
+        className="pointer-events-none absolute -top-4 -right-8 z-0 hidden select-none lg:block"
         aria-hidden="true"
       >
         <Image

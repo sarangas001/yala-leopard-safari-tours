@@ -6,6 +6,8 @@ import IconFeatureGrid from "@/components/IconFeatureGrid";
 import ParkInclusionsExclusions from "@/components/ParkInclusionsExclusions";
 import ParkFaq from "@/components/ParkFaq";
 import FinalCta from "@/components/FinalCta";
+import IllustratedBlock from "@/components/IllustratedBlock";
+import { PACKAGE_ILLUSTRATIONS as ILLUS } from "@/lib/illustrations";
 
 export const metadata: Metadata = {
   title: "Taxi & Car Rental with Driver | Yala Leopard Safari Tours",
@@ -85,11 +87,17 @@ export default function TaxiCarRentalPage() {
   return (
     <main className="flex flex-1 flex-col bg-white">
       <TaxiCarRentalHero />
-      <TaxiVehicleOptions />
+      <IllustratedBlock {...ILLUS[0]}>
+        <TaxiVehicleOptions />
+      </IllustratedBlock>
       <TaxiPricingModel />
-      <IconFeatureGrid heading="Popular Transfer Types" items={TRANSFER_TYPES} columns={4} />
+      <IllustratedBlock {...ILLUS[1]}>
+        <IconFeatureGrid heading="Popular Transfer Types" items={TRANSFER_TYPES} columns={4} />
+      </IllustratedBlock>
       <IconFeatureGrid heading="How It Works" items={HOW_IT_WORKS} columns={3} />
-      <IconFeatureGrid heading="Why Travel with Us?" items={WHY_TRAVEL_WITH_US} columns={4} />
+      <IllustratedBlock {...ILLUS[2]}>
+        <IconFeatureGrid heading="Why Travel with Us?" items={WHY_TRAVEL_WITH_US} columns={4} />
+      </IllustratedBlock>
       <ParkInclusionsExclusions
         heading="What's Included / Excluded"
         inclusions={["Driver", "Fuel"]}
@@ -100,7 +108,9 @@ export default function TaxiCarRentalPage() {
           "Entry tickets or attraction fees",
         ]}
       />
-      <ParkFaq heading="Taxi & Car Rental FAQs" faqs={FAQS} />
+      <IllustratedBlock {...ILLUS[3]}>
+        <ParkFaq heading="Taxi & Car Rental FAQs" faqs={FAQS} />
+      </IllustratedBlock>
       <FinalCta />
     </main>
   );

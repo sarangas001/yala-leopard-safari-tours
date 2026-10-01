@@ -57,7 +57,7 @@ export default function SafariMoreServices() {
 
         <div className="mx-auto mt-14 grid max-w-4xl grid-cols-1 gap-6 sm:grid-cols-2 lg:mt-16 lg:gap-7">
           {SERVICES.map((service, i) => (
-            <Reveal key={service.title} delay={i * 0.1}>
+            <Reveal still key={service.title} delay={i * 0.1}>
               <a
                 href={service.href}
                 className="group flex h-full flex-col overflow-hidden rounded-3xl border border-black/6 bg-white shadow-sm transition-shadow duration-700 hover:shadow-md"
@@ -69,7 +69,7 @@ export default function SafariMoreServices() {
                     fill
                     sizes="(min-width: 1024px) 50vw, 100vw"
                     quality={75}
-                    className={`object-cover transition-transform duration-1500 group-hover:scale-105 ${focalClass(service.image)}`}
+                    className={`object-cover ${focalClass(service.image)}`}
                     style={focalStyle(service.image)}
                   />
                 </div>

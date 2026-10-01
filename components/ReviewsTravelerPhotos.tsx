@@ -61,7 +61,7 @@ export default function ReviewsTravelerPhotos() {
 
         <div className="mt-12 grid grid-cols-2 gap-4 sm:grid-cols-4 lg:mt-16 lg:gap-6">
           {GUEST_PHOTOS.map((photo, i) => (
-            <Reveal key={photo.src} delay={(i % 4) * 0.06}>
+            <Reveal still key={photo.src} delay={(i % 4) * 0.06}>
               <div className="group relative aspect-square w-full overflow-hidden rounded-2xl">
                 <Image
                   src={photo.src}
@@ -69,7 +69,7 @@ export default function ReviewsTravelerPhotos() {
                   fill
                   sizes="(min-width: 1024px) 25vw, 50vw"
                   quality={75}
-                  className={`object-cover transition-transform duration-1500 group-hover:scale-105 ${focalClass(photo.src)}`}
+                  className={`object-cover ${focalClass(photo.src)}`}
                   style={focalStyle(photo.src)}
                 />
                 <div className="absolute inset-0 bg-linear-to-t from-black/70 via-black/0 to-transparent opacity-0 transition-opacity duration-700 group-hover:opacity-100" />

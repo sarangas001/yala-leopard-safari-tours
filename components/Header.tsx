@@ -166,8 +166,8 @@ export default function Header() {
 
   return (
     <header className="fixed inset-x-0 top-0 z-50 w-full">
-      <div className="pointer-events-none absolute inset-0 bg-linear-to-b from-black/30 via-black/10 to-transparent" />
-      <div ref={scrolledLayerRef} className="pointer-events-none absolute inset-0 bg-linear-to-b from-black/95 via-black/70 to-black/30 opacity-0" />
+      <div className="pointer-events-none absolute inset-0 bg-linear-to-b from-black/20 via-black/5 to-transparent" />
+      <div ref={scrolledLayerRef} className="pointer-events-none absolute inset-0 bg-linear-to-b from-black/70 via-black/45 to-black/15 opacity-0" />
 
       <div className="relative">
         <div className="relative mx-auto flex max-w-[1600px] items-center justify-between gap-4 px-10 py-3 sm:px-20 xl:px-20 2xl:px-40">
@@ -292,7 +292,7 @@ export default function Header() {
         id="mobile-menu"
         ref={mobilePanelRef}
         style={{ height: 0, opacity: 0, display: "none", overflow: "hidden" }}
-        className="relative border-t border-white/10 bg-black xl:hidden"
+        className="relative border-t border-white/10 bg-black/75 backdrop-blur-md xl:hidden"
       >
         <nav
           aria-label="Mobile"

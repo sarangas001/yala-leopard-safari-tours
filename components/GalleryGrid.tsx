@@ -300,7 +300,7 @@ export default function GalleryGrid() {
 
         <div className="mt-12 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:mt-16 lg:grid-cols-4 lg:gap-6">
           {filtered.map((img, i) => (
-            <Reveal key={img.src} delay={(i % 4) * 0.06}>
+            <Reveal still key={img.src} delay={(i % 4) * 0.06}>
               <div className="group relative aspect-square w-full overflow-hidden rounded-2xl">
                 <Image
                   src={img.src}
@@ -309,7 +309,7 @@ export default function GalleryGrid() {
                   height={600}
                   sizes="(min-width: 1024px) 25vw, (min-width: 640px) 33vw, 50vw"
                   quality={75}
-                  className="h-full w-full object-cover transition-transform duration-1500 group-hover:scale-110"
+                  className="h-full w-full object-cover"
                 />
                 <div className="absolute inset-0 bg-linear-to-t from-black/75 via-black/0 to-transparent opacity-60 transition-opacity duration-900 group-hover:opacity-100" />
                 <span className="absolute inset-x-0 bottom-0 p-3 text-sm font-medium text-white/0 transition-all duration-700 group-hover:text-white sm:p-4">

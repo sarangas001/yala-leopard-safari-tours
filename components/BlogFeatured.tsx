@@ -25,7 +25,7 @@ export default function BlogFeatured() {
 
         <div className="mt-14 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:mt-16 lg:gap-7">
           {featured.map((article, i) => (
-            <Reveal key={article.slug} delay={i * 0.1}>
+            <Reveal still key={article.slug} delay={i * 0.1}>
               <a
                 href={`/blog/${article.slug}`}
                 className="group flex h-full flex-col overflow-hidden rounded-3xl border border-black/6 bg-white shadow-sm transition-shadow duration-700 hover:shadow-md"
@@ -37,7 +37,7 @@ export default function BlogFeatured() {
                     fill
                     sizes="(min-width: 1024px) 50vw, 100vw"
                     quality={75}
-                    className={`object-cover transition-transform duration-1500 group-hover:scale-105 ${focalClass(article.heroImage)}`}
+                    className={`object-cover ${focalClass(article.heroImage)}`}
                     style={focalStyle(article.heroImage)}
                   />
                   <span className="absolute left-4 top-4 rounded-full bg-white/90 px-3 py-1 text-xs font-semibold tracking-wide text-brand-ink backdrop-blur-sm">

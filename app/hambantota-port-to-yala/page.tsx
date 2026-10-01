@@ -10,6 +10,8 @@ import ParkFaq from "@/components/ParkFaq";
 import FinalCta from "@/components/FinalCta";
 import Link from "next/link";
 import Reveal from "@/components/Reveal";
+import IllustratedBlock from "@/components/IllustratedBlock";
+import { PACKAGE_ILLUSTRATIONS as ILLUS } from "@/lib/illustrations";
 
 export const metadata: Metadata = {
   title: "Hambantota Port to Yala Safari | Yala Leopard Safari Tours",
@@ -99,7 +101,9 @@ export default function HambantotaPortToYalaPage() {
   return (
     <main className="flex flex-1 flex-col bg-white">
       <HambantotaHero />
-      <HambantotaPackageSummary />
+      <IllustratedBlock {...ILLUS[0]}>
+        <HambantotaPackageSummary />
+      </IllustratedBlock>
       <ParkInclusionsExclusions
         heading="What's Included & Excluded"
         inclusions={[
@@ -114,6 +118,7 @@ export default function HambantotaPortToYalaPage() {
           "Personal expenses and unselected optional services",
         ]}
       />
+      <IllustratedBlock {...ILLUS[1]}>
       <ParkChecklist
         heading="Designed for Cruise Passengers"
         intro="Arriving by cruise ship brings its own timing challenges, so this experience is built around your port schedule rather than a fixed departure time. We can't guarantee a return in time for every possible ship departure, but we work closely with you to keep the day running smoothly."
@@ -129,8 +134,10 @@ export default function HambantotaPortToYalaPage() {
           },
         ]}
       />
+      </IllustratedBlock>
       <IconFeatureGrid heading="How the Experience Works" items={HOW_IT_WORKS} columns={3} />
 
+      <IllustratedBlock {...ILLUS[2]}>
       <section className="w-full bg-white">
         <div className="mx-auto max-w-[1600px] px-10 pt-12 text-center sm:px-20 sm:pt-16 lg:px-40 lg:pt-20">
           <Reveal className="mx-auto max-w-2xl">
@@ -142,6 +149,7 @@ export default function HambantotaPortToYalaPage() {
         </div>
       </section>
       <ParkWildlifeSlider heading="What You May See in Yala" animals={WILDLIFE} />
+      </IllustratedBlock>
 
       <ParkChecklist
         heading="What to Bring"
@@ -160,6 +168,7 @@ export default function HambantotaPortToYalaPage() {
           },
         ]}
       />
+      <IllustratedBlock {...ILLUS[3]}>
       <ParkChecklist
         heading="Important Information"
         columns={[
@@ -183,13 +192,16 @@ export default function HambantotaPortToYalaPage() {
           </>
         }
       />
+      </IllustratedBlock>
 
-      <Testimonials />
-      <ParkFaq
-        heading="Hambantota to Yala FAQs"
-        intro="Quick answers to the questions we hear most from cruise and port arrivals."
-        faqs={FAQS}
-      />
+      <Testimonials illustration={false} />
+      <IllustratedBlock {...ILLUS[4]}>
+        <ParkFaq
+          heading="Hambantota to Yala FAQs"
+          intro="Quick answers to the questions we hear most from cruise and port arrivals."
+          faqs={FAQS}
+        />
+      </IllustratedBlock>
       <FinalCta />
     </main>
   );
