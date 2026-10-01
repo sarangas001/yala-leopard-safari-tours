@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import Reveal from "@/components/Reveal";
+import { focalClass, focalStyle } from "@/lib/focal";
 
 const DURATIONS = ["Half Day", "7 Hours", "Full Day"];
 
@@ -51,7 +52,8 @@ export default function FeaturedSafari() {
                 fill
                 sizes="(min-width: 1024px) 50vw, 100vw"
                 quality={80}
-                className="object-cover object-left-center"
+                className={`object-cover object-left-center ${focalClass("/images/new-img/IMG_1753.jpg")}`}
+                style={focalStyle("/images/new-img/IMG_1753.jpg")}
               />
             </div>
           </Reveal>

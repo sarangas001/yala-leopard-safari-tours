@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useRef } from "react";
 import Reveal from "@/components/Reveal";
+import { focalClass, focalStyle } from "@/lib/focal";
 
 export type WildlifeAnimal = { name: string; image: string };
 
@@ -79,7 +80,8 @@ export default function ParkWildlifeSlider({
                     priority={i === 0}
                     sizes="(min-width: 640px) 288px, 256px"
                     quality={75}
-                    className="object-cover transition-transform duration-1500 group-hover:scale-105"
+                    className={`object-cover transition-transform duration-1500 group-hover:scale-105 ${focalClass(animal.image)}`}
+                    style={focalStyle(animal.image)}
                   />
                 </div>
                 <div className="p-5">

@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import Reveal from "@/components/Reveal";
+import { focalClass, focalStyle } from "@/lib/focal";
 
 export type PriceTier = { group: string; price: string };
 
@@ -53,7 +54,8 @@ export default function SafariPricing({
                       fill
                       sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
                       quality={75}
-                      className="object-cover"
+                      className={`object-cover ${focalClass((pkg.image ?? image)!)}`}
+                      style={focalStyle((pkg.image ?? image)!)}
                     />
                   </div>
                 ) : null}

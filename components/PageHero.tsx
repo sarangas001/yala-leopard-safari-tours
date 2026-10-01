@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Reveal from "@/components/Reveal";
+import { focalClass, focalStyle } from "@/lib/focal";
 
 export default function PageHero({
   eyebrow,
@@ -25,7 +26,7 @@ export default function PageHero({
   return (
     <section className="relative w-full overflow-hidden bg-white">
       <div className="absolute inset-0">
-        <Image src={image} alt={alt} fill priority sizes="100vw" quality={75} className={"object-cover " + imageClassName} />
+        <Image src={image} alt={alt} fill priority sizes="100vw" quality={80} className={`object-cover ${imageClassName} ${focalClass(image)}`} style={focalStyle(image)} />
         <div className="absolute inset-0 bg-linear-to-b from-black/65 via-black/35 to-black/45" />
       </div>
 

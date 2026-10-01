@@ -5,6 +5,7 @@ import FinalCta from "@/components/FinalCta";
 import Illustration from "@/components/Illustration";
 import { categoryLabel } from "@/lib/blog/types";
 import type { BlogArticle } from "@/lib/blog/types";
+import { focalClass, focalStyle } from "@/lib/focal";
 
 export default function BlogPostView({ article }: { article: BlogArticle }) {
   return (
@@ -33,7 +34,8 @@ export default function BlogPostView({ article }: { article: BlogArticle }) {
                 priority
                 sizes="(min-width: 1024px) 768px, 100vw"
                 quality={82}
-                className="object-cover"
+                className={`object-cover ${focalClass(article.heroImage)}`}
+                style={focalStyle(article.heroImage)}
               />
             </div>
           </Reveal>

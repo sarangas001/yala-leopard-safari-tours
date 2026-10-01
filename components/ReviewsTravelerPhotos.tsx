@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Reveal from "@/components/Reveal";
+import { focalClass, focalStyle } from "@/lib/focal";
 
 type PhotoCard = {
   src: string;
@@ -68,7 +69,8 @@ export default function ReviewsTravelerPhotos() {
                   fill
                   sizes="(min-width: 1024px) 25vw, 50vw"
                   quality={75}
-                  className="object-cover transition-transform duration-1500 group-hover:scale-105"
+                  className={`object-cover transition-transform duration-1500 group-hover:scale-105 ${focalClass(photo.src)}`}
+                  style={focalStyle(photo.src)}
                 />
                 <div className="absolute inset-0 bg-linear-to-t from-black/70 via-black/0 to-transparent opacity-0 transition-opacity duration-700 group-hover:opacity-100" />
                 <span className="absolute inset-x-0 bottom-0 p-3 text-xs font-medium text-white/0 transition-all duration-700 group-hover:text-white">

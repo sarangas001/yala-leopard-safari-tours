@@ -7,6 +7,7 @@ import { useState } from "react";
 import Reveal from "@/components/Reveal";
 import { ARTICLES } from "@/lib/blog/articles";
 import { CATEGORIES, categoryLabel, type CategoryKey } from "@/lib/blog/types";
+import { focalClass, focalStyle } from "@/lib/focal";
 
 export default function BlogCategoriesAndPosts() {
   const [active, setActive] = useState<CategoryKey | "all">("all");
@@ -80,7 +81,8 @@ export default function BlogCategoriesAndPosts() {
                       fill
                       sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
                       quality={72}
-                      className="object-cover transition-transform duration-1500 group-hover:scale-105"
+                      className={`object-cover transition-transform duration-1500 group-hover:scale-105 ${focalClass(article.heroImage)}`}
+                      style={focalStyle(article.heroImage)}
                     />
                     <span className="absolute left-4 top-4 rounded-full bg-white/90 px-3 py-1 text-xs font-semibold tracking-wide text-brand-ink backdrop-blur-sm">
                       {categoryLabel(article.category)}

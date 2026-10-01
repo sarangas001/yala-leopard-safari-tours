@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { focalClass, focalStyle } from "@/lib/focal";
 
 export default function NotFound() {
   return (
@@ -14,7 +15,8 @@ export default function NotFound() {
             aria-hidden="true"
             sizes="100vw"
             quality={70}
-            className="object-cover"
+            className={`object-cover ${focalClass("/images/parks/yala.jpg")}`}
+            style={focalStyle("/images/parks/yala.jpg")}
           />
           <div className="absolute inset-0 bg-black/65" />
         </div>

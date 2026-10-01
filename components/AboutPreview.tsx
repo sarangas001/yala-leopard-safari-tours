@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Reveal from "@/components/Reveal";
+import { focalClass, focalStyle } from "@/lib/focal";
 
 export default function AboutPreview() {
   return (
@@ -29,7 +30,8 @@ export default function AboutPreview() {
                 fill
                 sizes="(min-width: 1024px) 50vw, 100vw"
                 quality={80}
-                className="object-cover object-top"
+                className={`object-cover object-top ${focalClass("/images/new-img/IMG_2067.jpg")}`}
+                style={focalStyle("/images/new-img/IMG_2067.jpg")}
               />
             </div>
           </Reveal>

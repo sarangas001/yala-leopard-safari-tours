@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Reveal from "@/components/Reveal";
+import { focalClass, focalStyle } from "@/lib/focal";
 
 export type TeamMember = {
   name: string;
@@ -27,7 +28,8 @@ export default function TeamMemberProfile({
               fill
               sizes="(min-width: 1024px) 50vw, 100vw"
               quality={80}
-              className="object-cover object-top"
+              className={`object-cover object-top ${focalClass(member.photo)}`}
+              style={focalStyle(member.photo)}
             />
           ) : (
             // Placeholder — swap for a real photo before launch

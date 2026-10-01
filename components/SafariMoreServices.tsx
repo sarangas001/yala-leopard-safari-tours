@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Reveal from "@/components/Reveal";
+import { focalClass, focalStyle } from "@/lib/focal";
 
 type ServiceCard = {
   title: string;
@@ -68,7 +69,8 @@ export default function SafariMoreServices() {
                     fill
                     sizes="(min-width: 1024px) 50vw, 100vw"
                     quality={75}
-                    className="object-cover transition-transform duration-1500 group-hover:scale-105"
+                    className={`object-cover transition-transform duration-1500 group-hover:scale-105 ${focalClass(service.image)}`}
+                    style={focalStyle(service.image)}
                   />
                 </div>
 

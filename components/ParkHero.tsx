@@ -1,5 +1,7 @@
 import Image from "next/image";
+import HeroVideo from "@/components/HeroVideo";
 import Reveal from "@/components/Reveal";
+import { focalClass, focalStyle } from "@/lib/focal";
 
 export type ParkHeroCta = {
   label: string;
@@ -27,30 +29,25 @@ export default function ParkHero({
   title,
   description,
   video,
+  poster,
   image,
   ctas,
 }: {
   title: string;
   description?: string;
   video?: string;
+  /** Still shown while (or instead of) the video; required to avoid downloading video on phones. */
+  poster?: string;
   image?: string;
   ctas?: ParkHeroCta[];
 }) {
   return (
     <section className="relative w-full overflow-hidden bg-white">
       <div className="absolute inset-0">
-        {video ? (
-          <video
-            className="h-full w-full object-cover"
-            src={video}
-            autoPlay
-            muted
-            loop
-            playsInline
-            preload="auto"
-          />
+        {video && poster ? (
+          <HeroVideo src={video} poster={poster} />
         ) : image ? (
-          <Image src={image} alt="" fill priority sizes="100vw" quality={80} className="object-cover" />
+          <Image src={image} alt="" fill priority sizes="100vw" quality={80} className={`object-cover ${focalClass(image)}`} style={focalStyle(image)} />
         ) : null}
         <div className="absolute inset-0 bg-linear-to-b from-black/65 via-black/35 to-black/55" />
       </div>

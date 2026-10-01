@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Reveal from "@/components/Reveal";
+import { focalClass, focalStyle } from "@/lib/focal";
 
 const ANIMALS = [
   { name: "Sri Lankan Leopard", image: "/images/parks/yala.jpg" },
@@ -45,7 +46,8 @@ export default function WildlifeGrid() {
                   fill
                   sizes="(min-width: 1024px) 25vw, 50vw"
                   quality={70}
-                  className="object-cover transition-transform duration-1500 group-hover:scale-110"
+                  className={`object-cover transition-transform duration-1500 group-hover:scale-110 ${focalClass(animal.image)}`}
+                  style={focalStyle(animal.image)}
                 />
                 {/* Overlay hidden by default, revealed on hover */}
                 <div className="absolute inset-0 bg-linear-to-t from-black/75 via-black/0 to-transparent opacity-60 transition-opacity duration-900 group-hover:opacity-100" />

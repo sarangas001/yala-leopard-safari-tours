@@ -5,6 +5,7 @@ import Illustration from "@/components/Illustration";
 import Image from "next/image";
 import { useRef } from "react";
 import Reveal from "@/components/Reveal";
+import { focalClass, focalStyle } from "@/lib/focal";
 
 // Short descriptions are draft copy — refine before launch.
 const SERVICES = [
@@ -131,7 +132,8 @@ export default function AboutServices() {
                     priority={i === 0}
                     sizes="(min-width: 640px) 320px, 288px"
                     quality={75}
-                    className="object-cover transition-transform duration-1500 group-hover:scale-105"
+                    className={`object-cover transition-transform duration-1500 group-hover:scale-105 ${focalClass(service.image)}`}
+                    style={focalStyle(service.image)}
                   />
                 </div>
 

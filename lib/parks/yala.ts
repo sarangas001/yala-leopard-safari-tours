@@ -12,6 +12,7 @@ export const yala: ParkContent = {
       description:
         "Explore Yala National Park with an experienced local wildlife driver in a comfortable 4x4 safari jeep. Choose from flexible Half-Day, 7-Hour and Full-Day options.",
       video: "/videos/yala.mp4",
+      poster: "/images/parks/yala.jpg",
       ctas: [{ label: "Book Yala Safari", href: "/#enquire" }],
     },
     {

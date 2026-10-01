@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useCallback, useEffect, useRef, useState, type KeyboardEvent } from "react";
 import gsap from "gsap";
+import { focalClass, focalStyle } from "@/lib/focal";
 
 type Destination = {
   id: string;
@@ -244,9 +245,10 @@ export default function Hero() {
                   fill
                   priority={i === 0}
                   loading={i === 0 ? undefined : "eager"}
-                  quality={72}
+                  quality={80}
                   sizes="100vw"
-                  className="object-cover"
+                  className={`object-cover ${focalClass(destination.image)}`}
+                  style={focalStyle(destination.image)}
                 />
               </div>
             </div>
