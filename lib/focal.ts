@@ -40,7 +40,8 @@ const FOCAL_POINTS: Record<string, string> = {
   "/images/new-img/pelicans.jpg": "50% 40%",
   "/images/new-img/water-baffalo.jpg": "60% 40%",
   "/images/new-img/wild-boar.jpeg": "70% 55%",
-  "/images/parks/bundala.jpg": "55% 40%",
+  // Bee-eater faces right: eye ~61%, beak tip ~78% across the frame.
+  "/images/parks/bundala.jpg": "72% 40%",
   "/images/parks/kumana.jpg": "60% 50%",
   "/images/parks/udawalawe.jpg": "45% 55%",
   "/images/parks/yala.jpg": "60% 50%",
