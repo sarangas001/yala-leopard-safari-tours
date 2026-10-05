@@ -26,7 +26,6 @@ export const yala: ParkContent = {
           name: "Half-Day Private Safari",
           time: "5:00 AM – 10:00 AM",
           duration: "Approx. 4–5 hours",
-          includes: "Breakfast",
           image: "/images/new-img/13.jpg",
           tiers: [
             { group: "1 Person", price: "$80" },
@@ -41,7 +40,6 @@ export const yala: ParkContent = {
           name: "7-Hour Private Safari",
           time: "5:00 AM – 12:00 PM",
           duration: "7 hours",
-          includes: "Breakfast",
           image: "/images/new-img/IMG_1606.jpg",
           tiers: [
             { group: "1 Person", price: "$95" },
@@ -56,7 +54,6 @@ export const yala: ParkContent = {
           name: "Full-Day Private Safari",
           time: "5:00 AM – 6:00 PM",
           duration: "Approx. 13 hours",
-          includes: "Breakfast and lunch",
           image: "/images/new-img/IMG_9129.jpg",
           tiers: [
             { group: "1 Person", price: "$140" },
@@ -71,7 +68,6 @@ export const yala: ParkContent = {
           name: "7-Hour Shared Safari",
           time: "5:00 AM – 12:00 PM",
           duration: "7 hours",
-          includes: "Breakfast",
           flatPrice: "$25 per person",
           image: "/images/new-img/IMG_2392.jpg",
         },        
@@ -79,7 +75,6 @@ export const yala: ParkContent = {
           name: "Full-Day Shared Safari",
           time: "5:00 AM – 6:00 PM",
           duration: "Approx. 13 hours",
-          includes: "Breakfast and lunch",
           flatPrice: "$50 per person",
           image: "/images/new-img/8.webp",
         },
@@ -125,11 +120,6 @@ export const yala: ParkContent = {
           icon: "/images/icons/05-scenic-rest-stop.svg",
         },
         {
-          title: "Breakfast or Lunch",
-          text: "Enjoy breakfast or lunch out in the park, according to your selected package.",
-          icon: "/images/icons/06-breakfast-lunch-package.svg",
-        },
-        {
           title: "Continue Wildlife Spotting",
           text: "Carry on exploring and spotting wildlife as the safari continues.",
           icon: "/images/icons/07-continue-wildlife-spotting.svg",
@@ -151,8 +141,6 @@ export const yala: ParkContent = {
         "4x4 safari jeep",
         "Experienced English-speaking wildlife driver",
         "Drinking water",
-        "Breakfast",
-        "Lunch on applicable full-day package",
         "Binocular availability where provided",
       ],
       exclusions: [
@@ -251,7 +239,7 @@ export const yala: ParkContent = {
         },
         {
           q: "Are meals included?",
-          a: "Most packages include breakfast, and full-day safaris also include lunch. Drinking water is provided throughout every safari.",
+          a: "Meals are not included in our packages. Drinking water is provided throughout every safari.",
         },
         {
           q: "Is hotel pickup available?",

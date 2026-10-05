@@ -15,8 +15,8 @@ const SERVICES: ServiceCard[] = [
   {
     title: "Hambantota Port to Yala Safari",
     text: "Picked up from Hambantota Cruise Port or your Hambantota hotel, straight into a Yala safari and back again.",
-    image: "/images/new-img/IMG_2374.jpg",
-    alt: "A safari guide standing beside a 4x4 jeep in Yala National Park",
+    image: "/images/new-img/13.jpg",
+    alt: "A Sri Lankan leopard resting on a tree branch in Yala National Park",
     href: "/hambantota-port-to-yala",
     cta: "View Safari Package",
   },

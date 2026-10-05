@@ -269,7 +269,7 @@ export default function Footer() {
               key={item.key}
               href={item.href}
               {...(item.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
-              className="flex items-center justify-center gap-3 rounded text-sm font-medium text-brand-ink transition-colors hover:text-brand-orange focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange/40 sm:justify-start"
+              className="flex items-center justify-start gap-3 rounded text-sm font-medium text-brand-ink transition-colors hover:text-brand-orange focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange/40"
             >
               <Image
                 src={item.icon}

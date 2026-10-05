@@ -130,7 +130,6 @@ export default function BookingFlow({
                     >
                       <span className="font-display text-lg font-medium text-brand-ink">{pkg.name}</span>
                       <span className="mt-1 text-xs text-brand-ink-muted">{pkg.duration} · {pkg.time}</span>
-                      <span className="mt-2 text-xs text-brand-ink-muted">Includes: {pkg.includes}</span>
                       <span className="mt-3 font-display text-lg font-medium text-brand-orange">
                         {pkg.flatPrice ?? pkg.tiers?.[0]?.price}
                         {pkg.tiers ? <span className="text-xs font-normal text-brand-ink-muted"> from</span> : null}

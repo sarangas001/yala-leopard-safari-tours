@@ -44,8 +44,7 @@ export default function SafariInclusions() {
               Depending on the selected package, your safari can include hotel
               pickup and drop-off in applicable areas, a 4x4 safari jeep and an
               experienced English-speaking wildlife driver, plus drinking
-              water and breakfast to start the day. Full-day packages also
-              include lunch, and binoculars are provided where available. We
+              water, and binoculars are provided where available. We
               can further support or add on park entrance tickets as part of
               your booking.
             </p>

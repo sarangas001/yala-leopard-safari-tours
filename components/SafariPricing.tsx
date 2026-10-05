@@ -9,7 +9,6 @@ export type SafariPackage = {
   name: string;
   time: string;
   duration: string;
-  includes: string;
   tiers?: PriceTier[];
   flatPrice?: string;
   image?: string;
@@ -90,10 +89,6 @@ export default function SafariPricing({
                       </dl>
                     )}
                   </div>
-
-                  <p className="mt-4 text-xs text-brand-ink-muted">
-                    <span className="font-semibold text-brand-ink">Includes:</span> {pkg.includes}
-                  </p>
 
                   <Link
                     href={parkSlug ? `/book/${parkSlug}?package=${encodeURIComponent(pkg.name)}` : "/#enquire"}

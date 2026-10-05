@@ -167,7 +167,7 @@ const IMAGES: GalleryImage[] = [
     category: "wildlife",
   },
   {
-    src: "/images/new-img/Spoonbill.jpeg",
+    src: "/images/new-img/Spoonbill.png",
     alt: "A Eurasian spoonbill wading in a lagoon",
     caption: "Eurasian Spoonbill",
     category: "wildlife",

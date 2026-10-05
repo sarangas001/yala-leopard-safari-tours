@@ -11,8 +11,6 @@ export type BookingExtra = {
 };
 
 export const BOOKING_EXTRAS: BookingExtra[] = [
-  { id: "breakfast", label: "Breakfast", description: "Packed breakfast for the drive.", price: 8 },
-  { id: "lunch", label: "Lunch", description: "Packed lunch on full-day safaris.", price: 10 },
   { id: "snacks", label: "Snack Pack", description: "Light snacks and drinking water.", price: 5 },
   { id: "drinks", label: "Extra Drinks", description: "Additional bottled water and soft drinks.", price: 3 },
   { id: "child-seat", label: "Child Seat", description: "A child safety seat for the jeep.", price: 5 },

@@ -18,15 +18,14 @@ export const bundala: ParkContent = {
     {
       type: "pricing",
       heading: "Choose Your Bundala Safari",
-      image: "/images/new-img/Spoonbill.jpeg",
+      image: "/images/new-img/Spoonbill.png",
       description: "Bundala packages are currently planned as private tours only.",
       packages: [
         {
           name: "Half-Day Private Safari",
           time: "To be confirmed",
           duration: "Approx. 4–5 hours",
-          includes: "Breakfast",
-          image: "/images/new-img/Spoonbill.jpeg",
+          image: "/images/new-img/Spoonbill.png",
           tiers: [
             { group: "1 Person", price: "$80" },
             { group: "2 Persons", price: "$50 pp" },
@@ -40,7 +39,6 @@ export const bundala: ParkContent = {
           name: "7-Hour Private Safari",
           time: "To be confirmed",
           duration: "7 hours",
-          includes: "Breakfast",
           image: "/images/new-img/Spot-Billed-pelican.jpeg",
           tiers: [
             { group: "1 Person", price: "$95" },
@@ -55,7 +53,6 @@ export const bundala: ParkContent = {
           name: "Full-Day Private Safari",
           time: "To be confirmed",
           duration: "Approx. 13 hours",
-          includes: "Breakfast and lunch",
           image: "/images/new-img/black-necked-stork.jpeg",
           tiers: [
             { group: "1 Person", price: "$130" },
@@ -119,11 +116,6 @@ export const bundala: ParkContent = {
           title: "Photo & Viewing Stops",
           text: "Stop at suitable photo and viewing points where permitted by the park.",
           icon: "/images/icons/05-scenic-rest-stop.svg",
-        },
-        {
-          title: "Meals & Refreshments",
-          text: "Enjoy meals or refreshments out in the park, according to your selected package.",
-          icon: "/images/icons/06-breakfast-lunch-package.svg",
         },
         {
           title: "Return & Drop-off",

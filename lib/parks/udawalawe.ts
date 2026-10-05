@@ -26,7 +26,6 @@ export const udawalawe: ParkContent = {
           name: "Half-Day Private Safari",
           time: "To be confirmed",
           duration: "Approx. 4–5 hours",
-          includes: "Breakfast",
           image: "/images/new-img/IMG_2001.jpg",
           tiers: [
             { group: "1 Person", price: "$80" },
@@ -41,7 +40,6 @@ export const udawalawe: ParkContent = {
           name: "7-Hour Private Safari",
           time: "To be confirmed",
           duration: "7 hours",
-          includes: "Breakfast",
           image: "/images/new-img/IMG_1606.jpg",
           tiers: [
             { group: "1 Person", price: "$95" },
@@ -56,7 +54,6 @@ export const udawalawe: ParkContent = {
           name: "Full-Day Private Safari",
           time: "To be confirmed",
           duration: "Approx. 13 hours",
-          includes: "Breakfast and lunch",
           image: "/images/parks/udawalawe.jpg",
           tiers: [
             { group: "1 Person", price: "$140" },
@@ -107,11 +104,6 @@ export const udawalawe: ParkContent = {
           title: "Rest & Photo Stops",
           text: "Stop at suitable rest and photo points where permitted by the park.",
           icon: "/images/icons/05-scenic-rest-stop.svg",
-        },
-        {
-          title: "Meals & Refreshments",
-          text: "Enjoy meals or refreshments out in the park, according to your selected package.",
-          icon: "/images/icons/06-breakfast-lunch-package.svg",
         },
         {
           title: "Return & Drop-off",
