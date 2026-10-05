@@ -3,7 +3,7 @@ import ReviewsHero from "@/components/ReviewsHero";
 import ReviewsTrustSummary from "@/components/ReviewsTrustSummary";
 import ReviewsFaq from "@/components/ReviewsFaq";
 import ReviewsSources from "@/components/ReviewsSources";
-import ReviewsGuestStories from "@/components/ReviewsGuestStories";
+import Testimonials from "@/components/Testimonials";
 import ReviewsTravelerPhotos from "@/components/ReviewsTravelerPhotos";
 import ReviewsSubmitForm from "@/components/ReviewsSubmitForm";
 import ReviewsTrustNotes from "@/components/ReviewsTrustNotes";
@@ -19,7 +19,7 @@ export default function ReviewsPage() {
   return (
     <main className="flex flex-1 flex-col bg-white">
       <ReviewsHero />
-      <ReviewsGuestStories />
+      <Testimonials showAllLink={false} />
       <ReviewsTravelerPhotos />
       <ReviewsTrustSummary />
       <ReviewsSources />
