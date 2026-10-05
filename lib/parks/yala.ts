@@ -111,7 +111,7 @@ export const yala: ParkContent = {
         },
         {
           title: "Explore With a Local Driver",
-          text: "Your experienced local driver guides you along the park's best wildlife routes.",
+          text: "Your experienced local driver takes you along the park's best wildlife routes.",
           icon: "/images/icons/04-experienced-local-driver.svg",
         },
         {
@@ -135,7 +135,7 @@ export const yala: ParkContent = {
       type: "inclusionsExclusions",
       heading: "What's Included & Excluded",
       intro:
-        "Exact inclusions depend on the package you select: here's a general guide to what's covered.",
+        "Exact inclusions depend on the package you select: here's a general overview of what's covered.",
       inclusions: [
         "Hotel pickup/drop-off in selected areas",
         "4x4 safari jeep",

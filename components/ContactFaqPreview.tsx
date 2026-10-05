@@ -12,7 +12,7 @@ const FAQS = [
   },
   {
     q: "Can you arrange a safari for tomorrow?",
-    a: "Often, yes. Short-notice bookings depend on vehicle and guide availability, so message us as early as you can and we'll confirm right away.",
+    a: "Often, yes. Short-notice bookings depend on vehicle and driver availability, so message us as early as you can and we'll confirm right away.",
   },
   {
     q: "Do you offer airport transfers?",

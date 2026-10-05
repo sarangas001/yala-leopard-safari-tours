@@ -94,7 +94,7 @@ export default function ReviewsSubmitForm() {
                   name="review"
                   rows={5}
                   required
-                  placeholder="Tell us about your safari: the wildlife you saw, your guide, or anything that stood out."
+                  placeholder="Tell us about your safari: the wildlife you saw, your driver, or anything that stood out."
                   className={inputClass + " resize-none"}
                 />
               </Field>

@@ -66,7 +66,7 @@ export default function TrustStrip() {
             </p>
             <p className="mx-auto mt-4 max-w-md text-base leading-relaxed text-brand-ink-muted sm:mx-0">
               Our safaris take you deep into this world with experienced local
-              guides who know every trail, watering hole and favourite leopard
+              drivers who know every trail, watering hole and favourite leopard
               perch by heart. Small groups, open jeeps and an unhurried pace
               mean you miss nothing.
             </p>

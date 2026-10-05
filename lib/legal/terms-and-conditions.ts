@@ -62,7 +62,7 @@ export const termsAndConditions: LegalPage = {
           items: [
             "National park rules",
             "Instructions from authorized park staff",
-            "Reasonable instructions from the safari driver/guide",
+            "Reasonable instructions from the safari driver",
             "Safety requirements applying to the selected experience",
           ],
         },

@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { getLatestArticles } from "@/lib/blog/articles";
+import { TRUST_BADGES } from "@/lib/trust-badges";
 
 const CONTACT = {
   phoneDisplay: "076 043 5578",
@@ -100,16 +101,6 @@ function getNavColumns(): { heading: string; links: { href: string; label: strin
   ];
 }
 
-// Trust & recognition badges — sample placeholder artwork, swap for genuine
-// certifications/ratings this business has actually received before launch.
-const TRUST_BADGES = [
-  { src: "/images/trust/tripadvisor-reviews.svg", alt: "TripAdvisor reviews badge (sample)" },
-  { src: "/images/trust/google-reviews.svg", alt: "Google reviews badge (sample)" },
-  { src: "/images/trust/sri-lanka-tourism.svg", alt: "Sri Lanka Tourism badge (sample)" },
-  { src: "/images/trust/responsible-tourism.svg", alt: "Responsible Tourism badge (sample)" },
-  { src: "/images/trust/safari-excellence.svg", alt: "Safari Excellence badge (sample)" },
-];
-
 type IconProps = { className?: string };
 
 function FacebookIcon({ className = "h-5 w-5" }: IconProps) {
@@ -173,11 +164,10 @@ function TripAdvisorIcon({ className = "h-5 w-5" }: IconProps) {
 }
 
 const SOCIAL_LINKS = [
-  { label: "Facebook", Icon: FacebookIcon },
-  { label: "Instagram", Icon: InstagramIcon },
-  { label: "YouTube", Icon: YouTubeIcon },
-  { label: "TikTok", Icon: TikTokIcon },
-  { label: "TripAdvisor", Icon: TripAdvisorIcon },
+  { label: "Facebook", Icon: FacebookIcon, href: "https://www.facebook.com/share/18UbnPnyya/?mibextid=wwXIfr" },
+  { label: "Instagram", Icon: InstagramIcon, href: "https://www.instagram.com/yalaleopardsafariride?stkn=NDc3aXQzZWQ5c2gw" },
+  { label: "YouTube", Icon: YouTubeIcon, href: "https://youtube.com/@yalaleopardsafariride?si=e4u_kOLtOVT_43Ib" },
+  { label: "TripAdvisor", Icon: TripAdvisorIcon, href: TRUST_BADGES[0].href },
 ];
 
 function NavLink({ href, label }: { href: string; label: string }) {
@@ -232,7 +222,7 @@ export default function Footer() {
             <p className="mt-5 text-sm leading-relaxed text-brand-ink-muted">
               Discover the untamed beauty of Yala, Udawalawe and Bundala with
               unforgettable safari experiences led by knowledgeable local
-              guides. From leopard sightings at dawn to elephant herds at the
+              drivers. From leopard sightings at dawn to elephant herds at the
               waterhole, we help you explore Sri Lanka&apos;s wild side
               responsibly, safely and at an unhurried pace.
             </p>
@@ -248,10 +238,12 @@ export default function Footer() {
               safari offers, sent straight to your inbox.
             </p>
             <div className="mt-6 flex justify-center gap-3 sm:justify-start">
-              {SOCIAL_LINKS.map(({ label, Icon }) => (
+              {SOCIAL_LINKS.map(({ label, Icon, href }) => (
                 <a
                   key={label}
-                  href="#"
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   aria-label={label}
                   className="flex h-10 w-10 items-center justify-center rounded-full border border-brand-ink/20 text-brand-ink transition-colors hover:border-brand-orange hover:bg-brand-orange hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange/40 focus-visible:ring-offset-2 focus-visible:ring-offset-white"
                 >
@@ -287,18 +279,26 @@ export default function Footer() {
           ))}
         </div>
 
-        {/* Trust & recognition row — sample placeholder artwork, see comment above TRUST_BADGES */}
+        {/* Review-platform badges */}
         <div className="mt-8">
-          <div className="flex flex-wrap items-center justify-center gap-10 sm:gap-12">
+          <div className="flex flex-wrap items-center justify-center gap-x-10 gap-y-6 sm:gap-x-12">
             {TRUST_BADGES.map((badge) => (
-              <Image
+              <a
                 key={badge.src}
-                src={badge.src}
-                alt={badge.alt}
-                width={360}
-                height={300}
-                className="h-16 w-auto sm:h-20"
-              />
+                href={badge.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`${badge.alt} (opens in a new tab)`}
+                className="rounded transition-opacity hover:opacity-80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange/40"
+              >
+                <Image
+                  src={badge.src}
+                  alt={badge.alt}
+                  width={badge.width}
+                  height={badge.height}
+                  className="h-14 w-auto sm:h-16"
+                />
+              </a>
             ))}
           </div>
         </div>

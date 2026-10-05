@@ -147,7 +147,7 @@ export const privacyPolicy: LegalPage = {
             "Website/technical service providers",
             "Email or notification providers",
             "Analytics providers",
-            "Safari drivers/guides or transport providers involved in the booked service",
+            "Safari drivers or transport providers involved in the booked service",
             "Government, park or regulatory authorities where required",
           ],
         },

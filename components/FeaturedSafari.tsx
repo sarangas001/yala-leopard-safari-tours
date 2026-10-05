@@ -20,7 +20,7 @@ export default function FeaturedSafari() {
             <p className="mx-auto mt-5 max-w-md text-base leading-relaxed text-brand-ink-muted sm:mx-0">
               Yala holds the highest density of leopards on earth. Our flagship
               safari puts you in an open 4x4 jeep with a spotting-focused local
-              guide, tracking leopards, elephants and more across the dry-zone
+              driver, tracking leopards, elephants and more across the dry-zone
               scrub and open plains that made this park world-famous.
             </p>
 

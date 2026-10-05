@@ -28,7 +28,7 @@ const STORIES: GuestStory[] = [
     country: "United Kingdom",
     safariType: "yala",
     rating: 5,
-    excerpt: "Add a real, approved Yala review here: a specific moment (a leopard sighting, the guide's knowledge) reads best.",
+    excerpt: "Add a real, approved Yala review here: a specific moment (a leopard sighting, the driver's knowledge) reads best.",
     date: "Add review date",
     source: "Add source (Google, TripAdvisor, Direct, etc.)",
   },

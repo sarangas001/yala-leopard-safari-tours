@@ -97,7 +97,7 @@ export const udawalawe: ParkContent = {
         },
         {
           title: "Explore Elephant Habitats",
-          text: "Your experienced local driver guides you through the park's best elephant and wildlife routes.",
+          text: "Your experienced local driver takes you through the park's best elephant and wildlife routes.",
           icon: "/images/icons/04-experienced-local-driver.svg",
         },
         {
@@ -116,7 +116,7 @@ export const udawalawe: ParkContent = {
       type: "inclusionsExclusions",
       heading: "What's Included & Excluded",
       intro:
-        "Exact inclusions depend on the package you select: here's a general guide to what's covered.",
+        "Exact inclusions depend on the package you select: here's a general overview of what's covered.",
       inclusions: [
         "Private 4x4 safari jeep",
         "Experienced English-speaking wildlife driver",

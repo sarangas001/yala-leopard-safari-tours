@@ -14,7 +14,7 @@ const BENEFITS = [
   },
   {
     title: "36+ Years of Experience",
-    text: "Local safari expertise since 1990, passed down through generations of our guides.",
+    text: "Local safari expertise since 1990, passed down through generations of our drivers.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" className="h-5 w-5" aria-hidden="true">
         <circle cx="12" cy="12" r="8.5" stroke="currentColor" strokeWidth="1.5" />
@@ -23,8 +23,8 @@ const BENEFITS = [
     ),
   },
   {
-    title: "English-Speaking Guides",
-    text: "Friendly, knowledgeable and wildlife-conscious guides on every drive.",
+    title: "English-Speaking Drivers",
+    text: "Friendly, knowledgeable and wildlife-conscious drivers on every drive.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" className="h-5 w-5" aria-hidden="true">
         <circle cx="12" cy="8.5" r="3" stroke="currentColor" strokeWidth="1.5" />

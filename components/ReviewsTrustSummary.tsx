@@ -1,15 +1,6 @@
 import Image from "next/image";
 import Reveal from "@/components/Reveal";
-
-// Sample placeholder artwork — swap for genuine platform badges this
-// business has actually verified before launch. Deliberately not paired
-// with a star rating or review count here: those numbers live on the
-// platforms themselves and would go stale without a process to keep them
-// updated, so we link out rather than publish a number we can't maintain.
-const TRUST_BADGES = [
-  { src: "/images/trust/google-reviews.svg", alt: "Google reviews badge (sample)" },
-  { src: "/images/trust/tripadvisor-reviews.svg", alt: "TripAdvisor reviews badge (sample)" },
-];
+import { TRUST_BADGES } from "@/lib/trust-badges";
 
 export default function ReviewsTrustSummary() {
   return (
@@ -41,14 +32,22 @@ export default function ReviewsTrustSummary() {
 
         <Reveal still delay={0.1} className="mt-12 flex flex-wrap items-center justify-center gap-10 sm:gap-12">
           {TRUST_BADGES.map((badge) => (
-            <Image
+            <a
               key={badge.src}
-              src={badge.src}
-              alt={badge.alt}
-              width={360}
-              height={300}
-              className="h-16 w-auto sm:h-20"
-            />
+              href={badge.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`${badge.alt} (opens in a new tab)`}
+              className="rounded transition-opacity hover:opacity-80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange/40"
+            >
+              <Image
+                src={badge.src}
+                alt={badge.alt}
+                width={badge.width}
+                height={badge.height}
+                className="h-16 w-auto sm:h-20"
+              />
+            </a>
           ))}
         </Reveal>
       </div>

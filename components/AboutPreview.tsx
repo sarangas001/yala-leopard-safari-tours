@@ -26,7 +26,7 @@ export default function AboutPreview() {
             <div className="relative aspect-4/3 w-full overflow-hidden rounded-3xl shadow-2xl shadow-black/10">
               <Image
                 src="/images/new-img/IMG_2067.jpg"
-                alt="Safari guide and jeep in Yala National Park"
+                alt="Safari driver and jeep in Yala National Park"
                 fill
                 sizes="(min-width: 1024px) 50vw, 100vw"
                 quality={80}
@@ -44,7 +44,7 @@ export default function AboutPreview() {
               Founded by Kumara, Yala Leopard Safari Tours draws on more than 36
               years of local safari experience across Sri Lanka&apos;s southern
               parks. Our goal has always been simple: share the island&apos;s
-              wildlife responsibly, with guides who know these parks like home.
+              wildlife responsibly, with drivers who know these parks like home.
             </p>
 
             <a

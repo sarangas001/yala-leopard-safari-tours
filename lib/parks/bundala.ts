@@ -109,7 +109,7 @@ export const bundala: ParkContent = {
         },
         {
           title: "Explore Wetlands & Birding Areas",
-          text: "Your experienced local driver guides you through Bundala's lagoons and best birding routes.",
+          text: "Your experienced local driver takes you through Bundala's lagoons and best birding routes.",
           icon: "/images/icons/04-experienced-local-driver.svg",
         },
         {
@@ -128,7 +128,7 @@ export const bundala: ParkContent = {
       type: "inclusionsExclusions",
       heading: "What's Included & Excluded",
       intro:
-        "Exact inclusions depend on the package you select: here's a general guide to what's covered.",
+        "Exact inclusions depend on the package you select: here's a general overview of what's covered.",
       inclusions: [
         "Private 4x4 safari jeep",
         "Experienced English-speaking wildlife driver",

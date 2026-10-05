@@ -54,8 +54,8 @@ const IMAGES: GalleryImage[] = [
   },
   {
     src: "/images/scenic/guide-jeep.jpg",
-    alt: "A safari guide beside jeeps parked on a dirt track in Yala National Park",
-    caption: "Our Local Guides",
+    alt: "A safari driver beside jeeps parked on a dirt track in Yala National Park",
+    caption: "Our Local Drivers",
     category: "safari-life",
   },
   {

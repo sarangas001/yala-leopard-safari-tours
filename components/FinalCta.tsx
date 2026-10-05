@@ -21,18 +21,18 @@ export default function FinalCta() {
               (expanded ? "" : "line-clamp-3")
             }
           >
-            Small-group safaris, expert local guides, and memories that last a
+            Small-group safaris, expert local drivers, and memories that last a
             lifetime. Begin your journey with us and step away from the
             beaten territories to uncover the wildlife hidden beneath the
             clichés. Whether it&apos;s your first leopard sighting or your
-            fifth trip back to Yala, our guides bring decades of local
+            fifth trip back to Yala, our drivers bring decades of local
             tracking knowledge to every drive, so you leave with more than
             photos, you leave with a story worth telling. From the dry-zone
             scrub of Yala to the wetlands of Bundala and the open plains of
             Udawalawe, every itinerary is paced around the moment rather than
             the clock, so nothing about the wild ever feels rushed. Each
             safari runs in a comfortable open 4x4 jeep with a small group
-            size, flexible pickup from your hotel or villa, and a guide who
+            size, flexible pickup from your hotel or villa, and a driver who
             knows every waterhole, trail and favourite leopard perch by heart,
             so you can simply sit back, watch, and let Sri Lanka&apos;s
             wilderness reveal itself.

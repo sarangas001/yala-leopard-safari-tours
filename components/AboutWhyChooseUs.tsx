@@ -13,7 +13,7 @@ const REASONS = [
   },
   {
     title: "English-Speaking Drivers",
-    text: "Friendly, fluent drivers and guides who can answer your questions throughout the drive.",
+    text: "Friendly, fluent drivers who can answer your questions throughout the drive.",
     icon: "/images/icons/english-speaking-drivers.svg",
   },
   {

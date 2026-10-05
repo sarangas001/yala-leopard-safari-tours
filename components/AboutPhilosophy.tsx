@@ -25,7 +25,7 @@ export default function AboutPhilosophy() {
             Our Safari Philosophy
           </h2>
           <p className="mt-5 text-base leading-relaxed text-brand-ink-muted">
-            At Yala Leopard Safari Tours, every safari is guided by one
+            At Yala Leopard Safari Tours, every safari is driven by one
             simple principle: the animals come first. Sightings in the wild
             are never guaranteed, we track leopards, elephants and birdlife
             with patience and respect, not by chasing a promise, and we
@@ -34,7 +34,7 @@ export default function AboutPhilosophy() {
           <p className="mt-4 text-base leading-relaxed text-brand-ink-muted">
             We keep a responsible distance from wildlife at all times,
             prioritising safe driving and your comfort over getting closer
-            than the animals are comfortable with. Our guides know how to
+            than the animals are comfortable with. Our drivers know how to
             position the jeep for a great photograph without disturbing the
             animal being photographed, so every memory you take home is one
             we&apos;re proud to have been part of.

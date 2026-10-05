@@ -26,7 +26,7 @@ const fraunces = Fraunces({
 export const metadata: Metadata = {
   title: "Yala Leopard Safari Tours | Sri Lanka Wildlife Safaris",
   description:
-    "Small-group leopard and wildlife safaris across Yala, Udawalawe and Bundala National Parks, led by local Sri Lankan guides.",
+    "Small-group leopard and wildlife safaris across Yala, Udawalawe and Bundala National Parks, led by experienced local drivers.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

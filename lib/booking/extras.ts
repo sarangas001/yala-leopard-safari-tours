@@ -15,7 +15,6 @@ export const BOOKING_EXTRAS: BookingExtra[] = [
   { id: "drinks", label: "Extra Drinks", description: "Additional bottled water and soft drinks.", price: 3 },
   { id: "child-seat", label: "Child Seat", description: "A child safety seat for the jeep.", price: 5 },
   { id: "binoculars", label: "Binocular Rental", description: "A pair of binoculars for the drive.", price: 5 },
-  { id: "special-guide", label: "Special / Private Guide", description: "A dedicated guide for your group.", price: 25 },
   { id: "extended-pickup", label: "Extended Pickup Area", description: "Pickup from outside our standard coverage area.", price: 15 },
 ];
 
