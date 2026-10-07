@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Reveal from "@/components/Reveal";
 
 const FACTS: { label: string; value: string }[] = [
@@ -32,13 +33,13 @@ export default function HambantotaPackageSummary() {
               ))}
             </dl>
 
-            <a
-              href="/#enquire"
+            <Link
+              href="/book/yala"
               className="mt-6 inline-flex w-fit items-center gap-2 rounded-full bg-brand-orange px-6 py-3 text-sm font-semibold text-white shadow-md shadow-brand-orange/25 transition-all hover:bg-brand-orange-dark hover:shadow-lg hover:shadow-brand-orange/30"
             >
               Book This Experience
               <span aria-hidden="true">→</span>
-            </a>
+            </Link>
           </div>
         </Reveal>
       </div>

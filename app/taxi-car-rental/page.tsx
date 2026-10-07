@@ -17,16 +17,16 @@ export const metadata: Metadata = {
 
 const TRANSFER_TYPES = [
   { title: "Tissamaharama / Yala Hotel Transfers", icon: "/images/icons/hotel-pickup-dropoff.svg" },
-  { title: "Hambantota Transfers", icon: "/images/icons/location.svg" },
-  { title: "Mattala Rajapaksa International Airport Transfers", icon: "/images/icons/location.svg" },
-  { title: "Bandaranaike International Airport Transfers", icon: "/images/icons/location.svg" },
-  { title: "Ella Transfers", icon: "/images/icons/location.svg" },
-  { title: "Mirissa / Southern Coast Transfers", icon: "/images/icons/location.svg" },
+  { title: "Hambantota Transfers", icon: "/images/icons/02-hambantota-transfers.svg" },
+  { title: "Mattala Rajapaksa International Airport Transfers", icon: "/images/icons/03-mattala-airport-transfers.svg" },
+  { title: "Bandaranaike International Airport Transfers", icon: "/images/icons/04-bandaranaike-airport-transfers.svg" },
+  { title: "Ella Transfers", icon: "/images/icons/05-ella-transfers.svg" },
+  { title: "Mirissa / Southern Coast Transfers", icon: "/images/icons/06-mirissa-southern-coast-transfers.svg" },
   { title: "Custom Long-Distance Travel", icon: "/images/icons/customise-your-booking.svg" },
 ];
 
 const HOW_IT_WORKS = [
-  { title: "Enter Details", text: "Enter your pickup and destination.", icon: "/images/icons/location.svg" },
+  { title: "Enter Details", text: "Enter your pickup and destination.", icon: "/images/icons/07-enter-details.svg" },
   { title: "Choose Date & Passengers", text: "Select date/time and number of passengers.", icon: "/images/icons/select-your-package.svg" },
   { title: "Choose Vehicle", text: "Choose your vehicle type.", icon: "/images/icons/choose-your-park.svg" },
   { title: "View Estimated Fare", text: "View an estimated fare where distance can be calculated.", icon: "/images/icons/transparent-pricing.svg" },

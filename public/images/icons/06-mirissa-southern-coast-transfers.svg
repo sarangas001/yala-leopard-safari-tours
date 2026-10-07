@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 75 75" role="img" aria-labelledby="title desc">
+  <title id="title">Mirissa and Southern Coast Transfers</title>
+  <desc id="desc">A transfer vehicle, palm tree, sun, and ocean waves on a soft coral organic background.</desc>
+  <path opacity=".82" fill="#FFC7BD" d="M44.3 8.6s7.9-2 13.1 2.7S70.5 27 70.9 41.4 72 68.1 46.3 67 12.1 55 7.3 46.4 3.5 24.1 13.2 19.7 40.7 9 44.3 8.6Z"/>
+  <g fill="none" stroke="#111" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="57" cy="19" r="6" fill="#fff"/>
+    <path d="M24 43c0-13 2-21 8-29M31 16c-7-2-11 1-13 5M31 16c1-6 5-9 10-9M31 16c7-3 12-1 15 3M31 16c-1-6-5-9-9-10"/>
+    <path fill="#fff" d="M13 39h36l8 8v10H12V44c0-2.6.5-4 1-5Z"/><path d="M20 39v8h37M13 47h44"/>
+    <circle cx="21" cy="57" r="4" fill="#fff"/><circle cx="49" cy="57" r="4" fill="#fff"/>
+    <path d="M8 64c6-5 12 5 18 0s12 5 18 0 12 5 19 0"/>
+  </g>
+</svg>

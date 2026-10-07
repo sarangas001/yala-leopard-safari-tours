@@ -53,18 +53,18 @@ export default function TrustStrip() {
 
 
           {/* Text content */}
-          <Reveal delay={0.12} className="text-center sm:text-left">
+          <Reveal delay={0.12} className="text-center lg:text-left">
             <h2 className="font-display text-3xl font-medium tracking-tight text-brand-ink sm:text-4xl lg:text-5xl">
               Wild Encounters,<br />
               Memories for a Lifetime
             </h2>
-            <p className="mx-auto mt-5 max-w-md text-base leading-relaxed text-brand-ink-muted sm:mx-0">
+            <p className="mx-auto mt-5 max-w-md text-base leading-relaxed text-brand-ink-muted lg:mx-0">
               Sri Lanka&apos;s southern parks hide some of nature&apos;s most
               extraordinary spectacles: leopards draped across ancient rocks,
               elephant herds wading through golden reservoirs, and flamingos
               painting coastal lagoons pink at dawn.
             </p>
-            <p className="mx-auto mt-4 max-w-md text-base leading-relaxed text-brand-ink-muted sm:mx-0">
+            <p className="mx-auto mt-4 max-w-md text-base leading-relaxed text-brand-ink-muted lg:mx-0">
               Our safaris take you deep into this world with experienced local
               drivers who know every trail, watering hole and favourite leopard
               perch by heart. Small groups, open jeeps and an unhurried pace

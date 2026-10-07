@@ -13,7 +13,7 @@ export const bundala: ParkContent = {
         "Discover the wetlands, lagoons, coastal habitats and remarkable birdlife of Bundala National Park with an experienced local safari driver in a private 4x4 jeep.",
       video: "/videos/bundala.mp4",
       poster: "/images/parks/bundala.jpg",
-      ctas: [{ label: "Book Bundala Safari", href: "/#enquire" }],
+      ctas: [{ label: "Book Bundala Safari", href: "#park-content" }],
     },
     {
       type: "pricing",

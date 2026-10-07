@@ -21,12 +21,12 @@ export default function AboutFinalCta() {
         </div>
 
         <div className="relative z-10 mx-auto max-w-[1600px] px-10 py-24 sm:px-20 sm:py-28 lg:px-40 lg:py-32">
-          <Reveal className="max-w-xl text-center sm:text-left">
+          <Reveal className="mx-auto max-w-xl text-center lg:mx-0 lg:text-left">
             <h2 className="font-display text-3xl font-medium leading-[1.05] tracking-tight text-white sm:text-4xl lg:text-5xl">
               Explore Sri Lanka&apos;s Wildlife with a Local Safari Team
             </h2>
 
-            <div className="mt-8 flex flex-wrap justify-center gap-4 sm:justify-start">
+            <div className="mt-8 flex flex-wrap justify-center gap-4 lg:justify-start">
               {/* eslint-disable-next-line @next/next/no-html-link-for-pages -- cross-page anchor to the Home page's park selector, not handled by SmoothScroll's same-page hash logic */}
               <a
                 href="/#safaris"

@@ -47,7 +47,7 @@ export default function ParkRelatedExperiences({
                     {experience.text}
                   </p>
                   <span className="mt-5 inline-flex items-center gap-2 rounded-full bg-brand-orange px-5 py-2.5 text-xs font-semibold text-white shadow-md shadow-brand-orange/25 transition-all group-hover:bg-brand-orange-dark group-hover:shadow-lg group-hover:shadow-brand-orange/30">
-                    Read More
+                    View Safari Packages
                     <span aria-hidden="true">→</span>
                   </span>
                 </div>

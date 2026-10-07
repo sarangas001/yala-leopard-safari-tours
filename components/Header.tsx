@@ -89,6 +89,10 @@ export default function Header() {
   const scrolledLayerRef = useRef<HTMLDivElement | null>(null);
   const reducedMotionRef = useRef(false);
 
+  // Individual blog posts and the cookie policy have no hero to blend into,
+  // so the nav keeps its dark background from the very top of the page.
+  const solidNav = pathname.startsWith("/blog/") || pathname === "/legal/cookie-policy";
+
   const isActive = (href: string) =>
     href === "/" ? pathname === "/" : pathname === href || pathname.startsWith(href + "/");
 
@@ -102,7 +106,7 @@ export default function Header() {
   useEffect(() => {
     let ticking = false;
     const update = () => {
-      const progress = Math.min(window.scrollY / SCROLL_FADE_DISTANCE, 1);
+      const progress = solidNav ? 1 : Math.min(window.scrollY / SCROLL_FADE_DISTANCE, 1);
       if (scrolledLayerRef.current) {
         scrolledLayerRef.current.style.opacity = String(progress);
       }
@@ -117,7 +121,7 @@ export default function Header() {
     window.addEventListener("scroll", onScroll, { passive: true });
     update();
     return () => window.removeEventListener("scroll", onScroll);
-  }, []);
+  }, [solidNav]);
 
   // Animate the mobile menu panel open/closed and lock body scroll while open.
   useEffect(() => {
@@ -168,6 +172,14 @@ export default function Header() {
     <header className="fixed inset-x-0 top-0 z-50 w-full">
       <div className="pointer-events-none absolute inset-0 bg-linear-to-b from-black/20 via-black/5 to-transparent" />
       <div ref={scrolledLayerRef} className="pointer-events-none absolute inset-0 bg-linear-to-b from-black/70 via-black/45 to-black/15 opacity-0" />
+
+      {/* Same blurred dark scrim as the open mobile menu, spanning the logo bar too so they blend. */}
+      <div
+        className={
+          "pointer-events-none absolute inset-0 bg-black/75 backdrop-blur-md transition-opacity duration-500 xl:hidden " +
+          (mobileOpen ? "opacity-100" : "opacity-0")
+        }
+      />
 
       <div className="relative">
         <div className="relative mx-auto flex max-w-[1600px] items-center justify-between gap-4 px-10 py-3 sm:px-20 xl:px-20 2xl:px-40">
@@ -292,7 +304,7 @@ export default function Header() {
         id="mobile-menu"
         ref={mobilePanelRef}
         style={{ height: 0, opacity: 0, display: "none", overflow: "hidden" }}
-        className="relative border-t border-white/10 bg-black/75 backdrop-blur-md xl:hidden"
+        className="relative xl:hidden"
       >
         <nav
           aria-label="Mobile"

@@ -10,8 +10,7 @@ const CONTACT = {
   whatsappHref: "https://wa.me/94760915578",
   email: "yalaleopardsafariride@gmail.com",
   location: "538/B Gagasiripura, Debarawawa, Tissamaharama, Sri Lanka",
-  mapHref:
-    "https://maps.google.com/?q=538/B+Gagasiripura,+Debarawawa,+Tissamaharama,+Sri+Lanka",
+  mapHref: "https://maps.app.goo.gl/ydc2xVngFDfPqSmc6?g_st=ic",
 };
 
 const CONTACT_ITEMS: {
@@ -66,7 +65,7 @@ function getNavColumns(): { heading: string; links: { href: string; label: strin
     {
       heading: "Explore",
       links: [
-        { href: "/", label: "Home" },
+        { href: "/#hero", label: "Home" },
         { href: "/about", label: "About Us" },
         { href: "/safaris", label: "Safaris" },
         { href: "/gallery", label: "Gallery" },
@@ -191,7 +190,7 @@ function NavColumn({
   links: { href: string; label: string }[];
 }) {
   return (
-    <div className="flex h-full flex-col text-center sm:text-left">
+    <div className="flex h-full flex-col text-center lg:text-left">
       <h3 className="text-sm font-semibold uppercase tracking-[0.14em] text-brand-ink">
         {heading}
       </h3>
@@ -211,7 +210,7 @@ export default function Footer() {
       <div className="mx-auto max-w-[1600px] px-10 py-10 sm:px-20 sm:py-12 lg:px-40 lg:py-14">
         <div className="flex flex-col gap-10 lg:flex-row lg:items-start lg:justify-center-safe lg:gap-14">
           {/* Brand area */}
-          <div className="mx-auto max-w-sm text-center sm:mx-0 sm:text-left">
+          <div className="mx-auto max-w-sm text-center lg:mx-0 lg:text-left">
             <Image
               src="/logo-black.png"
               alt="Yala Leopard Safari Tours logo"
@@ -229,7 +228,7 @@ export default function Footer() {
           </div>
 
           {/* Newsletter area */}
-          <div className="mx-auto w-full max-w-md text-center sm:mx-0 sm:text-left">
+          <div className="mx-auto w-full max-w-md text-center lg:mx-0 lg:text-left">
             <h3 className="font-display text-2xl font-medium text-brand-ink sm:text-[1.75rem]">
               Get Safari Stories &amp; Travel Inspiration
             </h3>
@@ -237,7 +236,7 @@ export default function Footer() {
               Sign up for Yala travel tips, wildlife updates and special
               safari offers, sent straight to your inbox.
             </p>
-            <div className="mt-6 flex justify-center gap-3 sm:justify-start">
+            <div className="mt-6 flex justify-center gap-3 lg:justify-start">
               {SOCIAL_LINKS.map(({ label, Icon, href }) => (
                 <a
                   key={label}
@@ -261,7 +260,7 @@ export default function Footer() {
               key={item.key}
               href={item.href}
               {...(item.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
-              className="flex items-center justify-start gap-3 rounded text-sm font-medium text-brand-ink transition-colors hover:text-brand-orange focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange/40"
+              className="flex items-center justify-center gap-3 rounded text-sm font-medium lg:justify-start text-brand-ink transition-colors hover:text-brand-orange focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange/40"
             >
               <Image
                 src={item.icon}
@@ -318,15 +317,15 @@ export default function Footer() {
       {/* Bottom bar */}
       <div>
         <div className="mx-auto max-w-[1600px] px-10 py-6 sm:px-20 lg:px-40">
-          <div className="flex flex-col items-center gap-4 text-center text-xs text-brand-ink-muted sm:flex-row sm:items-center sm:justify-between sm:text-left">
+          <div className="flex flex-col items-center gap-4 text-center text-xs text-brand-ink-muted lg:flex-row lg:items-center lg:justify-between lg:text-left">
             <p suppressHydrationWarning>© {new Date().getFullYear()} Yala Leopard Safari Tours. All Rights Reserved.</p>
-            <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2 sm:justify-start">
+            <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2 lg:justify-start">
               <Link href="/legal/privacy-policy" className="transition-colors hover:text-brand-orange">Privacy Policy</Link>
               <Link href="/legal/terms-and-conditions" className="transition-colors hover:text-brand-orange">Terms and Conditions</Link>
               <Link href="/legal/cookie-policy" className="transition-colors hover:text-brand-orange">Cookie Policy</Link>
             </div>
           </div>
-          <div className="mt-4 flex flex-col items-center justify-between gap-2 text-center text-[11px] italic text-brand-ink-muted/80 sm:flex-row sm:text-left">
+          <div className="mt-4 flex flex-col items-center justify-between gap-2 text-center text-[11px] italic text-brand-ink-muted/80 lg:flex-row lg:text-left">
             <p>Designed with respect for Sri Lanka&apos;s wildlife.</p>
             <p>Site by Grow Digitally</p>
           </div>
