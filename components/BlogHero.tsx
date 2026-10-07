@@ -8,7 +8,7 @@ export default function BlogHero() {
       image="/images/gallery-hero.png"
       imageClassName="object-center"
       alt="Sunrise over the Yala plains with acacia trees and a safari jeep in silhouette"
-      cta={{ label: "Explore Our Safaris", href: "/safaris" }}
+      cta={{ label: "Read Our Stories", href: "#featured-stories" }}
     />
   );
 }
