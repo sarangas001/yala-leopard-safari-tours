@@ -42,6 +42,7 @@ export default function ParkHero({
   ctas?: ParkHeroCta[];
 }) {
   return (
+    <>
     <section className="relative w-full overflow-hidden bg-white">
       <div className="absolute inset-0">
         {video && poster ? (
@@ -93,5 +94,8 @@ export default function ParkHero({
         </Reveal>
       </div>
     </section>
+    {/* Scroll target for the hero CTAs: the first section below the hero. */}
+    <div id="park-content" className="scroll-mt-20" />
+    </>
   );
 }

@@ -80,7 +80,7 @@ function HashLinkHandler() {
 
       const hashIndex = href.indexOf("#");
       const hash = href.slice(hashIndex);
-      const path = href.slice(0, hashIndex) || "/";
+      const path = href.slice(0, hashIndex) || window.location.pathname;
       if (hash.length <= 1 || path !== window.location.pathname) return;
 
       const parkMatch = hash.match(PARK_HASH_RE);

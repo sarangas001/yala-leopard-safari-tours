@@ -23,7 +23,7 @@ const HOW_IT_WORKS = [
   {
     title: "Confirm Pickup",
     text: "Confirm your pickup point and arrival details with us in advance.",
-    icon: "/images/icons/location.svg",
+    icon: "/images/icons/01-confirm-pickup.svg",
   },
   {
     title: "Meet Your Driver",

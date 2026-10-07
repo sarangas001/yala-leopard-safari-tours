@@ -220,7 +220,7 @@ export default function Hero() {
         Now showing {activeDestination.name}
       </p>
 
-      <div className="relative h-[96svh] min-h-185 max-h-240 w-full overflow-hidden">
+      <div id="hero" className="relative h-[96svh] min-h-185 max-h-240 w-full overflow-hidden">
         <div className="absolute inset-0">
           {DESTINATIONS.map((destination, i) => (
             <div
@@ -260,7 +260,7 @@ export default function Hero() {
         </div>
 
         <div className="relative z-10 flex h-full flex-col px-10 pt-20 pb-8 sm:px-20 sm:pt-24 sm:pb-10 lg:px-40 lg:pt-28 lg:pb-12">
-          <div ref={introRef} className="mb-8 max-w-xl text-center text-white sm:text-left">
+          <div ref={introRef} className="mx-auto mb-8 max-w-xl text-center text-white lg:mx-0 lg:text-left">
             <span className="inline-flex items-center gap-3 text-xs font-medium uppercase tracking-[0.25em] text-white/80">
               <span className="h-px w-8 bg-white/40" aria-hidden="true" />
               Sri Lanka Safari Tours
@@ -286,7 +286,7 @@ export default function Hero() {
                   <h1 className="font-display text-4xl font-medium leading-[1.05] tracking-tight sm:text-5xl lg:text-6xl">
                     {destination.name}
                   </h1>
-                  <p className="mx-auto mt-4 max-w-md text-sm leading-relaxed text-white/75 sm:mx-0 sm:text-base">
+                  <p className="mx-auto mt-4 max-w-md text-sm leading-relaxed text-white/75 lg:mx-0 sm:text-base">
                     {destination.description}
                   </p>
                 </div>
@@ -306,7 +306,7 @@ export default function Hero() {
             <div
               role="tablist"
               aria-label="Choose a national park to view"
-              className="flex w-full items-end justify-center gap-3 sm:justify-start sm:gap-4"
+              className="flex w-full items-end justify-center gap-3 lg:justify-start sm:gap-4"
             >
               {DESTINATIONS.map((destination, i) => (
                 <button

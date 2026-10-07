@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 75 75" role="img" aria-labelledby="title desc">
+  <title id="title">Enter Details</title>
+  <desc id="desc">A booking form and pencil on a soft green organic background.</desc>
+  <path opacity=".82" fill="#CDE8B7" d="M44.3 8.6s7.9-2 13.1 2.7S70.5 27 70.9 41.4 72 68.1 46.3 67 12.1 55 7.3 46.4 3.5 24.1 13.2 19.7 40.7 9 44.3 8.6Z"/>
+  <g fill="none" stroke="#111" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="15" y="15" width="38" height="47" rx="3" fill="#fff"/>
+    <path fill="#fff" d="M26 12h16v8H26Z"/><path d="M23 29h21M23 37h16M23 45h12"/>
+    <path fill="#fff" d="m39 53 16-16 6 6-16 16-8 2Z"/>
+    <path d="m52 40 6 6M39 53l6 6"/>
+  </g>
+</svg>

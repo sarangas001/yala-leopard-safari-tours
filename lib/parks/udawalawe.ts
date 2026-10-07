@@ -13,7 +13,7 @@ export const udawalawe: ParkContent = {
         "Explore the open grasslands, reservoir landscapes and elephant-rich habitats of Udawalawe National Park with an experienced local safari driver in a private 4x4 jeep.",
       video: "/videos/udawalawe.mp4",
       poster: "/images/parks/udawalawe.jpg",
-      ctas: [{ label: "Book Udawalawe Safari", href: "/#enquire" }],
+      ctas: [{ label: "Book Udawalawe Safari", href: "#park-content" }],
     },
     {
       type: "pricing",

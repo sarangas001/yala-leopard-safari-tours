@@ -53,7 +53,7 @@ export default function TeamMemberProfile({
 
       <Reveal
         delay={0.12}
-        className={"text-center sm:text-left" + (reverse ? " lg:order-1" : "")}
+        className={"text-center lg:text-left" + (reverse ? " lg:order-1" : "")}
       >
         <h3 className="font-display text-3xl font-medium tracking-tight text-brand-ink sm:text-4xl">
           {member.name}
@@ -62,7 +62,7 @@ export default function TeamMemberProfile({
           {member.role}
         </p>
         <p className="mt-1 text-sm text-brand-ink-muted">{member.experience}</p>
-        <p className="mx-auto mt-5 max-w-md text-base leading-relaxed text-brand-ink-muted sm:mx-0">
+        <p className="mx-auto mt-5 max-w-md text-base leading-relaxed text-brand-ink-muted lg:mx-0">
           {member.bio}
         </p>
       </Reveal>

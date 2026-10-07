@@ -36,11 +36,11 @@ export default function SafariInclusions() {
             </div>
           </Reveal>
 
-          <Reveal delay={0.12} className="text-center sm:text-left">
+          <Reveal delay={0.12} className="text-center lg:text-left">
             <h2 className="font-display text-3xl font-medium tracking-tight text-brand-ink sm:text-4xl lg:text-5xl">
               What Our Safari Experience Can Include
             </h2>
-            <p className="mx-auto mt-4 max-w-md text-base leading-relaxed text-brand-ink-muted sm:mx-0">
+            <p className="mx-auto mt-4 max-w-md text-base leading-relaxed text-brand-ink-muted lg:mx-0">
               Depending on the selected package, your safari can include hotel
               pickup and drop-off in applicable areas, a 4x4 safari jeep and an
               experienced English-speaking wildlife driver, plus drinking

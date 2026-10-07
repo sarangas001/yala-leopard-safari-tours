@@ -8,7 +8,7 @@ export default function TaxiCarRentalHero() {
       video="/videos/udawalawe.mp4"
       poster="/images/parks/udawalawe.jpg"
       ctas={[
-        { label: "Get a Quote", href: "/#enquire" },
+        { label: "Get a Quote", href: "#park-content" },
         { label: "WhatsApp Us", href: "https://wa.me/94760915578", variant: "whatsapp" },
       ]}
     />

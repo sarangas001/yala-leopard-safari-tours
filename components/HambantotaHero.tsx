@@ -8,7 +8,7 @@ export default function HambantotaHero() {
       video="/videos/yala.mp4"
       poster="/images/parks/yala.jpg"
       ctas={[
-        { label: "Book This Experience", href: "/#enquire" },
+        { label: "Book This Experience", href: "#park-content" },
         { label: "WhatsApp Us", href: "https://wa.me/94760915578", variant: "whatsapp" },
       ]}
     />
