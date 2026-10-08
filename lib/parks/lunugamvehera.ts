@@ -11,7 +11,8 @@ export const lunugamvehera: ParkContent = {
       title: "Lunugamvehera National Park Safari Tours (Yala Block 5 & 6)",
       description:
         "Explore an important elephant corridor connecting Yala and Udawalawe National Parks, built around the Lunugamvehera reservoir, with an experienced local safari driver in a private 4x4 jeep.",
-      image: "/images/new-img/11.jpg",
+      video: "/videos/udawalawe.mp4",
+      poster: "/images/new-img/11.jpg",
       ctas: [{ label: "Book Lunugamvehera Safari", href: "/#enquire" }],
     },
     {
