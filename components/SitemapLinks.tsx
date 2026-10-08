@@ -23,6 +23,7 @@ const SECTIONS: { heading: string; links: { href: string; label: string }[] }[] 
       { href: "/safaris/yala", label: "Yala National Park" },
       { href: "/safaris/udawalawe", label: "Udawalawe National Park" },
       { href: "/safaris/bundala", label: "Bundala National Park" },
+      { href: "/safaris/lunugamvehera", label: "Lunugamvehera National Park" },
     ],
   },
   {
@@ -38,7 +39,7 @@ const SECTIONS: { heading: string; links: { href: string; label: string }[] }[] 
 
 export default function SitemapLinks() {
   return (
-    <section className="w-full bg-white">
+    <section id="sitemap-links" className="w-full scroll-mt-20 bg-white">
       <div className="mx-auto max-w-[1600px] px-10 py-[1.5cm] sm:px-20 sm:py-[1.5cm] lg:px-40 lg:py-[2.5cm]">
         <div className="grid grid-cols-1 gap-12 sm:grid-cols-3 sm:gap-8">
           {SECTIONS.map((section, i) => (

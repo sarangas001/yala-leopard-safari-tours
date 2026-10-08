@@ -7,6 +7,7 @@ export default function FaqHero() {
       description="Find answers about safari packages, park entrance tickets, pickup, payments, cancellation, wildlife, children and transport."
       image="/images/parks/udawalawe.jpg"
       alt="Open grassland and reservoir views in Udawalawe National Park"
+      cta={{ label: "Browse the FAQs", href: "#faqs" }}
     />
   );
 }

@@ -7,7 +7,7 @@ export default function AboutHero() {
       description="Yala Wild Safari is operated by Yala Leopard Safari Tours, a local safari provider specializing in Yala, Udawalawe and Bundala National Parks."
       image="/images/new-img/IMG_2170.jpg"
       alt="A convoy of safari jeeps on a dirt track through Yala's dry-zone forest"
-      cta={{ label: "Plan Your Safari", href: "/safaris" }}
+      cta={{ label: "Discover Our Story", href: "#our-story" }}
     />
   );
 }

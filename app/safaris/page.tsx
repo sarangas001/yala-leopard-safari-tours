@@ -10,7 +10,7 @@ import FinalCta from "@/components/FinalCta";
 export const metadata: Metadata = {
   title: "Safaris | Yala Leopard Safari Tours",
   description:
-    "Explore our Yala, Udawalawe and Bundala safari experiences.",
+    "Explore our Yala, Udawalawe, Bundala and Lunugamvehera safari experiences.",
 };
 
 export default function SafarisPage() {

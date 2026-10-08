@@ -1,4 +1,4 @@
-import Script from "next/script";
+import ElfsightWidget from "@/components/ElfsightWidget";
 import Illustration from "@/components/Illustration";
 import Reveal from "@/components/Reveal";
 import { TRUST_BADGES } from "@/lib/trust-badges";
@@ -42,10 +42,7 @@ export default function Testimonials({
 
         <Reveal still className="mx-auto mt-10 max-w-6xl lg:mt-12">
           {WIDGET_ID ? (
-            <>
-              <div className={`elfsight-app-${WIDGET_ID}`} data-elfsight-app-lazy />
-              <Script src="https://elfsightcdn.com/platform.js" strategy="lazyOnload" />
-            </>
+            <ElfsightWidget widgetId={WIDGET_ID} />
           ) : (
             <div className="rounded-3xl border border-black/6 bg-brand-cream px-6 py-12 text-center">
               <p className="text-sm text-brand-ink-muted">

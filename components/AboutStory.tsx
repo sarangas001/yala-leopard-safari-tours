@@ -2,7 +2,7 @@ import Reveal from "@/components/Reveal";
 
 export default function AboutStory() {
   return (
-    <section className="w-full bg-white">
+    <section id="our-story" className="w-full scroll-mt-20 bg-white">
       <div className="mx-auto max-w-[1600px] px-10 py-[1.5cm] sm:px-20 sm:py-[1.5cm] lg:px-40 lg:py-[2.5cm]">
         <Reveal className="mx-auto  text-center">
           <h2 className="font-display text-3xl font-medium tracking-tight text-brand-ink sm:text-4xl lg:text-5xl">

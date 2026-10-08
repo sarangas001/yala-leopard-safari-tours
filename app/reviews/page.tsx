@@ -19,7 +19,9 @@ export default function ReviewsPage() {
   return (
     <main className="flex flex-1 flex-col bg-white">
       <ReviewsHero />
-      <Testimonials showAllLink={false} />
+      <div id="guest-reviews" className="scroll-mt-20">
+        <Testimonials showAllLink={false} />
+      </div>
       <ReviewsTravelerPhotos />
       <ReviewsTrustSummary />
       <ReviewsSources />

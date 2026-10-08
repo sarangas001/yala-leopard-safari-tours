@@ -44,6 +44,16 @@ const PARKS: Park[] = [
     image: "/images/parks/bundala.jpg",
     alt: "A blue-tailed bee-eater in Bundala National Park's wetlands",
   },
+  {
+    id: "lunugamvehera",
+    name: "Lunugamvehera National Park (Yala Block 5-6)",
+    bestFor: "Best for elephant migratory corridors, quiet safaris, and reservoir birding.",
+    available: "Half Day, 7 Hours, Full Day",
+    tourTypes: "Private",
+    cta: "View Lunugamvehera Safari Packages",
+    image: "/images/new-img/11.jpg",
+    alt: "Dry-zone forest landscape at Lunugamvehera National Park",
+  },
 ];
 
 export default function SafariParkCards() {

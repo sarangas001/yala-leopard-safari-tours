@@ -8,7 +8,7 @@ export default function GalleryHero() {
       image="/images/new-img/gallery-hero.jpg"
       imageClassName="object-[50%_40%]"
       alt="Two Sri Lankan leopards walking out of the bush in Yala National Park"
-      cta={{ label: "Book Your Safari", href: "/safaris" }}
+      cta={{ label: "Explore the Gallery", href: "#gallery" }}
     />
   );
 }
