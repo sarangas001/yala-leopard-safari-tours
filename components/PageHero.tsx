@@ -32,7 +32,7 @@ export default function PageHero({
 
       <div
         className={
-          "relative z-10 mx-auto max-w-[1600px] px-10 pt-32 pb-20 text-center sm:px-20 sm:pt-40 sm:pb-24 lg:flex lg:items-center lg:justify-center lg:px-40 lg:py-0 " +
+          "relative z-10 mx-auto max-w-[1600px] px-10 pt-44 pb-20 text-center sm:px-20 sm:pt-56 sm:pb-24 lg:flex lg:items-center lg:justify-center lg:px-40 lg:pt-48 lg:pb-0 " +
           (compact ? "lg:min-h-120" : "lg:min-h-185")
         }
       >

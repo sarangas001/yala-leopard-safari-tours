@@ -18,12 +18,17 @@ const PARK_HEROES: Record<string, { image: string; alt: string }> = {
     image: "/images/parks/bundala.jpg",
     alt: "A blue-tailed bee-eater in Bundala National Park's wetlands",
   },
+  lunugamvehera: {
+    image: "/images/new-img/11.jpg",
+    alt: "Dry-zone forest landscape at Lunugamvehera National Park",
+  },
 };
 
 const PARK_NAMES: Record<string, string> = {
   yala: "Yala National Park",
   udawalawe: "Udawalawe National Park",
   bundala: "Bundala National Park",
+  lunugamvehera: "Lunugamvehera National Park",
 };
 
 export function generateStaticParams() {

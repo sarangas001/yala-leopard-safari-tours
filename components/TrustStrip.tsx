@@ -42,8 +42,8 @@ export default function TrustStrip() {
               <Image
                 src="/images/parks/yala2.png"
                 alt="A Sri Lankan leopard resting on a rock in Yala National Park"
-                width={600}
-                height={700}
+                width={1254}
+                height={1254}
                 quality={90}
                 style={{ width: "100%", height: "auto", maxWidth: "640px" }}
                 className=""

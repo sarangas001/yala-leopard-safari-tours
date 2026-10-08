@@ -11,6 +11,7 @@ const PARK_NAMES: Record<string, string> = {
   yala: "Yala National Park",
   udawalawe: "Udawalawe National Park",
   bundala: "Bundala National Park",
+  lunugamvehera: "Lunugamvehera National Park",
 };
 
 export function generateStaticParams() {
