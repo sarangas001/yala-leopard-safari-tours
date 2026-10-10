@@ -326,7 +326,7 @@ export default function Footer() {
               <Link href="/legal/cookie-policy" className="transition-colors hover:text-brand-orange">Cookie Policy</Link>
             </div>
           </div>
-          <div className="mt-4 flex flex-col items-center justify-between gap-2 text-center text-[11px] italic text-brand-ink-muted/80 lg:flex-row lg:text-left">
+          <div className="mt-4 flex flex-col items-center justify-between gap-2 text-center text-[13px] italic text-brand-ink-muted/80 lg:flex-row lg:text-left">
             <p>Designed with respect for Sri Lanka&apos;s wildlife.</p>
             <p>Site by Grow Digitally</p>
           </div>
