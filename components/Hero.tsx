@@ -245,10 +245,10 @@ export default function Hero() {
                   fill
                   priority={i === 0}
                   loading={i === 0 ? undefined : "eager"}
-                  quality={95}
+                  quality={75}
                   // object-cover scales the photo to the hero's height, so on phones it is drawn
-                  // roughly 3x wider than the screen — request a file that large (capped by the source).
-                  sizes="(min-width: 1024px) 100vw, 320vw"
+                  // roughly 2-3x wider than the screen — request a file that large (capped by the source).
+                  sizes="(min-width: 1024px) 100vw, 200vw"
                   className={`object-cover ${focalClass(destination.image)}`}
                   style={focalStyle(destination.image)}
                 />
