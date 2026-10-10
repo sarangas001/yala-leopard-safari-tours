@@ -14,10 +14,15 @@ export default function ElfsightWidget({ widgetId }: { widgetId: string }) {
     const host = hostRef.current;
     if (!host) return;
 
-    const app = document.createElement("div");
-    app.className = `elfsight-app-${widgetId}`;
-    app.setAttribute("data-elfsight-app-lazy", "");
-    host.appendChild(app);
+    // Strict Mode mounts effects twice. Tearing the widget down between the two
+    // runs leaves its styled-components pointing at removed <style> tags (error #17),
+    // so create it only once per host and never remove it in cleanup.
+    if (!host.firstElementChild) {
+      const app = document.createElement("div");
+      app.className = `elfsight-app-${widgetId}`;
+      app.setAttribute("data-elfsight-app-lazy", "");
+      host.appendChild(app);
+    }
 
     if (!document.querySelector(`script[src="${PLATFORM_SRC}"]`)) {
       const script = document.createElement("script");
@@ -26,10 +31,8 @@ export default function ElfsightWidget({ widgetId }: { widgetId: string }) {
       document.body.appendChild(script);
     }
 
-    return () => {
-      host.replaceChildren();
-    };
   }, [widgetId]);
 
-  return <div ref={hostRef} />;
+  // key forces a fresh host (and widget) if the ID ever changes.
+  return <div key={widgetId} ref={hostRef} />;
 }
