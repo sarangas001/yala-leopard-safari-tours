@@ -22,13 +22,13 @@ const STEPS = [
     icon: "/images/icons/review-live-total.svg",
   },
   {
-    title: "Pay securely online",
-    text: "Pay in full or choose a deposit: safe, simple and protected.",
+    title: "Send your booking request",
+    text: "Choose to pay in full or a deposit, and send your details straight to our team.",
     icon: "/images/icons/pay-securely-online.svg",
   },
   {
     title: "Receive confirmation",
-    text: "Your booking details and voucher arrive instantly after payment: you're all set.",
+    text: "Our team replies quickly to confirm availability and arrange payment: you're all set.",
     icon: "/images/icons/receive-confirmation.svg",
   },
 ];

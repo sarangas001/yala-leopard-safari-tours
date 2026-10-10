@@ -1,7 +1,7 @@
 "use client";
 
 import { useRef, useState, type ReactNode } from "react";
-import { useSearchParams } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import Link from "next/link";
 import Reveal from "@/components/Reveal";
 import type { SafariPackage } from "@/components/SafariPricing";
@@ -35,6 +35,7 @@ function Field({
 
 export default function CheckoutFlow({ park, packages }: { park: string; packages: SafariPackage[] }) {
   const searchParams = useSearchParams();
+  const router = useRouter();
 
   const packageName = searchParams.get("package") ?? "";
   const date = searchParams.get("date") ?? "";
@@ -55,7 +56,6 @@ export default function CheckoutFlow({ park, packages }: { park: string; package
   const [agreed, setAgreed] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
-  const [canceledDismissed, setCanceledDismissed] = useState(false);
   const detailsFormRef = useRef<HTMLFormElement>(null);
   const specialRequestRef = useRef<HTMLTextAreaElement>(null);
 
@@ -64,7 +64,6 @@ export default function CheckoutFlow({ park, packages }: { park: string; package
   const remainingBalance = paymentOption === "full" ? 0 : breakdown.total - depositDue;
 
   const editHref = `/book/${park}?${searchParams.toString()}`;
-  const showCanceledBanner = searchParams.get("canceled") === "true" && !canceledDismissed;
 
   async function handlePayment() {
     if (!agreed || isSubmitting || !detailsFormRef.current) return;
@@ -77,7 +76,7 @@ export default function CheckoutFlow({ park, packages }: { park: string; package
     setIsSubmitting(true);
 
     try {
-      const response = await fetch("/api/checkout", {
+      const response = await fetch("/api/booking", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -107,13 +106,13 @@ export default function CheckoutFlow({ park, packages }: { park: string; package
 
       const data = await response.json();
 
-      if (!response.ok || !data.url) {
-        throw new Error(data.error || "Something went wrong starting checkout. Please try again.");
+      if (!response.ok || !data.reference) {
+        throw new Error(data.error || "Something went wrong sending your booking. Please try again.");
       }
 
-      window.location.assign(data.url);
+      router.push(`/book/${park}/confirmation?ref=${encodeURIComponent(data.reference)}`);
     } catch (error) {
-      setErrorMessage(error instanceof Error ? error.message : "Something went wrong starting checkout. Please try again.");
+      setErrorMessage(error instanceof Error ? error.message : "Something went wrong sending your booking. Please try again.");
       setIsSubmitting(false);
     }
   }
@@ -137,19 +136,6 @@ export default function CheckoutFlow({ park, packages }: { park: string; package
   return (
     <section className="w-full bg-white">
       <div className="mx-auto max-w-[1600px] px-10 py-[1.5cm] sm:px-20 sm:py-[1.5cm] lg:px-40 lg:py-[2.5cm]">
-        {showCanceledBanner ? (
-          <div className="mb-8 flex items-start justify-between gap-4 rounded-2xl border border-brand-orange/30 bg-brand-orange/5 p-4 text-sm text-brand-ink">
-            <p>Your checkout was canceled and no payment was taken. You can review your booking below and pay whenever you&apos;re ready.</p>
-            <button
-              type="button"
-              onClick={() => setCanceledDismissed(true)}
-              className="shrink-0 text-brand-ink-muted hover:text-brand-ink"
-              aria-label="Dismiss"
-            >
-              ✕
-            </button>
-          </div>
-        ) : null}
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-[1fr_400px] lg:gap-16">
           <div className="space-y-12">
             <Reveal>
@@ -242,12 +228,15 @@ export default function CheckoutFlow({ park, packages }: { park: string; package
             </Reveal>
 
             <Reveal delay={0.14}>
-              <h2 className="font-display text-2xl font-medium text-brand-ink sm:text-3xl">Payment Choice</h2>
+              <h2 className="font-display text-2xl font-medium text-brand-ink sm:text-3xl">Payment Preference</h2>
+              <p className="mt-2 text-sm text-brand-ink-muted">
+                No payment is taken on this website. Our team will contact you to confirm availability and arrange payment.
+              </p>
               <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2">
                 {(
                   [
-                    { key: "full" as const, label: "Pay in Full", text: `Pay the full confirmed total of ${formatUsd(breakdown.total)} now.` },
-                    { key: "deposit" as const, label: "Pay 50% Deposit", text: `Pay ${formatUsd(depositDue)} now, with the remaining ${formatUsd(remainingBalance)} due later.` },
+                    { key: "full" as const, label: "Pay in Full", text: `Pay the full total of ${formatUsd(breakdown.total)}, arranged with our team once your booking is confirmed.` },
+                    { key: "deposit" as const, label: "Pay 50% Deposit", text: `Pay ${formatUsd(depositDue)} to secure your booking, with the remaining ${formatUsd(remainingBalance)} due later.` },
                   ]
                 ).map((option) => (
                   <button
@@ -292,15 +281,15 @@ export default function CheckoutFlow({ park, packages }: { park: string; package
                 </dl>
 
                 <div className="mt-5 flex items-baseline justify-between border-t border-black/[0.07] pt-4">
-                  <span className="text-sm font-semibold text-brand-ink">Total Due</span>
+                  <span className="text-sm font-semibold text-brand-ink">Total</span>
                   <span className="font-display text-2xl font-medium text-brand-orange">{formatUsd(breakdown.total)}</span>
                 </div>
 
                 {paymentOption === "deposit" ? (
                   <div className="mt-4 space-y-1.5 rounded-xl bg-brand-cream p-4 text-xs text-brand-ink-muted">
-                    <div className="flex justify-between"><span>Deposit due now</span><span className="font-semibold text-brand-ink">{formatUsd(depositDue)}</span></div>
+                    <div className="flex justify-between"><span>Deposit</span><span className="font-semibold text-brand-ink">{formatUsd(depositDue)}</span></div>
                     <div className="flex justify-between"><span>Remaining balance</span><span className="font-semibold text-brand-ink">{formatUsd(remainingBalance)}</span></div>
-                    <p className="pt-1">The remaining balance is due according to the confirmed payment process ahead of your safari date.</p>
+                    <p className="pt-1">The remaining balance is due ahead of your safari date, as agreed with our team.</p>
                   </div>
                 ) : null}
 
@@ -330,11 +319,11 @@ export default function CheckoutFlow({ park, packages }: { park: string; package
                   onClick={handlePayment}
                   className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full bg-brand-orange px-7 py-3.5 text-sm font-semibold text-white shadow-md shadow-brand-orange/25 transition-all hover:bg-brand-orange-dark hover:shadow-lg hover:shadow-brand-orange/30 disabled:cursor-not-allowed disabled:opacity-50"
                 >
-                  {isSubmitting ? "Redirecting to Stripe…" : "Pay Securely Now"}
+                  {isSubmitting ? "Sending your booking…" : "Send Booking Request"}
                   {!isSubmitting ? <span aria-hidden="true">→</span> : null}
                 </button>
                 <p className="mt-3 text-center text-xs text-brand-ink-muted">
-                  Amount due now: <span className="font-semibold text-brand-ink">{formatUsd(dueNow)}</span>
+                  Payment preference amount: <span className="font-semibold text-brand-ink">{formatUsd(dueNow)}</span>
                 </p>
               </div>
             </Reveal>

@@ -1,7 +1,7 @@
 import Illustration from "@/components/Illustration";
 import Image from "next/image";
-import type { ReactNode } from "react";
 import Reveal from "@/components/Reveal";
+import ContactForm from "@/components/ContactForm";
 
 const CONTACT = {
   phoneDisplay: "076 043 5578",
@@ -41,17 +41,6 @@ const CONTACT_ITEMS = [
     icon: "/images/icons/location.svg",
     external: true,
   },
-];
-
-const SERVICES = [
-  "Yala Safari",
-  "Udawalawe Safari",
-  "Bundala Safari",
-  "Hambantota Port to Yala Safari",
-  "Taxi / Car Rental",
-  "Airport Transfer",
-  "Custom Tour",
-  "Other",
 ];
 
 type IconProps = { className?: string };
@@ -94,31 +83,6 @@ function MailIcon({ className = "h-5 w-5" }: IconProps) {
   );
 }
 
-const inputClass =
-  "w-full rounded-xl border border-earth/25 bg-white px-4 py-3 text-sm text-brand-ink placeholder:text-brand-ink-muted/60 transition-colors focus:border-brand-orange focus:outline-none";
-
-function Field({
-  label,
-  required,
-  className,
-  children,
-}: {
-  label: string;
-  required?: boolean;
-  className?: string;
-  children: ReactNode;
-}) {
-  return (
-    <label className={className}>
-      <span className="mb-1.5 block text-sm font-medium text-brand-ink">
-        {label}
-        {required ? <span className="text-brand-orange"> *</span> : null}
-      </span>
-      {children}
-    </label>
-  );
-}
-
 export default function ContactFormSection() {
   return (
     <section id="enquiry" className="relative overflow-hidden w-full scroll-mt-20 bg-white">
@@ -136,73 +100,7 @@ export default function ContactFormSection() {
                 you with a tailored itinerary.
               </p>
 
-              <form className="mt-8 grid grid-cols-1 gap-5 sm:grid-cols-2">
-                <Field label="First Name" required>
-                  <input type="text" name="firstName" required className={inputClass} />
-                </Field>
-                <Field label="Last Name" required>
-                  <input type="text" name="lastName" required className={inputClass} />
-                </Field>
-
-                <Field label="Email" required>
-                  <input type="email" name="email" required className={inputClass} />
-                </Field>
-                <Field label="Phone / WhatsApp" required>
-                  <input type="tel" name="phone" required className={inputClass} />
-                </Field>
-
-                <Field label="Country">
-                  <input type="text" name="country" className={inputClass} />
-                </Field>
-                <Field label="Service Interested In" required>
-                  <select name="service" required defaultValue="" className={inputClass}>
-                    <option value="" disabled>
-                      Select a service
-                    </option>
-                    {SERVICES.map((service) => (
-                      <option key={service} value={service}>
-                        {service}
-                      </option>
-                    ))}
-                  </select>
-                </Field>
-
-                <Field label="Travel Date">
-                  <input type="date" name="travelDate" className={inputClass} />
-                </Field>
-                <Field label="Pickup Location">
-                  <input type="text" name="pickupLocation" className={inputClass} />
-                </Field>
-
-                <div className="grid grid-cols-3 gap-3 sm:col-span-2">
-                  <Field label="Adults">
-                    <input type="number" name="adults" min={0} defaultValue={1} className={inputClass} />
-                  </Field>
-                  <Field label="Children">
-                    <input type="number" name="children" min={0} defaultValue={0} className={inputClass} />
-                  </Field>
-                  <Field label="Infants">
-                    <input type="number" name="infants" min={0} defaultValue={0} className={inputClass} />
-                  </Field>
-                </div>
-
-                <Field label="Message" className="sm:col-span-2">
-                  <textarea
-                    name="message"
-                    rows={4}
-                    placeholder="Tell us about your trip, dates or anything else we should know."
-                    className={inputClass + " resize-none"}
-                  />
-                </Field>
-
-                <button
-                  type="submit"
-                  className="mt-2 inline-flex w-full items-center justify-center gap-2 rounded-full bg-brand-orange px-7 py-3.5 text-sm font-semibold text-white shadow-md shadow-brand-orange/25 transition-all hover:bg-brand-orange-dark hover:shadow-lg hover:shadow-brand-orange/30 sm:col-span-2 sm:w-auto"
-                >
-                  Send Enquiry
-                  <span aria-hidden="true">→</span>
-                </button>
-              </form>
+              <ContactForm />
             </div>
           </Reveal>
 
