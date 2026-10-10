@@ -8,8 +8,8 @@ type NetworkInformation = { saveData?: boolean };
 
 /**
  * Hero background: an optimised poster image everywhere, with the video layered
- * on top for everyone except viewers who have asked for reduced motion or data
- * saving. The still covers the gap while the video buffers, including on phones.
+ * on top for larger screens, except viewers who have asked for reduced motion or data
+ * saving. Phones only get the still.
  */
 export default function HeroVideo({ src, poster }: { src: string; poster: string }) {
   const [playVideo, setPlayVideo] = useState(false);
@@ -19,7 +19,9 @@ export default function HeroVideo({ src, poster }: { src: string; poster: string
     const saveData = (navigator as Navigator & { connection?: NetworkInformation }).connection?.saveData;
     // One-time preference check after mount: the server render can't read these settings.
     // eslint-disable-next-line react-hooks/set-state-in-effect
-    setPlayVideo(!reduced && !saveData);
+    // Phones skip the multi-megabyte video; the optimised poster is enough there.
+    const smallScreen = window.matchMedia("(max-width: 767px)").matches;
+    setPlayVideo(!reduced && !saveData && !smallScreen);
   }, []);
 
   return (
