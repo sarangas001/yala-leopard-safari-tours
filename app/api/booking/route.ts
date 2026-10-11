@@ -1,8 +1,7 @@
 import { NextResponse } from "next/server";
 import { randomBytes } from "node:crypto";
 import { getPark } from "@/lib/parks";
-import { getPackage, calculateBreakdown, formatUsd } from "@/lib/booking/pricing";
-import { BOOKING_EXTRAS } from "@/lib/booking/extras";
+import { getPackage, calculateBreakdown, formatUsd, resolveStartTime } from "@/lib/booking/pricing";
 import { sendNotificationEmail } from "@/lib/email/mailer";
 import { buildBookingEmail } from "@/lib/email/templates";
 
@@ -26,7 +25,7 @@ type BookingRequestBody = {
   children: number;
   infants: number;
   entranceTickets: boolean;
-  extras: string[];
+  session?: string;
   pickupType: "hotel" | "undecided";
   hotelName: string;
   pickupNotes: string;
@@ -86,9 +85,11 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: "Invalid guest counts" }, { status: 400 });
   }
 
-  const extraIds = Array.isArray(body.extras)
-    ? body.extras.filter((id) => BOOKING_EXTRAS.some((extra) => extra.id === id))
-    : [];
+  // Packages with several sessions (e.g. Morning/Evening half-day) need a valid pick.
+  const session = clean(body.session, 50);
+  if (selectedPackage.timeOptions && !selectedPackage.timeOptions.some((o) => o.label === session)) {
+    return NextResponse.json({ error: "Please choose a start time for this safari" }, { status: 400 });
+  }
 
   const customer = body.customer;
   if (
@@ -107,7 +108,7 @@ export async function POST(request: Request) {
   const paymentOption = body.paymentOption === "deposit" ? "deposit" : "full";
   const entranceTickets = Boolean(body.entranceTickets);
 
-  const breakdown = calculateBreakdown({ adults, children, entranceTickets, extras: extraIds }, selectedPackage);
+  const breakdown = calculateBreakdown({ adults, children, entranceTickets }, selectedPackage);
   if (breakdown.total <= 0) {
     return NextResponse.json({ error: "Unable to calculate a valid total for this selection" }, { status: 400 });
   }
@@ -125,22 +126,18 @@ export async function POST(request: Request) {
     reference,
     parkName: PARK_NAMES[body.park] ?? body.park,
     packageName: selectedPackage.name,
-    startTime: selectedPackage.time,
+    startTime: resolveStartTime(selectedPackage, session),
     date: clean(body.date, 50),
     adults,
     children,
     infants,
     pickup: pickupType === "hotel" ? hotelName || "Hotel pickup (name not provided)" : "Not decided yet",
     pickupNotes: clean(body.pickupNotes, 1000),
-    addOns: BOOKING_EXTRAS.filter((extra) => extraIds.includes(extra.id)).map(
-      (extra) => `${extra.label} (${formatUsd(extra.price)})`
-    ),
     specialRequest: typeof body.specialRequest === "string" ? body.specialRequest.trim().slice(0, 2000) : "",
     paymentOption,
     breakdown: {
       packageCharge: formatUsd(breakdown.packageCharge),
       entranceTickets: formatUsd(breakdown.entranceTickets),
-      extrasCharge: formatUsd(breakdown.extrasCharge),
       total: formatUsd(breakdown.total),
     },
     dueNow: formatUsd(dueNow),

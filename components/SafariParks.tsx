@@ -24,6 +24,13 @@ const PARKS = [
     copy: "A Ramsar-listed coastal sanctuary of lagoons and dunes, alive with flamingos, migratory birds, crocodiles and elephants.",
     image: "/images/new-img/IMG_9172.jpg",
   },
+  {
+    id: "lunugamvehera",
+    name: "Lunugamvehera National Park",
+    bestFor: "Elephants & Quiet Safaris",
+    copy: "A quiet elephant corridor linking Yala and Udawalawe, built around a scenic reservoir with far fewer visitors than the bigger parks.",
+    image: "/images/new-img/15.png",
+  },
 ];
 
 export default function SafariParks() {
@@ -54,9 +61,9 @@ export default function SafariParks() {
         </Reveal>
 
         {/* Cards — image on top, white body below */}
-        <div className="mt-14 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:mt-16 lg:grid-cols-3 lg:gap-7">
+        <div className="mt-14 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:mt-16 xl:grid-cols-4 lg:gap-7">
           {PARKS.map((park, i) => (
-            <Reveal still key={park.id} delay={i * 0.1}>
+            <Reveal still key={park.id} delay={(i % 4) * 0.1}>
               <a href={`/safaris/${park.id}`} className="group block h-full">
                 <div className="flex h-full flex-col overflow-hidden rounded-3xl border border-black/6 bg-white shadow-sm transition-shadow duration-700 group-hover:shadow-md">
                   {/* Image at top */}

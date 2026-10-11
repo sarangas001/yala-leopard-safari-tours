@@ -1,6 +1,6 @@
 import { parks } from "@/lib/parks";
 import type { SafariPackage } from "@/components/SafariPricing";
-import { BOOKING_EXTRAS, ENTRANCE_TICKET_PRICE_USD } from "@/lib/booking/extras";
+import { ENTRANCE_TICKET_PRICE_USD } from "@/lib/booking/extras";
 import type { BookingConfig } from "@/lib/booking/types";
 
 // Reuses the same package data already shown on each park's pricing section
@@ -46,30 +46,30 @@ export function calculatePackagePrice(pkg: SafariPackage | undefined, payingGues
 export type PriceBreakdown = {
   packageCharge: number;
   entranceTickets: number;
-  extrasCharge: number;
   total: number;
 };
 
 export function calculateBreakdown(
-  config: Pick<BookingConfig, "adults" | "children" | "entranceTickets" | "extras">,
+  config: Pick<BookingConfig, "adults" | "children" | "entranceTickets">,
   pkg: SafariPackage | undefined
 ): PriceBreakdown {
   const payingGuests = config.adults + config.children;
   const packageCharge = calculatePackagePrice(pkg, payingGuests);
   const entranceTickets = config.entranceTickets ? ENTRANCE_TICKET_PRICE_USD * payingGuests : 0;
-  const extrasCharge = config.extras.reduce((sum, extraId) => {
-    const extra = BOOKING_EXTRAS.find((e) => e.id === extraId);
-    return sum + (extra?.price ?? 0);
-  }, 0);
 
   return {
     packageCharge,
     entranceTickets,
-    extrasCharge,
-    total: packageCharge + entranceTickets + extrasCharge,
+    total: packageCharge + entranceTickets,
   };
 }
 
 export function formatUsd(amount: number): string {
   return `$${amount.toFixed(2)}`;
+}
+
+/** Resolves a package's start time for a chosen session (e.g. Morning/Evening half-day). */
+export function resolveStartTime(pkg: SafariPackage, session: string): string {
+  const option = pkg.timeOptions?.find((o) => o.label === session);
+  return option ? `${option.label}: ${option.time}` : pkg.time;
 }

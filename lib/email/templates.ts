@@ -136,10 +136,9 @@ export type BookingEmailData = {
   infants: number;
   pickup: string;
   pickupNotes: string;
-  addOns: string[];
   specialRequest: string;
   paymentOption: "full" | "deposit";
-  breakdown: { packageCharge: string; entranceTickets: string; extrasCharge: string; total: string };
+  breakdown: { packageCharge: string; entranceTickets: string; total: string };
   dueNow: string;
   remainingBalance: string;
   customer: { name: string; email: string; phone: string; country: string };
@@ -171,7 +170,6 @@ export function buildBookingEmail(data: BookingEmailData) {
         { label: "Guests", value: guests },
         { label: "Pickup", value: data.pickup },
         ...(data.pickupNotes ? [{ label: "Pickup notes", value: data.pickupNotes }] : []),
-        { label: "Add-ons", value: data.addOns.length ? data.addOns.join(", ") : "None" },
         ...(data.specialRequest ? [{ label: "Special request", value: data.specialRequest }] : []),
       ],
     },
@@ -180,7 +178,6 @@ export function buildBookingEmail(data: BookingEmailData) {
       rows: [
         { label: "Safari / package", value: data.breakdown.packageCharge },
         { label: "Entrance tickets", value: data.breakdown.entranceTickets },
-        { label: "Meals / extras", value: data.breakdown.extrasCharge },
         { label: "Total", value: data.breakdown.total, highlight: true },
         {
           label: "Customer's payment preference",
@@ -275,5 +272,67 @@ export function buildContactEmail(data: ContactEmailData) {
       ],
     }),
     text: renderText(title, sections),
+  };
+}
+
+export type TransferEmailData = {
+  reference: string;
+  service: string;
+  vehicle: string;
+  customer: { name: string; email: string; phone: string; country: string };
+  pickupLocation: string;
+  dropoffLocation: string;
+  date: string;
+  time: string;
+  passengers: string;
+  roundTrip: boolean;
+  notes: string;
+};
+
+export function buildTransferEmail(data: TransferEmailData) {
+  const sections: EmailSection[] = [
+    {
+      title: "Customer",
+      rows: [
+        { label: "Name", value: data.customer.name },
+        { label: "Email", value: data.customer.email },
+        { label: "Phone / WhatsApp", value: data.customer.phone },
+        { label: "Country", value: data.customer.country || "—" },
+      ],
+    },
+    {
+      title: "Transfer Details",
+      rows: [
+        { label: "Service", value: data.service },
+        ...(data.vehicle ? [{ label: "Vehicle", value: data.vehicle }] : []),
+        { label: "Pickup", value: data.pickupLocation },
+        { label: "Drop-off", value: data.dropoffLocation },
+        { label: "Date", value: data.date },
+        { label: "Time", value: data.time || "To be confirmed" },
+        { label: "Passengers", value: data.passengers },
+        { label: "Return trip", value: data.roundTrip ? "Yes" : "No" },
+        ...(data.notes ? [{ label: "Notes", value: data.notes }] : []),
+      ],
+    },
+  ];
+
+  const title = `New transfer request — ${data.service}`;
+
+  return {
+    subject: `New Transfer ${data.reference} — ${data.customer.name} (${data.service}, ${data.date})`,
+    html: renderLayout({
+      preheader: `${data.customer.name} · ${data.service} · ${data.date}`,
+      eyebrow: `Booking ${data.reference}`,
+      title,
+      intro: `A new transfer request has come in from <strong style="color:${COLORS.ink};">${escapeHtml(
+        data.customer.name
+      )}</strong>. No payment has been taken online — please contact the customer to confirm availability and the fare.`,
+      sections,
+      actions: [
+        { label: "Reply by email", href: `mailto:${data.customer.email}`, primary: true },
+        { label: "WhatsApp customer", href: whatsappHref(data.customer.phone) },
+      ],
+    }),
+    text: renderText(`${title} (${data.reference})`, sections),
   };
 }

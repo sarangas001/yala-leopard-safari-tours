@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import HambantotaHero from "@/components/HambantotaHero";
 import HambantotaPackageSummary from "@/components/HambantotaPackageSummary";
+import HambantotaBooking from "@/components/HambantotaBooking";
 import ParkInclusionsExclusions from "@/components/ParkInclusionsExclusions";
 import ParkChecklist from "@/components/ParkChecklist";
 import IconFeatureGrid from "@/components/IconFeatureGrid";
@@ -104,6 +105,7 @@ export default function HambantotaPortToYalaPage() {
       <IllustratedBlock {...ILLUS[0]}>
         <HambantotaPackageSummary />
       </IllustratedBlock>
+      <HambantotaBooking />
       <ParkInclusionsExclusions
         heading="What's Included & Excluded"
         inclusions={[

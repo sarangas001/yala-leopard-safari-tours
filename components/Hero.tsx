@@ -38,6 +38,14 @@ const DESTINATIONS: Destination[] = [
       "A Ramsar-listed coastal sanctuary of lagoons and dunes, home to flamingos, elephants and hundreds of bird species.",
     image: "/images/parks/bundala.jpg",
   },
+  {
+    id: "lunugamvehera",
+    name: "Lunugamvehera National Park",
+    eyebrow: "Elephant corridor and reservoir birding",
+    description:
+      "A quiet elephant corridor linking Yala and Udawalawe, built around the Lunugamvehera reservoir with far fewer visitors.",
+    image: "/images/new-img/15.png",
+  },
 ];
 
 const AUTO_ADVANCE_MS = 3250;

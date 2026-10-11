@@ -1,4 +1,5 @@
 import type { ParkContent } from "@/lib/parks/types";
+import { FULL_DAY_DETAILS, HALF_DAY_DETAILS, SEVEN_HOUR_DETAILS } from "@/lib/parks/package-details";
 
 export const yala: ParkContent = {
   slug: "yala",
@@ -24,7 +25,7 @@ export const yala: ParkContent = {
       packages: [
         {
           name: "Half-Day Private Safari",
-          time: "5:00 AM – 10:00 AM",
+          ...HALF_DAY_DETAILS,
           duration: "Approx. 4–5 hours",
           image: "/images/new-img/13.jpg",
           tiers: [
@@ -38,7 +39,7 @@ export const yala: ParkContent = {
         },
         {
           name: "7-Hour Private Safari",
-          time: "5:00 AM – 12:00 PM",
+          ...SEVEN_HOUR_DETAILS,
           duration: "7 hours",
           image: "/images/new-img/IMG_1606.jpg",
           tiers: [
@@ -52,7 +53,7 @@ export const yala: ParkContent = {
         },
         {
           name: "Full-Day Private Safari",
-          time: "5:00 AM – 6:00 PM",
+          ...FULL_DAY_DETAILS,
           duration: "Approx. 13 hours",
           image: "/images/new-img/IMG_9129.jpg",
           tiers: [
@@ -66,14 +67,14 @@ export const yala: ParkContent = {
         },
         {
           name: "7-Hour Shared Safari",
-          time: "5:00 AM – 12:00 PM",
+          ...SEVEN_HOUR_DETAILS,
           duration: "7 hours",
           flatPrice: "$25 per person",
           image: "/images/new-img/IMG_2392.jpg",
         },        
         {
           name: "Full-Day Shared Safari",
-          time: "5:00 AM – 6:00 PM",
+          ...FULL_DAY_DETAILS,
           duration: "Approx. 13 hours",
           flatPrice: "$50 per person",
           image: "/images/new-img/8.webp",
@@ -223,7 +224,7 @@ export const yala: ParkContent = {
       faqs: [
         {
           q: "What is the best time for a Yala safari?",
-          a: "Early morning safaris, starting around 5:00 AM, tend to offer the best wildlife activity and cooler temperatures. Our Full-Day safari also lets you experience both morning and late-afternoon light.",
+          a: "Early morning safaris, starting around 5:00 AM, tend to offer the best wildlife activity and cooler temperatures. Our Half-Day safari is also available in the evening (1:30 PM – 6:00 PM), and the Full-Day safari lets you experience both morning and late-afternoon light.",
         },
         {
           q: "Is the park entrance ticket included?",
@@ -239,7 +240,7 @@ export const yala: ParkContent = {
         },
         {
           q: "Are meals included?",
-          a: "Meals are not included in our packages. Drinking water is provided throughout every safari.",
+          a: "Yes. Half-Day and 7-Hour safaris include breakfast, and Full-Day safaris include breakfast, lunch and a fruit pack. Every package also includes a free water bottle.",
         },
         {
           q: "Is hotel pickup available?",

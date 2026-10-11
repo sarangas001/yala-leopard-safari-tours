@@ -46,7 +46,7 @@ export async function generateMetadata({
 
   return {
     title: `Book Your ${PARK_NAMES[park] ?? "Safari"} | Yala Leopard Safari Tours`,
-    description: `Configure your ${PARK_NAMES[park] ?? "safari"} package, guests and extras, and see a live price before checkout.`,
+    description: `Configure your ${PARK_NAMES[park] ?? "safari"} package, guests and date, and see a live price before checkout.`,
   };
 }
 

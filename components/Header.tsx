@@ -12,6 +12,8 @@ type NavLink = {
   label: string;
   /** Path that marks this item active when href is a hash link to another page. */
   activePath?: string;
+  /** Opens its dropdown instead of navigating; href is only used as a key and active-state hint. */
+  dropdownOnly?: boolean;
   children?: { href: string; label: string }[];
 };
 
@@ -31,6 +33,7 @@ const NAV_LINKS: NavLink[] = [
     href: "/taxi-car-rental",
     label: "Taxi & Car Rental",
     activePath: "/taxi-car-rental",
+    dropdownOnly: true,
     children: [
       { href: "/hambantota-port-to-yala", label: "Hambantota Port to Yala Safari" },
       { href: "/taxi-car-rental", label: "Taxi and Car Rental" },
@@ -90,9 +93,12 @@ export default function Header() {
   const scrolledLayerRef = useRef<HTMLDivElement | null>(null);
   const reducedMotionRef = useRef(false);
 
-  // Individual blog posts and the cookie policy have no hero to blend into,
-  // so the nav keeps its dark background from the very top of the page.
-  const solidNav = pathname.startsWith("/blog/") || pathname === "/legal/cookie-policy";
+  // Individual blog posts, the cookie policy and the booking confirmation page have no
+  // hero to blend into, so the nav keeps its dark background from the very top of the page.
+  const solidNav =
+    pathname.startsWith("/blog/") ||
+    pathname === "/legal/cookie-policy" ||
+    /^\/book\/[^/]+\/confirmation\/?$/.test(pathname);
 
   const isActive = (href: string) =>
     href === "/" ? pathname === "/" : pathname === href || pathname.startsWith(href + "/");
@@ -223,19 +229,34 @@ export default function Header() {
                     if (event.key === "Escape") setOpenMenu(null);
                   }}
                 >
-                  <Link
-                    href={link.href}
-                    onClick={closeAll}
-                    onFocus={() => setOpenMenu(link.label)}
-                    aria-haspopup="menu"
-                    aria-expanded={dropdownOpen}
-                    className={navLinkClass(active) + " inline-flex items-center gap-1"}
-                  >
-                    {link.label}
-                    <ChevronIcon
-                      className={"h-4 w-4 transition-transform duration-500 " + (dropdownOpen ? "rotate-180" : "")}
-                    />
-                  </Link>
+                  {link.dropdownOnly ? (
+                    <button
+                      type="button"
+                      onClick={() => setOpenMenu(dropdownOpen ? null : link.label)}
+                      aria-haspopup="menu"
+                      aria-expanded={dropdownOpen}
+                      className={navLinkClass(active) + " inline-flex cursor-pointer items-center gap-1"}
+                    >
+                      {link.label}
+                      <ChevronIcon
+                        className={"h-4 w-4 transition-transform duration-500 " + (dropdownOpen ? "rotate-180" : "")}
+                      />
+                    </button>
+                  ) : (
+                    <Link
+                      href={link.href}
+                      onClick={closeAll}
+                      onFocus={() => setOpenMenu(link.label)}
+                      aria-haspopup="menu"
+                      aria-expanded={dropdownOpen}
+                      className={navLinkClass(active) + " inline-flex items-center gap-1"}
+                    >
+                      {link.label}
+                      <ChevronIcon
+                        className={"h-4 w-4 transition-transform duration-500 " + (dropdownOpen ? "rotate-180" : "")}
+                      />
+                    </Link>
+                  )}
 
                   {/* pt-4 keeps the hover area continuous between the trigger and the panel. */}
                   <div
@@ -320,9 +341,13 @@ export default function Header() {
 
             return (
               <div key={link.href}>
-                <Link href={link.href} onClick={closeAll} className={mobileLinkClass}>
-                  {link.label}
-                </Link>
+                {link.dropdownOnly ? (
+                  <p className={mobileLinkClass}>{link.label}</p>
+                ) : (
+                  <Link href={link.href} onClick={closeAll} className={mobileLinkClass}>
+                    {link.label}
+                  </Link>
+                )}
                 {link.children ? (
                   <div className="ml-3 flex flex-col border-l border-white/15 pl-2">
                     {link.children.map((child) => (

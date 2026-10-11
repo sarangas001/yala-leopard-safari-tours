@@ -4,7 +4,8 @@ import { useMemo, useState } from "react";
 import { useRouter } from "next/navigation";
 import Reveal from "@/components/Reveal";
 import type { SafariPackage } from "@/components/SafariPricing";
-import { BOOKING_EXTRAS, ENTRANCE_TICKET_PRICE_USD } from "@/lib/booking/extras";
+import { ENTRANCE_TICKET_PRICE_USD } from "@/lib/booking/extras";
+import { MAX_CAPACITY_NOTE } from "@/lib/parks/package-details";
 import { MAX_TIERED_GUESTS, calculateBreakdown, formatUsd } from "@/lib/booking/pricing";
 import { DEFAULT_BOOKING_CONFIG } from "@/lib/booking/types";
 
@@ -71,7 +72,7 @@ export default function BookingFlow({
   const [children, setChildren] = useState(DEFAULT_BOOKING_CONFIG.children);
   const [infants, setInfants] = useState(DEFAULT_BOOKING_CONFIG.infants);
   const [entranceTickets, setEntranceTickets] = useState(DEFAULT_BOOKING_CONFIG.entranceTickets);
-  const [extras, setExtras] = useState<string[]>(DEFAULT_BOOKING_CONFIG.extras);
+  const [session, setSession] = useState(DEFAULT_BOOKING_CONFIG.session);
   const [pickupType, setPickupType] = useState(DEFAULT_BOOKING_CONFIG.pickupType);
   const [hotelName, setHotelName] = useState(DEFAULT_BOOKING_CONFIG.hotelName);
   const [pickupNotes, setPickupNotes] = useState(DEFAULT_BOOKING_CONFIG.pickupNotes);
@@ -81,13 +82,13 @@ export default function BookingFlow({
   const atGuestLimit = payingGuests >= MAX_TIERED_GUESTS;
 
   const breakdown = useMemo(
-    () => calculateBreakdown({ adults, children, entranceTickets, extras }, selectedPackage),
-    [adults, children, entranceTickets, extras, selectedPackage]
+    () => calculateBreakdown({ adults, children, entranceTickets }, selectedPackage),
+    [adults, children, entranceTickets, selectedPackage]
   );
 
-  const toggleExtra = (id: string) => {
-    setExtras((prev) => (prev.includes(id) ? prev.filter((e) => e !== id) : [...prev, id]));
-  };
+  // Packages with several sessions (Morning/Evening half-day) default to the first one.
+  const sessionOptions = selectedPackage?.timeOptions;
+  const activeSession = sessionOptions?.some((o) => o.label === session) ? session : (sessionOptions?.[0]?.label ?? "");
 
   const canContinue = Boolean(packageName && date && payingGuests > 0);
 
@@ -99,7 +100,7 @@ export default function BookingFlow({
       children: String(children),
       infants: String(infants),
       entranceTickets: String(entranceTickets),
-      extras: extras.join(","),
+      session: activeSession,
       pickupType,
       hotelName,
       pickupNotes,
@@ -129,7 +130,9 @@ export default function BookingFlow({
                       }
                     >
                       <span className="font-display text-lg font-medium text-brand-ink">{pkg.name}</span>
-                      <span className="mt-1 text-xs text-brand-ink-muted">{pkg.duration} · {pkg.time}</span>
+                      <span className="mt-1 text-xs text-brand-ink-muted">
+                        {pkg.duration} · {pkg.timeOptions ? pkg.timeOptions.map((o) => o.label).join(" or ") : pkg.time}
+                      </span>
                       <span className="mt-3 font-display text-lg font-medium text-brand-orange">
                         {pkg.flatPrice ?? pkg.tiers?.[0]?.price}
                         {pkg.tiers ? <span className="text-xs font-normal text-brand-ink-muted"> from</span> : null}
@@ -158,11 +161,33 @@ export default function BookingFlow({
 
             <Reveal delay={0.08}>
               <h2 className="font-display text-2xl font-medium text-brand-ink sm:text-3xl">3. Start Time</h2>
-              <p className="mt-4 text-sm leading-relaxed text-brand-ink-muted">
-                {selectedPackage
-                  ? `Your selected package runs ${selectedPackage.time}.`
-                  : "Select a package above to see its start time."}
-              </p>
+              {sessionOptions ? (
+                <div className="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-2">
+                  {sessionOptions.map((option) => (
+                    <button
+                      key={option.label}
+                      type="button"
+                      onClick={() => setSession(option.label)}
+                      aria-pressed={option.label === activeSession}
+                      className={
+                        "flex flex-col rounded-2xl border p-4 text-left transition-colors " +
+                        (option.label === activeSession
+                          ? "border-brand-orange bg-brand-orange/5"
+                          : "border-black/6 hover:border-brand-orange/40")
+                      }
+                    >
+                      <span className="font-display text-lg font-medium text-brand-ink">{option.label}</span>
+                      <span className="mt-1 text-xs text-brand-ink-muted">{option.time}</span>
+                    </button>
+                  ))}
+                </div>
+              ) : (
+                <p className="mt-4 text-sm leading-relaxed text-brand-ink-muted">
+                  {selectedPackage
+                    ? `Your selected package runs ${selectedPackage.time}.`
+                    : "Select a package above to see its start time."}
+                </p>
+              )}
             </Reveal>
 
             <Reveal delay={0.1}>
@@ -195,25 +220,39 @@ export default function BookingFlow({
             </Reveal>
 
             <Reveal delay={0.14}>
-              <h2 className="font-display text-2xl font-medium text-brand-ink sm:text-3xl">6. Meals and Extras</h2>
-              <div className="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-2">
-                {BOOKING_EXTRAS.map((extra) => (
-                  <label key={extra.id} className="flex items-start gap-3 rounded-xl border border-earth/25 p-4">
-                    <input
-                      type="checkbox"
-                      checked={extras.includes(extra.id)}
-                      onChange={() => toggleExtra(extra.id)}
-                      className="mt-0.5 h-4 w-4 shrink-0 rounded border-earth/40 text-brand-orange focus:ring-brand-orange"
-                    />
-                    <span className="text-sm text-brand-ink-muted">
-                      <span className="block font-medium text-brand-ink">
-                        {extra.label} <span className="font-normal text-brand-ink-muted">+{formatUsd(extra.price)}</span>
-                      </span>
-                      {extra.description}
-                    </span>
-                  </label>
-                ))}
-              </div>
+              <h2 className="font-display text-2xl font-medium text-brand-ink sm:text-3xl">6. Includes / Excludes</h2>
+              {selectedPackage ? (
+                <div className="mt-4 grid grid-cols-1 gap-6 rounded-2xl border border-earth/25 p-5 sm:grid-cols-2">
+                  <div>
+                    <h3 className="text-sm font-semibold text-brand-ink">Included</h3>
+                    <ul className="mt-3 space-y-2 text-sm text-brand-ink-muted">
+                      {selectedPackage.includes?.map((item) => (
+                        <li key={item} className="flex items-start gap-2">
+                          <span aria-hidden="true" className="font-semibold text-brand-orange">✓</span>
+                          {item}
+                        </li>
+                      ))}
+                      <li className="flex items-start gap-2">
+                        <span aria-hidden="true" className="font-semibold text-brand-orange">✓</span>
+                        {MAX_CAPACITY_NOTE}
+                      </li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h3 className="text-sm font-semibold text-brand-ink">Excluded</h3>
+                    <ul className="mt-3 space-y-2 text-sm text-brand-ink-muted">
+                      {selectedPackage.excludes?.map((item) => (
+                        <li key={item} className="flex items-start gap-2">
+                          <span aria-hidden="true" className="font-semibold text-brand-ink-muted/60">✕</span>
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              ) : (
+                <p className="mt-4 text-sm text-brand-ink-muted">Select a package above to see what&apos;s included.</p>
+              )}
             </Reveal>
 
             <Reveal delay={0.16}>
@@ -269,10 +308,6 @@ export default function BookingFlow({
                   <div className="flex justify-between gap-3">
                     <dt className="text-brand-ink-muted">Entrance tickets</dt>
                     <dd className="font-medium text-brand-ink">{formatUsd(breakdown.entranceTickets)}</dd>
-                  </div>
-                  <div className="flex justify-between gap-3">
-                    <dt className="text-brand-ink-muted">Meals/add-ons</dt>
-                    <dd className="font-medium text-brand-ink">{formatUsd(breakdown.extrasCharge)}</dd>
                   </div>
                 </dl>
                 <div className="mt-5 flex items-baseline justify-between border-t border-black/[0.07] pt-4">

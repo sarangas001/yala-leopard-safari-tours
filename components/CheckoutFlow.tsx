@@ -5,8 +5,7 @@ import { useRouter, useSearchParams } from "next/navigation";
 import Link from "next/link";
 import Reveal from "@/components/Reveal";
 import type { SafariPackage } from "@/components/SafariPricing";
-import { BOOKING_EXTRAS } from "@/lib/booking/extras";
-import { calculateBreakdown, formatUsd } from "@/lib/booking/pricing";
+import { calculateBreakdown, formatUsd, resolveStartTime } from "@/lib/booking/pricing";
 
 const inputClass =
   "w-full rounded-xl border border-earth/25 bg-white px-4 py-3 text-sm text-brand-ink placeholder:text-brand-ink-muted/60 transition-colors focus:border-brand-orange focus:outline-none";
@@ -43,14 +42,13 @@ export default function CheckoutFlow({ park, packages }: { park: string; package
   const children = Number(searchParams.get("children") ?? 0);
   const infants = Number(searchParams.get("infants") ?? 0);
   const entranceTickets = searchParams.get("entranceTickets") === "true";
-  const extraIds = (searchParams.get("extras") ?? "").split(",").filter(Boolean);
+  const session = searchParams.get("session") ?? "";
   const pickupType = searchParams.get("pickupType") ?? "hotel";
   const hotelName = searchParams.get("hotelName") ?? "";
   const pickupNotes = searchParams.get("pickupNotes") ?? "";
 
   const selectedPackage = packages.find((pkg) => pkg.name === packageName);
-  const selectedExtras = BOOKING_EXTRAS.filter((extra) => extraIds.includes(extra.id));
-  const breakdown = calculateBreakdown({ adults, children, entranceTickets, extras: extraIds }, selectedPackage);
+  const breakdown = calculateBreakdown({ adults, children, entranceTickets }, selectedPackage);
 
   const [paymentOption, setPaymentOption] = useState<"full" | "deposit">("full");
   const [agreed, setAgreed] = useState(false);
@@ -87,7 +85,7 @@ export default function CheckoutFlow({ park, packages }: { park: string; package
           children,
           infants,
           entranceTickets,
-          extras: extraIds,
+          session,
           pickupType,
           hotelName,
           pickupNotes,
@@ -194,7 +192,7 @@ export default function CheckoutFlow({ park, packages }: { park: string; package
                 </div>
                 <div className="flex justify-between gap-3">
                   <dt className="text-brand-ink-muted">Start Time</dt>
-                  <dd className="font-medium text-brand-ink">{selectedPackage.time}</dd>
+                  <dd className="font-medium text-brand-ink">{resolveStartTime(selectedPackage, session)}</dd>
                 </div>
                 <div className="flex justify-between gap-3">
                   <dt className="text-brand-ink-muted">Date</dt>
@@ -218,12 +216,6 @@ export default function CheckoutFlow({ park, packages }: { park: string; package
                     <dd className="text-right font-medium text-brand-ink">{pickupNotes}</dd>
                   </div>
                 ) : null}
-                <div className="flex justify-between gap-3">
-                  <dt className="text-brand-ink-muted">Add-ons</dt>
-                  <dd className="text-right font-medium text-brand-ink">
-                    {selectedExtras.length ? selectedExtras.map((e) => e.label).join(", ") : "None"}
-                  </dd>
-                </div>
               </dl>
             </Reveal>
 
@@ -269,10 +261,6 @@ export default function CheckoutFlow({ park, packages }: { park: string; package
                   <div className="flex justify-between gap-3">
                     <dt className="text-brand-ink-muted">Entrance tickets</dt>
                     <dd className="font-medium text-brand-ink">{formatUsd(breakdown.entranceTickets)}</dd>
-                  </div>
-                  <div className="flex justify-between gap-3">
-                    <dt className="text-brand-ink-muted">Meals / extras</dt>
-                    <dd className="font-medium text-brand-ink">{formatUsd(breakdown.extrasCharge)}</dd>
                   </div>
                   <div className="flex justify-between gap-3">
                     <dt className="text-brand-ink-muted">Taxes / service charges</dt>

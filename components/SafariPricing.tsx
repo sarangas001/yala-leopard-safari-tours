@@ -2,12 +2,19 @@ import Image from "next/image";
 import Link from "next/link";
 import Reveal from "@/components/Reveal";
 import { focalClass, focalStyle } from "@/lib/focal";
+import { MAX_CAPACITY_NOTE } from "@/lib/parks/package-details";
 
 export type PriceTier = { group: string; price: string };
 
+export type TimeOption = { label: string; time: string };
+
 export type SafariPackage = {
   name: string;
+  /** Summary of the start time; when `timeOptions` is set, guests pick one at booking. */
   time: string;
+  timeOptions?: TimeOption[];
+  includes?: string[];
+  excludes?: string[];
   duration: string;
   tiers?: PriceTier[];
   flatPrice?: string;
@@ -62,10 +69,19 @@ export default function SafariPricing({
                   <h3 className="font-display text-xl font-medium text-brand-ink">{pkg.name}</h3>
 
                   <dl className="mt-3 space-y-1 text-xs text-brand-ink-muted">
-                    <div className="flex gap-1.5">
-                      <dt className="font-semibold text-brand-ink">Time:</dt>
-                      <dd>{pkg.time}</dd>
-                    </div>
+                    {pkg.timeOptions ? (
+                      pkg.timeOptions.map((option) => (
+                        <div key={option.label} className="flex gap-1.5">
+                          <dt className="font-semibold text-brand-ink">{option.label}:</dt>
+                          <dd>{option.time}</dd>
+                        </div>
+                      ))
+                    ) : (
+                      <div className="flex gap-1.5">
+                        <dt className="font-semibold text-brand-ink">Time:</dt>
+                        <dd>{pkg.time}</dd>
+                      </div>
+                    )}
                     <div className="flex gap-1.5">
                       <dt className="font-semibold text-brand-ink">Duration:</dt>
                       <dd>{pkg.duration}</dd>
@@ -89,6 +105,25 @@ export default function SafariPricing({
                       </dl>
                     )}
                   </div>
+
+                  <ul className="mt-5 space-y-1.5 border-t border-black/5 pt-4 text-xs text-brand-ink-muted">
+                    {pkg.includes?.map((item) => (
+                      <li key={item} className="flex items-start gap-2">
+                        <span aria-hidden="true" className="font-semibold text-brand-orange">✓</span>
+                        {item}
+                      </li>
+                    ))}
+                    {pkg.excludes?.map((item) => (
+                      <li key={item} className="flex items-start gap-2">
+                        <span aria-hidden="true" className="font-semibold text-brand-ink-muted/60">✕</span>
+                        {item}
+                      </li>
+                    ))}
+                    <li className="flex items-start gap-2">
+                      <span aria-hidden="true" className="font-semibold text-brand-orange">✓</span>
+                      {MAX_CAPACITY_NOTE}
+                    </li>
+                  </ul>
 
                   <Link
                     href={parkSlug ? `/book/${parkSlug}?package=${encodeURIComponent(pkg.name)}` : "/#enquire"}

@@ -1,4 +1,5 @@
 import type { ParkContent } from "@/lib/parks/types";
+import { FULL_DAY_DETAILS, HALF_DAY_DETAILS, SEVEN_HOUR_DETAILS } from "@/lib/parks/package-details";
 
 export const udawalawe: ParkContent = {
   slug: "udawalawe",
@@ -24,7 +25,7 @@ export const udawalawe: ParkContent = {
       packages: [
         {
           name: "Half-Day Private Safari",
-          time: "To be confirmed",
+          ...HALF_DAY_DETAILS,
           duration: "Approx. 4–5 hours",
           image: "/images/new-img/IMG_2001.jpg",
           tiers: [
@@ -38,7 +39,7 @@ export const udawalawe: ParkContent = {
         },
         {
           name: "7-Hour Private Safari",
-          time: "To be confirmed",
+          ...SEVEN_HOUR_DETAILS,
           duration: "7 hours",
           image: "/images/new-img/IMG_1606.jpg",
           tiers: [
@@ -52,7 +53,7 @@ export const udawalawe: ParkContent = {
         },
         {
           name: "Full-Day Private Safari",
-          time: "To be confirmed",
+          ...FULL_DAY_DETAILS,
           duration: "Approx. 13 hours",
           image: "/images/parks/udawalawe.jpg",
           tiers: [

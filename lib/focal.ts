@@ -12,6 +12,7 @@ const FOCAL_POINTS: Record<string, string> = {
   "/images/new-img/11.jpg": "40% 40%",
   "/images/new-img/12.jpg": "50% 45%",
   "/images/new-img/13.jpg": "30% 40%",
+  "/images/new-img/15.png": "50% 30%",
   "/images/new-img/4-A-Kumana-leopard.jpg": "45% 35%",
   "/images/new-img/8.webp": "50% 55%",
   "/images/new-img/9.webp": "75% 50%",
