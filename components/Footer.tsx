@@ -209,7 +209,7 @@ export default function Footer() {
     <footer className="w-full bg-white text-brand-ink">
       {/* ============ SECTION 1 — Brand, newsletter, contact & trust ============ */}
       <div className="mx-auto max-w-[1600px] px-10 py-10 sm:px-20 sm:py-12 lg:px-40 lg:py-14">
-        <div className="flex flex-col gap-10 lg:flex-row lg:items-start lg:justify-center-safe lg:gap-14">
+        <div className="flex flex-col gap-8 lg:flex-row lg:items-start lg:justify-center-safe lg:gap-14">
           {/* Brand area */}
           <div className="mx-auto max-w-sm text-center lg:mx-0 lg:text-left">
             <Image
@@ -230,14 +230,14 @@ export default function Footer() {
 
           {/* Newsletter area */}
           <div className="mx-auto w-full max-w-md text-center lg:mx-0 lg:text-left">
-            <h3 className="font-display text-2xl font-medium text-brand-ink sm:text-[1.75rem]">
+            <h3 className="font-display text-xl font-medium text-brand-ink sm:text-2xl">
               Get Safari Stories &amp; Travel Inspiration
             </h3>
-            <p className="mt-3 text-sm leading-relaxed text-brand-ink-muted">
+            <p className="mt-2 text-sm leading-relaxed text-brand-ink-muted">
               Sign up for Yala travel tips, wildlife updates and special
               safari offers, sent straight to your inbox.
             </p>
-            <div className="mt-6 flex justify-center gap-3 lg:justify-start">
+            <div className="mt-4 flex justify-center gap-3 lg:justify-start">
               {SOCIAL_LINKS.map(({ label, Icon, href }) => (
                 <a
                   key={label}
@@ -255,13 +255,13 @@ export default function Footer() {
         </div>
 
         {/* Contact row */}
-        <div className="mt-8 grid grid-cols-1 gap-x-8 gap-y-5 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mx-auto mt-8 grid w-full max-w-md grid-cols-1 justify-items-start gap-x-8 gap-y-5 sm:max-w-2xl sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:grid-cols-4">
           {CONTACT_ITEMS.map((item) => (
             <a
               key={item.key}
               href={item.href}
               {...(item.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
-              className="flex items-center justify-center gap-3 rounded text-sm font-medium lg:justify-start text-brand-ink transition-colors hover:text-brand-orange focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange/40"
+              className="flex items-start justify-start gap-3 rounded text-sm font-medium text-brand-ink transition-colors hover:text-brand-orange focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange/40"
             >
               <Image
                 src={item.icon}
@@ -328,7 +328,7 @@ export default function Footer() {
           </div>
           <div className="mt-4 flex flex-col items-center justify-between gap-2 text-center text-[13px] italic text-brand-ink-muted/80 lg:flex-row lg:text-left">
             <p>Designed with respect for Sri Lanka&apos;s wildlife.</p>
-            <p>Site by Grow Digitally</p>
+            <p>Web Design &amp; SEO by <a href="https://growdigitally.lk" target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-brand-orange">GrowDigitally.lk</a></p>
           </div>
         </div>
       </div>

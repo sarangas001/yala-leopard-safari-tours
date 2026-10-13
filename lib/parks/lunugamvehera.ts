@@ -3,9 +3,9 @@ import { FULL_DAY_DETAILS, HALF_DAY_DETAILS, SEVEN_HOUR_DETAILS } from "@/lib/pa
 
 export const lunugamvehera: ParkContent = {
   slug: "lunugamvehera",
-  metaTitle: "Lunugamvehera National Park Safari | Yala Leopard Safari Tours",
+  metaTitle: "Lunugamvehera Safari | National Park Jeep Tours",
   metaDescription:
-    "Explore an important elephant corridor connecting Yala and Udawalawe National Parks, built around the Lunugamvehera reservoir, with an experienced local safari driver in a private 4x4 jeep.",
+    "Explore a Lunugamvehera safari with a private jeep and local driver. Compare wildlife tour packages and opportunities to see elephants and birdlife.",
   sections: [
     {
       type: "hero",
@@ -14,7 +14,7 @@ export const lunugamvehera: ParkContent = {
         "Explore an important elephant corridor connecting Yala and Udawalawe National Parks, built around the Lunugamvehera reservoir, with an experienced local safari driver in a private 4x4 jeep.",
       video: "/videos/udawalawe.mp4",
       poster: "/images/new-img/11.jpg",
-      ctas: [{ label: "Book Lunugamvehera Safari", href: "/#enquire" }],
+      ctas: [{ label: "Book Lunugamvehera Safari", href: "#park-content" }],
     },
     {
       type: "pricing",

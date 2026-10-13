@@ -6,7 +6,7 @@ export default function LegalPageView({ page }: { page: LegalPage }) {
   return (
     <>
       <section className="w-full bg-white">
-        <div className="mx-auto max-w-[1600px] px-10 py-[1.5cm] sm:px-20 sm:py-[1.5cm] lg:px-40 lg:py-[2.5cm]">
+        <div className="mx-auto max-w-[1600px] px-10 pt-[3.5cm] pb-[1.1cm] sm:px-20 sm:pt-[4cm] sm:pb-[1.5cm] lg:px-40 lg:pt-[4.5cm] lg:pb-[2.5cm]">
           <Reveal className="mx-auto max-w-3xl text-center">
             <h1 className="font-display text-4xl font-medium leading-[1.1] tracking-tight text-brand-ink sm:text-5xl">
               {page.title}

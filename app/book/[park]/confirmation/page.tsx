@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { buildMetadata } from "@/lib/seo";
 import { notFound } from "next/navigation";
 import Reveal from "@/components/Reveal";
 import { getPark, getParkSlugs } from "@/lib/parks";
@@ -7,10 +8,11 @@ export function generateStaticParams() {
   return getParkSlugs().map((park) => ({ park }));
 }
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetadata("/book/confirmation", {
   title: "Booking Confirmation | Yala Leopard Safari Tours",
   description: "Your safari booking request has been received.",
-};
+  noindex: true,
+});
 
 export default async function BookingConfirmation({
   params,
@@ -55,18 +57,18 @@ export default async function BookingConfirmation({
             </p>
           </Reveal>
 
-          <Reveal delay={0.2} className="mx-auto mt-10 flex max-w-2xl flex-wrap items-center justify-center gap-3">
+          <Reveal delay={0.2} className="mx-auto mt-10 grid w-fit grid-cols-1 gap-3 sm:grid-cols-2">
             <a
               href="https://wa.me/94760915578"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-full bg-[#25D366] px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-[#1EBE5A]"
+              className="inline-flex items-center justify-center gap-2 rounded-full bg-[#25D366] px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-[#1EBE5A]"
             >
               WhatsApp Us
             </a>
             <a
               href={`/book/${park}`}
-              className="inline-flex items-center gap-2 rounded-full border border-earth/25 px-6 py-3 text-sm font-semibold text-brand-ink transition-colors hover:bg-sand"
+              className="inline-flex items-center justify-center gap-2 rounded-full border border-earth/25 px-6 py-3 text-sm font-semibold text-brand-ink transition-colors hover:bg-sand"
             >
               Start Another Booking
             </a>

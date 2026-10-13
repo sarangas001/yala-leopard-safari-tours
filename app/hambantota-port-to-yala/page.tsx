@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { buildMetadata } from "@/lib/seo";
 import HambantotaHero from "@/components/HambantotaHero";
 import HambantotaPackageSummary from "@/components/HambantotaPackageSummary";
 import HambantotaBooking from "@/components/HambantotaBooking";
@@ -14,11 +15,7 @@ import Reveal from "@/components/Reveal";
 import IllustratedBlock from "@/components/IllustratedBlock";
 import { PACKAGE_ILLUSTRATIONS as ILLUS } from "@/lib/illustrations";
 
-export const metadata: Metadata = {
-  title: "Hambantota Port to Yala Safari | Yala Leopard Safari Tours",
-  description:
-    "Get picked up from Hambantota International Cruise Port or your Hambantota hotel, enjoy a Yala safari in a 4x4 jeep, and return to Hambantota after your wildlife experience.",
-};
+export const metadata: Metadata = buildMetadata("/hambantota-port-to-yala");
 
 const HOW_IT_WORKS = [
   {

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { buildMetadata } from "@/lib/seo";
 import { notFound } from "next/navigation";
 import LegalPageView from "@/components/LegalPageView";
 import { getLegalPage, getLegalPageSlugs } from "@/lib/legal";
@@ -16,10 +17,10 @@ export async function generateMetadata({
   const page = getLegalPage(slug);
   if (!page) return {};
 
-  return {
+  return buildMetadata(`/legal/${slug}`, {
     title: `${page.title} | Yala Leopard Safari Tours`,
     description: page.metaDescription,
-  };
+  });
 }
 
 export default async function LegalPage({

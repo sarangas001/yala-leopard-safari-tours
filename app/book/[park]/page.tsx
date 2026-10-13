@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { buildMetadata } from "@/lib/seo";
 import { notFound } from "next/navigation";
 import PageHero from "@/components/PageHero";
 import BookingFlow from "@/components/BookingFlow";
@@ -44,10 +45,11 @@ export async function generateMetadata({
   const parkData = getPark(park);
   if (!parkData) return {};
 
-  return {
+  return buildMetadata(`/book/${park}`, {
     title: `Book Your ${PARK_NAMES[park] ?? "Safari"} | Yala Leopard Safari Tours`,
     description: `Configure your ${PARK_NAMES[park] ?? "safari"} package, guests and date, and see a live price before checkout.`,
-  };
+    noindex: true,
+  });
 }
 
 export default async function BookPark({

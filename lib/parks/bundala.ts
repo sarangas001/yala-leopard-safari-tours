@@ -3,9 +3,9 @@ import { FULL_DAY_DETAILS, HALF_DAY_DETAILS, SEVEN_HOUR_DETAILS } from "@/lib/pa
 
 export const bundala: ParkContent = {
   slug: "bundala",
-  metaTitle: "Bundala National Park Safari | Yala Leopard Safari Tours",
+  metaTitle: "Bundala Safari | Bundala National Park Jeep Tours",
   metaDescription:
-    "Discover the wetlands, lagoons, coastal habitats and remarkable birdlife of Bundala National Park with an experienced local safari driver in a private 4x4 jeep.",
+    "Plan a Bundala safari in Bundala National Park. Explore birdwatching, wetlands, private jeep tour packages and booking options with local drivers.",
   sections: [
     {
       type: "hero",

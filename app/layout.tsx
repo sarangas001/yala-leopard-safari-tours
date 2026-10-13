@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import SmoothScroll from "@/components/SmoothScroll";
 import "lenis/dist/lenis.css";
 import "./globals.css";
+import { SITE_NAME, SITE_URL } from "@/lib/seo";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -24,6 +25,8 @@ const fraunces = Fraunces({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
+  applicationName: SITE_NAME,
   title: "Yala Leopard Safari Tours | Sri Lanka Wildlife Safaris",
   description:
     "Small-group leopard and wildlife safaris across Yala, Udawalawe and Bundala National Parks, led by experienced local drivers.",

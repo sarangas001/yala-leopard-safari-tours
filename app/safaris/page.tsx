@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { buildMetadata } from "@/lib/seo";
 import SafariHero from "@/components/SafariHero";
 import SafariParkCards from "@/components/SafariParkCards";
 import SafariMoreServices from "@/components/SafariMoreServices";
@@ -7,11 +8,7 @@ import ParkChooserFaq from "@/components/ParkChooserFaq";
 import SafariInclusions from "@/components/SafariInclusions";
 import FinalCta from "@/components/FinalCta";
 
-export const metadata: Metadata = {
-  title: "Safaris | Yala Leopard Safari Tours",
-  description:
-    "Explore our Yala, Udawalawe, Bundala and Lunugamvehera safari experiences.",
-};
+export const metadata: Metadata = buildMetadata("/safaris");
 
 export default function SafarisPage() {
   return (

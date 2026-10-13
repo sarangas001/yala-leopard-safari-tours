@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { buildMetadata } from "@/lib/seo";
 import ReviewsHero from "@/components/ReviewsHero";
 import ReviewsTrustSummary from "@/components/ReviewsTrustSummary";
 import ReviewsFaq from "@/components/ReviewsFaq";
@@ -9,11 +10,7 @@ import ReviewsSubmitForm from "@/components/ReviewsSubmitForm";
 import ReviewsTrustNotes from "@/components/ReviewsTrustNotes";
 import FinalCta from "@/components/FinalCta";
 
-export const metadata: Metadata = {
-  title: "Reviews | Yala Leopard Safari Tours",
-  description:
-    "Read experiences shared by guests who explored Sri Lanka's wildlife with our safari team, and submit your own review.",
-};
+export const metadata: Metadata = buildMetadata("/reviews");
 
 export default function ReviewsPage() {
   return (

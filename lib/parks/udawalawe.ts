@@ -3,9 +3,9 @@ import { FULL_DAY_DETAILS, HALF_DAY_DETAILS, SEVEN_HOUR_DETAILS } from "@/lib/pa
 
 export const udawalawe: ParkContent = {
   slug: "udawalawe",
-  metaTitle: "Udawalawe National Park Safari | Yala Leopard Safari Tours",
+  metaTitle: "Udawalawe Safari | Jeep Packages & Prices",
   metaDescription:
-    "Explore the open grasslands, reservoir landscapes and elephant-rich habitats of Udawalawe National Park with an experienced local safari driver in a private 4x4 jeep.",
+    "Book an Udawalawe safari to see wild elephants in Sri Lanka. Compare private jeep tours, safari prices, tour durations and local pickup arrangements.",
   sections: [
     {
       type: "hero",

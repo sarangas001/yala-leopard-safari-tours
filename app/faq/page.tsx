@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { buildMetadata } from "@/lib/seo";
 import FaqHero from "@/components/FaqHero";
 import FaqBookingFaqs from "@/components/FaqBookingFaqs";
 import FaqPricingFaqs from "@/components/FaqPricingFaqs";
@@ -8,11 +9,7 @@ import FaqGuestFaqs from "@/components/FaqGuestFaqs";
 import FaqCancellationFaqs from "@/components/FaqCancellationFaqs";
 import FinalCta from "@/components/FinalCta";
 
-export const metadata: Metadata = {
-  title: "FAQs | Yala Leopard Safari Tours",
-  description:
-    "Find answers about safari packages, park entrance tickets, pickup, payments, cancellation, wildlife, children and transport.",
-};
+export const metadata: Metadata = buildMetadata("/faq");
 
 export default function FaqPage() {
   return (

@@ -26,7 +26,7 @@ export default function AboutVehicles() {
             <h2 className="font-display text-3xl font-medium tracking-tight text-brand-ink sm:text-4xl lg:text-5xl">
               Our Safari Vehicles
             </h2>
-            <p className="mx-auto mt-5 max-w-md text-base leading-relaxed text-brand-ink-muted lg:mx-0">
+            <p className="mx-auto mt-5 max-w-md text-base leading-relaxed text-brand-ink-muted sm:max-w-none lg:mx-0 lg:max-w-md">
               Every safari runs in an open 4x4 jeep, built to handle
               Yala&apos;s dry-zone tracks while keeping you comfortable for
               the whole drive. Raised, cushioned seating and an open

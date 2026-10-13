@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { buildMetadata } from "@/lib/seo";
 import { notFound } from "next/navigation";
 import ParkSections from "@/components/ParkSections";
 import { getPark, getParkSlugs } from "@/lib/parks";
@@ -16,10 +17,7 @@ export async function generateMetadata({
   const park = getPark(id);
   if (!park) return {};
 
-  return {
-    title: park.metaTitle,
-    description: park.metaDescription,
-  };
+  return buildMetadata(`/safaris/${id}`, { title: park.metaTitle, description: park.metaDescription });
 }
 
 export default async function ParkSafariPage({

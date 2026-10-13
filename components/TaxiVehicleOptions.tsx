@@ -78,10 +78,8 @@ export default function TaxiVehicleOptions() {
                   <h3 className="font-display text-xl font-medium text-brand-ink sm:text-2xl">
                     {vehicle.name}
                   </h3>
-                  {vehicle.examples ? (
-                    <p className="mt-2 text-sm text-brand-ink-muted">{vehicle.examples}</p>
-                  ) : null}
-                  <span className="mt-5 inline-flex flex-col items-center rounded-2xl bg-brand-orange/8 px-5 py-3">
+                  <p className="mt-2 min-h-5 text-sm text-brand-ink-muted">{vehicle.examples ?? ""}</p>
+                  <span className="mt-5 mb-5 inline-flex min-h-24 flex-col items-center justify-center rounded-2xl bg-brand-orange/8 px-5 py-3">
                     <span className="text-xs font-semibold uppercase tracking-wide text-brand-orange">
                       Capacity
                     </span>
@@ -89,7 +87,7 @@ export default function TaxiVehicleOptions() {
                   </span>
                   <span
                     className={
-                      "mt-5 inline-flex rounded-full px-5 py-2 text-xs font-semibold transition-colors " +
+                      "mt-auto inline-flex rounded-full px-5 py-2 text-xs font-semibold transition-colors " +
                       (selected === vehicle.name ? "bg-brand-orange text-white" : "bg-brand-cream text-brand-ink")
                     }
                   >

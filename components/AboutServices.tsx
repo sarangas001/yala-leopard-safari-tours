@@ -30,8 +30,14 @@ const SERVICES = [
   {
     title: "Hambantota Port to Yala Safari",
     text: "A convenient safari transfer for cruise and port arrivals heading straight into Yala.",
-    image: "/images/new-img/IMG_2374.jpg",
+    image: "/images/new-img/IMG_9129.jpg",
     href: "/hambantota-port-to-yala",
+  },
+  {
+    title: "Lunugamvehera National Park Safari",
+    text: "Private safaris through an important elephant corridor linking Yala and Udawalawe, built around the Lunugamvehera reservoir.",
+    image: "/images/parks/lunugamvehera.jpg",
+    href: "/safaris/lunugamvehera",
   },
   {
     title: "Taxi & Car Rental with Driver",

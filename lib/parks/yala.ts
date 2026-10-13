@@ -3,9 +3,9 @@ import { FULL_DAY_DETAILS, HALF_DAY_DETAILS, SEVEN_HOUR_DETAILS } from "@/lib/pa
 
 export const yala: ParkContent = {
   slug: "yala",
-  metaTitle: "Yala National Park Safari | Yala Leopard Safari Tours",
+  metaTitle: "Safari in Yala | Jeep Tour Packages & Prices",
   metaDescription:
-    "Explore Yala National Park with an experienced local wildlife driver in a comfortable 4x4 safari jeep. Half-Day, 7-Hour and Full-Day options available.",
+    "Book a safari in Yala with experienced local 4x4 jeep drivers. Compare half-day, 7-hour and full-day Yala safari packages, prices and pickup options.",
   sections: [
     {
       type: "hero",

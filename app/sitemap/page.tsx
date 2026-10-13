@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
+import { buildMetadata } from "@/lib/seo";
 import SitemapHero from "@/components/SitemapHero";
 import SitemapLinks from "@/components/SitemapLinks";
 import FinalCta from "@/components/FinalCta";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetadata("/sitemap", {
   title: "Sitemap | Yala Leopard Safari Tours",
   description: "A complete overview of every page on the Yala Leopard Safari Tours website.",
-};
+});
 
 export default function SitemapPage() {
   return (

@@ -27,7 +27,7 @@ export default function ParkFaq({
   return (
     <section className="relative overflow-hidden w-full bg-white">
       {illustration ? <Illustration src={illustration} side={illustrationSide} /> : null}
-      <div className="relative z-10 mx-auto max-w-[1600px] px-10 py-[1.5cm] sm:px-20 sm:py-[1.5cm] lg:px-40 lg:py-[2.5cm]">
+      <div className="relative z-10 mx-auto max-w-[1600px] px-10 py-[1.1cm] sm:px-20 sm:py-[1.5cm] lg:px-40 lg:py-[2.5cm]">
         <Reveal className="mx-auto max-w-2xl text-center">
           <h2 className="font-display text-3xl font-medium tracking-tight text-brand-ink sm:text-4xl lg:text-5xl">
             {heading}

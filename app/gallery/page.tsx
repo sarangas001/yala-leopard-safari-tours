@@ -1,11 +1,9 @@
 import type { Metadata } from "next";
+import { buildMetadata } from "@/lib/seo";
 import GalleryHero from "@/components/GalleryHero";
 import GalleryGrid from "@/components/GalleryGrid";
 
-export const metadata: Metadata = {
-  title: "Gallery | Yala Leopard Safari Tours",
-  description: "Photos from our Yala, Udawalawe and Bundala safaris.",
-};
+export const metadata: Metadata = buildMetadata("/gallery");
 
 export default function GalleryPage() {
   return (

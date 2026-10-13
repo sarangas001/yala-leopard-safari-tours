@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { buildMetadata } from "@/lib/seo";
 import AboutHero from "@/components/AboutHero";
 import AboutStory from "@/components/AboutStory";
 import AboutTeam from "@/components/AboutTeam";
@@ -9,11 +10,7 @@ import AboutServices from "@/components/AboutServices";
 import AboutVehicles from "@/components/AboutVehicles";
 import FinalCta from "@/components/FinalCta";
 
-export const metadata: Metadata = {
-  title: "About Us | Yala Leopard Safari Tours",
-  description:
-    "Yala Wild Safari is operated by Yala Leopard Safari Tours, a local safari provider specializing in Yala, Udawalawe and Bundala National Parks.",
-};
+export const metadata: Metadata = buildMetadata("/about");
 
 export default function AboutPage() {
   return (

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { buildMetadata } from "@/lib/seo";
 import TaxiCarRentalHero from "@/components/TaxiCarRentalHero";
 import TaxiVehicleOptions from "@/components/TaxiVehicleOptions";
 import TaxiPricingModel from "@/components/TaxiPricingModel";
@@ -9,11 +10,7 @@ import FinalCta from "@/components/FinalCta";
 import IllustratedBlock from "@/components/IllustratedBlock";
 import { PACKAGE_ILLUSTRATIONS as ILLUS } from "@/lib/illustrations";
 
-export const metadata: Metadata = {
-  title: "Taxi & Car Rental with Driver | Yala Leopard Safari Tours",
-  description:
-    "Travel comfortably between Yala, Tissamaharama, Hambantota, airports, hotels and destinations across Sri Lanka with an English-speaking driver.",
-};
+export const metadata: Metadata = buildMetadata("/taxi-car-rental");
 
 const TRANSFER_TYPES = [
   { title: "Tissamaharama / Yala Hotel Transfers", icon: "/images/icons/hotel-pickup-dropoff.svg" },

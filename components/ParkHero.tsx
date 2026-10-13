@@ -9,22 +9,6 @@ export type ParkHeroCta = {
   variant?: "primary" | "whatsapp";
 };
 
-function WhatsAppIcon({ className = "h-5 w-5" }: { className?: string }) {
-  return (
-    <svg viewBox="0 0 24 24" fill="none" className={className} aria-hidden="true">
-      <path
-        d="M12 3.5a8.4 8.4 0 0 0-7.2 12.7L3.5 20.5l4.4-1.3A8.4 8.4 0 1 0 12 3.5Z"
-        stroke="currentColor"
-        strokeWidth="1.5"
-      />
-      <path
-        d="M8.8 8.4c.2-.5.4-.5.6-.5h.5c.2 0 .4 0 .5.4.2.5.6 1.6.6 1.7.1.1.1.3 0 .4-.1.2-.1.3-.3.4-.1.2-.3.3-.4.5-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.1.5.1.6-.1.2-.2.7-.8.9-1.1.2-.2.4-.2.6-.1l1.5.7c.2.1.4.2.4.3.1.2.1.9-.2 1.5-.3.6-1.5 1.2-2.1 1.2-.5.1-1.2.1-1.9-.1-.4-.1-1-.3-1.7-.6-3-1.3-4.9-4.3-5-4.5-.1-.2-1.2-1.6-1.2-3s.7-2.1.9-2.4Z"
-        fill="currentColor"
-      />
-    </svg>
-  );
-}
-
 export default function ParkHero({
   title,
   description,
@@ -65,7 +49,7 @@ export default function ParkHero({
           ) : null}
 
           {ctas && ctas.length > 0 ? (
-            <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
+            <div className="mx-auto mt-8 grid w-fit grid-cols-1 gap-3 sm:auto-cols-fr sm:grid-flow-col">
               {ctas.map((cta) =>
                 cta.variant === "whatsapp" ? (
                   <a
@@ -73,16 +57,16 @@ export default function ParkHero({
                     href={cta.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 rounded-full bg-[#25D366] px-7 py-3.5 text-sm font-semibold text-white shadow-lg shadow-black/20 transition-all hover:bg-[#1EBE5A] hover:shadow-xl"
+                    className="inline-flex items-center justify-center gap-2 rounded-full bg-[#25D366] px-7 py-3.5 text-sm font-semibold text-white shadow-lg shadow-black/20 transition-all hover:bg-[#1EBE5A] hover:shadow-xl"
                   >
-                    <WhatsAppIcon className="h-4.5 w-4.5" />
+                    <Image src="/images/icons/whatsapp-50.png" alt="" aria-hidden="true" width={50} height={50} className="h-6 w-6" />
                     {cta.label}
                   </a>
                 ) : (
                   <a
                     key={cta.label}
                     href={cta.href}
-                    className="inline-flex items-center gap-2 rounded-full bg-brand-orange px-7 py-3.5 text-sm font-semibold text-white shadow-lg shadow-brand-orange/30 transition-all hover:bg-brand-orange-dark hover:shadow-xl hover:shadow-brand-orange/35 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+                    className="inline-flex items-center justify-center gap-2 rounded-full bg-brand-orange px-7 py-3.5 text-sm font-semibold text-white shadow-lg shadow-brand-orange/30 transition-all hover:bg-brand-orange-dark hover:shadow-xl hover:shadow-brand-orange/35 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
                   >
                     {cta.label}
                     <span aria-hidden="true">→</span>

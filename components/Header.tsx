@@ -93,11 +93,11 @@ export default function Header() {
   const scrolledLayerRef = useRef<HTMLDivElement | null>(null);
   const reducedMotionRef = useRef(false);
 
-  // Individual blog posts, the cookie policy and the booking confirmation page have no
+  // Individual blog posts, the legal pages and the booking confirmation page have no
   // hero to blend into, so the nav keeps its dark background from the very top of the page.
   const solidNav =
     pathname.startsWith("/blog/") ||
-    pathname === "/legal/cookie-policy" ||
+    pathname.startsWith("/legal/") ||
     /^\/book\/[^/]+\/confirmation\/?$/.test(pathname);
 
   const isActive = (href: string) =>

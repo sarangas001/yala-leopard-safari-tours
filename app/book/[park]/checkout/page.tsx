@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { buildMetadata } from "@/lib/seo";
 import { Suspense } from "react";
 import { notFound } from "next/navigation";
 import PageHero from "@/components/PageHero";
@@ -10,10 +11,11 @@ export function generateStaticParams() {
   return getParkSlugs().map((park) => ({ park }));
 }
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetadata("/book/checkout", {
   title: "Checkout | Yala Leopard Safari Tours",
   description: "Review your safari booking, choose a payment option and complete checkout.",
-};
+  noindex: true,
+});
 
 export default async function BookingCheckout({
   params,
