@@ -18,7 +18,7 @@ const SERVICES: ServiceCard[] = [
     image: "/images/new-img/13.jpg",
     alt: "A Sri Lankan leopard resting on a tree branch in Yala National Park",
     href: "/hambantota-port-to-yala",
-    cta: "Book Safari Tours",
+    cta: "Book this Tour",
   },
   {
     title: "Taxi and Car Rental",
@@ -26,7 +26,7 @@ const SERVICES: ServiceCard[] = [
     image: "/images/new-img/taxi-car-2.jpeg",
     alt: "A row of private vehicles available for hire in Sri Lanka",
     href: "/taxi-car-rental",
-    cta: "Book Safari Tours",
+    cta: "Book this Tour",
   },
 ];
 

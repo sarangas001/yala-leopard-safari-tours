@@ -328,7 +328,7 @@ export default function Footer() {
           </div>
           <div className="mt-4 flex flex-col items-center justify-between gap-2 text-center text-[13px] italic text-brand-ink-muted/80 lg:flex-row lg:text-left">
             <p>Designed with respect for Sri Lanka&apos;s wildlife.</p>
-            <p>Web Design &amp; SEO by <a href="https://growdigitally.lk" target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-brand-orange">GrowDigitally.lk</a></p>
+            <a href="https://growdigitally.lk" target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-brand-orange"><p>Web Design &amp; SEO by GrowDigitally.lk</p></a>
           </div>
         </div>
       </div>

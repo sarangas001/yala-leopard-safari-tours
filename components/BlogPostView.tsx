@@ -26,7 +26,7 @@ export default function BlogPostView({ article }: { article: BlogArticle }) {
           </Reveal>
 
           <Reveal delay={0.1} className="mx-auto mt-10 max-w-3xl">
-            <div className="relative aspect-16/9 w-full overflow-hidden rounded-3xl">
+            <div className="relative aspect-video w-full overflow-hidden rounded-3xl">
               <Image
                 src={article.heroImage}
                 alt={article.heroAlt}

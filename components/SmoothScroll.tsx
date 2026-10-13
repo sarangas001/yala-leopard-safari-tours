@@ -7,6 +7,18 @@ import { useEffect, useRef, useState, type ReactNode } from "react";
 const HEADER_OFFSET = 96;
 const PARK_HASH_RE = /^#park-(.+)$/;
 
+// An element whose id matches the hash wins (e.g. `#park-content` on park pages);
+// otherwise `#park-<id>` is a home-page deep link that scrolls to the #safaris section.
+function resolveHashTarget(hash: string) {
+  const parkMatch = hash.match(PARK_HASH_RE);
+  const direct = document.getElementById(decodeURIComponent(hash.slice(1)));
+  if (direct) return { targetEl: direct, parkId: null };
+  return {
+    targetEl: parkMatch ? document.getElementById("safaris") : null,
+    parkId: parkMatch ? parkMatch[1] : null,
+  };
+}
+
 // Lenis owns the actual scroll position independently of Next's router, so a
 // client-side navigation to a new page can otherwise leave the new page's Hero
 // scrolled to wherever the previous page happened to be. Snap back to the top
@@ -59,8 +71,7 @@ function HashLinkHandler() {
     const hash = window.location.hash;
     if (hash.length <= 1) return;
 
-    const parkMatch = hash.match(PARK_HASH_RE);
-    const targetEl = parkMatch ? document.getElementById("safaris") : document.querySelector(hash);
+    const { targetEl } = resolveHashTarget(hash);
     if (!targetEl) return;
 
     requestAnimationFrame(() => {
@@ -83,13 +94,12 @@ function HashLinkHandler() {
       const path = href.slice(0, hashIndex) || window.location.pathname;
       if (hash.length <= 1 || path !== window.location.pathname) return;
 
-      const parkMatch = hash.match(PARK_HASH_RE);
-      const targetEl = parkMatch ? document.getElementById("safaris") : document.querySelector(hash);
+      const { targetEl, parkId } = resolveHashTarget(hash);
       if (!targetEl) return;
 
       event.preventDefault();
-      if (parkMatch) {
-        window.dispatchEvent(new CustomEvent("select-park", { detail: parkMatch[1] }));
+      if (parkId) {
+        window.dispatchEvent(new CustomEvent("select-park", { detail: parkId }));
       }
       history.pushState(null, "", hash);
 

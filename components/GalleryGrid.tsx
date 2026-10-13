@@ -256,6 +256,54 @@ const IMAGES: GalleryImage[] = [
     caption: "Wildlife Photographer at Work",
     category: "safari-life",
   },
+  {
+    src: "/images/new-img/IMG_9501.JPG.jpeg",
+    alt: "An Asian elephant walking down the track between safari jeeps as guests photograph it",
+    caption: "Elephant Encounter",
+    category: "wildlife",
+  },
+  {
+    src: "/images/new-img/IMG_0068.jpg",
+    alt: "Two guests giving a thumbs up in front of a safari jeep beside a reservoir",
+    caption: "Happy Guests at the Reservoir",
+    category: "safari-life",
+  },
+  {
+    src: "/images/new-img/IMG_0380.jpg",
+    alt: "A safari driver and three guests posing beside a reservoir with hills behind",
+    caption: "Guests with Our Driver",
+    category: "safari-life",
+  },
+  {
+    src: "/images/new-img/IMG_0394.jpg",
+    alt: "A guest striking a pose beside a safari jeep at the reservoir's edge",
+    caption: "Strike a Pose",
+    category: "safari-life",
+  },
+  {
+    src: "/images/new-img/IMG_0396.jpg",
+    alt: "Two guests smiling in front of a safari jeep on a lakeside track",
+    caption: "Lakeside Safari Stop",
+    category: "safari-life",
+  },
+  {
+    src: "/images/new-img/IMG_0698.jpg",
+    alt: "Two guests standing in front of a muddy safari jeep on a red dirt track",
+    caption: "Ready for the Drive",
+    category: "safari-life",
+  },
+  {
+    src: "/images/new-img/IMG_9749.jpg",
+    alt: "A couple in sun hats posing by a reservoir during a safari break",
+    caption: "Safari Break by the Water",
+    category: "safari-life",
+  },
+  {
+    src: "/images/new-img/IMG_9929.jpg",
+    alt: "Two guests smiling from the open seats of a 4x4 safari jeep",
+    caption: "Riding in the Jeep",
+    category: "safari-life",
+  },
 ];
 
 const CATEGORIES: { key: Category | "all"; label: string }[] = [
