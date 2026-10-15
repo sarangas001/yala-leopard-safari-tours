@@ -1,14 +1,10 @@
-import ElfsightWidget from "@/components/ElfsightWidget";
+import GoogleReviewsSlider from "@/components/GoogleReviewsSlider";
 import Illustration from "@/components/Illustration";
 import Reveal from "@/components/Reveal";
+import { GOOGLE_REVIEWS } from "@/lib/google-reviews";
 import { TRUST_BADGES } from "@/lib/trust-badges";
 
-// Live Google reviews, rendered by an Elfsight "Google Reviews" widget.
-// Create the widget at https://elfsight.com, then set its ID (the
-// `elfsight-app-…` UUID from the embed code) in NEXT_PUBLIC_ELFSIGHT_GOOGLE_REVIEWS_ID.
-// The ID is public (it appears in the page HTML), so it is safe to keep as the default.
-const WIDGET_ID =
-  process.env.NEXT_PUBLIC_ELFSIGHT_GOOGLE_REVIEWS_ID ?? "8a2d6268-d418-434d-bce3-940ed4ec81c6";
+// Google reviews are added by hand in lib/google-reviews.ts.
 const GOOGLE_PROFILE_URL = TRUST_BADGES.find((b) => b.alt === "Google Business Profile")!.href;
 
 export default function Testimonials({
@@ -41,8 +37,8 @@ export default function Testimonials({
         </Reveal>
 
         <Reveal still className="mx-auto mt-10 max-w-6xl lg:mt-12">
-          {WIDGET_ID ? (
-            <ElfsightWidget widgetId={WIDGET_ID} />
+          {GOOGLE_REVIEWS.length ? (
+            <GoogleReviewsSlider reviews={GOOGLE_REVIEWS} />
           ) : (
             <div className="rounded-3xl border border-black/6 bg-brand-cream px-6 py-12 text-center">
               <p className="text-sm text-brand-ink-muted">
