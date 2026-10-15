@@ -6,7 +6,7 @@ import { buildTransferEmail } from "@/lib/email/templates";
 export const runtime = "nodejs";
 
 const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-const VEHICLES = ["Sedan", "Mini Van", "SUV"];
+const VEHICLES = ["Sedan", "Van", "SUV"];
 
 const SERVICES = {
   taxi: { label: "Taxi & Car Rental", prefix: "TAX" },

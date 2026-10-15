@@ -22,11 +22,11 @@ const VEHICLES: Vehicle[] = [
     alt: "A white Toyota sedan parked on a gravel forecourt",
   },
   {
-    name: "Mini Van",
+    name: "Van",
     examples: "KDH / Dolphin",
     capacity: "Approx. 6–10 passengers",
     image: "/images/new-img/mini-van (2).png",
-    alt: "A white Toyota mini van parked on a gravel forecourt",
+    alt: "A white Toyota van parked on a gravel forecourt",
   },
   {
     name: "SUV",

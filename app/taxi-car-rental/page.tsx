@@ -68,7 +68,7 @@ const FAQS = [
   },
   {
     q: "What vehicles are available?",
-    a: "We offer sedans (approx. 3–4 passengers), mini vans (approx. 6–10 passengers) and SUVs, with SUV capacity and model details confirmed at the time of booking.",
+    a: "We offer sedans (approx. 3–4 passengers), vans (approx. 6–10 passengers) and SUVs, with SUV capacity and model details confirmed at the time of booking.",
   },
   {
     q: "Can I request a child seat?",
