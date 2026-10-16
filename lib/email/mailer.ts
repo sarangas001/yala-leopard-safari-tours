@@ -26,16 +26,21 @@ export async function sendNotificationEmail({
   html,
   text,
   replyTo,
+  to,
+  attachments,
 }: {
   subject: string;
   html: string;
   text: string;
   replyTo?: string;
+  to?: string;
+  attachments?: { filename: string; content: Buffer; contentType?: string }[];
 }) {
   await getTransporter().sendMail({
     from: `"Yala Leopard Safari Website" <${process.env.GMAIL_USER}>`,
-    to: process.env.NOTIFICATION_EMAIL,
+    to: to ?? process.env.NOTIFICATION_EMAIL,
     replyTo,
+    attachments,
     subject,
     html,
     text,

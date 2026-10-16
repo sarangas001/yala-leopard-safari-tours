@@ -1,4 +1,6 @@
-import type { ReactNode } from "react";
+"use client";
+
+import { useState, type FormEvent, type ReactNode } from "react";
 import Reveal from "@/components/Reveal";
 
 const SERVICES = [
@@ -42,6 +44,31 @@ function Field({
 }
 
 export default function ReviewsSubmitForm() {
+  const [status, setStatus] = useState<"idle" | "sending" | "success">("idle");
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
+
+  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    if (status === "sending") return;
+
+    const form = event.currentTarget;
+    setErrorMessage(null);
+    setStatus("sending");
+
+    try {
+      const response = await fetch("/api/review", { method: "POST", body: new FormData(form) });
+      const data = await response.json();
+      if (!response.ok) {
+        throw new Error(data.error || "Something went wrong. Please try again.");
+      }
+      form.reset();
+      setStatus("success");
+    } catch (error) {
+      setErrorMessage(error instanceof Error ? error.message : "Something went wrong. Please try again.");
+      setStatus("idle");
+    }
+  }
+
   return (
     <section className="w-full bg-white">
       <div className="mx-auto max-w-[1600px] px-10 py-[1.5cm] sm:px-20 sm:py-[1.5cm] lg:px-40 lg:py-[2.5cm]">
@@ -56,7 +83,15 @@ export default function ReviewsSubmitForm() {
 
         <Reveal delay={0.1} className="mx-auto mt-12 max-w-2xl">
           <div className="rounded-3xl border border-black/6 bg-white p-8 shadow-sm sm:p-10">
-            <form className="grid grid-cols-1 gap-5 sm:grid-cols-2">
+            <form onSubmit={handleSubmit} className="relative grid grid-cols-1 gap-5 sm:grid-cols-2">
+              <input
+                type="text"
+                name="website"
+                tabIndex={-1}
+                autoComplete="off"
+                aria-hidden="true"
+                className="absolute left-[-9999px] h-0 w-0 opacity-0"
+              />
               <Field label="Name" required>
                 <input type="text" name="name" required className={inputClass} />
               </Field>
@@ -121,11 +156,21 @@ export default function ReviewsSubmitForm() {
                 </span>
               </label>
 
+              {status === "success" ? (
+                <p className="rounded-xl bg-forest/10 p-3 text-sm text-forest sm:col-span-2">
+                  Thank you! Your review has been submitted and will appear once it has been moderated.
+                </p>
+              ) : null}
+              {errorMessage ? (
+                <p className="rounded-xl bg-red-50 p-3 text-sm text-red-700 sm:col-span-2">{errorMessage}</p>
+              ) : null}
+
               <button
                 type="submit"
-                className="mt-2 inline-flex w-full items-center justify-center gap-2 rounded-full bg-brand-orange px-7 py-3.5 text-sm font-semibold text-white shadow-md shadow-brand-orange/25 transition-all hover:bg-brand-orange-dark hover:shadow-lg hover:shadow-brand-orange/30 sm:col-span-2 sm:w-auto"
+                disabled={status === "sending"}
+                className="mt-2 inline-flex w-full items-center justify-center gap-2 rounded-full bg-brand-orange px-7 py-3.5 text-sm font-semibold text-white shadow-md shadow-brand-orange/25 transition-all hover:bg-brand-orange-dark hover:shadow-lg hover:shadow-brand-orange/30 disabled:cursor-not-allowed disabled:opacity-50 sm:col-span-2 sm:w-auto"
               >
-                Submit Review
+                {status === "sending" ? "Sending…" : "Submit Review"}
                 <span aria-hidden="true">→</span>
               </button>
             </form>

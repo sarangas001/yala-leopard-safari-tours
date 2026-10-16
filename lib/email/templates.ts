@@ -275,6 +275,53 @@ export function buildContactEmail(data: ContactEmailData) {
   };
 }
 
+export type ReviewEmailData = {
+  name: string;
+  email: string;
+  service: string;
+  rating: string;
+  review: string;
+  hasPhoto: boolean;
+};
+
+export function buildReviewEmail(data: ReviewEmailData) {
+  const sections: EmailSection[] = [
+    {
+      title: "Reviewer",
+      rows: [
+        { label: "Name", value: data.name },
+        { label: "Email", value: data.email },
+      ],
+    },
+    {
+      title: "Review",
+      rows: [
+        { label: "Safari / service", value: data.service },
+        { label: "Rating", value: data.rating, highlight: true },
+        { label: "Photo", value: data.hasPhoto ? "Attached to this email" : "None" },
+        { label: "Review", value: data.review },
+      ],
+    },
+  ];
+
+  const title = `New review — ${data.rating}`;
+
+  return {
+    subject: `New Review — ${data.name} (${data.service}, ${data.rating})`,
+    html: renderLayout({
+      preheader: `${data.name} · ${data.service} · ${data.rating}`,
+      eyebrow: "Review form",
+      title,
+      intro: `<strong style="color:${COLORS.ink};">${escapeHtml(
+        data.name
+      )}</strong> has submitted a review through the website. The reviewer has consented to it being published.`,
+      sections,
+      actions: [{ label: "Reply by email", href: `mailto:${data.email}`, primary: true }],
+    }),
+    text: renderText(title, sections),
+  };
+}
+
 export type TransferEmailData = {
   reference: string;
   service: string;
