@@ -121,7 +121,8 @@ export function buildMetadata(path: string, options: BuildOptions = {}): Metadat
   return {
     title: { absolute: title },
     description,
-    alternates: { canonical: url },
+    // A canonical on a noindex page sends Google mixed signals, so only indexable pages get one.
+    ...(options.noindex ? {} : { alternates: { canonical: url } }),
     robots: options.noindex ? { index: false, follow: true } : { index: true, follow: true },
     openGraph: {
       type: options.type ?? "website",
