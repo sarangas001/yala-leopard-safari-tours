@@ -67,13 +67,7 @@ export async function POST(request: Request) {
   });
 
   try {
-    // REVIEW_NOTIFICATION_EMAIL (optional) overrides NOTIFICATION_EMAIL for reviews only.
-    await sendNotificationEmail({
-      ...email,
-      replyTo: emailAddress,
-      to: process.env.REVIEW_NOTIFICATION_EMAIL || undefined,
-      attachments,
-    });
+    await sendNotificationEmail({ ...email, replyTo: emailAddress, attachments });
   } catch (error) {
     console.error("Review email failed:", error instanceof Error ? error.message : error);
     return NextResponse.json(
