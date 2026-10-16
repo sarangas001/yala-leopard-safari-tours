@@ -4,7 +4,6 @@ import { buildReviewEmail } from "@/lib/email/templates";
 
 export const runtime = "nodejs";
 
-const REVIEW_EMAIL = "yalaleopardsafariride@gmail.com";
 const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const MAX_PHOTO_BYTES = 5 * 1024 * 1024;
 
@@ -68,7 +67,13 @@ export async function POST(request: Request) {
   });
 
   try {
-    await sendNotificationEmail({ ...email, replyTo: emailAddress, to: REVIEW_EMAIL, attachments });
+    // REVIEW_NOTIFICATION_EMAIL (optional) overrides NOTIFICATION_EMAIL for reviews only.
+    await sendNotificationEmail({
+      ...email,
+      replyTo: emailAddress,
+      to: process.env.REVIEW_NOTIFICATION_EMAIL || undefined,
+      attachments,
+    });
   } catch (error) {
     console.error("Review email failed:", error instanceof Error ? error.message : error);
     return NextResponse.json(

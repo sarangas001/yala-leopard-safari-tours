@@ -50,9 +50,16 @@ const DESTINATIONS: Destination[] = [
 
 const AUTO_ADVANCE_MS = 3250;
 const COUNT = DESTINATIONS.length;
+// Thumbnails visible at once on phones; larger screens show them all.
+const MOBILE_VISIBLE = 3;
 
 export default function Hero() {
   const [active, setActive] = useState(0);
+  // First thumbnail of the phone window. It only moves when the active park leaves the window,
+  // so the previous thumbnail stays visible and three are always shown.
+  const [windowStart, setWindowStart] = useState(0);
+  if (active < windowStart) setWindowStart(active);
+  else if (active > windowStart + MOBILE_VISIBLE - 1) setWindowStart(active - (MOBILE_VISIBLE - 1));
 
   const rootRef = useRef<HTMLElement | null>(null);
   const introRef = useRef<HTMLDivElement | null>(null);
@@ -267,7 +274,7 @@ export default function Hero() {
           <div className="absolute inset-0 bg-linear-to-r from-black/50 via-black/5 to-transparent" />
         </div>
 
-        <div className="relative z-10 flex h-full flex-col px-10 pt-20 pb-8 sm:px-20 sm:pt-24 sm:pb-10 lg:px-40 lg:pt-28 lg:pb-12">
+        <div className="relative z-10 mx-auto flex h-full w-full max-w-[1600px] flex-col px-10 pt-26 pb-8 sm:px-20 sm:pt-31 sm:pb-10 lg:px-40 lg:pt-28 lg:pb-12">
           <div ref={introRef} className="mx-auto mb-8 max-w-xl text-center text-white lg:mx-0 lg:text-left">
             <span className="inline-flex items-center gap-3 text-xs font-medium uppercase tracking-[0.25em] text-white/80">
               <span className="h-px w-8 bg-white/40" aria-hidden="true" />
@@ -329,7 +336,10 @@ export default function Hero() {
                   tabIndex={i === active ? 0 : -1}
                   onClick={() => selectDestination(i)}
                   onKeyDown={(event) => handleTabKeyDown(event, i)}
-                  className="group text-left focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+                  className={
+                    "group text-left focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white" +
+                    (i < windowStart || i >= windowStart + MOBILE_VISIBLE ? " max-sm:hidden" : "")
+                  }
                 >
                   <span
                     className={

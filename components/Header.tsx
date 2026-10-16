@@ -189,7 +189,7 @@ export default function Header() {
       />
 
       <div className="relative">
-        <div className="relative mx-auto flex max-w-[1600px] items-center justify-between gap-4 px-10 py-3 sm:px-20 xl:px-20 2xl:px-40">
+        <div className="relative mx-auto flex max-w-[1600px] items-center justify-between gap-4 px-10 py-3 sm:px-20 lg:px-40">
           <Link href="/" onClick={closeAll} className="shrink-0">
             <Image
               src="/logo-lockup.png"
@@ -197,11 +197,11 @@ export default function Header() {
               width={1478}
               height={720}
               priority
-              className="h-14 w-auto sm:h-18"
+              className="h-14 w-auto sm:h-18 xl:h-14 2xl:h-18"
             />
           </Link>
 
-          <nav aria-label="Primary" className="hidden items-center gap-6 xl:flex 2xl:gap-8">
+          <nav aria-label="Primary" className="hidden items-center gap-4 xl:flex 2xl:gap-8">
             {NAV_LINKS.map((link) => {
               const active =
                 isActive(link.activePath ?? link.href) || !!link.children?.some((c) => isActive(c.href));
