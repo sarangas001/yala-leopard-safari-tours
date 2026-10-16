@@ -17,10 +17,8 @@ export async function generateMetadata({
   const page = getLegalPage(slug);
   if (!page) return {};
 
-  return buildMetadata(`/legal/${slug}`, {
-    title: `${page.title} | Yala Leopard Safari Tours`,
-    description: page.metaDescription,
-  });
+  // Titles and descriptions come from ROUTE_SEO; the legal copy's own metaDescription names a different brand.
+  return buildMetadata(`/legal/${slug}`);
 }
 
 export default async function LegalPage({

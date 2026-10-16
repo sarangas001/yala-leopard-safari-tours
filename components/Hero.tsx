@@ -224,6 +224,7 @@ export default function Hero() {
       aria-label="Featured national parks"
       className="relative w-full scroll-mt-20 bg-white"
     >
+      <h1 className="sr-only">Safari in Sri Lanka: Yala, Udawalawe, Bundala &amp; Lunugamvehera Jeep Tours</h1>
       <p className="sr-only" role="status" aria-live="polite">
         Now showing {activeDestination.name}
       </p>
@@ -291,9 +292,9 @@ export default function Hero() {
                     (i === 0 ? "opacity-100" : "pointer-events-none opacity-0")
                   }
                 >
-                  <h1 className="font-display text-4xl font-medium leading-[1.05] tracking-tight sm:text-5xl lg:text-6xl">
+                  <h2 className="font-display text-4xl font-medium leading-[1.05] tracking-tight sm:text-5xl lg:text-6xl">
                     {destination.name}
-                  </h1>
+                  </h2>
                   <p className="mx-auto mt-4 max-w-md text-sm leading-relaxed text-white/75 lg:mx-0 sm:text-base">
                     {destination.description}
                   </p>
